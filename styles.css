@@ -1,0 +1,38 @@
+/* css styles */
+
+h1 {
+  color: #03b594; /* Set the color of first-level headers (h1) to #3b66bc */
+}
+
+h2 {
+  color: #3b66bc; /* Set the color of first-level headers (h1) to #3b66bc */
+}
+
+a:hover {
+    color: #03b594 
+}
+
+.navbar {
+        border-bottom: 3px solid; /* Sets the thickness of the bottom border */
+    border-image: linear-gradient(to left, #3b66bc, #03b594) 1;
+}
+
+.sidebar {
+    border-right: 3px solid #e4e2d9; /* Right border with the specified color */
+    font-weight: bold;
+}
+
+.navbar a {
+    font-weight: bold;
+}
+
+.footer {
+    font-weight: bold; /* Make text bold */
+    color: white; /* Set text color to white */
+}
+
+::selection {
+    background:#03b594 ; /* This sets the background color of the highlighted text */
+    color: white; /* This sets the text color within the highlight */
+}
+
