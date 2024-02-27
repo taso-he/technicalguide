@@ -1,6 +1,8 @@
 # TASO Technical Guide
 
-This GitHub repository contains the files and code for the TASO Technical Guide.
+This GitHub repository contains the files and code for the [TASO Technical Guide](https://taso-he.github.io/technicalguide/).
+
+[https://taso-he.github.io/technicalguide/](https://taso-he.github.io/technicalguide/)
 
 ## How we built the guide
 
