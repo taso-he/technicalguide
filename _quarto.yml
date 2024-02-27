@@ -1,0 +1,106 @@
+project:
+  type: website
+
+website:
+  title: "Technical Guide"
+  image: images/logo_transp.png
+  favicon: images/favicon.png
+  open-graph: true
+  google-analytics: "G-2PY6X92Q3P"
+  comments:
+    hypothesis: false
+  back-to-top-navigation: true
+  navbar:
+    background: "#FFFFFF"
+    foreground: "#3b66bc"
+    logo: images/logo_transp.png
+    logo-alt: "TASO logo"
+    logo-href: https://taso.org.uk/
+    left:
+      - icon: house
+        href: index.qmd
+        text: Home
+    right: 
+      - text: Sign up for our newsletter
+        href: https://taso.org.uk/newsletter/
+        icon: envelope
+      - icon: github
+        href: https://github.com/taso-he
+      - icon: twitter
+        href: https://twitter.com/taso_he
+      - icon: linkedin
+        href: https://uk.linkedin.com/company/taso
+
+  sidebar: 
+    - title: Guide
+      style: floating
+      background: "#edebe3"
+      collapse-level: 1
+      align: left
+      contents:
+        - href: index.qmd
+          text: Introduction to the guides
+        - section: "Data visualisation style guide"
+          href: data-vis/index.qmd
+          contents: 
+            - href: data-vis/index.qmd
+              text: Introduction
+            - href: data-vis/principles.qmd
+              text: Principles for good data visualisation
+            - href: data-vis/styling.qmd
+              text: Styling charts for TASO publications
+            - href: data-vis/references.qmd
+              text: References and further resources
+        - section: "Coding good practice"
+          href: coding-good-practice/index.qmd
+          contents: 
+            - href: coding-good-practice/index.qmd
+              text: Introduction
+            - href: coding-good-practice/good_practice.qmd
+              text: Good practice tips
+            - href: coding-good-practice/styler.qmd
+              text: Automatic styling with styleR
+            - href: coding-good-practice/furtherresources.qmd 
+              text: Further resources
+        - href: contact.qmd
+          text: Contact point
+
+  page-navigation: true
+
+  page-footer:
+    background: "#3b66bc"
+    left: |
+      TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.  
+      It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.   
+      Charity number: 1193025
+    right:   |
+      Get in touch:  
+      TASO  
+      Evidence Quarter  
+      4th Floor, Albany House  
+      Petty France  
+      London SW1H 9EA  
+      info@taso.org.uk
+    center:   |
+      Website built with Quarto
+    
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+    footnotes-hover: true
+    code-fold: true
+    code-summary: "Show the code"
+    grid:
+      sidebar-width: 200px
+      body-width: 1000px
+      margin-width: 200px
+
+editor: visual
+
+execute:
+  freeze: false
+

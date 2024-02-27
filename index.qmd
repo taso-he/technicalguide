@@ -1,0 +1,46 @@
+---
+title: "TASO Technical Guide"
+---
+
+## Introduction
+
+Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This is a TASO resource site. Access the [main TASO website here](https://taso.org.uk/). This website contains:
+
+-   [**Data visualisation style guide**](data-vis/index.qmd): Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
+
+-   [**Coding good practice**](coding-good-practice/index.qmd): Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
+
+-   [**Contact point**](contact.qmd): We view these guides as iterative resources, and we encourage you to share your feedback.
+
+## Why publish on GitHub?
+
+We created these documents using Quarto, and published them through GitHub. This enables a more fluid and responsive approach to sharing good practices. It allows us to regularly update the content, ensuring that you always have access to the latest guidelines in data visualisation and coding.
+
+The interactive nature of this website also facilitates a more engaging experience. You will see callout boxes that highlight key points or warnings:
+
+::: callout-tip
+The data visualisation guide and coding good practice are separate but complementary documents. We designed the data visualisation style guide with a wide audience in mind. Those who do code can view the technical details behind the charts.
+:::
+
+You will also see when we are referring to code through text highlighted `like this`. You can see code that you can copy and try yourself in these fold-out boxes:
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
+
+df <- data.frame(
+  Year = c(2019, 2020, 2021, 2022),
+  School_A = c(10, 12, 15, 13),
+  School_B = c(17, 15, 21, 24),
+  School_C = c(4, 2, 5, 6)
+)
+```
+
+You can see the latest changes and the code behind how we built this website using [Quarto](https://quarto.org/) on our [GitHub page](https://github.com/taso-he).
+
+::: callout-note
+**The TASO Technical Guide © 2024 by TASO is licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). This means that others are free to share, copy, distribute, and transmit the work, as well as to adapt or build upon it, for non-commercial purposes, as long as appropriate credit is given, a link to the license is provided, and any changes made are indicated.**
+
+This website incorporates and adapts elements of the Quarto code from the "Best Practices for Data Visualisation" guide, authored by Andreas Krause, Nicola Rennie and Brian Tarran, and published by the Royal Statistical Society in July 2023. While the specific content from the guide has not been used, [the code structure](https://github.com/royal-statistical-society/datavisguide/blob/main/_quarto.yml) has been valuable in the development of specific functionalities on this site. Their guide is accessible at <https://royal-statistical-society.github.io/datavisguide/> and is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). We are thankful to the authors and the Royal Statistical Society for sharing their expertise and resources, which have greatly assisted in the technical aspects of this website's construction.
+:::

@@ -1,0 +1,107 @@
+---
+title: "Styling charts for TASO publications"
+---
+
+This section is designed with TASO partners and staff in mind, providing rules on chart formatting to ensure consistency across TASO outputs. That said, we anticipate that the insights provided may also be beneficial to anyone interested in developing their own data visualisation style guide, or understanding the technical details behind creating consistently formatted and distinctive charts.
+
+## Formatting rules
+
+```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
+library(tidyverse)
+
+df <- data.frame(
+  X_Axis_Title = c("Category 1", "Category 2", "Category 3", "Category 4"),
+  Y_Axis_Title = c(10, 20, 30, 20)
+)
+
+ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
+  geom_bar(stat = "identity", fill = "#3b66bc") +
+    geom_hline(yintercept = 0, linetype = "solid", color = "#404040") +
+  labs(x = "Axis Title (in italics if included)", 
+       y = "", 
+       title = "This is the title of the chart, it should be in Arial bold, no\nlonger than two lines, and normally active",
+       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle",
+       caption = "Source: This is the source in italics\n\nNotes: These are the notes in italics") + 
+  theme_minimal() + 
+  theme(
+          text = element_text(family = "Arial"),
+          plot.title.position = "plot",
+          plot.title = element_text(size = 16, face = "bold"),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(colour = "grey"),
+          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          axis.text.y = element_text(size = 11),
+          axis.text.x = element_text(size = 11),
+          axis.title.x = element_text(size = 10, face = "italic"))
+
+```
+
+You can find an example R script for creating charts with TASO styling on [our GitHub](https://github.com/taso-he). R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the [R resources](references.qmd) section.
+
+-   The font for the charts is Arial. Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.
+
+-   The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page. The title should be in bold, size 16.
+
+-   The subtitle should be a formal statistical title (as you might traditionally title a chart). The subtitle should be size 12.
+
+-   The caption should be in the bottom left of the chart. It should be in italics and size 10.
+
+-   Text sizes can have some flexibility. But ensure that the title is the largest text on the page, followed by the subtitle. Ensure all other text is smaller than the title and subtitle.
+
+-   Colours
+
+    -   The text should be black, but adjust as appropriate for readability. For example, sometimes data labels will need to be white to stand out against colours.
+    -   Background should be #EDEBE3 (putty).
+    -   Gridlines should generally be #E4E2D9 (darker than the background but lighter than text and lines). Gridline shade can be adjusted if it aids readability, but it should be a shade of grey.
+
+-   Format
+
+    -   180mm (width) x 120mm (height) is the default standard chart size for A4 PDF reports. 180mm is the maximum width, however, the height is flexible depending on the chart. For example, if your chart needs to be tall rather than wide.
+    -   Save as a PNG or a JPEG to avoid losing quality through copy and pasting or screenshots.
+
+-   If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.
+
+## Brand colours
+
+[#07dbb3]{style="background-color:#07dbb3; font-weight:bold;"} [#3b66bc]{style="background-color:#3b66bc; color:white; font-weight:bold;"} [#e4e2d9]{style="background-color:#e4e2d9; font-weight:bold;"} [#edebe3]{style="background-color:#edebe3; font-weight:bold;"} [#f9466c]{style="background-color:#f9466c; font-weight:bold;"} [#485866]{style="background-color:#485866; color:white; font-weight:bold;"}
+
+::: callout-note
+You can use RColourBrewer to generate gradients in R. Alternatively, you can use [this website](https://www.learnui.design/tools/data-color-picker.html#single?) to modify the brightness and colour intensity and choose the number of colours you want to generate.
+:::
+
+```{r fig.align="center", message=FALSE, warning=FALSE}
+
+
+taso_one_colour <- "#3b66bc"
+taso_two_colour <- c("#3b66bc", "#07dbb3")
+taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
+taso_four_colour <- c("#3b66bc", "#0093d9", "#00bad2", "#07dbb3")
+taso_five_colour <- c("#3b66bc", "#0089d6", "#00a8da", "#00c3cc", "#07dbb3")
+
+taso_likert <- c("#f9466c", "#fea3ac", "#f1f1f1", "#9ea8d7", "#3b66bc")
+
+```
+
+## Accessibility
+
+Ensure foreground and background colours contrast enough to pass the WCAG AA standard. You can check the colour contrast here.
+
+For more in-depth guidance on accessibility, we recommend the accessibility sections of the [Government Analysis Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) and the [Royal Statistical Society data visualisation guide](https://royal-statistical-society.github.io/datavisguide/).
+
+At TASO, we will be looking further into how we can improve the accessibility of our charts, particularly around the use of accessible colour palettes.
+
+For alt text, [Amy Cesal](https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81?) provides some useful guidance on how to write alt text for charts.[^1] She includes the following formula to help:
+
+[^1]: Cesal, A. 2020. Writing Alt Text for Data Visualization. <https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81> \[Accessed 21 November 2023\]
+
+[Chart type]{style="background-color:#3b66bc; color:white; font-weight:bold;"} of [type of data]{style="background-color:#07dbb3; font-weight:bold;"} where [reason for including chart]{style="background-color:#485866; color:white; font-weight:bold;"}
+
+::: callout-tip
+## Alt text example
+
+[Bar chart]{style="background-color:#3b66bc; color:white; font-weight:bold;"} of the [average earnings of students by highest qualification]{style="background-color:#07dbb3; font-weight:bold;"} where [students who went to a top third university earn the most]{style="background-color:#485866; color:white; font-weight:bold;"}
+:::

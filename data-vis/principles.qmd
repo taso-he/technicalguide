@@ -1,0 +1,428 @@
+---
+title: "Principles for good data visualisation"
+---
+
+In this section, we present guiding principles to improve your chart design. We encourage TASO partners to implement these principles when designing charts. Applying these principles may vary depending on specific contexts and needs, but keeping them in mind can help make your charts more impactful and communicate your ideas more effectively.
+
+## Choosing your chart
+
+When deciding on a chart, remember the core message you intend to convey. If summarising your chart's point takes more than a few sentences, you may need to reconsider your choice. The [Visual Vocabulary tool](https://ft-interactive.github.io/visual-vocabulary/) by the Financial Times is a valuable resource for selecting the right chart and sparking creative ideas.[^1] Consider your audience when making your selection -- what works well in a technical report may not resonate as effectively in a webinar or blog post. Remember, charts are more than data points; they are narratives designed to tell a compelling story, prioritising clarity over exhaustive detail.
+
+[^1]: Financial Times. 2019. Visual vocabulary. <https://ft-interactive.github.io/visualvocabulary/> \[Accessed 21 November 2023\]
+
+## RAISE principles - summary
+
+These principles are adapted from the key steps for better data visualisation set out by Jonathan Schwabish.[^2] Keep them in mind when designing charts to help make them as engaging as possible:
+
+[^2]: Schwabish, J. 2021. Better data visualizations: A guide for scholars, researchers, and wonks. Columbia University Press.
+
+1.  **Reduce the clutter**: excessive chart elements, such as dense gridlines, or superfluous tick marks and labels, can reduce the effectiveness of a chart.
+
+2.  **Annotate**: consider including explanatory text to help the audience understand how to interpret the visualisation, guiding them through the content.
+
+3.  **Integrate the text**: where feasible, incorporate legends directly into the chart and use active titles that capture the primary takeaway. If articulating the key message is challenging, you may need to reassess your choice of chart.
+
+4.  **Show the data**: consider highlighting the values that are more important to your argument, particularly if there is a lot of information on the chart. This helps ensure the audience focuses on the most pertinent data points.
+
+5.  **Engage the audience**: thoughtfully assess the chart's context and consider how to effectively engage the audience. A chart extracted from a technical report may not translate as effectively in a webinar or blog post and may demand adaptation.
+
+## Reduce the clutter
+
+Start with the principle of making charts as simple and stripped back as possible, and gradually incorporate elements as needed. Unnecessary and distracting visual components can compromise the overall effectiveness of your visualisation.
+
+-   Text should almost always be horizontal. Sometimes it may be worth considering the format of the chart to incorporate this, such as horizontal bars instead of vertical.
+
+-   Consider if you can label data points directly -- if you can label all data points, you may be able to drop axis labels.
+
+-   Consider if axis titles need to be included. For example, if the X-axis shows '2013, 2014, 2015', there is no need to add 'Year' as the X-axis title.
+
+-   Consider how many gridlines are helpful -- too few can mean they are not useful, and too many can make the chart cluttered.
+
+-   Do not use unnecessary elements like colour gradients or 3D effects.
+
+::: {.panel-tabset .nav-pills}
+## Cluttered
+
+```{r fig.align="center", fig.alt = "Bar chart with TASO stylings. Cluttered vertical and horizontal gridlines, X and Y axis titles, and multi-coloured bars.", message=FALSE, warning=FALSE}
+# Load the tidyverse package.
+library(tidyverse)
+
+# Create a dataframe.
+df <- data.frame(
+  category = c("Social or communication impairment", 
+                 "Sensory, medical or physical impairments", 
+                 "Multiple impairments", 
+                 "Mental health condition", 
+                 "Cognitive or learning difficulties"),
+  proportion = c(0.006, 0.022, 0.026, 0.039, 0.05)
+)
+
+# Build the plot using ggplot2 package.
+ggplot(df, aes(x=reorder(category, proportion), y=proportion, fill = category)) +
+  # Add bars to the plot to represent each category's proportion.
+  geom_bar(stat="identity") +
+  # Flip the plot to horizontal layout for better readability of category names.
+  coord_flip() + 
+  # Set the labels for the plot, including title, subtitle, axes labels, and caption.
+  labs(x = "Category", y = "Proportion of students (%)", 
+       title = "The range and nature of disability varies considerably",
+       subtitle = "Figure 1: Proportion of students studying in England who declared a disability\nby impairment, 2018-19",
+       caption = "Source: Reproduced from OfS analysis of equality and diversity data\n\nNote: 85.7% of students do not declare a disability 
+"
+) + 
+  # Format the y-axis as a percentage for better interpretation.
+  scale_y_continuous(labels = scales::percent_format(scale = 100),
+  expand = c(0.02, 0)) +  
+  # Add text labels to each bar for direct reading of percentages.
+  geom_text(aes(label = scales::percent(proportion)), 
+            vjust = 0.5, 
+            hjust = 1.5, 
+            size = 3, 
+            fontface = "bold", 
+            data = df, 
+            color = "white") +
+
+# Customise with TASO elements.
+theme_minimal() + 
+  # Further customize the plot's appearance including font, title, grid lines, and margins.
+  theme(
+        text = element_text(family = "Arial"),
+        plot.title.position = "plot",
+        plot.title = element_text(size = 16, face = "bold"),
+        plot.subtitle = element_text(size = 12),
+        plot.caption.position = "plot",
+        plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
+        panel.grid.major = element_line(colour = "darkgrey"),
+        panel.grid.minor = element_line(colour = "darkgrey"),
+        plot.background = element_rect(fill = "#EDEBE3"),
+        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+        axis.text.x = element_text(size = 11),
+        axis.text.y = element_text(size = 11),
+        legend.position = "none")
+```
+
+## Tidy
+
+```{r fig.align="center", fig.alt = "Bar chart with TASO stylings. Minimal vertical gridlines, no X and Y axis titles, and bars are all one colour.", message=FALSE, warning=FALSE}
+library(tidyverse)
+
+df <- data.frame(
+  category = c("Social or communication impairment", 
+                 "Sensory, medical or physical impairments", 
+                 "Multiple impairments", 
+                 "Mental health condition", 
+                 "Cognitive or learning difficulties"),
+  proportion = c(0.006, 0.022, 0.026, 0.039, 0.05)
+)
+
+ggplot(df, aes(x=reorder(category, proportion), y=proportion)) +
+  geom_bar(stat="identity", fill = "#3b66bc") +
+  coord_flip() + # Flip the coordinates to make the bars horizontal
+  labs(x = "", y = "", 
+       title = "The range and nature of disability varies considerably",
+       subtitle = "Figure 1: Proportion of students studying in England who declared a disability\nby impairment, 2018-19",
+       caption = "Source: Reproduced from OfS analysis of equality and diversity data\n\nNote: 85.7% of students do not declare a disability 
+"
+) + 
+scale_y_continuous(labels = scales::percent_format(scale = 100),
+expand = c(0.02, 0)) +  # Formatting axis as percentage
+geom_text(aes(label = scales::percent(proportion)), 
+          vjust = 0.5, 
+          hjust = 1.5, 
+          size = 3, 
+          fontface = "bold", 
+          data = df, 
+          color = "white") +
+  theme_minimal() + 
+  theme(
+        text = element_text(family = "Arial"),
+        plot.title.position = "plot",
+        plot.title = element_text(size = 16, face = "bold"),
+        plot.subtitle = element_text(size = 12),
+        plot.caption.position = "plot",
+        plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
+        panel.grid.major.y = element_blank(),
+        panel.grid.major.x = element_line("grey"),
+        plot.background = element_rect(fill = "#EDEBE3"),
+        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+        axis.text.x = element_text(size = 11),
+        axis.text.y = element_text(size = 11))
+
+```
+:::
+
+## Annotate
+
+Consider using annotations if they will help tell the story of the data. They can be used to highlight key information and support your analysis, bridging the gap between raw data and interpretation, and guiding the reader's thinking process. They can also add context, if there are outliers, peaks or troughs, or if the chart type is unfamiliar to the reader.
+
+-   Relevance is key -- ensure that annotations directly contribute to the narrative of the data. Avoid unnecessary or excessive annotations that could confuse the reader. Use them selectively to emphasise key insights.
+
+-   Make annotations concise, and place them near the relevant data points.
+
+-   Ensure they are distinct from other elements of the chart, such as through font size or weight.
+
+## Integrate the text
+
+### Active titles
+
+The choice of a chart title is often contextual, influenced by factors such as the nature of the content and any constraints posed by technical reports or academic papers. In general, opt for an active title that succinctly captures the key takeaway, complemented by a formal statistical subtitle. Titling charts in this way can make them more memorable and easier to digest. For more on why we think this is a more effective way to title charts, please see [this blog post by the Office for National Statistics](https://digitalblog.ons.gov.uk/2019/01/28/say-what-you-see-the-way-we-write-chart-titles-is-changing/).[^3]
+
+[^3]: Donnarumma, F. 2019. Say what you see - the way we write chart titles is changing. <https://digitalblog.ons.gov.uk/2019/01/28/say-what-you-see-the-way-we-write-charttitles-is-changing/> \[Accessed 21 November 2023\]
+
+::: callout-tip
+## Example of best practice for chart titles and subtitles
+
+**Title**: Students with mental health difficulties consistently have the highest anxiety
+
+**Subtitle**: Figure 18: Average anxiety level over time by disability type
+:::
+
+::: callout-caution
+## This is traditionally the most common way of titling charts, but can be less helpful than an active title
+
+**Title**: Fig. 18: Average anxiety level over time by disability type
+:::
+
+### Integrate the legend
+
+Integrating the legend into the chart aids reader interpretation, creating a smoother, more intuitive experience. With an integrated legend, viewers do not need to shift their focus between the visualisation and a separate legend, which can be particularly difficult when there are multiple, similar colours involved.
+
+::: {.panel-tabset .nav-pills}
+## Standard
+
+```{r fig.align="center", fig.alt = "Line chart with three coloured lines, with coloured legend to the right.",message=FALSE, warning=FALSE}
+library(tidyverse)
+
+taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
+
+df <- data.frame(
+  Year = c(2019, 2020, 2021, 2022),
+  School_A = c(10, 12, 15, 13),
+  School_B = c(17, 15, 21, 24),
+  School_C = c(4, 2, 5, 6)
+)
+
+df <- gather(df, key = "School", value = "Value", -Year)
+
+# Now you can create a plot with ggplot
+ggplot(df, aes(x = Year, y = Value, color = School, group = School)) +
+  geom_line() + # or geom_point() if you want points
+  geom_point() +
+  scale_colour_manual(values = taso_three_colour) +
+  theme_minimal() +
+  theme(
+          text = element_text(family = "Arial"),
+          panel.grid.major.x = element_line(colour = "#E4E2D9"),
+          panel.grid.major.y = element_line(colour = "#E4E2D9"),
+          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          axis.text.y = element_text(size = 11),
+          axis.text.x = element_text(size = 11), 
+          axis.title = element_blank()) +
+  coord_cartesian(clip = "off") 
+```
+
+## Integrated legend
+
+```{r fig.align="center", fig.alt = "Line chart with three coloured lines, with the line categories labelled directly at the end of the line.",message=FALSE, warning=FALSE}
+library(tidyverse)
+
+taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
+
+df <- data.frame(
+  Year = c(2019, 2020, 2021, 2022),
+  School_A = c(10, 12, 15, 13),
+  School_B = c(17, 15, 21, 24),
+  School_C = c(4, 2, 5, 6)
+)
+
+df <- gather(df, key = "School", value = "Value", -Year)
+
+# Now you can create a plot with ggplot
+ggplot(df, aes(x = Year, y = Value, color = School, group = School)) +
+  geom_line() + # or geom_point() if you want points
+  geom_point() +
+  geom_text(data = subset(df, Year == 2022), aes(label = School), 
+            hjust = 0.3, vjust = -1, size = 3.5, fontface = "bold") +
+  scale_colour_manual(values = taso_three_colour) +
+  theme_minimal() +
+  theme(
+          text = element_text(family = "Arial"),
+          panel.grid.major.x = element_line(colour = "#E4E2D9"),
+          panel.grid.major.y = element_line(colour = "#E4E2D9"),
+          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          axis.text.y = element_text(size = 11),
+          axis.text.x = element_text(size = 11), 
+          axis.title = element_blank()) +
+  coord_cartesian(clip = "off") + 
+  guides(fill = FALSE, colour = FALSE)
+```
+:::
+
+## Show the data
+
+Consider highlighting the values that are most important to your argument. You don't need to show all the data all of the time, as this can make it hard to see the data that matters most. For example, for line charts, try to have no more than four or five different colours.
+
+You can change the properties of parts of the chart -- such as by selectively using colour, shape and saturation -- to guide a reader's attention and make parts of a chart stand out.
+
+::: {.panel-tabset .nav-pills}
+## Standard
+
+```{r fig.align="center", fig.alt = "Bar chart with four blue bars.", message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(ggtext)
+
+df <- data.frame(
+  category = c("No", 
+               "Yes - inadequately specified", 
+               "Yes - explores the general approach", 
+               "Yes - adequately specified (institutional level)", 
+               "Yes - adequately specified (intervention level)"),
+  count = c(42, 31, 17, 26, 27)
+)
+
+ggplot(df, aes(x = count, y = factor(category, levels = c("No", 
+                                                                         "Yes - inadequately specified", 
+                                                                         "Yes - explores the general approach", 
+                                                                         "Yes - adequately specified (institutional level)", 
+                                                                         "Yes - adequately specified (intervention level)")))) +
+  # ^ sorting the bars in the chart in desired order
+  geom_bar(stat = "identity", fill = "#EDEBE3") + # Adding bars of same colour as background underneath so alpha can be used for colouring
+  geom_bar(stat = "identity", fill = "#3b66bc") + # Bar chart coloured peacock
+  theme_minimal() + # Setting the theme as minimal, adding elements we want back in 
+  # Title, subtitle, axis titles and caption 
+  labs(
+    title = 'Over 40 providers did not include a Theory of Change  \n(ToC) in their Access and Participation Plan (APP)',
+    # By using ggtext::element_markdown, we can use markdown stylings to colour specific words in the chart to highlight a point
+    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a\nToC in their APP",
+    caption = "Source: TASO (2023), Approaches to addressing the ethnicity degree awarding gap",
+    x = NULL, # Not showing X or Y axis title for this example chart
+    y = NULL 
+  ) +
+  scale_x_continuous(expand = c(0,0)) + 
+  geom_vline(xintercept = 0, colour = "#404040", linewidth = 0.5) +
+  # Theme elements
+  theme(text = element_text(family = "Arial"), # Specifying font for whole chart
+        ## Title and subtitle elements 
+        plot.title.position = "plot", # Aligning title to entire plot (not just panel)
+        plot.title = ggtext::element_markdown(face = "bold", 
+                                              size = 16), 
+        plot.subtitle = element_text(size = 12), 
+        ## Caption elements 
+        plot.caption.position = "plot", # Aligning caption to entire plot
+        plot.caption = element_text(hjust = 0, # Aligning font to the left
+                                    size = 8, # Changing size
+                                    face = "italic"), # Italicizing caption
+        ## Other theme elements
+        plot.background = element_rect(fill = "#EDEBE3"), # Changing background colour
+        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"), # Setting margin in inches
+        axis.text.x = element_text(size = 10), 
+        panel.grid.major.x = element_line(colour = "grey"),
+
+  ) + 
+  # Other helpful elements
+  coord_cartesian(clip = "off") +
+  geom_text(aes(label = count, colour = category), vjust = 0.5, hjust = 1.5, size = 3, fontface = "bold", 
+            data = df, color = "white")
+```
+
+## Highlighting data
+
+```{r fig.align="center", fig.alt = "Bar chart with three light blue bars, and one bar highlighted with a darker blue.",message=FALSE, warning=FALSE}
+
+library(tidyverse)
+library(ggtext)
+
+df <- data.frame(
+  category = c("No", 
+               "Yes - inadequately specified", 
+               "Yes - explores the general approach", 
+               "Yes - adequately specified (institutional level)", 
+               "Yes - adequately specified (intervention level)"),
+  count = c(42, 31, 17, 26, 27)
+)
+
+ggplot(df, aes(x = count, y = factor(category, levels = c("No", 
+                                                                         "Yes - inadequately specified", 
+                                                                         "Yes - explores the general approach", 
+                                                                         "Yes - adequately specified (institutional level)", 
+                                                                         "Yes - adequately specified (intervention level)")))) +
+  # ^ sorting the bars in the chart in desired order
+  geom_bar(stat = "identity", fill = "#EDEBE3") + # Adding bars of same colour as background underneath so alpha can be used for colouring
+  geom_bar(stat = "identity", fill = "#3b66bc", alpha = 0.4) + # Bar chart coloured peacock
+  theme_minimal() + # Setting the theme as minimal, adding elements we want back in 
+  # Title, subtitle, axis titles and caption 
+  labs(
+    title = 'Over 40 providers <span style="color:#3b66bc;">did not include a Theory of Change</span>  \n(ToC) in their Access and Participation Plan (APP)',
+    # By using ggtext::element_markdown, we can use markdown stylings to colour specific words in the chart to highlight a point
+    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a\nToC in their APP",
+    caption = "Source: TASO (2023), Approaches to addressing the ethnicity degree awarding gap",
+    x = NULL, # Not showing X or Y axis title for this example chart
+    y = NULL 
+  ) +
+  scale_x_continuous(expand = c(0,0)) + 
+  geom_vline(xintercept = 0, colour = "#404040", linewidth = 0.5) +
+  # Theme elements
+  theme(text = element_text(family = "Arial"), # Specifying font for whole chart
+        ## Title and subtitle elements 
+        plot.title.position = "plot", # Aligning title to entire plot (not just panel)
+        plot.title = ggtext::element_markdown(face = "bold", 
+                                              size = 16), 
+        plot.subtitle = element_text(size = 12), 
+        ## Caption elements 
+        plot.caption.position = "plot", # Aligning caption to entire plot
+        plot.caption = element_text(hjust = 0, # Aligning font to the left
+                                    size = 8, # Changing size
+                                    face = "italic"), # Italicizing caption
+        ## Other theme elements
+        plot.background = element_rect(fill = "#EDEBE3"), # Changing background colour
+        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"), # Setting margin in inches
+        axis.text.x = element_text(size = 10), 
+        panel.grid.major.x = element_line(colour = "grey"),
+
+  ) + 
+  # Other helpful elements
+  coord_cartesian(clip = "off") + 
+  geom_bar(data = subset(df, category == "No"), fill = "#3b66bc", stat = "identity", show.legend = FALSE) + 
+  geom_text(aes(label = count, colour = category), vjust = 0.5, hjust = 1.5, size = 3, fontface = "bold", 
+            data = subset(df, category == "No"), color = "white") +
+  geom_text(aes(label = count, colour = category), vjust = 0.5, hjust = 1.5, size = 3, 
+            data = subset(df, category != "No"), color = "black")
+```
+:::
+
+## Engage the audience
+
+Strive to make your visualisation as engaging as possible. Capturing the reader's attention ensures that your message is not only seen but also comprehended and remembered. Engaging visuals spark curiosity, encouraging a deeper exploration and analysis of the data. This connection leads to a more profound understanding of the insights you are sharing.
+
+## Guidance for common chart types
+
+### Bar charts
+
+-   Bar charts should always start at zero.
+
+-   Order bars by their values, unless there is a logical order, such as level of qualification or date.
+
+-   Consider directly labelling data points and removing gridlines if there are only a few bars in your chart.
+
+-   As text should be horizontal, a horizontal bar chart may be more appropriate when your axis labels are long.
+
+### Line charts
+
+-   Try not to use more than five lines on a single chart. Including too many lines can make the chart confusing, particularly when they cross over at multiple points.
+
+    -   If you need to include more than this, consider splitting your chart into small multiples (also known as faceting or panel charts).
+
+    -   Alternatively, consider highlighting selected lines of interest and greying the rest out. This makes clear the line of interest while still enabling readers to easily see how it compares to other lines.
+
+-   Try to integrate the legend and label lines directly, so readers do not have to match the colours from the line to the legend, as in the example on the right below.
+
+### Pie charts
+
+-   Generally, we find that bar charts are more effective than pie charts, as it can be hard to discern the difference in size between different segments.
+
+-   Pie charts can be particularly difficult to read when values are close, or if there are multiple segments.
+
+-   Consider whether another chart type may be more appropriate. However, this is a rule of thumb and pie charts can be used, but do so with caution.

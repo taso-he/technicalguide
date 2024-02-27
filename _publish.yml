@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: ddff2d7a-3901-4643-8b2f-57a1933685fd
+      url: 'https://lukearundeltaso.quarto.pub/test-reporting-toolkit'

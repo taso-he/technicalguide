@@ -1,0 +1,25 @@
+---
+title: "Coding good practice"
+---
+
+Code hygiene is crucial for maintaining the quality and readability of code.[^1] This document sets out guidelines for ensuring that code is accessible and shareable.
+
+[^1]: As R is the primary statistical software used by TASO, this document is written specifically with R in mind. However, many of the guidelines will apply to other languages like Python or Stata.
+
+## Who is this for?
+
+This guide is for those who have some experience and familiarity with R and are looking to refine their coding approach.
+
+Practitioners, academics and students can all gain from this guide. It is particularly beneficial for those dealing with complex scripts, revisiting their code for updates, or sharing work with colleagues and the wider sector.
+
+## Why is good code hygeine important?
+
+::: {.callout-note title="Hadley Wickham on coding style"}
+"Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread."
+:::
+
+Good code hygiene entails writing code that is not only functional but also clean, well-organised, and easy to understand.
+
+For non-expert R users, maintaining good code hygiene can simplify the learning curve. Well-written code is easier to debug, update, and share. This guide offers practical tips for immediate application, helping you write clean and readable code.
+
+By following these guidelines, you will improve your own coding skills. You will also contribute to the broader research community by making your code more accessible to others. Whether working on personal projects, collaborating with a team, or contributing to open-source software, these guidelines will enhance the quality and longevity of your R code.

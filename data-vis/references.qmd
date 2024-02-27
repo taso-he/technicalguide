@@ -1,0 +1,67 @@
+---
+title: "References and further resources"
+---
+
+## Resources referenced and linked to in the text (in order of appearance)
+
+Financial Times. 2019. Visual vocabulary. <https://ft-interactive.github.io/visualvocabulary/> \[Accessed 21 November 2023\]
+
+Schwabish, J. 2021. Better data visualizations: A guide for scholars, researchers, and wonks. Columbia University Press.
+
+Donnarumma, F. 2019. Say what you see - the way we write chart titles is changing. <https://digitalblog.ons.gov.uk/2019/01/28/say-what-you-see-the-way-we-write-charttitles-is-changing/> \[Accessed 21 November 2023\]
+
+Learn UI Design. 2023. Data color picker. <https://www.learnui.design/tools/data-colorpicker.html#single> \[Accessed 21 November 2023\]
+
+Government Analysis Function. 2022. Data visualisation: charts. <https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/> \[Accessed 21 November 2023\]
+
+Royal Statistical Society. 2023. Best Practices for Data Visualisation: <https://royalstatistical-society.github.io/datavisguide/> \[Accessed 21 November 2023\]
+
+Cesal, A. 2020. Writing Alt Text for Data Visualization. <https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81> \[Accessed 21 November 2023\]
+
+## Further data visualisation resources
+
+This style guide draws on some existing style guides. Some key sources of inspiration include:
+
+-   [Government Analysis Function style guide](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-12?)
+
+-   [Urban Institute Data Visualisation style guide](http://urbaninstitute.github.io/graphics-styleguide/?)
+
+-   [Royal Statistical Society style guide](https://royal-statistical-society.github.io/datavisguide/?)
+
+We have endeavoured to keep this guide as concise as possible, meaning we do not cover the same ground that more extensive style guides do. If you have further questions on data visualisation, the above guides may be able to help. In particular, we found the Government Analysis Function valuable as an extensive but readable style guide.
+
+Our principles for effective data visualisation are rooted in the insights of Jonathan Schwabish, showcased in his contributions through PolicyViz. Sources include:
+
+-   Better Data Vizualisations: A Guide for Scholars, Researchers and Wonks
+
+-   Better Presentations: A Guide for Scholars, Researchers and Wonks
+
+-   [Data viz cheat sheet](https://policyviz.com/2018/08/07/dataviz-cheatsheet/?)
+
+-   [List of style guides](https://policyviz.com/2016/11/30/style-guides/?)
+
+-   [An Economist's Guide to Visualising Data](https://www.aeaweb.org/articles?id=10.1257/jep.28.1.209?)
+
+For excellent examples of data visualisation, we also found the Financial Times (FT) and The Economist very helpful, particularly the work of John Burn-Murdoch:
+
+-   You can [find the work of John Burn-Murdoch here](https://www.ft.com/john-burn-murdoch?), or on [X](http://x.com/jburnmurdoch?) (formerly Twitter). [This presentation](https://www.youtube.com/watch?v=tIbaQUo6H9g?) is also insightful.
+
+-   The Economist's data visualisation newsletter Off The Charts is a helpful resource for learning how their data journalism team create visualisations and tackles problems. Its ['Graphic Detail'](https://www.economist.com/graphic-detail?) section showcases its charts.
+
+Organisations that focus on data visualisation also have helpful blogs. These include [Flourish](https://flourish.studio/blog/?), [Datawrapper](https://blog.datawrapper.de/category/datavis-dos-and-donts/?) and [Visualisingdata](https://visualisingdata.com/?).
+
+## R resources
+
+You can find example R code for creating charts with TASO stylings on our [GitHub](https://github.com/TASO-What-Works?).
+
+If you are using R to create your plots, you may also find the following resources helpful.
+
+-   [ggplot Wizardry Hands-On](https://z3tt.github.io/OutlierConf2021/?) - some helpful tips and tricks from Cédric Scherer
+
+-   [Tips and Tricks for ggplot2](https://erikgahner.dk/2022/tips-and-tricks-for-ggplot2/?) - more helpful tips and tricks from Erik Gahner Larsen
+
+-   [Modern Data Visualisation with R](https://rkabacoff.github.io/datavis/?) - an open-access textbook by Robert Kabacoff
+
+-   [R for Data Science](https://r4ds.had.co.nz/data-visualisation.html?) - an open-access textbook by Hadley Wickham, if you are using ggplot for the first time the data visualisation chapter provides a great introduction to how ggplot works.
+
+-   [R graph gallery](https://r-graph-gallery.com/index.html?) - a collection of charts made with R. The creator [Yan Holtz](https://twitter.com/R_Graph_Gallery?) provides useful insight on X (formerly Twitter).

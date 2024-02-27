@@ -1,0 +1,120 @@
+---
+title: "Good practice tips"
+---
+
+Efficient and clean coding practices are fundamental for effective data analysis and collaboration. This section offers a set of good practice tips tailored for scripting in R.[^1] These guidelines are designed to improve the readability, shareability, and functionality of your code.
+
+[^1]: R and RStudio are two different things. R is a programming language for statistics, and RStudio is a tool that makes R easier to use. It's rare, but someone might have R without RStudio. This guide is written assuming you have both R and RStudio installed.
+
+## Tips for effective R scripting
+
+### Structuring the scripts
+
+-   Use commented lines of `-` to help break up the script into readable sections.
+
+-   Load all required packages, then all required files. Only load the packages that are necessary for your script.
+
+``` r
+# Loading libraries and data --------------------------------------------------
+
+# Load libraries (install if needed)
+
+library(tidyverse) 
+
+# Load data 
+
+df <- read.csv("example_data_vis.csv")
+
+# Tidying the data ------------------------------------------------------------
+
+# Filter by year
+df <- df %>% 
+  filter(enrollment_year == 2020)
+
+# Separating a full name into first and last name
+df_separated <- df %>% separate(col = FullName, 
+                                into = c("FirstName", "LastName"), 
+                                sep = " ")
+```
+
+-   Include a line on who wrote the script, and a line or two on what its purpose is.
+
+``` r
+# Open University Learner Analytics Data (OULAD) ------------------------------
+
+# 1. OULAD loading and cleaning -----------------------------------------------
+
+# Introduction ----------------------------------------------------------------
+
+# Ongoing document written by LA with support from RJS.
+# Analyses the Open University Learner Analytics Dataset.
+# Info on this open dataset and the data can be found here:
+# https://analyse.kmi.open.ac.uk/open_dataset
+```
+
+-   If the script is unwieldy, consider breaking the code up into separate files. As a rule of thumb, a file shouldn't be longer than 2000 lines.
+
+### Coding practices
+
+-   Where possible, use the `tidyverse` rather than Base R. The tidyverse has friendly syntax and is often easier to read than Base R.[^2]
+
+[^2]: There is debate around this. However this discussion is beyond the scope of this guide. All that we need to know for the purposes of this guide is that the tidyverse is a collection of packages designed to work together in data science tasks. It simplifies data manipulation, visualisation and analysis through a consistent syntax and logical workflow. For all things tidyverse, see [R for Data Science](https://r4ds.hadley.nz/).
+
+<!-- -->
+
+-   Comment liberally, explaining what your code is doing and why.
+
+``` r
+# Creating binary deprivation measure
+# Where bottom three deciles are coded as deprived
+student_info <- student_info %>%
+  mutate(deprivation_status = case_when(
+    is.na(imd_decile) ~ NA_character_,
+    imd_decile %in% 1:3 ~ "Deprived", 
+    imd_decile %in% 4:10 ~ "Not deprived", 
+    TRUE ~ "ERROR"
+  ))
+  
+# student_info has more than one row for many students, who are taking more than one module
+# So we can keep unique id_student to perform a lookup 
+student_info_unique <- student_info %>%
+  distinct(id_student, .keep_all = TRUE)
+```
+
+-   Try to keep the code to 80 characters or less per line for readability.
+
+-   Use `<-` not `=` for assignment.[^3]
+
+[^3]: In R, `<-` assigns values to variables, while `==` tests equality. Using different symbols for assignment and equality makes R code more readable and easier to follow.
+
+```{=html}
+<!-- -->
+```
+-   Try not to repeat yourself - if you're repeating the same code many times, consider using a loop or function, which will save time and decrease the likelihood of making a mistake.
+
+### Organising files and workspace
+
+-   Aim for names (both for files and variables) that are concise and meaningful.
+
+    -   Bad practice:
+        -   `data_analysis_version2_final.R`
+        -   `new_script_updated.R`
+        -   `final_data_03.04.2024.R`
+    -   Good practice:
+        -   `student_performance_analysis.R`
+        -   `course_enrollment_trends.R`
+        -   `faculty_publication_summary.R`
+
+-   If files should be run in a certain order, begin the file name with numbers (e.g. `1_tidy_data`, `2_exploratory_analysis`, `3_model`).
+
+-   It may be helpful to explicitly specify R script or package dependencies clearly.[^4] Use a `DESCRIPTION` file to detail required R packages and their versions. For scripts, consider including a `README` file that mentions all necessary packages and scripts, ensuring users know exactly what they need to run your code smoothly. 
+
+[^4]: Dependencies in R are external packages or software your code needs to run, such as `ggplot2` for graphs or `dplyr` for data handling. Listing these packages ensures others can use your code without issues, making it easier to share and reproduce your work across different systems.
+
+-   Try to avoid modifying raw data. If you modify data manually you might make errors, and won't be able to restore the original version. Creating a script that processes the raw data and creates a new version enables you to keep track of all the steps you have taken.
+
+-   Start with a clean environment: do not save the workspace (which is turned on by default).[^5] Go to Tools -\> 'Global Options', then select 'Never' for 'Save workspace to .RData on exit'.
+
+[^5]: A 'clean environment' means having a fresh workspace where no previous work (like variables or data sets you've created, or libraries you've loaded) is left over. This is crucial for making sure your code runs smoothly and is easy for others to understand. The most straightforward way to achieve a clean environment is by going to the 'Session' menu and selecting 'Restart R'. 
+
+![](rprintscreen.png){fig-alt="Image of the RStudio 'Options' page, highlighting the 'Workspace' section." width="60%" fig-align="center"}

@@ -1,0 +1,70 @@
+---
+title: "Data visualisation style guide"
+---
+
+This data visualisation style guide has been developed to help TASO, our partners, and the wider sector to create impactful and effective charts. It is designed to provide clear, accessible guidelines that can be applied using the data visualisation tool of your choice. We welcome your feedback on this guidance. We view this as an iterative document that will evolve as we learn more about which elements are most helpful. Please let us know what you think: [luke.arundel\@taso.org.uk](mailto:luke.arundel@taso.org.uk).
+
+## Why good data visualisation matters
+
+While often overshadowed by other aspects of writing and analysis, data visualisation warrants dedicated attention. At TASO, we recognise its value and are committed to empowering our audience through carefully designed charts. Good data visualisation is vital because it holds the power to convey complex information succinctly and memorably. By presenting data visually, we simplify patterns, trends and insights. We can tell a story with the data, and design our charts to tell this story compellingly. To do this, we need to carefully consider how we set up our charts, and not rely on the default software settings.
+
+## About the guide
+
+### How to use the guide
+
+The guide is split into two main sections.
+
+-   The [first section](principles.qmd) is designed for anyone who wants to make their data visualisations more engaging. We present guidelines that serve as effective rules of thumb for creating impactful charts. While we expect our staff and partners to follow these guidelines when creating charts for TASO publications, they are highly flexible according to context.
+-   The [second section](styling.qmd) gives more technical details on styling charts for TASO publications. It covers aspects like sizing, font usage and colour schemes. This is to ensure consistency across TASO publications when collaborating with our partners. This section is tailored for TASO staff and partners, so if you are a general audience seeking high-level insights, you may wish to skip over it. However, we hope that general audiences may still find this section helpful if you are interested in developing your own style guide, or in understanding the finer details behind creating charts.
+
+::: callout-note
+In this document, you will find examples of charts that follow our guidelines. These are either redesigns of existing TASO charts using the new guidance, or in some cases new charts to illustrate the guidelines. These charts are only intended to demonstrate how the style guide can be applied, and so should not be taken and shared outside of this document. As we apply the style guide, we will update this document with real examples taken from TASO publications.
+:::
+
+#### Viewing the code
+
+In this guide, wherever there is a chart, you will see a 'Show the code' button as below. Clicking this will reveal the R code used to create the plot you're viewing. Using R is not a requirement for making high-quality charts, but for those who use R as their tool of choice, we hope this code will be helpful.
+
+```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
+# Load the tidyverse package, which includes ggplot2 and other data manipulation tools.
+library(tidyverse)
+
+# Create a dataframe
+df <- data.frame(
+  X_Axis_Title = c("Category 1", "Category 2", "Category 3", "Category 4"),
+  Y_Axis_Title = c(10, 20, 30, 20)
+)
+
+# Build the plot using ggplot2 package.
+ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
+  # Add bar elements to the plot. 'stat = "identity"' tells ggplot to use the y-values as they are.
+  geom_bar(stat = "identity", fill = "#3b66bc") +
+  # Add a horizontal line at y = 0, with a solid line type and a specified color.
+    geom_hline(yintercept = 0, linetype = "solid", color = "#404040") +
+  # Add labels for the axes, title, subtitle, and caption. Also format these elements.
+  labs(x = "Axis Title (in italics if included)", 
+       y = "", 
+       title = "This is the title of the chart, it should be in Arial bold, no\nlonger than two lines, and normally active",
+       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle",
+       caption = "Source: This is the source in italics\n\nNotes: These are the notes in italics") + 
+  # Customise with TASO theme elements, including background colour, title positioning, gridlines.
+  theme_minimal() + 
+  theme(
+          text = element_text(family = "Arial"),
+          plot.title.position = "plot",
+          plot.title = element_text(size = 16, face = "bold"),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
+          panel.grid.major.x = element_blank(),
+          panel.grid.major.y = element_line(colour = "grey"),
+          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          axis.text.y = element_text(size = 11),
+          axis.text.x = element_text(size = 11),
+          axis.title.x = element_text(size = 10, face = "italic"))
+```
+
+### How we made the guide
+
+In developing the guide, we have drawn extensively on existing data visualisation work, notably the key principles outlined by Jonathan Schwabish, and the Government Analysis Function guidance on data visualisation. We aimed to distil and accentuate elements from various sources that we thought would be most beneficial for TASO, our partners and the wider sector. This guide, therefore, stands as a curated synthesis, offering tailored and impactful guidance for our specific context, with due credit to the influential work and expertise that inspired it. We have taken care to strike a balance, ensuring the guide offers practical insights without being overly burdensome. For a comprehensive list of the guides and resources we consulted during this process, please refer to the [References and further resources](references.qmd) section.
