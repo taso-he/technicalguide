@@ -1,5 +1,8 @@
 ---
 title: "Coding good practice"
+format: html
+title-block-banner: "#3b66bc"
+title-block-banner-color: "white"
 ---
 
 Code hygiene is crucial for maintaining the quality and readability of code.[^1] This document sets out guidelines for ensuring that code is accessible and shareable.

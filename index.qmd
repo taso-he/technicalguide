@@ -1,5 +1,8 @@
 ---
 title: "TASO Technical Guide"
+format: html
+title-block-banner: "#07dbb3"
+title-block-banner-color: "black"
 ---
 
 ## Introduction
