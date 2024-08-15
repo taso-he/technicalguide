@@ -15,7 +15,7 @@ website:
     foreground: "#3b66bc"
     logo: images/logo_transp.png
     logo-alt: "TASO logo"
-    logo-href: https://taso.org.uk/
+    logo-href: https://taso-he.github.io/technicalguide/
     left:
       - icon: house
         href: index.qmd
@@ -81,8 +81,24 @@ website:
       Petty France  
       London SW1H 9EA  
       info@taso.org.uk
-    center:   |
-      Website built with Quarto
+    center:
+      - text: "EVENTS"
+        href: https://taso.org.uk/events/
+      - text: "TASO PRIVACY NOTICE"
+        href: https://taso.org.uk/taso-privacy-notice/
+      - text: "APPROPRIATE POLICY DOCUMENT"
+        href: https://taso.org.uk/appropriate-policy-document/
+      - text: "TASO SPEAKER REQUEST FORM"
+        href: https://taso.org.uk/taso-speaker-request-form/
+      - text: "ACCESSIBILITY STATEMENT"
+        href: https://taso.org.uk/accessibility-statement/
+    
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "This is a TASO resource site. Access the [main TASO website here](https://taso.org.uk/)"
+    type: primary
+    position: below-navbar
     
 format:
   html:
@@ -98,6 +114,9 @@ format:
       sidebar-width: 200px
       body-width: 1000px
       margin-width: 200px
+    link-external-newwindow: true
+    fig-cap-location: top
+    lightbox: true
 
 editor: visual
 

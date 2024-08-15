@@ -1,19 +1,78 @@
 ---
 title: "TASO Technical Guide"
+subtitle: "An interactive TASO resource to enhance your data visualisation and coding practices"
 format: html
-title-block-banner: "#07dbb3"
-title-block-banner-color: "black"
+title-block-banner: "#3b66bc"
+title-block-banner-color: "white"
 ---
 
 ## Introduction
 
-Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This is a TASO resource site. Access the [main TASO website here](https://taso.org.uk/). This website contains:
+Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This website contains:
 
--   [**Data visualisation style guide**](data-vis/index.qmd): Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
+:::{.grid style="background-color: #dbe3f4; padding: 10px"}
 
--   [**Coding good practice**](coding-good-practice/index.qmd): Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
+::: {.g-col-4}
+<div style="text-align: center;">
+  <a href="data-vis/index.qmd">
+    <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;">
+      Data Visualisation Style Guide
+    </button>
+  </a>
+</div>
 
--   [**Contact point**](contact.qmd): We view these guides as iterative resources, and we encourage you to share your feedback.
+Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
+:::
+
+::: {.g-col-4}
+<div style="text-align: center;">
+  <a href="coding-good-practice/index.qmd">
+    <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;">
+      Coding Good Practice
+    </button>
+  </a>
+</div>
+
+Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
+:::
+
+::: {.g-col-4}
+<div style="text-align: center;">
+  <a href="contact.qmd">
+    <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;">
+      Contact Point
+    </button>
+  </a>
+</div>
+
+We view these guides as iterative resources, and we encourage you to share your feedback.
+:::
+
+:::
 
 ## Why publish on GitHub?
 

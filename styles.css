@@ -36,3 +36,25 @@ a:hover {
     color: white; /* This sets the text color within the highlight */
 }
 
+.parallax-container {
+  position: relative;
+}
+
+.parallax-image-container {
+  height: 400px;
+  background-attachment: fixed;
+  opacity: 1;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Parallax image data vis */
+.parallax-image-container.datavis {
+  background-image: url(images/data_vis_guide_image.png);
+}
+
+/* Parallax image coding */
+.parallax-image-container.coding {
+  background-image: url(images/coding_guidance_image.png);
+}
