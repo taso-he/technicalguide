@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.5.56">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Guide - TASO Technical Guide</title>
+<title>TASO Technical Guide – Technical Guide</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -81,7 +81,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -90,8 +96,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2PY6X92Q3P"></script>
@@ -112,91 +120,98 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       .quarto-title-block .quarto-title-banner h5,
       .quarto-title-block .quarto-title-banner h6
       {
-        color: black;
+        color: white;
       }
 
       .quarto-title-block .quarto-title-banner {
-        color: black;
-background: #07dbb3;
+        color: white;
+background: #3b66bc;
       }
 </style>
 
 
 <link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Technical Guide - TASO Technical Guide">
-<meta property="og:description" content="">
-<meta property="og:site-name" content="Technical Guide">
+<meta property="og:title" content="TASO Technical Guide – Technical Guide">
+<meta property="og:description" content="An interactive TASO resource to enhance your data visualisation and coding practices">
+<meta property="og:image" content="https://taso-he.github.io/technicalguide/images/logo_transp.png">
+<meta property="og:site_name" content="Technical Guide">
+<meta property="og:image:height" content="342">
+<meta property="og:image:width" content="940">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
 
 <div id="quarto-search-results"></div>
-  <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
-    <a href="https://taso.org.uk/" class="navbar-brand navbar-brand-logo">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://taso-he.github.io/technicalguide/" class="navbar-brand navbar-brand-logo">
     <img src="./images/logo_transp.png" alt="TASO logo" class="navbar-logo">
     </a>
-    <a class="navbar-brand" href="https://taso.org.uk/">
+    <a class="navbar-brand" href="https://taso-he.github.io/technicalguide/">
     <span class="navbar-title">Technical Guide</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page"><i class="bi bi-house" role="img">
+    <a class="nav-link active" href="./index.html" aria-current="page"> <i class="bi bi-house" role="img">
 </i> 
- <span class="menu-text">Home</span></a>
+<span class="menu-text">Home</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://taso.org.uk/newsletter/" rel="" target=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="https://taso.org.uk/newsletter/"> <i class="bi bi-envelope" role="img">
 </i> 
- <span class="menu-text">Sign up for our newsletter</span></a>
+<span class="menu-text">Sign up for our newsletter</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/taso-he/technicalguide" rel="" target=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/taso-he/technicalguide"> <i class="bi bi-github" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://twitter.com/taso_he" rel="" target=""><i class="bi bi-twitter" role="img">
+    <a class="nav-link" href="https://twitter.com/taso_he"> <i class="bi bi-twitter" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="https://uk.linkedin.com/company/taso" rel="" target=""><i class="bi bi-linkedin" role="img">
+    <a class="nav-link" href="https://uk.linkedin.com/company/taso"> <i class="bi bi-linkedin" role="img">
 </i> 
- <span class="menu-text"></span></a>
+<span class="menu-text"></span></a>
   </li>  
 </ul>
+          </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
 </div>
-          </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction to the guides</a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Introduction to the guides</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
     </div>
   </nav>
+  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
       <h1 class="title">TASO Technical Guide</h1>
+            <p class="subtitle lead">An interactive TASO resource to enhance your data visualisation and coding practices</p>
                       </div>
   </div>
     
@@ -211,7 +226,7 @@ background: #07dbb3;
   
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
@@ -224,7 +239,7 @@ background: #07dbb3;
       <div class="sidebar-item-container"> 
             <a href="./data-vis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualisation style guide</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -259,7 +274,7 @@ background: #07dbb3;
       <div class="sidebar-item-container"> 
             <a href="./coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Coding good practice</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
@@ -299,7 +314,7 @@ background: #07dbb3;
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
@@ -317,14 +332,54 @@ background: #07dbb3;
 
 
 
+
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
-<p>Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a>. This website contains:</p>
-<ul>
-<li><p><a href="./data-vis/index.html"><strong>Data visualisation style guide</strong></a>: Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).</p></li>
-<li><p><a href="./coding-good-practice/index.html"><strong>Coding good practice</strong></a>: Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.</p></li>
-<li><p><a href="./contact.html"><strong>Contact point</strong></a>: We view these guides as iterative resources, and we encourage you to share your feedback.</p></li>
-</ul>
+<p>Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This website contains:</p>
+<div class="grid" style="background-color: #dbe3f4; padding: 10px">
+<div class="g-col-4">
+<div style="text-align: center;">
+<p><a href="./data-vis/index.html"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;"> Data Visualisation Style Guide </button> </a></p>
+</div>
+<p>Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).</p>
+</div>
+<div class="g-col-4">
+<div style="text-align: center;">
+<p><a href="./coding-good-practice/index.html"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;"> Coding Good Practice </button> </a></p>
+</div>
+<p>Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.</p>
+</div>
+<div class="g-col-4">
+<div style="text-align: center;">
+<p><a href="./contact.html"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;"> Contact Point </button> </a></p>
+</div>
+<p>We view these guides as iterative resources, and we encourage you to share your feedback.</p>
+</div>
+</div>
 </section>
 <section id="why-publish-on-github" class="level2">
 <h2 class="anchored" data-anchor-id="why-publish-on-github">Why publish on GitHub?</h2>
@@ -345,7 +400,7 @@ Tip
 </div>
 <p>You will also see when we are referring to code through text highlighted <code>like this</code>. You can see code that you can copy and try yourself in these fold-out boxes:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -414,18 +469,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -457,11 +501,55 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
-  function tippyHover(el, contentFn) {
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/taso-he\.github\.io\/technicalguide\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+          // target, if specified
+          link.setAttribute("target", "_blank");
+          if (link.getAttribute("rel") === null) {
+            link.setAttribute("rel", "noopener");
+          }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -471,8 +559,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -484,7 +581,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -528,6 +748,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -553,6 +774,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -616,7 +863,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./data-vis/index.html" class="pagination-link">
+      <a href="./data-vis/index.html" class="pagination-link" aria-label="Data visualisation style guide">
         <span class="nav-page-text">Data visualisation style guide</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
@@ -624,19 +871,52 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-    <div class="nav-footer-left">TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.<br>
+    <div class="nav-footer-left">
+<p>TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.<br>
 It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.<br>
-Charity number: 1193025</div>   
-    <div class="nav-footer-center">Website built with Quarto</div>
-    <div class="nav-footer-right">Get in touch:<br>
+Charity number: 1193025</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/events/">
+<p>EVENTS</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-privacy-notice/">
+<p>TASO PRIVACY NOTICE</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/appropriate-policy-document/">
+<p>APPROPRIATE POLICY DOCUMENT</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-speaker-request-form/">
+<p>TASO SPEAKER REQUEST FORM</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/accessibility-statement/">
+<p>ACCESSIBILITY STATEMENT</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+<p>Get in touch:<br>
 TASO<br>
 Evidence Quarter<br>
 4th Floor, Albany House<br>
 Petty France<br>
 London SW1H 9EA<br>
-info@taso.org.uk</div>
+info@taso.org.uk</p>
+</div>
   </div>
 </footer>
+
 
 
 
