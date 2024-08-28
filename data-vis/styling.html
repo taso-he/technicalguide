@@ -318,6 +318,19 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 
 
 <p>This section is designed with TASO partners and staff in mind, providing rules on chart formatting to ensure consistency across TASO outputs. That said, we anticipate that the insights provided may also be beneficial to anyone interested in developing their own data visualisation style guide, or understanding the technical details behind creating consistently formatted and distinctive charts.</p>
+<div class="callout callout-style-default callout-warning callout-titled" title="A note for TASO partners">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+A note for TASO partners
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Designing charts for TASO publications has been a trial and error process, as we figure out what works for our partners. If you are a partner on a TASO project and are unsure how to design your charts, please contact <a href="mailto:luke.arundel@taso.org.uk">luke.arundel@taso.org.uk</a></p>
+</div>
+</div>
 <section id="formatting-rules" class="level2">
 <h2 class="anchored" data-anchor-id="formatting-rules">Formatting rules</h2>
 <div class="cell" data-layout-align="center">
@@ -364,10 +377,10 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </div>
 <p>You can find an example R script for creating charts with TASO styling on <a href="https://github.com/taso-he">our GitHub</a>. R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the <a href="../data-vis/references.html">R resources</a> section.</p>
 <ul>
-<li><p>The font for the charts is Arial. Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.</p></li>
-<li><p>The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page. The title should be in bold, size 16.</p></li>
-<li><p>The subtitle should be a formal statistical title (as you might traditionally title a chart). The subtitle should be size 12.</p></li>
-<li><p>The caption should be in the bottom left of the chart. It should be in italics and size 10.</p></li>
+<li><p>The font for the charts is Arial (or URW DIN if you have access). Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.</p></li>
+<li><p>The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page.</p></li>
+<li><p>The subtitle should be a formal statistical title (as you might traditionally title a chart).</p></li>
+<li><p>The caption should be in the bottom left of the chart. It should be in italics, and smaller than the rest of the text on the chart.</p></li>
 <li><p>Text sizes can have some flexibility. But ensure that the title is the largest text on the page, followed by the subtitle. Ensure all other text is smaller than the title and subtitle.</p></li>
 <li><p>Colours</p>
 <ul>
@@ -382,6 +395,32 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </ul></li>
 <li><p>If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.</p></li>
 </ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Adjusting charts for different publication types">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Adjusting charts for different publication types
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO’s <a href="https://taso.org.uk/research/current-projects/education-earnings-employment/">Education pathways</a> report.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Chart for report</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Chart for social media</a></li></ul>
+<div class="tab-content nav-pills">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our ‘active title’ for the figure caption, but we used it in-text, rather than as part of the image itself.</p>
+<p><a href="../images/data-vis-images/report_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../images/data-vis-images/report_ed_pathways_chart.png" class="img-fluid"></a></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes.</p>
+<p><a href="../images/data-vis-images/social_media_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../images/data-vis-images/social_media_ed_pathways_chart.png" class="img-fluid"></a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
 </section>
 <section id="brand-colours" class="level2">
 <h2 class="anchored" data-anchor-id="brand-colours">Brand colours</h2>
@@ -928,7 +967,7 @@ info@taso.org.uk</p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":false,"openEffect":"zoom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
