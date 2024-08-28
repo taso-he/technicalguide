@@ -4,6 +4,10 @@ title: "Styling charts for TASO publications"
 
 This section is designed with TASO partners and staff in mind, providing rules on chart formatting to ensure consistency across TASO outputs. That said, we anticipate that the insights provided may also be beneficial to anyone interested in developing their own data visualisation style guide, or understanding the technical details behind creating consistently formatted and distinctive charts.
 
+::: {.callout-warning title="A note for TASO partners"}
+Designing charts for TASO publications has been a trial and error process, as we figure out what works for our partners. If you are a partner on a TASO project and are unsure how to design your charts, please contact [luke.arundel\@taso.org.uk](mailto:luke.arundel@taso.org.uk) 
+:::
+
 ## Formatting rules
 
 ```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
@@ -42,13 +46,13 @@ ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
 
 You can find an example R script for creating charts with TASO styling on [our GitHub](https://github.com/taso-he). R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the [R resources](references.qmd) section.
 
--   The font for the charts is Arial. Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.
+-   The font for the charts is Arial (or URW DIN if you have access). Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.
 
--   The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page. The title should be in bold, size 16.
+-   The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page.
 
--   The subtitle should be a formal statistical title (as you might traditionally title a chart). The subtitle should be size 12.
+-   The subtitle should be a formal statistical title (as you might traditionally title a chart).
 
--   The caption should be in the bottom left of the chart. It should be in italics and size 10.
+-   The caption should be in the bottom left of the chart. It should be in italics, and smaller than the rest of the text on the chart.
 
 -   Text sizes can have some flexibility. But ensure that the title is the largest text on the page, followed by the subtitle. Ensure all other text is smaller than the title and subtitle.
 
@@ -64,6 +68,27 @@ You can find an example R script for creating charts with TASO styling on [our G
     -   Save as a PNG or a JPEG to avoid losing quality through copy and pasting or screenshots.
 
 -   If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.
+
+::: {.callout-note title="Adjusting charts for different publication types"}
+
+We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report. 
+
+::: {.panel-tabset .nav-pills}
+
+## Chart for report 
+
+For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our 'active title' for the figure caption, but we used it in-text, rather than as part of the image itself. 
+
+![](../images/data-vis-images/report_ed_pathways_chart.png)
+
+## Chart for social media
+
+To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes. 
+
+![](../images/data-vis-images/social_media_ed_pathways_chart.png)
+
+:::
+:::
 
 ## Brand colours
 

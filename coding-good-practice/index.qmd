@@ -6,6 +6,14 @@ title-block-banner: "#3b66bc"
 title-block-banner-color: "white"
 ---
 
+::: {layout-ncol=2}
+
+![R Studio interface](../images/coding_screenshot.png){group="coding-group"}
+
+![GitHub interface](../images/github_screenshot.png){group="coding-group"}
+
+:::
+
 Code hygiene is crucial for maintaining the quality and readability of code.[^1] This document sets out guidelines for ensuring that code is accessible and shareable.
 
 [^1]: As R is the primary statistical software used by TASO, this document is written specifically with R in mind. However, many of the guidelines will apply to other languages like Python or Stata.
