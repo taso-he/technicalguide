@@ -1,0 +1,25 @@
+Level,Learner,Institution
+Foundation,Demographics; e.g.,Course studied
+Foundation," - Ethnicity",Modules studied
+Foundation," - Disability status",
+Foundation," - Prior attainment",
+Foundation," - Contextual offer holder",
+Foundation," - Area-based measures (IMD, POLAR4, TUNDRA)",
+Foundation,End-of-stage grades,
+Foundation,Continuation,
+Intermediate,Engagement data,Course contact hours
+Intermediate,Attendance,Contact hours split by module
+Intermediate,Virtual learning environment usage,Extra curricular contact hours
+Intermediate,Library use,
+Intermediate,Course materials access,
+Intermediate,Extenuating circumstances,
+Intermediate,Module marks,
+Advanced,Engagement with extra-curriculars,Timetable of contact hours
+Advanced,Engagement with support,Assessment deadlines
+Advanced,Personal tutor,Module prerequisites (i.e. is passing a prior module/assessment required to sit this module)
+Advanced,Academic skills,Support services available to the student
+Advanced,Pastoral support,Personal tutor
+Advanced,Leave of absence,Academic skills
+Advanced,"Assessment submission data (timing, attempts)",Pastoral support
+Advanced,Use of reading lists,
+Advanced,Within-module assessment grades,

@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "Technical Guide"
+  title: "Technical Guides"
   image: images/logo_transp.png
   favicon: images/favicon.png
   open-graph: true
@@ -40,6 +40,27 @@ website:
       contents:
         - href: index.qmd
           text: Introduction to the guides
+        - section: "Data infrastructure guide"
+          href: dig/index.qmd
+          contents:
+            - href: dig/index.qmd
+              text: Introduction
+            - href: dig/diagnose.qmd
+              text: Diagnose
+            - href: dig/plan.qmd
+              text: "Plan: Research questions and outcomes"
+            - href: dig/plan-methods.qmd
+              text: "Plan: Choosing methods"
+            - href: dig/plan-methods-overview.qmd
+              text: "Plan: Methodology overview"              
+            - href: dig/measure.qmd
+              text: Measure
+            - href: dig/reflect.qmd
+              text: Reflect
+            - href: dig/barriers.qmd
+              text: Barriers and facilitators
+            - href: dig/acknowledgements.qmd
+              text: Acknowledgements 
         - section: "Data visualisation style guide"
           href: data-vis/index.qmd
           contents: 
@@ -51,7 +72,7 @@ website:
               text: Styling charts for TASO publications
             - href: data-vis/references.qmd
               text: References and further resources
-        - section: "Coding good practice"
+        - section: "Coding good practice guide"
           href: coding-good-practice/index.qmd
           contents: 
             - href: coding-good-practice/index.qmd
@@ -114,7 +135,7 @@ format:
       sidebar-width: 200px
       body-width: 1000px
       margin-width: 200px
-    link-external-newwindow: true
+    link-external-newwindow: false
     fig-cap-location: top
     lightbox: true
 

@@ -1,0 +1,77 @@
+---
+title: "Data infrastructure guide"
+subtitle: using and developing institutional data infrastructure to support student success in higher education
+format: html
+title-block-banner: "#3b66bc"
+title-block-banner-color: "white"
+author: Luke Arundel & Dr Rob Summers
+date: last-modified
+date-format: "MMMM, YYYY" 
+---
+
+To create a more inclusive higher education system, institutions in England are required to take active steps to address barriers faced by underrepresented groups.
+
+Since 2018 the Office for Students (OfS), the regulator for higher education in England, has required all registered providers in the [approved (fee cap) category](https://www.officeforstudents.org.uk/for-providers/registering-with-the-ofs/registration-with-the-ofs-a-guide/) to submit an [access and participation plan (APP)](https://www.officeforstudents.org.uk/for-providers/equality-of-opportunity/access-and-participation-plans/), which details how providers will support access and participation for underrepresented groups in higher education.
+
+The regulations governing APPs were [updated in 2023](https://www.officeforstudents.org.uk/publications/regulatory-notice-1-access-and-participation-plan-guidance/) to require higher education providers (HEPs) to identify risks to [equality of opportunity](https://www.officeforstudents.org.uk/for-providers/equality-of-opportunity/) in access, participation and progression, and provide details of interventions designed to eliminate these risks. In addition, HEPs are expected to evaluate the impact of these interventions and publish their results.
+
+The purpose of this guide is to help HEPs use their institutional data to identify equality gaps in student success and evaluate the effectiveness of interventions designed to reduce them.
+
+::: {.callout-note title="What is institutional data?"}
+Institutional data is data that is recorded and used as part of an institution's administration and operations process. It includes data about student demographics, students' interaction with institutional systems (such as attendance, virtual learning environment use, and engagement with support services), attainment, and course information (such as contact hours and modes of assessment).
+:::
+
+## What is this document?
+
+This document is a practical guide on using institutional data to address several key areas. It aims to help enable HEPs to:
+
+-   identify equality gaps in higher education
+-   identify where those equality gaps may be particularly acute, to enable effective design of post-entry student success activities
+-   help generate robust [Type 3 (causal) evidence](https://taso.org.uk/evidence/toolkit/what-is-causal-evidence/) of the success of student support interventions.
+
+Additionally, this guide provides considerations for:
+
+-   planning an evaluation of student success interventions
+-   obtaining ethical approval to carry out an evaluation and publish the results of an intervention
+
+## Who is this guide for?
+
+Different sections are aimed at different audiences but overall this document will be useful for:
+
+::: columns
+::: {.column width="60%"}
+-   evaluators
+-   practitioners
+-   those responsible for writing their institution's APPs
+-   planning teams
+-   senior executive/management with responsibility for supporting student success.
+:::
+
+::: {.column width="40%"}
+::: callout-note
+In each section, it is indicated who that part of the guide is aimed at, e.g.:
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+source("dig_functions.R")
+genAudienceTable(audience=c("Evaluators", 
+                            "Practitioners"))
+```
+:::
+:::
+:::
+
+There are a large variety of HEPs in England, from small and specialist providers with tens of students, to the very largest with tens of thousands. Where possible we have tried to make this guide useful for a wide range of providers, though some sections will be more relevant to some types of providers than others.
+
+## How is the guide organised?
+
+The guide is organised around the four stages of [TASO's Monitoring and Evaluation Framework](https://taso.org.uk/evidence/our-approach-to-evaluation/) (MEF), pictured in @fig-mefdiagram. In addition, there are sections on common barriers to and facilitators of evaluation of student success work.
+
+![MEF diagram](../images/dig-images/im_mef_diagram_cropped.png){#fig-mefdiagram fig-alt="Diagnose:  Identifying the situation that needs addressing; Establishing (or revising the Theory of Change)\\nPlan:  Identifying the research questions; Identifying the outcome measures; Selecting the research methods; Creating a research protocol; Measure:  Collecting data; Analysing data; Evaluating the success of the intervention\\nReflect:  Reporting the findings; Discussions with stakeholders; Integration of findings into programme design/revision" width="80%" fig-align="center"}
+
+::: callout-note
+The MEF icon will be used to signify the applicable part of the MEF for each section.
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+genMEFTable(stage=2)
+```
+:::

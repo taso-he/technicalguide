@@ -1,0 +1,269 @@
+---
+title: "Measure: Collection and analysis of data"
+---
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+source("dig_functions.R")
+genMEFAudienceTable(stage=3, 
+                    audience=c("Evaluators"))
+```
+
+Once you have [diagnosed](diagnose.qmd) an equality gap, [planned](plan.qmd) your research questions, outcomes, and chosen your [methods](plan-methods.qmd), you can start to measure your impact.
+
+Below are some TASO examples of different QED and RCT designs that serve as useful case studies. These examples can help inform your own analysis, offering insights into how different approaches can be applied to measure impact effectively and accurately.
+
+## QEDs
+
+### Matching
+
+::: {.callout-note collapse="true" title="NTU: Black Leadership Programme (BLP) impact evaluation using propensity score matching"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_NTU_ImpactEvaluation.pdf">
+<button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download BLP impact evaluation </button> </a>
+:::
+
+**Background**: Staffordshire University was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of four post-entry interventions to address inequalities in student outcomes using institutional data and quasi-experimental designs. This report corresponds to the evaluation conducted for Nottingham Trent University's Black Leadership Programme (BLP).
+
+**Aims**: To explore whether the BLP impacts students' social and academic engagement, and whether there is a relationship with degree outcomes and BLP participation that is mediated by academic engagement.
+
+**Intervention**: BLP is an intervention delivered during level 5 (2nd year undergraduate) for Black and Black heritage students that provides mentoring, social events, and a programme of workshops and development activities to support students' self-concept, social capital and skills, such that they begin to engage more at NTU and ultimately progress to succeeding in higher education and in their lives outside higher education.
+
+**Design**: This evaluation was a QED using available institutional data. A comparator group was developed with Propensity Score Matching using POLAR4 Quintile, UCAS entry points, Academic School, level of study, and academic year as matching variables.
+
+**Outcome measures**: Three primary outcome measures were included in the analyses:
+
+-   Academic engagement -- this was an amalgamated dataset of different types of academic engagement, including both structured and unstructured types of engagement.
+
+-   Structured social engagement -- sports clubs and societies signed up to with the Students' Union.
+
+-   Unstructured social engagement -- whether students had signed up for a gym membership.
+
+There was one secondary outcome measure:
+
+-   Level 6 grade -- this was used in place of final degree classification.
+
+**Analyses**: A combination of logistic regression, ANOVA, and structural equation modelling were used to address the research questions.
+
+**Results**: Results suggest limited effect of BLP on social and academic engagement across the academic journey. However, BLP students were found to have higher level 6 grades, which may be explained by factors other than academic engagement.
+
+**Conclusions**: BLP may have an impact on students that begins later than the year of the BLP programme, and is not through a direct relationship on students' academic engagement.
+:::
+
+::: {.callout-note collapse="true" title="UEA: Peer Assisted Learning (PAL) impact evaluation using propensity score matching"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_UEA_ImpactEvaluation.pdf">
+<button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download PAL impact evaluation </button> </a>
+:::
+
+**Background**: Staffordshire University was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of four post-entry interventions to address inequalities in student outcomes using institutional data and quasi-experimental designs. This analysis report is the impact evaluation of the Peer Assisted Learning (PAL) programme at the University of East Anglia (UEA).
+
+**Aims**: The aim of this study is to explore whether participation in PAL increases student engagement, continuation rates and attainment
+
+**Intervention**:
+
+PAL is open to all first-year students in participating schools of study on an opt-in basis. PAL consists of regularly scheduled mentoring sessions throughout the academic year. Prior to the academic year, schools and courses decide whether their course will deliver one-to-one peer mentoring or group mentoring. Group mentoring is formalised through the timetable and one-to-one mentoring is typically scheduled every three weeks.
+
+**Design**: This study will use a post-hoc QED to determine the relationship between PAL participation and the outcome measures of interest.
+
+**Outcome measures**: There are three primary outcome measures for this study: course engagement, continuation to the next level of academic study and end of stage grades. In addition, there are two secondary outcome measures for this study: course completion and final degree classification.
+
+**Analyses**: A matched control group was generated using propensity score matching to test the effect of PAL on student engagement and outcomes using ordinary least squares (OLS) or binary logistic regression (BLR) where appropriate.
+
+**Results**: Results suggest that participation in PAL significantly improves the likelihood of continuation after the first year of study; is significantly associated with higher course engagement and provides significant positive benefits to end of stage grades in the first year. There was no observable effect of PAL participation on final degree classification. There is evidence that some underrepresented student groups in higher education who participate in PAL have different continuation and end of stage grade outcomes than their peers.
+
+**Conclusions**: This study provides evidence that participating in PAL supports first year student outcomes and equality of opportunity aims at UEA. The findings, while significant, produced small effects for the models tested. Further research is needed to build on these results including and understanding of how delivery mode and additional variables not captured in the models may impact the effectiveness of PAL for student mentees.
+:::
+
+### Difference-in-difference
+
+::: {.callout-note collapse="true" title="University of Leicester: Curriculum reform impact evaluation using differences in differences"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/BIT_University_of_Leicester_analysis_report.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download curriculum reform impact evaluation </button> </a>
+:::
+
+**Background**: The Centre for Transforming Access and Student Outcomes in Higher Education (henceforth TASO) has funded the University of Leicester (henceforth Leicester) to develop and implement a "Decolonising the Curriculum Toolkit" (a resource for staff that provides concise guidelines on how to make their curriculum more racially inclusive). TASO has also commissioned the Behavioural Insights Team (henceforth BIT) to evaluate the impact of the toolkit on reducing awarding gaps between Black, Asian and Minority Ethnic (BAME) students and White students.
+
+**Aims**: To evaluate how Leicester's 'Decolonising the Curriculum Toolkit' affected the attainment of BAME and White students as well as the racial awarding gap.
+
+**Intervention**: The "Decolonising the Curriculum Toolkit" is a two-page resource for staff that provides clear and concise guidelines on how to make module content, assessment and teaching practice more racially inclusive and relatable for all students. The toolkit was piloted across the Sociology BA course in the 2020/21 academic year.
+
+**Design**: This is a matched difference-in-differences study with repeated cross-sections. The analysis compares students' attainment trends in the modules that implemented the "Decolonising the Curriculum Toolkit" (treatment modules) with that of similarly comparable modules that did not implement the initiative.
+
+**Outcome measures**: The primary outcome measure is a student's module-level attainment, and it is defined as the percentile rank of the final module mark.
+
+**Analyses**: The primary analysis consists of a difference-in-differences regression, comparing module marks before and after the academic year 2019-20 (the year that curriculum reform took place) between reformed vs. matched unreformed modules. It focuses on BAME students only. The secondary analysis repeats the primary analysis for White students. Additional descriptive line charts have been made to illustrate how the awarding gaps of reformed vs. comparator modules changed since the "Decolonising the Curriculum Toolkit" was implemented.
+
+**Results**: Overall, this impact evaluation suggests that the "Decolonising the Curriculum Toolkit'' might have had a negative impact on both BAME and White students' attainment among Sociology students at the University of Leicester. The estimated treatment effect was significantly negative among BAME students, -6.63 percentiles, 95% CI \[-13.23, 0.03\], p = 0.05. It was directionally negative (though not significant at the 5% level) among White students, -3.07 percentiles, 95% CI \[-9.79, 3.64\], p = 0.37. Findings from the exploratory analysis suggest that intervention did not affect the racial awarding gap.
+
+**Conclusions**: In light of the above discussion, we do not recommend rolling out this toolkit (in its current form) before conducting a closer examination of how the toolkit was delivered by teachers and received by students. We believe the implementation and process evaluation (IPE) led by Leicester may shed light on what might have caused this and help contextualise these effects. If findings from the IPE suggest that there is evidence of promise in how teaching staff and BAME students might benefit from the reforms, we would recommend refining the toolkit based on the IPE and then conducting further impact evaluation of the intervention, with a larger sample and over a longer time period.
+:::
+
+::: {.callout-note collapse="true" title="University of Kent: Curriculum reform impact evaluation using differences in differences"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/BIT_University_of_Kent_analysis_report.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download curriculum reform impact evaluation </button> </a>
+:::
+
+**Background**: The Centre for Transforming Access and Student Outcomes in Higher Education (henceforth TASO) has funded the University of Kent (henceforth Kent) and commissioned the Behavioural Insights Team (henceforth BIT) to evaluate the impact of their "Diversity Mark" programme (an initiative that seeks to diversify the current Eurocentric curriculum) on reducing awarding gaps between Black, Asian and minority ethnic (BAME) students and White students.
+
+**Aims**: To evaluate whether and to which extent Kent's 'Diversity Mark' initiative reduced the awarding gaps between BAME and White students.
+
+**Intervention**: The "Diversity Mark" initiative is a collaborative response to Kent students' call for more diverse curricula. The School of Sociology, Social Policy and Social Research (henceforth SSPSSR), students, and library services worked together to audit 19 core undergraduate modules offered in the two campuses and explored ways to incorporate BAME authors and perspectives into those modules. The initiative was first piloted in 2018-19, and another module was piloted in 2020-21.
+
+**Design**: The study is a matched difference-in-differences with repeated cross-sections. The analysis compares students' attainment trend among the modules that implemented the Diversity Mark Initiative (treatment modules) with similar comparator modules that didn't implement the initiative.
+
+**Outcome measures**: The primary outcome measure is a student's module-level average attainment, and it is defined as the percentile rank of the final module mark.
+
+**Analyses**: The primary analysis consists of a difference-in-differences regression, comparing module marks before and after the academic year 2018-19 between reformed vs. matched unreformed modules. It focuses on BAME students only. The secondary analysis repeats the primary analysis for White students. Additional descriptive charts are made to illustrate the change in awarding gaps of reformed vs. comparator modules before and after the Diversity Mark Initiative.
+
+**Results**: Among the modules matched for analyses (4 reformed modules, 4 comparator modules), we did not observe a significant effect of the Diversity Mark Initiative on improving attainment in terms of module mark percentile rank among the BAME students --- the average difference in attainment between reformed and unreformed modules post-intervention versus pre-intervention was not statistically significant (2.0 percentile rank, 95% CI \[-2.20, 6.21\]), p = 0.35. We observed a marginally positive difference among the White students (3.45 percentile rank, 95% CI \[-0.13, 7.03\]), p = 0.06.
+
+**Conclusions**: Overall, we didn't find conclusive evidence supporting the effectiveness of the Diversity Mark Initiative in reducing the racial awarding gap among the SSPSSR students at the University of Kent. However, we also didn't find evidence that suggests it might backfire: the observed trend among BAME students' attainment before and after the initiative, though not significant, was positive. Therefore, we consider the initiative an innovative approach to address the racial awarding gap that is worth further testing.
+:::
+
+## RCTs
+
+::: {.callout-note collapse="true" title="Nottingham Trent University: Learner Analytics Randomised Controlled Trial (RCT)"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/TASO_LearningAnalytics_Impact-report_NTU_v2.4.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download learning analytics impact evaluation </button> </a>
+:::
+
+**Background**: The Behavioural Insights Team (BIT) was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of two randomised controlled trials. Both trials were designed to assess the impact of learning analytics interventions. This report corresponds to the trial delivered at Nottingham Trent University (NTU).
+
+**Aims**: To evaluate whether a preventative intervention targeted at students that generate a no-engagement alert via NTU's learning analytics student dashboard (StREAM) increased student engagement.
+
+**Intervention**:
+
+-   In the intervention 1 group, students who generated a no-engagement alert received up to two phone call attempts from NTU's central support team (business as usual).
+
+-   In the intervention 2 group, students who generated a no-engagement alert received an email inviting them to request a phone call.
+
+**Design**: This study was a two-arm, parallel group randomised controlled trial, testing for superiority of the intervention 1 condition over the intervention 2 condition.
+
+**Outcome measures**: There were two primary outcomes:
+
+1.  Average daily student engagement rating in the 10 day period following their first no-engagement flag (days 1 to 10 of the intervention period) and II.
+
+2.  Average daily student engagement rating in the first four-week period of Term 2.
+
+These outcomes were collected by NTU's learning analytics system, which involves daily reporting on individual-level engagement data.
+
+**Analyses**: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.
+
+**Results**: The primary analysis suggests no benefit to students of intervention 1 (automatic phone call) over intervention 2 (email). Estimated effects on the primary outcomes and first secondary outcome are either null or narrowly negative, and none are statistically significant at the 5% level. The impact table for the results is in Appendix C.
+:::
+
+::: {.callout-note collapse="true" title="Sheffield Hallam University: Learner Analytics Randomised Controlled Trial (RCT)"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/TASO_LearningAnalytics_Impact-report_SHU_v2.3.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download learning analytics impact evaluation </button> </a>
+:::
+
+**Background**: The Behavioural Insights Team (BIT) was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of two randomised controlled trials. Both trials were designed to assess the impact of learning analytics interventions. This report corresponds to the trial delivered at Sheffield Hallam University (SHU).
+
+**Aims**: To evaluate whether a preventative intervention targeted at students identified as being 'at-risk' via SHU's learning analytics programme increases student engagement.
+
+**Intervention**: Student Support Advisers (SSAs) from a central team proactively monitored engagement at two pre-agreed census points (week 5 and 8 of the autumn term) to identify students who have poor engagement with their course.
+
+-   In the intervention 1 group students who generated a red flag (indicating low engagement) in week 4 and/or week 7 received an email detailing support resources available to them plus a text message (SMS) informing them that they will receive a default phone call from a central support team. An SSA then attempted to call all students.
+
+-   In the intervention 2 group students who generated a red flag (indicating low engagement) in week 4 and/or week 7 received an email detailing support resources available to them. No telephone calls were made.
+
+**Design**: This study was a two-arm, parallel group randomised controlled trial, testing for superiority of the intervention 1 condition over the intervention 2 condition.
+
+**Outcome measures**: There was one primary outcome, the proportion of Red RAG engagement scores at week 9 (defined in section 3.3).
+
+**Analyses**: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.
+
+**Results**: The primary analysis suggests no benefit to students of intervention 1 over intervention 2. All estimated effects are small, and none are statistically significant at the 5% level.
+:::
+
+::: {.callout-note collapse="true" title="Summer Schools Randomised Controlled Trial (RCT)"}
+::: {style="text-align: left; margin-top: 10px;"}
+<a href="https://taso.org.uk/wp-content/uploads/TASO_in_person_summer_schools_interim_analysis_report_of_exploratory_outcomes.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download summer schools impact evaluation </button> </a>
+:::
+
+**Background**: This project is a collaboration between the Centre for Transforming Access and Student Outcomes in Higher Education (TASO), five Higher Education Providers (HEPs) and the Behavioural Insights Team (BIT). In summer 2022, a series of summer schools were delivered with the aim of widening participation in higher education (HE) among participants. Three types of evaluation are being conducted with these summer schools: an impact evaluation, a cost evaluation, and an implementation and process evaluation (IPE). This report presents the interim findings from the impact evaluation.
+
+**Aims**: The aim of the project is to investigate the efficacy of summer schools as a widening participation activity. The aim of the widening participation agenda is to increase progression to HE among students from disadvantaged or under-represented groups.
+
+**Intervention**: This study evaluated a collection of interventions. Five HEPs delivered their own summer schools, either for students in pre-16 or post-16 education. Mode of delivery differed, with some summer schools taking place in-person, and some using a combination of online and in-person elements.
+
+**Design**: This study is a two-arm, parallel group randomised controlled trial (RCT).
+
+**Outcome measures**: The outcomes analysed in this interim report are survey measures of participants' self-reported applications to HE, and self-reported attitudes to HE, covering their likelihood of going on to further academic study (for pre-16 students), their self-efficacy relating to HE, the compatibility of HE with their social identity, and their perception of practical barriers to HE.
+
+**Analyses**: A combination of logistic and Ordinary Least Squares (OLS) regressions are used, as appropriate, to estimate effects on the primary, secondary and exploratory outcomes.
+
+**Results**: There is a positive effect on students' sense of the compatibility of HE with their identity, which is significant at the 5% or 10% level depending on the model specification. Results are not highly consistent across model specifications. None of the other effects are statistically significant at the 5% or 10% level. A high and differential rate of attrition has led to a small sample and possible bias in some of the estimated effects.
+
+**Conclusions**: There is early evidence of promise that these summer schools had a small positive effect on the hypothesised mediating mechanism of compatibility of HE with social identity. The analysis also suggests that there was no effect on self-reported applications to HE, self-efficacy relating to HE, students' self-reported likelihood of attending HE or post-16 academic study (depending on their age), or perception of practical barriers to HE. This is probably because most applicants to HE summer schools already intend to apply to HE. The more robust test of the intervention will come in 2025 when we have administrative data on students' entry to HE.
+:::

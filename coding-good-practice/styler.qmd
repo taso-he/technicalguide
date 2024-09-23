@@ -6,6 +6,6 @@ The tidyverse style guide provides all the detail you could need on the specific
 
 Once this package is installed (which only needs to be done once), you can use an 'Addin' in RStudio. Click the 'Addins' button, scroll down to the 'STYLER' section and click 'style active file'.
 
-![](addins.png){fig-alt="Image of the RStudio toolbar with the Addins button highlighted." fig-align="center"}
+![](../images/coding-images/addins.png){fig-alt="Image of the RStudio toolbar with the Addins button highlighted." fig-align="center"}
 
 ![](styleactivefile.png){fig-alt="Image of the RStudio STYLER section of 'Addins'." fig-align="center"}

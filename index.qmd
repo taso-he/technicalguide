@@ -1,6 +1,6 @@
 ---
-title: "TASO Technical Guide"
-subtitle: "An interactive TASO resource to enhance your data visualisation and coding practices"
+title: "TASO Technical Guides"
+subtitle: "A collection of interactive TASO resources to enhance your evaluation, data visualisation, and coding practices"
 format: html
 title-block-banner: "#3b66bc"
 title-block-banner-color: "white"
@@ -8,9 +8,29 @@ title-block-banner-color: "white"
 
 ## Introduction
 
-Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your data visualisation and coding practices. This website contains:
+Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your evaluation, data visualisation and coding practices. This website contains:
 
 :::{.grid style="background-color: #dbe3f4; padding: 10px"}
+
+::: {.g-col-4}
+<div style="text-align: center;">
+  <a href="dig/index.qmd">
+    <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;">
+      Data Infrastructure Guide
+    </button>
+  </a>
+</div>
+
+A practical guide on using institutional data to identify equality gaps in students success and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.
+:::
 
 ::: {.g-col-4}
 <div style="text-align: center;">
@@ -52,31 +72,11 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
 :::
 
-::: {.g-col-4}
-<div style="text-align: center;">
-  <a href="contact.qmd">
-    <button type="button" style="
-      background-color: #3b66bc; 
-      color: white; 
-      font-weight: bold;
-      padding: 10px 20px; 
-      font-size: 16px; 
-      border: none; 
-      border-radius: 25px; 
-      cursor: pointer;">
-      Contact Point
-    </button>
-  </a>
-</div>
-
-We view these guides as iterative resources, and we encourage you to share your feedback.
-:::
-
 :::
 
 ## Why publish on GitHub?
 
-We created these documents using Quarto, and published them through GitHub. This enables a more fluid and responsive approach to sharing good practices. It allows us to regularly update the content, ensuring that you always have access to the latest guidelines in data visualisation and coding.
+We created these documents using Quarto, and published them through GitHub. This enables a more fluid and responsive approach to sharing good practices. It allows us to regularly update the content, ensuring that you always have access to the latest guidance.
 
 The interactive nature of this website also facilitates a more engaging experience. You will see callout boxes that highlight key points or warnings:
 

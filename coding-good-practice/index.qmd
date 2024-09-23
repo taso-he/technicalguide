@@ -1,17 +1,18 @@
 ---
-title: "Coding good practice"
+title: "Coding good practice guide"
 subtitle: "Practical tips for clean, readable and shareable scripts"
 format: html
 title-block-banner: "#3b66bc"
 title-block-banner-color: "white"
+author: Luke Arundel
+date: 02/01/2024
+date-format: "MMMM, YYYY" 
 ---
 
-::: {layout-ncol=2}
+::: {layout-ncol="2"}
+![R Studio interface](../images/coding-images/coding_screenshot.png){group="coding-group"}
 
-![R Studio interface](../images/coding_screenshot.png){group="coding-group"}
-
-![GitHub interface](../images/github_screenshot.png){group="coding-group"}
-
+![GitHub interface](../images/coding-images/github_screenshot.png){group="coding-group"}
 :::
 
 Code hygiene is crucial for maintaining the quality and readability of code.[^1] This document sets out guidelines for ensuring that code is accessible and shareable.

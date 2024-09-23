@@ -87,9 +87,8 @@ student_info_unique <- student_info %>%
 
 [^3]: In R, `<-` assigns values to variables, while `==` tests equality. Using different symbols for assignment and equality makes R code more readable and easier to follow.
 
-```{=html}
 <!-- -->
-```
+
 -   Try not to repeat yourself - if you're repeating the same code many times, consider using a loop or function, which will save time and decrease the likelihood of making a mistake.
 
 ### Organising files and workspace
@@ -107,14 +106,17 @@ student_info_unique <- student_info %>%
 
 -   If files should be run in a certain order, begin the file name with numbers (e.g. `1_tidy_data`, `2_exploratory_analysis`, `3_model`).
 
--   It may be helpful to explicitly specify R script or package dependencies clearly.[^4] Use a `DESCRIPTION` file to detail required R packages and their versions. For scripts, consider including a `README` file that mentions all necessary packages and scripts, ensuring users know exactly what they need to run your code smoothly. 
+-   It may be helpful to explicitly specify R script or package dependencies clearly.[^4] Use a `DESCRIPTION` file to detail required R packages and their versions. For scripts, consider including a `README` file that mentions all necessary packages and scripts, ensuring users know exactly what they need to run your code smoothly.
 
 [^4]: Dependencies in R are external packages or software your code needs to run, such as `ggplot2` for graphs or `dplyr` for data handling. Listing these packages ensures others can use your code without issues, making it easier to share and reproduce your work across different systems.
 
+```{=html}
+<!-- -->
+```
 -   Try to avoid modifying raw data. If you modify data manually you might make errors, and won't be able to restore the original version. Creating a script that processes the raw data and creates a new version enables you to keep track of all the steps you have taken.
 
 -   Start with a clean environment: do not save the workspace (which is turned on by default).[^5] Go to Tools -\> 'Global Options', then select 'Never' for 'Save workspace to .RData on exit'.
 
-[^5]: A 'clean environment' means having a fresh workspace where no previous work (like variables or data sets you've created, or libraries you've loaded) is left over. This is crucial for making sure your code runs smoothly and is easy for others to understand. The most straightforward way to achieve a clean environment is by going to the 'Session' menu and selecting 'Restart R'. 
+[^5]: A 'clean environment' means having a fresh workspace where no previous work (like variables or data sets you've created, or libraries you've loaded) is left over. This is crucial for making sure your code runs smoothly and is easy for others to understand. The most straightforward way to achieve a clean environment is by going to the 'Session' menu and selecting 'Restart R'.
 
-![](rprintscreen.png){fig-alt="Image of the RStudio 'Options' page, highlighting the 'Workspace' section." width="60%" fig-align="center"}
+![](../images/coding-images/rprintscreen.png){fig-alt="Image of the RStudio 'Options' page, highlighting the 'Workspace' section." width="60%" fig-align="center"}

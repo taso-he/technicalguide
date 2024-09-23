@@ -1,0 +1,309 @@
+---
+title: "Diagnose: Identifying equality gaps using institutional data"
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+source("oulad_cleaning_tidying.R")
+source("oulad_analysis.R")
+# Read the data for the tables
+levels_data_table <- read.csv("data/tbl_levels-of-data.csv")
+analysis_methods_table <- read.csv("data/tbl_analysis_methods.csv")
+```
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+source("dig_functions.R")
+genMEFAudienceTable(stage=1,
+                    audience=c("Evaluators","Planning teams","Senior management","Practitioners"))
+```
+
+Identifying equality gaps in your institution is a core part of the APP and [Teaching Excellence Framework (TEF)](https://www.officeforstudents.org.uk/for-providers/quality-and-standards/about-the-tef/) processes. Here, we go above and beyond the [OfS guidance and data dashboards](https://www.officeforstudents.org.uk/data-and-analysis/access-and-participation-data-dashboard/) to help providers have a deeper understanding of where equality gaps may lie in their institution.
+
+The degree to which you can identify and understand equality gaps will depend on the data you have available. In this guide we define two broad classes of data, the learner context and the institution context:
+
+-   **The learner context** is data about the learner when they begin higher education -- e.g. demographics and prior attainment - and as they progress through higher education (e.g. engagement with their course and the institution).
+-   **The institution context** is data about the institution relevant to the learner's studies, such as courses and modules that are studied, contact hours, types of contact, types of assessment and timetable information.
+
+In @tbl-levelsofdata we also define three levels of data: *Foundation*, *Intermediate*, and *Advanced*. Although the levels of data are segregated, it is likely that institutions will have data from more than one of these levels. Data in each additional level provides increasing context for the learner and the institution. Not all of the data listed in @tbl-levelsofdata will be useful for identifying equality gaps, but may be useful in understanding what is required from an intervention to reduce equality gaps.
+
+::: callout-note
+The [Jisc Data maturity framework](https://www.jisc.ac.uk/data-maturity-framework) may be useful to understand your institution's data capability in terms of the infrastructure, the data you collect, and the role of people who use it.
+:::
+
+```{r, echo=FALSE, warning=FALSE, results='markup'}
+#| label: tbl-levelsofdata
+#| tbl-cap: Example data for different levels and contexts of institutional data
+kableExtra::kable(levels_data_table) %>%
+  kableExtra::add_header_above(c(" " = 1, "Context" = 2), bold = TRUE, background = "#3b66bc", color = "white") %>%
+  kableExtra::column_spec(1, bold = TRUE) %>% 
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
+  kableExtra::collapse_rows(columns = 1, valign = "middle") %>% 
+  kableExtra::row_spec(1:8, background = "#f9fafd") %>%
+  kableExtra::row_spec(9:15, background = "#ccd8ef") %>%
+  kableExtra::row_spec(16:24, background = "#aec1e6") %>%
+  kableExtra::kable_styling(bootstrap_options = "hover") 
+```
+
+## Identifying gaps in the student experience
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+genAudienceTable(audience=c("Evaluators", 
+                            "Planning teams"))
+```
+
+To effectively identify gaps in the student experience, we can use a range of statistical techniques, as outlined in @tbl-statisticalmethods. This begins with [descriptive statistics](#descriptive-analysis), which give a foundational understanding of the data by summarising and describing key features, such as counts and measures of average.
+
+For a more in-depth statistical analysis, inferential techniques like [t-tests](#t-tests) and [ANOVAs](#anova) are useful. T-tests enable the comparison of means between two groups, highlighting statistically significant differences. ANOVAs extend this comparison to multiple groups.
+
+[Regression](#regression) is a powerful tool for those who want to quantify the effect of various factors on student outcomes and explore in more detail the relationship between these factors.
+
+::: callout-note
+Here, we use the [Open University Learning Analytics Dataset (OULAD)](https://analyse.kmi.open.ac.uk/open_dataset). This analysis is educational and illustrative, to show the potential applications of various statistical techniques, using a dataset with variables familiar to many institutions. For those interested in a more comprehensive and formal analysis of the OULAD, we will be releasing a technical report later this year.
+
+The R code to create figures and tables below is available on our [GitHub page](https://github.com/taso-he/technicalguide). We will also be adding step-by-step guidance for performing these analyses in Excel (e.g. like our previous guidance on [conducting a paired t-test using Excel](https://cdn.taso.org.uk/wp-content/uploads/TASO_excel_paired_t_test_guidance.pdf)).
+:::
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-statisticalmethods
+#| tbl-cap: Statistical methods for identifying gaps in the student experience
+kableExtra::kable(analysis_methods_table, digits = 4) %>%
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  kableExtra::column_spec(1, bold = TRUE) %>% 
+  kableExtra::kable_styling(bootstrap_options = "hover") 
+```
+
+### Descriptive analysis {#descriptive-analysis}
+
+Identifying performance gaps among different student groups is important. It allows us to understand how various factors like socio-economic status, gender and disability contribute to disparities in outcomes. Recognising these gaps is the first step to developing interventions that can mitigate the effects of such disparities.
+
+For example, if we believe that there is likely to be a gap in attainment between students from deprived areas (IMD quintile 1 and 2) and students who are not from deprived areas (IMD quintiles 3 to 5), we might start by visualising the average attainment in terms of module scores. Using a box plot, as in @fig-deprivation_gaps, helps us to see how the distribution of scores differs between these groups.
+
+```{r, echo=FALSE, warning=FALSE, fig.align="center"}
+#| layout-ncol: 2
+#| label: fig-deprivation_gaps
+#| fig-cap: "Deprivation gaps"
+#| fig-subcap:
+#|   - "Average scores are lower for students from deprived areas"
+#|   - "Across modules, deprived students score lower on average" 
+overall_deprivation_gaps
+facet_overall_deprivation_gaps
+```
+
+Here, we can see that students from deprived areas tend to have lower average module scores compared with their counterparts from more affluent areas. This observation underscores the potential need for targeted interventions aimed at supporting students facing socio-economic challenges. Breaking this down by module, we can see that while average scores vary, a gap remains across the modules.
+
+To further understand the dynamics of this gap, we may want to look at how it has changed over time. Line charts, as in @fig-over_time_deprivation_gaps, can serve as an effective visual tool, illustrating the trend of average scores by deprivation status across different time periods. In @fig-over_time_deprivation_gaps we can see there is a consistent gap over time across the courses, suggesting that the gap we have identified is persistent.
+
+```{r, echo=FALSE, warning=FALSE, fig.align="center"}
+#| layout-ncol: 2
+#| label: fig-over_time_deprivation_gaps
+#| fig-cap: "Deprivation gaps over time"
+#| fig-subcap:
+#|   - "Over time, there are persistent gaps in average module scores between deprived students and their non-deprived peers"
+#|   - "Between courses, there is variation in the size of the gap in average module scores between deprived students and their non-deprived peers" 
+
+over_time_deprivation_gaps
+facet_over_time_deprivation_gaps
+
+```
+
+### T-tests {#t-tests}
+
+In @fig-deprivation_gaps above, we saw there was a `{r} round(t_test$estimate[1]-t_test$estimate[2],1)` percentage point (pp) difference in scores between students from deprived areas (score = `{r} round(t_test$estimate[2],1)`%) and students who are not from deprived areas (`{r} round(t_test$estimate[1],1)`%). However, looking at these charts alone, we cannot say whether the differences are meaningful or just random variation.
+
+We can use t-tests to determine if the difference in mean scores between students from deprived backgrounds and those who are not deprived is statistically significant using the conventional cut-off for the p-value of 0.05.
+
+The results of the t-test in @tbl-t_test_results, indicate that there is a statistically significant difference at the 5% level because the p-value is less than 0.05. This suggests that on average, students from deprived areas score significantly lower than their counterparts.
+
+To report the results of this t-test in text you would write: There was a significant difference between the scores for deprived students and the scores for students who are not deprived (t(10686.68) = 15.88, p\<0.001).
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-t_test_results
+#| tbl-cap: T-test results
+t_test_results %>%
+  kable(digits = 2, row.names = FALSE) %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  kable_styling(bootstrap_options = "hover") 
+```
+
+### ANOVA {#anova}
+
+Building on the concept of t-tests, we can extend our analysis to compare factors with more than two groups (e.g. ethnicity, prior qualification types). This is where ANOVA becomes useful. ANOVA allows us to assess whether there are statistically significant differences in means across three or more groups simultaneously.
+
+For example, ANOVA can enable us to determine whether scores differ based on a student's highest level of education. By performing ANOVA, we can compare the mean scores across each of the education levels at once, rather than comparing each pair separately. This approach helps to identify if at least one education group has a significantly different mean score compared to the others.
+
+In @tbl-anova_results, we can see that the ANOVA is significant (p\<0.001), indicating that there is evidence that the level of education influences the score.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-anova_results
+#| tbl-cap: ANOVA results
+tidy_anova %>%
+  kable(digits = 2) %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  kable_styling(bootstrap_options = "hover") 
+```
+
+Given that there is evidence of a relationship between highest qualification and the scores, you can then conduct further tests such as Tukey's HSD (a form of pairwise t-test) to determine which specific groups differ from each other, as shown in @tbl-tukey-results. This enables us to see, for example, that there is a significant difference in score between students with lower than A Level or equivalent and students with A Levels (highlighted pink), but not a significant difference between students with lower than A Level and students with no formal qualifications (highlighted green).
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-tukey-results
+#| tbl-cap: Tukey's HSD results for module scores for all different pairwise comparisons of educational level
+tidy_tukey %>%
+    select(-Significance) %>%  
+  kable(digits = 2, "html", escape = FALSE) %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  row_spec(8, background = "#aafced") %>%
+  row_spec(2, background = "#fdcbd6") %>%
+  kable_styling(bootstrap_options = "hover") 
+```
+
+@fig-highest-ed visualises these differences. We can see both the difference in scores by highest education using descriptive measures (in this case the median score using a boxplot), and the statistically significant differences in score between these qualification levels.
+
+```{r, echo=FALSE, warning=FALSE, fig.align="center"}
+#| layout-ncol: 2
+#| label: fig-highest-ed
+#| fig-cap: "Gaps in score by highest education"
+#| fig-subcap:
+#|   - "Students with higher levels of educuation score higher on average"
+#|   - "These differences are mostly statistically significant" 
+
+highest_ed_chart
+tukey_chart
+```
+
+### Regression {#regression}
+
+Descriptive statistics, such as means or medians, and t-tests and ANOVAs are invaluable for highlighting disparities. But to explore in more depth, it can be useful to progress to regression analysis.
+
+Regression analysis helps identify the relationship between an outcome (like module score) and a factor (such as gender), while accounting for other demographic variables (such as ethnicity or socio-economic status). It is particularly useful for exploring how an outcome is influenced by the interaction of two or more factors. For example, regression analysis can show how the interaction of deprivation status and gender impacts modules scores, while also accounting for other factors that may affect scores.
+
+While descriptive statistics show us the extent of equality gaps, and t-tests and ANOVAs can tell us whether these gaps are statistically significant, regression analysis can give us some of the more detailed insights needed to provide targeted interventions.
+
+#### Simple model
+
+In a basic linear regression model, we use only one explanatory variable - here deprivation status - to predict the dependent variable, which is the score.
+
+While this simple regression is comparable to our t-test in that it assesses the difference between two groups, it also allows us to quantify the exact impact of deprivation status on scores. Unlike the t-test, which only tells us if there is a significant difference, regression provides an estimate of how much lower deprived students score on average. Here, the regression results in @tbl-simple_regression_results tell us that deprived students score, on average, 7 marks lower (see highlighted row).
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-simple_regression_results
+#| tbl-cap: Simple regression results
+modelsummary(list("Simple model" = model_simple), output = "kableExtra", 
+             stars = TRUE,
+             gof_omit = "AIC|BIC|Log.Lik.|F") %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  row_spec(3, background = "#aafced") %>%
+  kable_styling(bootstrap_options = "hover") 
+```
+
+We can visualise this simple regression in a chart, as in @fig-simple_regression, with lines indicating our 95% confidence interval. However, this alone tells us relatively little about what impacts scores. Our adjusted R-squared of 0.014 tells us that deprivation status can only explain 1.4% of the variance in score.
+
+```{r, echo=FALSE, warning=FALSE, fig.align="center"}
+#| label: fig-simple_regression
+#| fig-cap: Deprived students score, on average, 7 marks lower
+simple_regression_chart
+```
+
+#### Simple model with interaction term
+
+To try and gain more detailed insights into how intersecting characteristics influence outcomes, we can introduce an interaction term. In @tbl-simple_and_interaction, we add to our simple regression an interaction between deprivation and gender. By doing so, we can explore whether the impact of deprivation on students' scores is moderated by their gender.
+
+Using an interaction term like this allows us to identify patterns that may not be evident when looking at these factors independently. This can be important when designing interventions that are sensitive to the needs of different student groups, enabling a more targeted approach.
+
+We see in @tbl-simple_and_interaction that while deprivation remains a significant predictor, the interaction between deprivation and gender is not significant. This indicates that the relationship between deprivation and score does not significantly differ across genders. In other words, the impact of being from a deprived area on the score is roughly the same for male students as it is for female students.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-simple_and_interaction
+#| tbl-cap: Simple regression with interaction results
+simple_and_interaction <- list("Simple model" = model_simple,
+                                "Interaction model" = model_interaction)
+
+modelsummary(simple_and_interaction, output = "kableExtra", 
+             stars = TRUE,
+             gof_omit = "AIC|BIC|Log.Lik.|F") %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  kable_styling(bootstrap_options = "hover") 
+
+```
+
+#### Full model (multiple regression)
+
+We can expand our model to include additional regressors such as module presentation, previous qualifications, age category, and virtual learning environment (VLE) clicks. Collectively, these factors should give a better view of the variables affecting student scores. By incorporating more predictors, we can identify more subtle relationships, and the impact of each factor on outcomes.
+
+In @tbl-full_regression, we see significant effects across many of our variables.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-full_regression
+#| tbl-cap: Full regression model results
+simple_interaction_full <- list("Simple model" = model_simple,
+                                "Interaction model" = model_interaction,
+                                "Full model" = model)
+
+modelsummary(simple_interaction_full, output = "kableExtra", 
+             stars = TRUE,
+             gof_omit = "AIC|BIC|Log.Lik.|F") %>%
+  row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>% 
+  kable_styling(bootstrap_options = "hover") 
+```
+
+If we sort and plot these results, as in @fig-full_regression, we get an indication of where it might be best to target an intervention. In particular, we can see that having the highest known qualification being below A Level, having a disability, and being from a deprived area have some of the biggest effects on score. This may prompt us to think about how we can devise interventions to target these groups.
+
+This expanded approach allows us to improve our understanding of the factors that influence our outcome of interest, enabling us to prioritise intervention efforts and design interventions with these factors in mind.
+
+```{r, echo=FALSE, warning=FALSE, fig.align="center"}
+#| label: fig-full_regression
+#| fig-cap: Being disabled, being deprived, and having lower qualification levels all have significant effects on average scores
+full_regression_chart
+```
+
+## Design your intervention
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+genAudienceTable(audience=c("Evaluators", 
+                            "Practitioners",
+                            "Senior management"))
+```
+
+### Theory of change {#theory-of-change}
+
+Once a gap has been diagnosed, you can start thinking about how an intervention could address this gap, and about evaluating this intervention.
+
+Developing a theory of change is the first step in TASO's Monitoring and Evaluation Framework and the foundation of all evaluations. The theory of change should capture the reasons why you think the activities you are doing will cause the change you want to realise.
+
+TASO has a two-strand approach to theory of change development:
+
+-   **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
+-   **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
+
+::: {.callout-tip title="More theory of change resources"}
+TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/) for developing Core and Enhanced Theories of Change, including:
+
+::: columns
+::: {.column width="50%"}
+-   [Core Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)
+
+-   [Theory of Change workshop resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theory-of-change-leader-pack/)
+
+-   [Enhanced Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)
+:::
+
+::: {.column width="50%"}
+-   [Theories of Change for the ethnicity degree awarding gap (EDAG)](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-for-the-ethnicity-degree-awarding-gap/)
+
+-   [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
+:::
+:::
+:::
+
+### Post-entry typology
+
+To effectively evaluate interventions aimed at improving student success, it's important to record how students engage with those interventions. Additionally, developing a common language to describe the students involved, the outcomes achieved, and the activities undertaken would help improve our collective understanding across the sector of what works to support student success.
+
+The [post-entry MOAT](https://taso.org.uk/evidence/evaluation-guidance-resources/mapping-outcomes-and-activities-tool-moat-resources/post-entry-mapping-outcomes-and-activities-tool-moat/) (Mapping Outcomes and Activities Tool) provides a framework to describe your post-entry student support activities, in terms of their intended beneficiaries, outcomes (and suggested measures), their type and sub-type, how they are delivered and, if applicable, how they map on to the [Equality of Opportunity Risk Register](https://www.officeforstudents.org.uk/advice-and-guidance/promoting-equal-opportunities/equality-of-opportunity-risk-register/).
+
+![Overview of the main features of the post-entry MOAT](../images/dig-images/MOAT_ConciseOverview.png){#fig-MOAT fig-alt="A flowchart titled 'Beneficiaries to Activity' showing a hierarchical relationship. At the top is a box labeled 'Beneficiaries,' with two sub-boxes: 'Provider level' and 'Student Group.' An arrow points downward to a box labeled 'Outcomes,' which contains one large red box labeled 'Primary' and three smaller green boxes labeled 'Secondary.' Another arrow points downward from 'Outcomes' to a box labeled 'Activity,' which has two blue sub-boxes: 'Activity Type' and 'Activity Sub-type." fig-align="center" width="500"}
+
+The post-entry MOAT covers any HEP's activity whose ultimate beneficiary is deemed to be its own students. This includes:
+
+-   transition activities designed for students who have confirmed the HEP as a firm choice on their UCAS application
+-   activities where individual students directly benefited and participated
+-   activities in which staff or entire departments are the focus; e.g. activities focused on changing the curriculum or academic culture within a school, which may include staff training and administrative or communications activities
+-   activities involving changes to physical or virtual infrastructure, e.g. improvements to lab or study facilities, or changes to the virtual learning environment.

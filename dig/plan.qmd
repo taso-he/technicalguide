@@ -1,0 +1,68 @@
+---
+title: "Plan: Research questions and outcome measures"
+---
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+source("dig_functions.R")
+genMEFAudienceTable(stage=2, 
+                    audience=c("Evaluators", 
+                               "Practitioners", 
+                               "Senior management"))
+```
+
+After [diagnosing](diagnose.qmd) your equality gaps, the next step is to plan your evaluation. The first part of planning is to decide what your research questions and outcome measures are.
+
+## Types of evaluation {#sec-types-of-evaluation}
+
+The OfS categorises evaluation into three types:
+
+1.  Narrative
+2.  Empirical enquiry
+3.  Causal
+
+These types are explained in @tbl-types_of_evaluation. While this guide is focused predominantly on studies generating causal (type 3) evidence using institutional data, we have provided a [flow chart](plan-methods.qmd#sec-choosing-an-evaluation-design) to help you determine what kind of evaluation is most suitable and links to resources to help you achieve it.
+
+```{r, echo=FALSE, warning=FALSE}
+#| label: tbl-types_of_evaluation
+#| tbl-cap: OfS types of evaluation 
+tbl_types <- read.csv("data/tbl_types-of-evidence.csv")
+tbl_types |>
+  kableExtra::kable(row.names = FALSE, 
+        col.names = stringr::str_replace_all(colnames(tbl_types),"\\."," ")) |>
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) |>
+  kableExtra::column_spec(1, bold = TRUE) |> 
+  kableExtra::kable_styling(bootstrap_options = "hover") 
+```
+
+## Identifying research questions for causal evaluation
+
+These questions follow the general format:
+
+> Did [**the intervention**]{style="background-color:#bdccea; color:black;"} change [**a specific outcome**]{style="background-color:#aafced; color:black;"} among [**the target group**]{style="background-color:#fdb8c7; color:black;"}?
+
+For example:
+
+> Did [**peer mentoring**]{style="background-color:#bdccea; color:black;"} [**reduce stress**]{style="background-color:#aafced; color:black;"} among [**nursing students**]{style="background-color:#fdb8c7; color:black;"}?
+
+> Did the [**online Cognitive Behavioural Therapy programme**]{style="background-color:#bdccea; color:black;"} [**reduce depression**]{style="background-color:#aafced; color:black;"} among [**students**]{style="background-color:#fdb8c7; color:black;"}?
+
+To help formulate your questions, you should also consider:
+
+-   Who will use the findings and how?
+-   What do stakeholders need to learn from the evaluation?
+-   What questions will you be able to answer and when?
+
+## Identifying outcome measures
+
+Once you have established your research questions, you will need to consider which outcome measures best enable you to answer them and demonstrate success. The measures should link closely with the process, outcomes and impact you have recorded in your theory of change. A simple way to think about which measures to select is:
+
+> I'll know [**the outcome has been reached**]{style="background-color:#bdccea; color:black;"} when I see [**this indicator**]{style="background-color:#aafced; color:black;"}.
+
+> I'll know [**that student engagement has improved**]{style="background-color:#bdccea; color:black;"} when I see [**average attendance has reached 70%**]{style="background-color:#aafced; color:black;"}.
+
+::: {.callout-tip title="Outcome measures resources"}
+For more information on identifying suitable outcome measures, see:
+
+-   [TASO MEF: Plan](https://taso.org.uk/evidence/our-approach-to-evaluation/step-2-plan/#identify-outcome-measures "Identifying outcome measures"){.uri}
+-   [Post-entry MOAT](https://taso.org.uk/evidence/evaluation-guidance-resources/mapping-outcomes-and-activities-tool-moat-resources/post-entry-mapping-outcomes-and-activities-tool-moat/)
+:::

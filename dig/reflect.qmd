@@ -1,0 +1,45 @@
+---
+title: "Reflect: Reporting, interpretation and refinement of intervention"
+---
+
+```{r ft.align="left", include=TRUE, echo=FALSE, warning=FALSE, message=FALSE}
+source("dig_functions.R")
+genMEFAudienceTable(stage=4, 
+                    audience=c("Evaluators", 
+                               "Practitioners", 
+                               "Senior management"))
+```
+
+## Reporting
+
+Generating evidence can only get us so far. Ultimately, it doesn't matter how great an educational idea or intervention is on paper; what really matters is how it manifests itself in the day-to-day work of students and educational stakeholders. It is therefore crucial that findings of all evaluations are shared to enable learning across an institution.
+
+Institutions deploying widening participation activities are learning organisations. They continuously strive to do better for the participants and staff in their charge. In doing so, they try new things, seek to learn from those experiences, and work to adopt and embed the practices that work best. There has been growing recognition over the last 20 years that simply 'packaging and posting' research is unlikely, by itself, to impact significantly on decision-making and behaviours.
+
+::: {.callout-tip title="TASO reporting templates"}
+TASO have useful reporting templates for researchers and evaluators, including:
+
+::: columns
+::: {.column width="50%"}
+-   [Final project report template](https://cdn.taso.org.uk/wp-content/uploads/TASO_final_project_report_template_October_23.docx)
+
+-   [Analysis report template](https://cdn.taso.org.uk/wp-content/uploads/TASO_analysis_report_template_October_23.docx)
+:::
+
+::: {.column width="50%"}
+-   [Implementation and process evaluation (IPE) reporting template](https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_report_template_FINAL_April_24.docx)
+
+-   [Economic evaluation report template](https://cdn.taso.org.uk/wp-content/uploads/2024_TASO_EE_Report_template.docx)
+:::
+:::
+:::
+
+## Putting evidence to work
+
+When writing up your evidence report, your writing should be guided by your research protocol and should focus on answering the research questions identified. You should present expected and unexpected results as this will enable further learning and facilitate the adaptation of theories of change and the interventions themselves. It is worth considering on how to sustain the consistent and intelligent implementation of your findings in future iterations of the programme.
+
+Depending on the extent of changes that result from your findings, implementation of these can be -- at the same time -- tiring, energising, ambitious or overwhelming. It is important to be realistic about your institutional 'implementation readiness' and whether motivation, general capacity and programme-specific skills need to be developed. For example, the loss of key staff or advocates can crucially change how your evaluative findings (and their consequent implementation) can be perceived, while a reduction in budgets or staff resources can limit their use.
+
+To avoid deadlocks, consider these possibilities at the early stages of an evaluation approach and use the reflective stage to revisit and consider any discrepancies between the expected and actual findings. The risks and assumptions section of your theory of change should be used to highlight contingency plans for potential turnover of staff, or to consider additional funding sources to maintain the innovation over time. To ensure that these kind of stresses do not affect the successful implementation of your evaluation and its consequent findings, it is recommended to take regular 'pulse checks' across your key stakeholders.
+
+Once your evaluation findings lead to the implementation of your intervention as 'business as usual', it is important to continue monitoring and tracking that implementation in order to capture how the intervention, in its full roll-out, is behaving and whether your underlying assumptions, contexts and logical chains are still matching the actual implementation in its scaled-up format.

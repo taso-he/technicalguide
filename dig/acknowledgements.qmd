@@ -1,0 +1,69 @@
+---
+title: "Acknowledgements"
+---
+
+This guide has been written by [Luke Arundel](https://taso.org.uk/person/luke-arundel/) and [Rob Summers](https://taso.org.uk/person/rob-summers/). The authors would like to thank the following individuals who worked on the [Institutional Data Use project](https://taso.org.uk/research/current-projects/institutional-data-use/) in various capacities. Their valuable insights, gained through workshops and discussions, have greatly informed the content of this guide.
+
+-   Bec Aeddi (Nottingham Trent University)
+
+-   Anna Anthony (HEAT)
+
+-   Sally Andrews (Staffordshire University)
+
+-   Fabio Arico (University of East Anglia)
+
+-   Jarek Bryk (University of Huddersfield)
+
+-   Hetti Bywater (TASO)
+
+-   Sarah Conner (TASO)
+
+-   Pete Crowson (Nottingham Trent University)
+
+-   Sarah-Jane Crowson (Hereford College of Arts)
+
+-   Tatjana Damjanovic (TASO)
+
+-   Becky Ghani (TASO)
+
+-   Helena Gillespe (University of East Anglia)
+
+-   Carl Harrington (University of East Anglia)
+
+-   Michelle Hawthorne (University of East Anglia)
+
+-   Laura Hope (Nottingham Trent University)
+
+-   Matthew Horton (Wolverhampton University)
+
+-   Emma Hynd (Nottingham Trent University)
+
+-   Mike Kerrigan (Nottingham Trent University)
+
+-   Eliza Kozman (TASO)
+
+-   Matt Mills (Huddersfield University)
+
+-   Gary McGladdery (Nottingham Trent University)
+
+-   Reda Nausedaite (University of East Anglia)
+
+-   Matt Pawelski (Lancaster University)
+
+-   Guy Pattison (Nottingham Trent University)
+
+-   Nicholette Pollard-Odle (TASO)
+
+-   Rebecca Robinson (Lancaster University)
+
+-   Rain Sherlock (TASO)
+
+-   Rebecca Siddle (Nottingham Trent University)
+
+-   Myles Smith (University of East Anglia)
+
+-   Sarah Ward (University of East Anglia)
+
+-   Jessie Whaite (Lancaster University)
+
+-   Jane Wormold (Huddersfield University)

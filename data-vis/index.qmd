@@ -4,10 +4,12 @@ subtitle: A practical guide for engaging and consistent charts
 format: html
 title-block-banner: "#3b66bc"
 title-block-banner-color: "white"
+author: Luke Arundel
+date: last-modified
+date-format: "MMMM, YYYY" 
 ---
 
-::: {layout-ncol=3}
-
+::: {layout-ncol="3"}
 ![](../images/data-vis-images/ucas_fig_1){group="my-group"}
 
 ![](../images/data-vis-images/ucas_fig_2){group="my-group"}

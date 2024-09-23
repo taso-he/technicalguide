@@ -1,0 +1,163 @@
+---
+title: "creating_dig_pdf"
+---
+
+To save as pdf: render --\> Print --\> Pages: 2 - (n-1) --\> Untick Headers (keep Backgrounbd graphics ticked) --\> Save as PDF
+
+{{< pagebreak >}}
+
+{{< pagebreak >}}
+
+# [Data Infrastructure Guide: Using and developing institutional data infrastructure to support student success in Higher Education]{style="color: #3b66bc;"}
+
+{{< pagebreak >}}
+
+# Introduction
+
+## What is this document?
+
+## Who is it for?
+
+## How is the guide organised?
+
+{{< pagebreak >}}
+
+# Diagnose: Identifying equality gaps using institutional data
+
+# Read the data for the tables
+
+## Identifying gaps in the student experience
+
+### Descriptive analysis {#descriptive-analysis}
+
+### t-tests {#t-tests}
+
+### ANOVA {#anova}
+
+### Regression {#regression}
+
+#### Simple model
+
+#### Simple model with interaction term
+
+#### Full model (multiple regression)
+
+## Design your intervention
+
+### Theory of change
+
+### Post-entry typology
+
+{{< pagebreak >}}
+
+# Plan: Research questions and outcome measures
+
+## Types of evaluation {#sec-types-of-evaluation}
+
+## Identifying research questions for causal evaluation
+
+## Identifying outcome measures
+
+{{< pagebreak >}}
+
+# Plan: Research methods
+
+## Choosing an Evaluation Design {#sec-choosing-an-evaluation-design}
+
+## Planning the analysis
+
+### Resourcing checklist
+
+#### Data
+
+#### People
+
+#### Systems
+
+### Writing an analysis plan/trial protocol
+
+### Ethical approval
+
+{{< pagebreak >}}
+
+# Plan: Methodology overview
+
+## Causal evaluations (type 3) {#sec-causal-evaluations}
+
+### Quasi-experimental designs (QED)
+
+#### Difference in difference
+
+##### Considerations
+
+#### Regression discontinuity design
+
+##### Considerations
+
+#### Instrumental Variables
+
+##### Considerations
+
+#### Matching methods
+
+##### Considerations
+
+#### Interrupted time-series analysis
+
+##### Considerations
+
+#### Synthetic control methods
+
+##### Considerations
+
+### Randomised controlled trials (RCTs)
+
+#### Individual RCT
+
+##### Considerations
+
+#### Cluster RCT
+
+##### Considerations
+
+#### Method Waitlist or Stepped-wedge RCT
+
+##### Considerations
+
+## Correlational evaluations (type 2) {#sec-correlational-evaluations}
+
+## Impact evaluation with small cohorts (small n evaluation) {#sec-small-n-evaluation}
+
+## Implementation and process evaluation
+
+{{< pagebreak >}}
+
+# Measure: Collection and analysis of data
+
+## QEDs
+
+### Matching
+
+### Differences in differences
+
+## RCTs
+
+{{< pagebreak >}}
+
+# Reflect: Reporting, interpretation and refinement of intervention
+
+## Reporting
+
+## Putting Evidence to Work
+
+{{< pagebreak >}}
+
+# Barriers and facilitators of effective evaluation
+
+## Barriers to effective evaluation
+
+## Facilitators of effective evaluation
+
+{{< pagebreak >}}
+
+{{< pagebreak >}}
