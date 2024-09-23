@@ -81,6 +81,7 @@ For example, if we believe that there is likely to be a gap in attainment betwee
 #| layout-ncol: 2
 #| label: fig-deprivation_gaps
 #| fig-cap: "Deprivation gaps"
+#| fig-alt: "Box plots showing that both overall and across modules, deprived students score lower on average"
 #| fig-subcap:
 #|   - "Average scores are lower for students from deprived areas"
 #|   - "Across modules, deprived students score lower on average" 
@@ -96,6 +97,7 @@ To further understand the dynamics of this gap, we may want to look at how it ha
 #| layout-ncol: 2
 #| label: fig-over_time_deprivation_gaps
 #| fig-cap: "Deprivation gaps over time"
+#| #| fig-alt: "Line charts showing that both overall and across modules, there are gaps in scores between deprived students and their non-deprived peers"
 #| fig-subcap:
 #|   - "Over time, there are persistent gaps in average module scores between deprived students and their non-deprived peers"
 #|   - "Between courses, there is variation in the size of the gap in average module scores between deprived students and their non-deprived peers" 
@@ -161,6 +163,7 @@ tidy_tukey %>%
 #| layout-ncol: 2
 #| label: fig-highest-ed
 #| fig-cap: "Gaps in score by highest education"
+#| fig-alt: "Box plot showing that students with higher levels of education score higher on average, and forest plot showing many of these differences are statistically significant"
 #| fig-subcap:
 #|   - "Students with higher levels of educuation score higher on average"
 #|   - "These differences are mostly statistically significant" 
@@ -199,6 +202,7 @@ We can visualise this simple regression in a chart, as in @fig-simple_regression
 ```{r, echo=FALSE, warning=FALSE, fig.align="center"}
 #| label: fig-simple_regression
 #| fig-cap: Deprived students score, on average, 7 marks lower
+#| fig-alt: "Dot plot with error bars showing that deprived students score, on average, 7 marks lower, and that this difference is statistically significant"
 simple_regression_chart
 ```
 
@@ -251,6 +255,7 @@ This expanded approach allows us to improve our understanding of the factors tha
 ```{r, echo=FALSE, warning=FALSE, fig.align="center"}
 #| label: fig-full_regression
 #| fig-cap: Being disabled, being deprived, and having lower qualification levels all have significant effects on average scores
+#| fig-alt: "A forest plot showing that being disabled, being deprived, and having lower qualification levels all have significant effects on average scores"
 full_regression_chart
 ```
 

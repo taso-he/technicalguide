@@ -67,7 +67,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Difference-in-difference example"}
 ::: columns
 ::: {.column width="50%"}
-![Difference-in-difference diagram](..\images/dig-images/diff-in-diff.png){#fig-diff-in-diff fig-align="center"}
+![Difference-in-difference diagram](..\images/dig-images/diff-in-diff.png){#fig-diff-in-diff fig-align="center" fig-alt="Difference-in-difference diagram comparing module grades between an intervention group and a comparator group over time, showing the pre- and post-intervention trends and the intervention effect."}
 :::
 
 ::: {.column width="50%"}
@@ -100,7 +100,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Regression discontinuity design example"}
 ::: columns
 ::: {.column width="50%"}
-![Regression discontinuity design diagram](..\images/dig-images/rdd.png){#fig-rdd fig-align="center"}
+![Regression discontinuity design diagram](..\images/dig-images/rdd.png){#fig-rdd fig-align="center" fig-alt="Regression discontinuity design diagram showing retention rates by grade, with a cutoff at 70 separating the intervention group and comparator group. The intervention effect is highlighted at the cutoff."}
 :::
 
 ::: {.column width="50%"}
@@ -129,7 +129,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Instrumental variables example"}
 ::: columns
 ::: {.column width="50%"}
-![Instrumental variables diagram](..\images/dig-images/iv.png){#fig-iv fig-align="center"}
+![Instrumental variables diagram](..\images/dig-images/iv.png){#fig-iv fig-align="center" fig-alt="Diagram illustrating an instrumental variables approach, where distance to an information session influences session attendance, which in turn affects graduate outcomes. The information session serves as the treatment, and distance to the session is the instrumental variable."}
 :::
 
 ::: {.column width="50%"}
@@ -159,7 +159,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Matching methods example"}
 ::: columns
 ::: {.column width="50%"}
-![Matching methods diagram](..\images/dig-images/matching_methods.png){#fig-matching fig-align="center"}
+![Matching methods diagram](..\images/dig-images/matching_methods.png){#fig-matching fig-align="center" fig-alt="Diagram showing control and matched comparator groups, represented by blue and green circles of varying sizes. Arrows connect matched pairs between the two groups, demonstrating the matching process used to compare similar students"}
 :::
 
 ::: {.column width="50%"}
@@ -189,7 +189,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Interrupted time series example"}
 ::: columns
 ::: {.column width="50%"}
-![Interrupted time-series diagram](..\images/dig-images/interrupted_time_series.png){#fig-interrupted-time-series fig-align="center"}
+![Interrupted time-series diagram](..\images/dig-images/interrupted_time_series.png){#fig-interrupted-time-series fig-align="center" fig-alt="Interrupted time series diagram showing student outcomes over time, with a dashed vertical line marking the start of institution-wide change. Pre- and post-intervention trends are represented by blue and green dots and lines, respectively, indicating the effect of the intervention on outcomes."}
 :::
 
 ::: {.column width="50%"}
@@ -217,7 +217,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Synthetic control methods example"}
 ::: columns
 ::: {.column width="50%"}
-![Synthetic control diagram](..\images/dig-images/synthetic-control.png){#fig-synthetic-control fig-align="center"}
+![Synthetic control diagram](..\images/dig-images/synthetic-control.png){#fig-synthetic-control fig-align="center" fig-alt="Synthetic control diagram comparing attainment over time between an intervention group and a weighted average comparator group. A dashed vertical line marks the intervention, and the post-intervention difference between the groups highlights the intervention effect."}
 :::
 
 ::: {.column width="50%"}
@@ -252,7 +252,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Individual RCT example"}
 ::: columns
 ::: {.column width="50%"}
-![Individual RCT diagram](..\images/dig-images/individual_rct.png){#fig-individual-rct fig-align="center"}
+![Individual RCT diagram](..\images/dig-images/individual_rct.png){#fig-individual-rct fig-align="center" fig-alt="Diagram showing participants randomly allocated into two groups: an intervention group and a control group. Each group consists of individuals represented by different colored dots, highlighting the randomisation process in an RCT."}
 :::
 
 ::: {.column width="50%"}
@@ -282,7 +282,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Cluster RCT example"}
 ::: columns
 ::: {.column width="50%"}
-![Cluster RCT diagram](..\images/dig-images/cluster_rct.png){#fig-cluster fig-align="center"}
+![Cluster RCT diagram](..\images/dig-images/cluster_rct.png){#fig-cluster fig-align="center" fig-alt="Diagram showing participants grouped into schools, modules, or classes, with entire clusters being randomly assigned to either an intervention group or a control group. Each cluster contains multiple individuals represented by blue circles."}
 :::
 
 ::: {.column width="50%"}
@@ -311,7 +311,7 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.callout-note title="Waitlist RCT example"}
 ::: columns
 ::: {.column width="50%"}
-![Waitlist RCT diagram](..\images/dig-images/waitlist_rct.png){#fig-waitlist fig-align="center"}
+![Waitlist RCT diagram](..\images/dig-images/waitlist_rct.png){#fig-waitlist fig-align="center" fig-alt="Diagram illustrating a waitlist RCT where the intervention group receives treatment in Term 1, and the control group does not. In Term 2, both groups receive the intervention, with the intervention effect measured between the groups in Term 1."}
 :::
 
 ::: {.column width="50%"}

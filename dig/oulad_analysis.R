@@ -429,8 +429,8 @@ readable_names <- c(
   "code_presentation2013J" = "2013J",
   "code_presentation2014B" = "2014B",
   "code_presentation2014J" = "2014J",
-  "qualificationsLower than A Level or no formal quals" = "Lower than A Level/no formal quals",
-  "qualificationsHE or post graduate qualification" = "HE or post graduate qual",
+  "qualificationsLower than A Level or no formal qualifications" = "Lower than A Level or no formal quals",
+  "qualificationsHE or post-graduate qualification" = "HE or post graduate qual",
   "num_of_prev_attempts" = "Number of Previous Attempts",
   "age_categoryUnder 35" = "Under 35",
   "total_vle_clicks_thousands" = "Total VLE Clicks (Thousands)"
