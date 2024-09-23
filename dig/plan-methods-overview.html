@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Plan: Methodology overview – Technical Guides</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../dig/measure.html" rel="next">
+<link href="../dig/plan-methods.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2PY6X92Q3P"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
+</script>
+<link href="../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Plan: Methodology overview – Technical Guides">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://taso-he.github.io/technicalguide/dig/data:image/png;base64,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">
+<meta property="og:site_name" content="Technical Guides">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://taso-he.github.io/technicalguide/" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo_transp.png" alt="TASO logo" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="https://taso-he.github.io/technicalguide/">
+    <span class="navbar-title">Technical Guides</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/newsletter/"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Sign up for our newsletter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/taso-he/technicalguide"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/taso_he"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://uk.linkedin.com/company/taso"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/plan-methods-overview.html">Plan: Methodology overview</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to the guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data infrastructure guide</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/diagnose.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Research questions and outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Choosing methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods-overview.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Plan: Methodology overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/measure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/reflect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Barriers and facilitators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualisation style guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles for good data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/styling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Styling charts for TASO publications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References and further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding good practice guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/good_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good practice tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/styler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic styling with styleR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/furtherresources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contact point</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sec-causal-evaluations" id="toc-sec-causal-evaluations" class="nav-link active" data-scroll-target="#sec-causal-evaluations">Causal evaluations (type 3)</a>
+  <ul>
+  <li><a href="#quasi-experimental-designs-qed" id="toc-quasi-experimental-designs-qed" class="nav-link" data-scroll-target="#quasi-experimental-designs-qed">Quasi-experimental designs (QED)</a>
+  <ul class="collapse">
+  <li><a href="#difference-in-difference" id="toc-difference-in-difference" class="nav-link" data-scroll-target="#difference-in-difference">Difference-in-difference</a></li>
+  <li><a href="#regression-discontinuity-design" id="toc-regression-discontinuity-design" class="nav-link" data-scroll-target="#regression-discontinuity-design">Regression discontinuity design</a></li>
+  <li><a href="#instrumental-variables" id="toc-instrumental-variables" class="nav-link" data-scroll-target="#instrumental-variables">Instrumental variables</a></li>
+  <li><a href="#matching-methods" id="toc-matching-methods" class="nav-link" data-scroll-target="#matching-methods">Matching methods</a></li>
+  <li><a href="#interrupted-time-series-analysis" id="toc-interrupted-time-series-analysis" class="nav-link" data-scroll-target="#interrupted-time-series-analysis">Interrupted time-series analysis</a></li>
+  <li><a href="#synthetic-control-methods" id="toc-synthetic-control-methods" class="nav-link" data-scroll-target="#synthetic-control-methods">Synthetic control methods</a></li>
+  </ul></li>
+  <li><a href="#randomised-controlled-trials-rcts" id="toc-randomised-controlled-trials-rcts" class="nav-link" data-scroll-target="#randomised-controlled-trials-rcts">Randomised controlled trials (RCTs)</a>
+  <ul class="collapse">
+  <li><a href="#individual-rct" id="toc-individual-rct" class="nav-link" data-scroll-target="#individual-rct">Individual RCT</a></li>
+  <li><a href="#cluster-rct" id="toc-cluster-rct" class="nav-link" data-scroll-target="#cluster-rct">Cluster RCT</a></li>
+  <li><a href="#waitlist-or-stepped-wedge-rct" id="toc-waitlist-or-stepped-wedge-rct" class="nav-link" data-scroll-target="#waitlist-or-stepped-wedge-rct">Waitlist or stepped-wedge RCT</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#sec-correlational-evaluations" id="toc-sec-correlational-evaluations" class="nav-link" data-scroll-target="#sec-correlational-evaluations">Correlational evaluations (type 2)</a></li>
+  <li><a href="#sec-small-n-evaluation" id="toc-sec-small-n-evaluation" class="nav-link" data-scroll-target="#sec-small-n-evaluation">Impact evaluation with small cohorts (small n evaluation)</a></li>
+  <li><a href="#implementation-and-process-evaluation" id="toc-implementation-and-process-evaluation" class="nav-link" data-scroll-target="#implementation-and-process-evaluation">Implementation and process evaluation</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/plan-methods-overview.html">Plan: Methodology overview</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Plan: Methodology overview</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-c11e5c6c{}.cl-c10b6a30{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-c10b6a44{font-family:'Source Sans Pro';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:underline;color:rgba(59, 102, 188, 1.00);background-color:transparent;}.cl-c119869c{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c11986a6{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-c1199ec0{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-c1199ec1{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-c11e5c6c"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-c1199ec0"><p class="cl-c119869c"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TtVIqHewg4pChOtlFRRxLFYtgobQVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi7OCk6CIl/i8ptIjx4Lgf7+497t4BQqvGVLMvDqiaZWSSCTFfWBUDrxhAAGEE4ZeYqaeyizl4jq97+Ph6F+NZ3uf+HENK0WSATySOM92wiDeIZzctnfM+cYRVJIX4nHjSoAsSP3JddvmNc9lhgWdGjFxmnjhCLJZ7WO5hVjFU4hniqKJqlC/kXVY4b3FWaw3WuSd/YaiorWS5TnMMSSwhhTREyGigihosxGjVSDGRof2Eh3/U8afJJZOrCkaOBdShQnL84H/wu1uzND3lJoUSQP+LbX+MA4FdoN207e9j226fAP5n4Err+ustYO6T9GZXix4B4W3g4rqryXvA5Q4w8qRLhuRIfppCqQS8n9E3FYDhWyC45vbW2cfpA5CjrpZvgINDYKJM2ese7x7s7e3fM53+fgAka3KHkP7f3AAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+gGBw8QHQbMx+MAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAALC0lEQVR42t2baWxc1RXHf/cts3hmvI3tcZzY2SGFNNACIiGgElW0ZZGqSoCgpUAqWgqULUBYhTEq2SBAwlL2ioiWEhpKJZZUXUgbSCKgAloH2sSJs9iO9232mffu7Qdn8RqP34ztqMfyh2e/u/3f2c+5gvGmC9e72ZUug1QZyhVCM8vRzSm4XCVoeh5KSSwrjJXuwk43YdstqGQLeZ5mQqe3sWWJNZ7bE+My66xVBVjGHLy+b1Nc9H2EMFFYKCUz25XQEMLEsnvo6XqHVPRvRCJ7aauJnLgAnPG8SWf3LMz8SygpvhSlJAqV0312tv2GRGQzBxL7oOb4YJ5S7eLLmtQEALBRp+rA6ZSE7sdthnJ46JF2LAjHvqS38wn23/EVQgxdb+ajCzDMQnbf9o/xBWDWqiq8pXcT8J3GZFBn97vI1EvU3dJ27PCPhCiqepHuzufYe+t7o01hOFp40eNe2lxXEgwuRQjBZFFx4cUodSGsW4ur830s8vFVPovLLEYTRZlMMXYApq6eRjS4mhL3dE4EEkKjJHQX8YJL8ehFuMxCAKQI5B6A6WvPoaz8YXTdM6pgqQkGwuuZOeDZ5Sp2DoBSAh4SvHmqoHRnH4vf7j+X0ikP4dXceBEUajrFyiAoDIKYFAoXPs3AJ1y02FFWWE0YkygeplE+NgA+rc7DDv4E3ZjGZy8Uoqb4mNvtQczwIrQ8Xsv/Jpow0YWGGEV5hu3kpIuG21s5dj/go19Op2DmJlz++VktXpdu5sH0wUnlAIFg5YF7OH/51uO9pg14WvzAftp2XUK8e1tWi0uYVOsAYKEIznmLj9acnjkAAEtqmuk+eA3pyM4sAFCTLgJSKdJCp3DaK3y8pjxzAADMvHasZLPjxZVSGbOpGKd4RBOClEpj+k7BKFrFxo16ZlZAKcGOtT8ir/QilEzmjAMEBkol6O79ACvyGVJ1YqejSE3HML1oIojHfzYF+d9CIkDZ2QEApFVfJBkIXcO03dtR6oXBrvNQALY8GiJUdafjwx9hvyPHtu0YXe0bkMkdeKL7+c9xA5S3mfa4F2HPxuM5l2DpVVmBkDwMolJJAmVX89Ga3wLhkQHYuFEnv7MGwzszK1dGotCETuuhx0h436fp1ljGYxuWxYFaoBbPyjeI+i6irOzGMe9HACmOcZGn4GxiXTejqlchjkWSA3VAqP4k/KHLs/bjUr0f07DvMvbetomm62OO5/n3vV3Y6XrHFiXeDwClLAKhpWzxlQ2vBD+oNigsXYnQvNknRLrfo/HuhqznmfPoIqZOezLjRMoQAOTAbJLhqcQfuL3P0x0MgOGpwl24ODc2WMqs56haeQZlVU8iVcrxHDGG7sMfvIytK0uGAuAt+BmaHsgJAELPDoCZa0+jYuY6lLKOmkon5jKsrCHeru6uwOO9eKAS/MuKIL7Sa3Nng3EOwIINPmI9X6ej7WWU0BFCRygDpTRsNDSho5TGWYGzKPHMQh72PJUGtlKHn/vyUuZh2AZrtEDFg3z6/EbOvD7WB4DH9TV0V4EzjW+HEcKF0NzHAMiCA/51dRR4bdT3NqyZTem8OlADzXX/lJwY9Hx0f65Soq1Tgd19ItDHEk40raCr/kE6dl8H/RSVsGzGmxYv30PPwTUjepd93374MwnNxO07t49Za5/xU1B5j8NsjAspN7Eouon2vdeh7EQfVxiSiaBEz8sI4XY0NjDlBpQSGl2tZY5zox17bmfxXa2IGsmiZa/TVv9DpB1BKntCADjvvl30NK53NNblO4utT5VoKHclSo7d1AjNTTLyp36sp1i87H3a636AEBYTRZHw70cM6kZzFVVPiYHpdu72ymn1g0RCAVuprXZNGAAe1y4Q5hBlOGrEKpNonqkaulHpaOHugytYsjQx7P/m16QmDICFt7VgxT93NFbXKjQM7wxn3l7iC04UCje/7gwAEdRwBeY5swCy6YQBQKYbnQHgKtQwzHIHQxXxZPcJA4Atu5xlroRH4/+BskjAathWqyMP0HQXnjgA6AUOZSemkez90tmilJ8wAGi6szqltHs1rNR+R4NNT25L4iqL7HB+6HJnlky1a1gpZxq0aPoDbNvozR0bj+KM1T7jH/bvOx4JYeSd7kx5ppo0lF2P02AgWTdxJfJw+ko+XH3y0IBInAQq7ciVt+1GjZR1AKGN3XVVMkme94IJ1PR5BGe+x7a13+if0yNQfMXhlMiYZY6Aq13DW9mKcpgELp69ng8eK5kYRScMdPdUiqreYdvq81BKsG3FPPIrbnQ0XzqynTPvbNdYeFUv4aZ1zhSXSuMRl00QC5iHvbcgwZP+wI4nLsHMvxalnBVwwoee42gYmQq/PQq3jMQikuDc9fx1zezx5wDN7Gf2fARn/Y6CaTc7+3AyRcLeDkeSoolILdLqQTMKhqSX3kh8xT5SCEBTAv2wyjzyqwnBweC9zHlqJ0KTICVCSIQusdIWhi6Rto0QcSrmb3Le+SmMwd6P89gh2YZpNBwDYElNO/987k0CU64b8nKvktSSOq4ywTePEt+8EVPXlh2msf6nWbW9KmHkjJt6mqs5Z1mcAZmUZOTpozm9/uQbg5+thvmRKkVX4000PXAwOxEgNwBYiQbi1uZj0x7NkQX2kAx/OuTj+nHOagJB64GfU7d8Tw4cJT0XmpRYx+ucf0fHUADOvD5NuOXOQXV5hd+hrAmhcWDfjdTf/d+stx16dD69+dmX7az4PqzU0/17BAaGw6loLZHWTQM8w7wsWM/lPZk56/Mdj5+3IsicdT9metUrGN5ZWTpSJuG2lzn71taBLDGYPl5bSaDy7+juCgB2phtYbTU7FgGJRXvLKyhrO1XFB9gyQh7xCFVU5+H2z0H3nEtp2VUoJUkrxXr3yZTqzsFMdO9AtV7MaXdFjw+AUoLtT9xE6dynUDJJXfoQD1uNOZA+A4VFJLyNRPQTlN1OSkVQtsBw5aGLEJ7AQgr8C/tMVT9RtICn3fMo1vwOv76b9t1LWbjs1dFbZIRQ7Fi/gUT3Fbjzz8SDjiL7xnpFnwn0B87BHzjnKIcMdrJGKqpk00wVPvQSm3s3sGhoa/3wKbGFt/TSe+gXKJnAFLnQvmP1MAcfHrQsANDMcr7jLxneuo5Ei5d/TuvuK/AYhUxMpW90feKU8oIXkFf8In9eVZA5AADnLd9M/e5rToy0l8gugesr+R6h8o1sri4+vhIcTDN+7aHCtxUpJ68B2gZe9CwgT7hGFSlbSWyrFxXZibRiKBlH2UkQUaTsIp2qJ9D16pHq1eg2ft+1KSreTE06B0RknAgxoipFWKbpVSnasWgnTSc2PdImgSIhk3Q33MaaaC0AbacqLtup4CE13P2izOTqrNfeQjfKJlkHjF7CtawwHS33UH9HxmW7zOQqmToWyCSSjcSTjRMOwGiHj8Z20dB59VgOnzkA8URfz18stod483W07V1KZ/vrGTdFjyswStLe+ivikRto7nd7LEPK0M+XPaSsLlqb76T5vsO9tupZ5j35LkbBcvx5Cybl8D2RD4m1rGP//YeykazRac76S4n2fsKhB4YpokzCxclYop5ox1rqer8Y9QZpTgCYUe1hX83xg5gznjdp65iLL3gFRYXfRSkrp1dnNaHR0fEW6e4/UpXcy5YaKzcTjwdVrSxC1+biLryQ4qKLUKqvWTnTVhwhNAQGkhTdXe8Sj27GNPdQd0vveBiX8aVFj3tpssuxZAjDnILbVYFmVuA2SxCGr8/RsaKk0i3IdAN2vJG0bCHgboWu5kwuQGdD/wMV1Ev0c9aFZQAAAABJRU5ErkJggg=="></p></td><td class="cl-c1199ec1"><p class="cl-c11986a6"><a href="https://taso.org.uk/evidence/our-approach-to-evaluation/step-2-plan/"><span class="cl-c10b6a44">Plan</span></a></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-c1199ec0"><p class="cl-c119869c"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-c1199ec1"><p class="cl-c11986a6"><span class="cl-c10b6a30">Evaluators</span><br><span class="cl-c10b6a30">Practitioners</span><br><span class="cl-c10b6a30">Senior management</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>The main purpose of this guide is to help you use institutional data to evaluate student success, and the bulk of this page will focus on unpacking quantitative <a href="#sec-causal-evaluations">causal</a> methods. We include explanations, examples, diagrams and key considerations for each quantitative causal methodology.</p>
+<p>However, after following the <a href="../dig/plan-methods.html#sec-choosing-an-evaluation-design">flowchart</a>, you may have found that generating quantitative causal evidence isn’t feasible in your situation. This could be, for example, because your sample size is too small, or the outcomes you’re interested in are not meaningfully measurable in a quantitative manner. If this applies, please see our section on <a href="#sec-small-n-evaluation">impact evaluation with small cohorts</a>.</p>
+<section id="sec-causal-evaluations" class="level2">
+<h2 class="anchored" data-anchor-id="sec-causal-evaluations">Causal evaluations (type 3)</h2>
+<p>Deciding which methods are most suitable to produce causal evidence can feel difficult. The <a href="../dig/plan-methods.html#sec-choosing-an-evaluation-design">flowchart</a> and the following sections will help you explore which experimental or quasi-experimental methods might work for your evaluation.</p>
+<p>Before using any specific experimental or quasi-experimental method, it is also important to consult more detailed resources. Each method comes with its own set of assumptions, requirements and considerations that will significantly impact the validity and reliability of your research findings.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Causal evaluation resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Causal evaluation resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/">TASO evaluation guidance</a></p></li>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/TASO-Report-Evaluating-complex-interventions-using-randomised-controlled-trials.pdf">TASO: Evaluating complex interventions using randomised controlled trials</a></p></li>
+<li><p><a href="https://mixtape.scunning.com/">Causal Inference: The Mixtape</a> (Scott Cunningham)</p></li>
+<li><p><a href="https://www.mostlyharmlesseconometrics.com/">Mostly Harmless Econometrics</a> (Joshua D. Angrist &amp; Jörn-Steffen Pischke)</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://link.springer.com/book/10.1057/9780230583993">Designing Randomised Trials in Health, Education and the Social Sciences</a> (David Torgerson &amp; Carole Torgerson)</p></li>
+<li><p><a href="https://openknowledge.worldbank.org/entities/publication/ebbe3565-69ff-5fe2-b65d-11329cf45293">Impact Evaluation in Practice</a> (World Bank)</p></li>
+<li><p><a href="https://www.econometrics-with-r.org/">Econometrics with R</a> (Christoph Hanck, Martin Arnold, Alexander Gerber, and Martin Schmelzer)</p></li>
+<li><p><a href="https://matheusfacure.github.io/python-causality-handbook/landing-page.html">Causal Inference for the Brave and True</a> (Matheus Facure Alves)</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<p>As with the flowchart, these sections adapt and build on insights from the <a href="https://assets.publishing.service.gov.uk/media/5e96cab9d3bf7f412b2264b1/HMT_Magenta_Book.pdf">Magenta Book</a>, published under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence</a>.</p>
+<section id="quasi-experimental-designs-qed" class="level3">
+<h3 class="anchored" data-anchor-id="quasi-experimental-designs-qed">Quasi-experimental designs (QED)</h3>
+<section id="difference-in-difference" class="level4">
+<h4 class="anchored" data-anchor-id="difference-in-difference">Difference-in-difference</h4>
+<ul>
+<li>This method estimates the effect of an intervention by comparing the difference in outcomes between those who received the intervention and those who did not, before and after the intervention took place.</li>
+<li>This method helps to isolate the effect of receiving the intervention from other changes over time that might affect the outcome, allowing you to control for unobserved factors.</li>
+<li>This method relies on the assumption that both groups would have followed similar trends in outcomes over time if the intervention wasn’t introduced (parallel trends assumption).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Difference-in-difference example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Difference-in-difference example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-diff-in-diff" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-diff-in-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Difference-in-difference diagram
+</figcaption>
+<div aria-describedby="fig-diff-in-diff-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/diff-in-diff.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: Difference-in-difference diagram"><img src="..\images/dig-images/diff-in-diff.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A mentoring programme is designed to improve module grades.</p></li>
+<li><p>It is rolled out to students in one academic department, but not to students in another similar department.</p></li>
+<li><p>The students in both departments have similar characteristics.</p></li>
+<li><p>Prior to the intervention the trends in attainment over time were similar.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations" class="level5">
+<h5 class="anchored" data-anchor-id="considerations">Considerations</h5>
+<ul>
+<li>Difficult if there is no clear timing of the intervention.</li>
+<li>For the most robust evaluation, requires outcome data before, during and after the intervention.</li>
+<li>Identifying a suitable comparator group can be difficult.</li>
+<li>Parallel trends assumption can be hard to establish and may not hold true.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="regression-discontinuity-design" class="level4">
+<h4 class="anchored" data-anchor-id="regression-discontinuity-design">Regression discontinuity design</h4>
+<ul>
+<li>This method estimates the effect of an intervention for which participant eligibility depends on whether an individual exceeds a threshold or cutoff (e.g.&nbsp;module grade).</li>
+<li>Individuals on either side of the cutoff are assumed to be similar, except for whether they received the intervention or not.</li>
+<li>By comparing individuals just below the cutoff (and did not receive intervention) to those just above (and did receive the intervention), any difference in outcomes can be attributed to the intervention, providing causal evidence.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Regression discontinuity design example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Regression discontinuity design example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-rdd" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-rdd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Regression discontinuity design diagram
+</figcaption>
+<div aria-describedby="fig-rdd-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/rdd.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Figure&nbsp;2: Regression discontinuity design diagram"><img src="..\images/dig-images/rdd.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A bursary is given to disadvantaged students achieving a final grade of 70 or higher at the end of their first year, aiming to increase retention.</p></li>
+<li><p>Retention rates of disadvantaged students who would have been eligible, but scored 69 (and a little below), are compared with students who scored 70 (and a little above) and received the bursary.</p></li>
+<li><p>The comparison groups are clearly and objectively defined by the cutoff.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-1" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-1">Considerations</h5>
+<ul>
+<li>Conclusions may not apply to those further from the cutoff</li>
+<li>Accurate estimation requires a large amount of data close to the cutoff.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="instrumental-variables" class="level4">
+<h4 class="anchored" data-anchor-id="instrumental-variables">Instrumental variables</h4>
+<ul>
+<li>This method can be used when there is an external factor (the instrument) that influences whether someone participates in the intervention, but is not directly linked to the outcome being studied.</li>
+<li>A good instrumental variable is exogenous; that is the instrumental variable must affect the likelihood of taking part in the intervention but be unrelated to the outcome, other than through the intervention itself.</li>
+<li>This method deals with hidden biases (such as motivation) and can address unobserved confounding variables. By comparing the outcomes of those influenced by the instrument to join the intervention to those who are not, the effect of the intervention can be determined.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Instrumental variables example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Instrumental variables example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-iv" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-iv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Instrumental variables diagram
+</figcaption>
+<div aria-describedby="fig-iv-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/iv.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Figure&nbsp;3: Instrumental variables diagram"><img src="..\images/dig-images/iv.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>An information and guidance session aims to improve graduate outcomes (e.g.&nbsp;employment).</p></li>
+<li><p>The distance a student would have to travel to the session location might be a good instrument that could be both <strong><em>relevant</em></strong> to participation in the session and <strong><em>unrelated (external or exogenous)</em></strong> to the session outcomes could be the distance to the session location:</p></li>
+<li><p><strong>Relevant:</strong> The distance between a student’s residence and the session location could influence their chances of attending.</p></li>
+<li><p><strong>Unrelated:</strong> The distance a student travels to the session is unlikely to directly affect graduate outcomes. It influences outcomes primarily through its effect on session attendance.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-2" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-2">Considerations</h5>
+<ul>
+<li>Finding a valid instrument is hard: many factors will have some association with outcomes.</li>
+<li>Potential bias if the instrumental variable influences the outcome by a means unrelated to the intervention (i.e., it is not perfectly exogenous).</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="matching-methods" class="level4">
+<h4 class="anchored" data-anchor-id="matching-methods">Matching methods</h4>
+<ul>
+<li>These methods can be used to create a comparison group by matching individuals from the population who do not receive an intervention with individuals who do using characteristics (such as grades, entry route, gender, ethnicity) that could influence both the likelihood of receiving the intervention and the outcomes of interest.</li>
+<li>The comparison group and intervention group will be similar based on those key characteristics. This creates pairs or groups that are comparable, except for the intervention.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Matching methods example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Matching methods example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-matching" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Matching methods diagram
+</figcaption>
+<div aria-describedby="fig-matching-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/matching_methods.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Figure&nbsp;4: Matching methods diagram"><img src="..\images/dig-images/matching_methods.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A new online tutoring programme for first-year students struggling with quantitative skills is introduced.</p></li>
+<li><p>To evaluate its impact on grades, students who receive the programme are matched with similar students who do not, based on their entry route to higher education, prior module marks, and VLE engagement, creating comparable groups.</p></li>
+<li><p>The grades in these groups are then compared.</p></li>
+<li><p>This approach is intuitive and easy to understand, and can be more powerful when paired with a difference-in-difference method.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-3" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-3">Considerations</h5>
+<ul>
+<li>Matching can only control for observed variables; any differences in unobserved variables can bias the results.</li>
+<li>Heavily relies on the availability and quality of data on relevant covariates.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="interrupted-time-series-analysis" class="level4">
+<h4 class="anchored" data-anchor-id="interrupted-time-series-analysis">Interrupted time-series analysis</h4>
+<ul>
+<li>This method can be used when an intervention takes place in the whole population of interest and the outcome measure is known over a period of time before and after an intervention (the interruption).</li>
+<li>The effects of an intervention are evaluated by obtaining outcome measures at several points before and after an intervention is introduced, allowing the change in level and trend of outcomes to be compared.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Interrupted time series example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Interrupted time series example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-interrupted-time-series" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-interrupted-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Interrupted time-series diagram
+</figcaption>
+<div aria-describedby="fig-interrupted-time-series-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/interrupted_time_series.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Figure&nbsp;5: Interrupted time-series diagram"><img src="..\images/dig-images/interrupted_time_series.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A HEP introduces an institution-wide change in mental health and wellbeing support, which includes support for all students at key transition points and ‘mental health champions’ on every course.</p></li>
+<li><p>Student outcomes across the HEP - such as wellbeing, engagement and attainment - before and after the change was introduced are compared.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-4" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-4">Considerations</h5>
+<ul>
+<li>Requires extensive data before and after the intervention (whole-provider change) comes in.</li>
+<li>Confidence in the causal impact of the intervention can be higher if there are no other changes occurring around the time of the intervention which could also affect the outcome. Consequently, unexpected events that occur around the time of the intervention may influence outcomes and confound the results.</li>
+<li>If any changes in outcome and/or its trend do not match the intervention’s timing, then it is hard to support a cause-and-effect relationship.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="synthetic-control-methods" class="level4">
+<h4 class="anchored" data-anchor-id="synthetic-control-methods">Synthetic control methods</h4>
+<ul>
+<li>Similar to a difference-in-difference design but uses data prior to the intervention to construct a ‘synthetic clone’ of a group receiving a particular intervention through the weighted average of groups not receiving the intervention.</li>
+<li>Differences between the performance after the intervention begins between the intervention group and its synthetic clone may be used as evidence that the intervention has had an effect. Most commonly applied to interventions applied at an area or group level.</li>
+<li>One key strength of synthetic controls is that they can offer a relevant comparison when no other comparators exist.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Synthetic control methods example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Synthetic control methods example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-synthetic-control" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-synthetic-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Synthetic control diagram
+</figcaption>
+<div aria-describedby="fig-synthetic-control-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/synthetic-control.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Figure&nbsp;6: Synthetic control diagram"><img src="..\images/dig-images/synthetic-control.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A module within an academic department is trialling changes in assessments to see if this supports wellbeing and attainment.</p></li>
+<li><p>A synthetic control is created using a weighted average of student assessments from other modules.</p></li>
+<li><p>The outcomes of this synthetic control prior to the change in assessment broadly match those of students on the reformed module.</p></li>
+<li><p>The intervention effect can be inferred from the difference in outcomes at the end of the trial period.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-5" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-5">Considerations</h5>
+<ul>
+<li>Only viable when it can be demonstrated that there was a relationship between the behaviour of the intervention and comparator groups in the period before the intervention.</li>
+<li>Developing a synthetic control requires extensive historical data: suitable when large volumes of secondary data are already available.</li>
+<li>Can be used on small sample sizes.</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+<section id="randomised-controlled-trials-rcts" class="level3">
+<h3 class="anchored" data-anchor-id="randomised-controlled-trials-rcts">Randomised controlled trials (RCTs)</h3>
+<section id="individual-rct" class="level4">
+<h4 class="anchored" data-anchor-id="individual-rct">Individual RCT</h4>
+<ul>
+<li>In a two-arm RCT individuals are randomly assigned to one of two groups. These two groups are usually the control group - who receive either no intervention orbusiness as usual - and the intervention group (sometimes referred to as the treatment group) who do receive the intervention.</li>
+<li>Random assignment helps ensure that the individuals in each group are similar in all ways except for the intervention they receive.</li>
+<li>Any difference in outcomes between the groups is the intervention’s real effect.</li>
+<li>RCTs (with implementation and process evaluation) are often considered the strongest way of testing the effectiveness of an intervention.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Individual RCT example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Individual RCT example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-individual-rct" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-individual-rct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7: Individual RCT diagram
+</figcaption>
+<div aria-describedby="fig-individual-rct-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/individual_rct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;7: Individual RCT diagram"><img src="..\images/dig-images/individual_rct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>A learning analytics system flags students who have low levels of engagement.</p></li>
+<li><p>Each student who is flagged is randomly assigned to receive either an email, or an email plus a phone call.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-6" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-6">Considerations</h5>
+<ul>
+<li>Running an RCT can be expensive and take a lot of time.</li>
+<li>Sometimes it is not possible or ethical to withhold the intervention from those who might benefit from it, making RCTs impractical; though see Waitlist or Stepped-wedge RCTs.</li>
+<li>RCTs are generally more ethical where there is no clear consensus about the effect of the intervention.</li>
+<li>The generalisability may be limited if the study setting is very controlled.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="cluster-rct" class="level4">
+<h4 class="anchored" data-anchor-id="cluster-rct">Cluster RCT</h4>
+<ul>
+<li>In a two-arm cluster RCT, groups (clusters) of individuals are randomly assigned to one of two groups.</li>
+<li>These two groups are usually the control group - who receive either no intervention or business as usual - and the intervention group (sometimes referred to as the treatment group) who do receive the intervention.</li>
+<li>Cluster RCTs are used when interventions are delivered to pre-existing groups (e.g.&nbsp;students on a module) and individual random allocation is not possible.</li>
+<li>Delivering interventions to entire groups can reduce the risk of control group participants being exposed to the intervention (spillover effects).</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Cluster RCT example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Cluster RCT example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-cluster" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-cluster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;8: Cluster RCT diagram
+</figcaption>
+<div aria-describedby="fig-cluster-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/cluster_rct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;8: Cluster RCT diagram"><img src="..\images/dig-images/cluster_rct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li>Participants are randomly assigned to receive a change in assessment type by academic school, with Business School and School of Social Sciences receiving the intervention, while School of Engineering and Mathematics and School of Life Sciences do not receive the intervention.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-7" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-7">Considerations</h5>
+<ul>
+<li>If the clusters themselves are not randomly selected, there is a potential for selection bias.</li>
+<li>Cluster RCTs often require larger samples than individual-level RCTs to achieve similar levels of statistical confidence, making them more resource-intensive.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="waitlist-or-stepped-wedge-rct" class="level4">
+<h4 class="anchored" data-anchor-id="waitlist-or-stepped-wedge-rct">Waitlist or stepped-wedge RCT</h4>
+<ul>
+<li>These RCT methods are suitable when it is not ethical or desirable to permanently withhold an intervention. All participants eventually receive the intervention, which is especially important for interventions which we have strong reason to believe will be beneficial.</li>
+<li>Can be easier to implement than traditional RCTs.</li>
+<li><strong>Waitlist RCT</strong>:
+<ul>
+<li>Participants are randomly assigned to either receive the intervention immediately or be placed on a waiting list (control group) and receive the intervention after a delay.</li>
+</ul></li>
+<li><strong>Stepped-wedge RCT</strong>:
+<ul>
+<li>All participants or clusters eventually receive the intervention, but the start times are randomly assigned so the intervention is rolled out in steps or phases.</li>
+<li>A stepped-wedge RCT can be thought of like a waitlist RCT with more than one delay period.</li>
+</ul></li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled" title="Waitlist RCT example">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Waitlist RCT example
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="columns">
+<div class="column" style="width:50%;">
+<div id="fig-waitlist" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-waitlist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9: Waitlist RCT diagram
+</figcaption>
+<div aria-describedby="fig-waitlist-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="..\images/dig-images/waitlist_rct.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;9: Waitlist RCT diagram"><img src="..\images/dig-images/waitlist_rct.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></a>
+</div>
+</figure>
+</div>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p>Wellbeing intervention targeted at STEM students has only 100 places per term, but 200 eligible students.</p></li>
+<li><p>100 students are randomly assigned to receive the intervention in term 1, while the other 100 are assigned to a waitlist control group.</p></li>
+<li><p>The outcomes for both groups are measured at the end of term 1.</p></li>
+<li><p>Then in term 2, the waitlist control group receives the intervention.</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<section id="considerations-8" class="level5">
+<h5 class="anchored" data-anchor-id="considerations-8">Considerations</h5>
+<ul>
+<li>If the intervention’s effectiveness changes over time, the design might not capture this accurately.</li>
+<li>As everyone ultimately receives the intervention, long-term outcomes cannot be measured.</li>
+</ul>
+<hr>
+</section>
+</section>
+</section>
+</section>
+<section id="sec-correlational-evaluations" class="level2">
+<h2 class="anchored" data-anchor-id="sec-correlational-evaluations">Correlational evaluations (type 2)</h2>
+<p>Type 2 evidence might tell us that students who take part in an activity have better outcomes than other students, for example, we might compare attainment for students who take part in an activity versus those who don’t.</p>
+<p>This kind of evidence allows us to understand if there is an association/correlation between taking part in an activity and better outcomes. However, it cannot tell us whether the activity actually causes the improvement or if other factors are responsible.</p>
+<p>The same techniques used in identifying the gaps in the first place - <a href="../dig/diagnose.html#descriptive-analysis">visually</a> or with inferential statistics (<a href="../dig/diagnose.html#t-tests">t-tests</a>, <a href="../dig/diagnose.html#anova">ANOVA</a>, <a href="../dig/diagnose.html#regression">regression</a>) - can be used to monitor their progression once an intervention is in place.</p>
+</section>
+<section id="sec-small-n-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-small-n-evaluation">Impact evaluation with small cohorts (small n evaluation)</h2>
+<p>Impact evaluation is important but can be challenging. TASO promotes the use of rigorous experimental and quasi-experimental methodologies as these are often the best way to determine causal inference. However, sometimes these types of impact evaluation raise challenges:</p>
+<ul>
+<li>They are effective in describing a causal link between an intervention and an outcome, but less good at explaining the mechanisms that cause the impact or the conditions under which an impact will occur.</li>
+<li>They require a reasonably large number of cases that can be divided into two or more groups. Cases may be individual students or groups that contain individuals, such as classrooms, schools or neighbourhoods.</li>
+<li>Most types of experiment – and some types of quasi-experiment – require evaluators to be able to change or influence (manipulate) the programme or intervention that is being evaluated. However, this can be difficult or even impossible, perhaps because a programme or intervention is already being delivered and the participants already confirmed or because there are concerns about evaluators influencing eligibility criteria.</li>
+<li>Experimental and quasi-experimental evaluation methodologies can sometimes struggle to account for the complexity of programmes implemented within multifaceted systems where the relationship between the programme/intervention and outcome is not straightforward.</li>
+</ul>
+<p>An alternative group of impact evaluation methodologies, sometimes referred to as ‘small n’ impact methodologies, can address some of these challenges:</p>
+<ul>
+<li>They only need a small number of cases or even a single case. The case is understood to be a complex entity in which multiple causes interact. Cases could be individual students or groups of people, such as a class or a school. This can be helpful when a programme or intervention is designed for a small cohort or is being piloted with a small cohort.</li>
+<li>They can ‘unpick’ relationships between causal factors that act together to produce outcomes. In small n methodologies, multiple causes are recognised and the focus of the impact evaluation switches from simple attribution to understanding the contribution of an intervention to a particular outcome. This can be helpful when services are implemented within complex systems.</li>
+<li>They can work with emergent interventions where experimentation and adaptation are ongoing. Generally, experiments and quasi-experiments require a programme or intervention to be fixed before an impact evaluation can be performed. Small n methodologies can, in some instances, be deployed in interventions that are still changing and developing.</li>
+<li>They can sometimes be applied retrospectively. Most experiments and some quasi-experiments need to be implemented at the start of the programme or intervention. Some small n methodologies can be used retrospectively on programmes or interventions that have finished.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Resources for impact evaluation with small cohorts">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Resources for impact evaluation with small cohorts
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TASO has some <a href="https://taso.org.uk/evidence/evaluation-guidance-resources/impact-evaluation-with-small-cohorts/">guidance for impact evaluation with small cohorts</a></p>
+</div>
+</div>
+</section>
+<section id="implementation-and-process-evaluation" class="level2">
+<h2 class="anchored" data-anchor-id="implementation-and-process-evaluation">Implementation and process evaluation</h2>
+<p>This type of evaluation provides information about how best to revise and improve activities. It can be used to assess whether the initiative, analysis and underlying assumption(s) are being implemented as intended. It is often helpful for pilot projects and new services and schemes. Implementation and process evaluation can also be used to monitor the progress and delivery of ongoing initiatives. IPE can help you:</p>
+<ul>
+<li>evaluate whether an intervention or programme was implemented as intended</li>
+<li>identify the elements of an intervention or programme that are necessary to produce the intended effects (outcomes)</li>
+<li>establish whether the assumption(s) and mechanisms underpinning the intervention’s theory of change hold true.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="Implementation and process evaluation resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Implementation and process evaluation resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TASO has published several resources to support the sector in conducting rigorous IPE:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/2024-04_TASO-implementation-process-evaluation-guidance.pdf">IPE guidance</a> - provides an introduction to IPE and step-by-step process for completing an IPE</p></li>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_Framework_Document_FINAL_April_24.pdf">IPE framework</a> - provides a summary of the TASO IPE framework and step-by-step approach to implementing the guidance</p></li>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_case_study_ThinkSmart_FINAL_April_24.pdf">Case study</a> - an illustrative example of an IPE protocol for an access intervention</p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_protocol_template_FINAL_April_24.docx">IPE protocol template</a> - to guide the sector in designing and developing their own IPEs</p></li>
+<li><p><a href="https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_report_template_FINAL_April_24.docx">IPE reporting template</a> - to guide the sector in structuring and developing their own IPE reports</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/taso-he\.github\.io\/technicalguide\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../dig/plan-methods.html" class="pagination-link" aria-label="Plan: Choosing methods">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plan: Choosing methods</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../dig/measure.html" class="pagination-link" aria-label="Measure">
+        <span class="nav-page-text">Measure</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.<br>
+It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.<br>
+Charity number: 1193025</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/events/">
+<p>EVENTS</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-privacy-notice/">
+<p>TASO PRIVACY NOTICE</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/appropriate-policy-document/">
+<p>APPROPRIATE POLICY DOCUMENT</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-speaker-request-form/">
+<p>TASO SPEAKER REQUEST FORM</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/accessibility-statement/">
+<p>ACCESSIBILITY STATEMENT</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+<p>Get in touch:<br>
+TASO<br>
+Evidence Quarter<br>
+4th Floor, Albany House<br>
+Petty France<br>
+London SW1H 9EA<br>
+info@taso.org.uk</p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox","loop":false});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

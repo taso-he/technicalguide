@@ -2,7 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://taso-he.github.io/technicalguide/index.html</loc>
-    <lastmod>2024-08-27T15:58:35.497Z</lastmod>
+    <lastmod>2024-09-18T09:22:17.892Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/plan.html</loc>
+    <lastmod>2024-09-23T09:13:36.406Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/plan-methods-overview.html</loc>
+    <lastmod>2024-09-20T16:10:12.768Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/index.html</loc>
+    <lastmod>2024-09-23T10:12:46.799Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/creating_dig_pdf.html</loc>
+    <lastmod>2024-09-23T09:52:30.671Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/acknowledgements.html</loc>
+    <lastmod>2024-09-18T15:12:03.808Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/data-vis/references.html</loc>
@@ -10,23 +30,23 @@
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/data-vis/index.html</loc>
-    <lastmod>2024-08-22T09:41:31.972Z</lastmod>
+    <lastmod>2024-09-18T09:02:41.672Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/styler.html</loc>
-    <lastmod>2024-08-09T14:08:52.806Z</lastmod>
+    <lastmod>2024-09-23T09:46:49.348Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/good_practice.html</loc>
-    <lastmod>2024-08-09T14:08:52.805Z</lastmod>
+    <lastmod>2024-09-23T09:46:32.789Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/furtherresources.html</loc>
-    <lastmod>2024-08-09T14:08:52.804Z</lastmod>
+    <lastmod>2024-09-23T09:46:58.114Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/index.html</loc>
-    <lastmod>2024-08-22T10:55:23.365Z</lastmod>
+    <lastmod>2024-09-23T09:45:49.394Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/contact.html</loc>
@@ -39,5 +59,25 @@
   <url>
     <loc>https://taso-he.github.io/technicalguide/data-vis/styling.html</loc>
     <lastmod>2024-08-28T08:28:53.888Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/barriers.html</loc>
+    <lastmod>2024-09-20T15:56:59.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/diagnose.html</loc>
+    <lastmod>2024-09-20T16:11:43.001Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/measure.html</loc>
+    <lastmod>2024-09-20T15:31:28.272Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/plan-methods.html</loc>
+    <lastmod>2024-09-20T15:48:51.173Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/reflect.html</loc>
+    <lastmod>2024-09-16T13:22:25.794Z</lastmod>
   </url>
 </urlset>

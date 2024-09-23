@@ -1,0 +1,1135 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Measure: Collection and analysis of data – Technical Guides</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../dig/reflect.html" rel="next">
+<link href="../dig/plan-methods-overview.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2PY6X92Q3P"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
+</script>
+<link href="../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Measure: Collection and analysis of data – Technical Guides">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://taso-he.github.io/technicalguide/dig/data:image/png;base64,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">
+<meta property="og:site_name" content="Technical Guides">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://taso-he.github.io/technicalguide/" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo_transp.png" alt="TASO logo" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="https://taso-he.github.io/technicalguide/">
+    <span class="navbar-title">Technical Guides</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/newsletter/"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Sign up for our newsletter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/taso-he/technicalguide"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/taso_he"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://uk.linkedin.com/company/taso"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/measure.html">Measure</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to the guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data infrastructure guide</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/diagnose.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Diagnose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Research questions and outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Choosing methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Methodology overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/measure.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Measure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/reflect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Barriers and facilitators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualisation style guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles for good data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/styling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Styling charts for TASO publications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References and further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding good practice guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/good_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good practice tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/styler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic styling with styleR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/furtherresources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contact point</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#qeds" id="toc-qeds" class="nav-link active" data-scroll-target="#qeds">QEDs</a>
+  <ul>
+  <li><a href="#matching" id="toc-matching" class="nav-link" data-scroll-target="#matching">Matching</a></li>
+  <li><a href="#difference-in-difference" id="toc-difference-in-difference" class="nav-link" data-scroll-target="#difference-in-difference">Difference-in-difference</a></li>
+  </ul></li>
+  <li><a href="#rcts" id="toc-rcts" class="nav-link" data-scroll-target="#rcts">RCTs</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/measure.html">Measure</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Measure: Collection and analysis of data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-bf502f0a{}.cl-bf3d0f10{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bf3d0f24{font-family:'Source Sans Pro';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:underline;color:rgba(59, 102, 188, 1.00);background-color:transparent;}.cl-bf4b3022{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bf4b302c{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bf4b4814{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bf4b481e{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-bf502f0a"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-bf4b4814"><p class="cl-bf4b3022"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-bf4b481e"><p class="cl-bf4b302c"><a href="https://taso.org.uk/evidence/our-approach-to-evaluation/step-3-measure/"><span class="cl-bf3d0f24">Measure</span></a></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-bf4b4814"><p class="cl-bf4b3022"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-bf4b481e"><p class="cl-bf4b302c"><span class="cl-bf3d0f10">Evaluators</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>Once you have <a href="../dig/diagnose.html">diagnosed</a> an equality gap, <a href="../dig/plan.html">planned</a> your research questions, outcomes, and chosen your <a href="../dig/plan-methods.html">methods</a>, you can start to measure your impact.</p>
+<p>Below are some TASO examples of different QED and RCT designs that serve as useful case studies. These examples can help inform your own analysis, offering insights into how different approaches can be applied to measure impact effectively and accurately.</p>
+<section id="qeds" class="level2">
+<h2 class="anchored" data-anchor-id="qeds">QEDs</h2>
+<section id="matching" class="level3">
+<h3 class="anchored" data-anchor-id="matching">Matching</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="NTU: Black Leadership Programme (BLP) impact evaluation using propensity score matching">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+NTU: Black Leadership Programme (BLP) impact evaluation using propensity score matching
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_NTU_ImpactEvaluation.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download BLP impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: Staffordshire University was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of four post-entry interventions to address inequalities in student outcomes using institutional data and quasi-experimental designs. This report corresponds to the evaluation conducted for Nottingham Trent University’s Black Leadership Programme (BLP).</p>
+<p><strong>Aims</strong>: To explore whether the BLP impacts students’ social and academic engagement, and whether there is a relationship with degree outcomes and BLP participation that is mediated by academic engagement.</p>
+<p><strong>Intervention</strong>: BLP is an intervention delivered during level 5 (2nd year undergraduate) for Black and Black heritage students that provides mentoring, social events, and a programme of workshops and development activities to support students’ self-concept, social capital and skills, such that they begin to engage more at NTU and ultimately progress to succeeding in higher education and in their lives outside higher education.</p>
+<p><strong>Design</strong>: This evaluation was a QED using available institutional data. A comparator group was developed with Propensity Score Matching using POLAR4 Quintile, UCAS entry points, Academic School, level of study, and academic year as matching variables.</p>
+<p><strong>Outcome measures</strong>: Three primary outcome measures were included in the analyses:</p>
+<ul>
+<li><p>Academic engagement – this was an amalgamated dataset of different types of academic engagement, including both structured and unstructured types of engagement.</p></li>
+<li><p>Structured social engagement – sports clubs and societies signed up to with the Students’ Union.</p></li>
+<li><p>Unstructured social engagement – whether students had signed up for a gym membership.</p></li>
+</ul>
+<p>There was one secondary outcome measure:</p>
+<ul>
+<li>Level 6 grade – this was used in place of final degree classification.</li>
+</ul>
+<p><strong>Analyses</strong>: A combination of logistic regression, ANOVA, and structural equation modelling were used to address the research questions.</p>
+<p><strong>Results</strong>: Results suggest limited effect of BLP on social and academic engagement across the academic journey. However, BLP students were found to have higher level 6 grades, which may be explained by factors other than academic engagement.</p>
+<p><strong>Conclusions</strong>: BLP may have an impact on students that begins later than the year of the BLP programme, and is not through a direct relationship on students’ academic engagement.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="UEA: Peer Assisted Learning (PAL) impact evaluation using propensity score matching">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+UEA: Peer Assisted Learning (PAL) impact evaluation using propensity score matching
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_UEA_ImpactEvaluation.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download PAL impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: Staffordshire University was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of four post-entry interventions to address inequalities in student outcomes using institutional data and quasi-experimental designs. This analysis report is the impact evaluation of the Peer Assisted Learning (PAL) programme at the University of East Anglia (UEA).</p>
+<p><strong>Aims</strong>: The aim of this study is to explore whether participation in PAL increases student engagement, continuation rates and attainment</p>
+<p><strong>Intervention</strong>:</p>
+<p>PAL is open to all first-year students in participating schools of study on an opt-in basis. PAL consists of regularly scheduled mentoring sessions throughout the academic year. Prior to the academic year, schools and courses decide whether their course will deliver one-to-one peer mentoring or group mentoring. Group mentoring is formalised through the timetable and one-to-one mentoring is typically scheduled every three weeks.</p>
+<p><strong>Design</strong>: This study will use a post-hoc QED to determine the relationship between PAL participation and the outcome measures of interest.</p>
+<p><strong>Outcome measures</strong>: There are three primary outcome measures for this study: course engagement, continuation to the next level of academic study and end of stage grades. In addition, there are two secondary outcome measures for this study: course completion and final degree classification.</p>
+<p><strong>Analyses</strong>: A matched control group was generated using propensity score matching to test the effect of PAL on student engagement and outcomes using ordinary least squares (OLS) or binary logistic regression (BLR) where appropriate.</p>
+<p><strong>Results</strong>: Results suggest that participation in PAL significantly improves the likelihood of continuation after the first year of study; is significantly associated with higher course engagement and provides significant positive benefits to end of stage grades in the first year. There was no observable effect of PAL participation on final degree classification. There is evidence that some underrepresented student groups in higher education who participate in PAL have different continuation and end of stage grade outcomes than their peers.</p>
+<p><strong>Conclusions</strong>: This study provides evidence that participating in PAL supports first year student outcomes and equality of opportunity aims at UEA. The findings, while significant, produced small effects for the models tested. Further research is needed to build on these results including and understanding of how delivery mode and additional variables not captured in the models may impact the effectiveness of PAL for student mentees.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="difference-in-difference" class="level3">
+<h3 class="anchored" data-anchor-id="difference-in-difference">Difference-in-difference</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="University of Leicester: Curriculum reform impact evaluation using differences in differences">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+University of Leicester: Curriculum reform impact evaluation using differences in differences
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/BIT_University_of_Leicester_analysis_report.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download curriculum reform impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: The Centre for Transforming Access and Student Outcomes in Higher Education (henceforth TASO) has funded the University of Leicester (henceforth Leicester) to develop and implement a “Decolonising the Curriculum Toolkit” (a resource for staff that provides concise guidelines on how to make their curriculum more racially inclusive). TASO has also commissioned the Behavioural Insights Team (henceforth BIT) to evaluate the impact of the toolkit on reducing awarding gaps between Black, Asian and Minority Ethnic (BAME) students and White students.</p>
+<p><strong>Aims</strong>: To evaluate how Leicester’s ‘Decolonising the Curriculum Toolkit’ affected the attainment of BAME and White students as well as the racial awarding gap.</p>
+<p><strong>Intervention</strong>: The “Decolonising the Curriculum Toolkit” is a two-page resource for staff that provides clear and concise guidelines on how to make module content, assessment and teaching practice more racially inclusive and relatable for all students. The toolkit was piloted across the Sociology BA course in the 2020/21 academic year.</p>
+<p><strong>Design</strong>: This is a matched difference-in-differences study with repeated cross-sections. The analysis compares students’ attainment trends in the modules that implemented the “Decolonising the Curriculum Toolkit” (treatment modules) with that of similarly comparable modules that did not implement the initiative.</p>
+<p><strong>Outcome measures</strong>: The primary outcome measure is a student’s module-level attainment, and it is defined as the percentile rank of the final module mark.</p>
+<p><strong>Analyses</strong>: The primary analysis consists of a difference-in-differences regression, comparing module marks before and after the academic year 2019-20 (the year that curriculum reform took place) between reformed vs.&nbsp;matched unreformed modules. It focuses on BAME students only. The secondary analysis repeats the primary analysis for White students. Additional descriptive line charts have been made to illustrate how the awarding gaps of reformed vs.&nbsp;comparator modules changed since the “Decolonising the Curriculum Toolkit” was implemented.</p>
+<p><strong>Results</strong>: Overall, this impact evaluation suggests that the “Decolonising the Curriculum Toolkit’’ might have had a negative impact on both BAME and White students’ attainment among Sociology students at the University of Leicester. The estimated treatment effect was significantly negative among BAME students, -6.63 percentiles, 95% CI [-13.23, 0.03], p = 0.05. It was directionally negative (though not significant at the 5% level) among White students, -3.07 percentiles, 95% CI [-9.79, 3.64], p = 0.37. Findings from the exploratory analysis suggest that intervention did not affect the racial awarding gap.</p>
+<p><strong>Conclusions</strong>: In light of the above discussion, we do not recommend rolling out this toolkit (in its current form) before conducting a closer examination of how the toolkit was delivered by teachers and received by students. We believe the implementation and process evaluation (IPE) led by Leicester may shed light on what might have caused this and help contextualise these effects. If findings from the IPE suggest that there is evidence of promise in how teaching staff and BAME students might benefit from the reforms, we would recommend refining the toolkit based on the IPE and then conducting further impact evaluation of the intervention, with a larger sample and over a longer time period.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="University of Kent: Curriculum reform impact evaluation using differences in differences">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+University of Kent: Curriculum reform impact evaluation using differences in differences
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/BIT_University_of_Kent_analysis_report.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download curriculum reform impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: The Centre for Transforming Access and Student Outcomes in Higher Education (henceforth TASO) has funded the University of Kent (henceforth Kent) and commissioned the Behavioural Insights Team (henceforth BIT) to evaluate the impact of their “Diversity Mark” programme (an initiative that seeks to diversify the current Eurocentric curriculum) on reducing awarding gaps between Black, Asian and minority ethnic (BAME) students and White students.</p>
+<p><strong>Aims</strong>: To evaluate whether and to which extent Kent’s ‘Diversity Mark’ initiative reduced the awarding gaps between BAME and White students.</p>
+<p><strong>Intervention</strong>: The “Diversity Mark” initiative is a collaborative response to Kent students’ call for more diverse curricula. The School of Sociology, Social Policy and Social Research (henceforth SSPSSR), students, and library services worked together to audit 19 core undergraduate modules offered in the two campuses and explored ways to incorporate BAME authors and perspectives into those modules. The initiative was first piloted in 2018-19, and another module was piloted in 2020-21.</p>
+<p><strong>Design</strong>: The study is a matched difference-in-differences with repeated cross-sections. The analysis compares students’ attainment trend among the modules that implemented the Diversity Mark Initiative (treatment modules) with similar comparator modules that didn’t implement the initiative.</p>
+<p><strong>Outcome measures</strong>: The primary outcome measure is a student’s module-level average attainment, and it is defined as the percentile rank of the final module mark.</p>
+<p><strong>Analyses</strong>: The primary analysis consists of a difference-in-differences regression, comparing module marks before and after the academic year 2018-19 between reformed vs.&nbsp;matched unreformed modules. It focuses on BAME students only. The secondary analysis repeats the primary analysis for White students. Additional descriptive charts are made to illustrate the change in awarding gaps of reformed vs.&nbsp;comparator modules before and after the Diversity Mark Initiative.</p>
+<p><strong>Results</strong>: Among the modules matched for analyses (4 reformed modules, 4 comparator modules), we did not observe a significant effect of the Diversity Mark Initiative on improving attainment in terms of module mark percentile rank among the BAME students — the average difference in attainment between reformed and unreformed modules post-intervention versus pre-intervention was not statistically significant (2.0 percentile rank, 95% CI [-2.20, 6.21]), p = 0.35. We observed a marginally positive difference among the White students (3.45 percentile rank, 95% CI [-0.13, 7.03]), p = 0.06.</p>
+<p><strong>Conclusions</strong>: Overall, we didn’t find conclusive evidence supporting the effectiveness of the Diversity Mark Initiative in reducing the racial awarding gap among the SSPSSR students at the University of Kent. However, we also didn’t find evidence that suggests it might backfire: the observed trend among BAME students’ attainment before and after the initiative, though not significant, was positive. Therefore, we consider the initiative an innovative approach to address the racial awarding gap that is worth further testing.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="rcts" class="level2">
+<h2 class="anchored" data-anchor-id="rcts">RCTs</h2>
+<div class="callout callout-style-default callout-note callout-titled" title="Nottingham Trent University: Learner Analytics Randomised Controlled Trial (RCT)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nottingham Trent University: Learner Analytics Randomised Controlled Trial (RCT)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/TASO_LearningAnalytics_Impact-report_NTU_v2.4.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download learning analytics impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: The Behavioural Insights Team (BIT) was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of two randomised controlled trials. Both trials were designed to assess the impact of learning analytics interventions. This report corresponds to the trial delivered at Nottingham Trent University (NTU).</p>
+<p><strong>Aims</strong>: To evaluate whether a preventative intervention targeted at students that generate a no-engagement alert via NTU’s learning analytics student dashboard (StREAM) increased student engagement.</p>
+<p><strong>Intervention</strong>:</p>
+<ul>
+<li><p>In the intervention 1 group, students who generated a no-engagement alert received up to two phone call attempts from NTU’s central support team (business as usual).</p></li>
+<li><p>In the intervention 2 group, students who generated a no-engagement alert received an email inviting them to request a phone call.</p></li>
+</ul>
+<p><strong>Design</strong>: This study was a two-arm, parallel group randomised controlled trial, testing for superiority of the intervention 1 condition over the intervention 2 condition.</p>
+<p><strong>Outcome measures</strong>: There were two primary outcomes:</p>
+<ol type="1">
+<li><p>Average daily student engagement rating in the 10 day period following their first no-engagement flag (days 1 to 10 of the intervention period) and II.</p></li>
+<li><p>Average daily student engagement rating in the first four-week period of Term 2.</p></li>
+</ol>
+<p>These outcomes were collected by NTU’s learning analytics system, which involves daily reporting on individual-level engagement data.</p>
+<p><strong>Analyses</strong>: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.</p>
+<p><strong>Results</strong>: The primary analysis suggests no benefit to students of intervention 1 (automatic phone call) over intervention 2 (email). Estimated effects on the primary outcomes and first secondary outcome are either null or narrowly negative, and none are statistically significant at the 5% level. The impact table for the results is in Appendix C.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Sheffield Hallam University: Learner Analytics Randomised Controlled Trial (RCT)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Sheffield Hallam University: Learner Analytics Randomised Controlled Trial (RCT)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/TASO_LearningAnalytics_Impact-report_SHU_v2.3.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download learning analytics impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: The Behavioural Insights Team (BIT) was commissioned by the Centre for Transforming Access and Student Outcomes in Higher Education (TASO) to act as an independent evaluator of two randomised controlled trials. Both trials were designed to assess the impact of learning analytics interventions. This report corresponds to the trial delivered at Sheffield Hallam University (SHU).</p>
+<p><strong>Aims</strong>: To evaluate whether a preventative intervention targeted at students identified as being ‘at-risk’ via SHU’s learning analytics programme increases student engagement.</p>
+<p><strong>Intervention</strong>: Student Support Advisers (SSAs) from a central team proactively monitored engagement at two pre-agreed census points (week 5 and 8 of the autumn term) to identify students who have poor engagement with their course.</p>
+<ul>
+<li><p>In the intervention 1 group students who generated a red flag (indicating low engagement) in week 4 and/or week 7 received an email detailing support resources available to them plus a text message (SMS) informing them that they will receive a default phone call from a central support team. An SSA then attempted to call all students.</p></li>
+<li><p>In the intervention 2 group students who generated a red flag (indicating low engagement) in week 4 and/or week 7 received an email detailing support resources available to them. No telephone calls were made.</p></li>
+</ul>
+<p><strong>Design</strong>: This study was a two-arm, parallel group randomised controlled trial, testing for superiority of the intervention 1 condition over the intervention 2 condition.</p>
+<p><strong>Outcome measures</strong>: There was one primary outcome, the proportion of Red RAG engagement scores at week 9 (defined in section 3.3).</p>
+<p><strong>Analyses</strong>: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.</p>
+<p><strong>Results</strong>: The primary analysis suggests no benefit to students of intervention 1 over intervention 2. All estimated effects are small, and none are statistically significant at the 5% level.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled" title="Summer Schools Randomised Controlled Trial (RCT)">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Summer Schools Randomised Controlled Trial (RCT)
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div style="text-align: left; margin-top: 10px;">
+<p><a href="https://taso.org.uk/wp-content/uploads/TASO_in_person_summer_schools_interim_analysis_report_of_exploratory_outcomes.pdf"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;
+      text-align: center;
+      display: inline-block;"> Download summer schools impact evaluation </button> </a></p>
+</div>
+<p><strong>Background</strong>: This project is a collaboration between the Centre for Transforming Access and Student Outcomes in Higher Education (TASO), five Higher Education Providers (HEPs) and the Behavioural Insights Team (BIT). In summer 2022, a series of summer schools were delivered with the aim of widening participation in higher education (HE) among participants. Three types of evaluation are being conducted with these summer schools: an impact evaluation, a cost evaluation, and an implementation and process evaluation (IPE). This report presents the interim findings from the impact evaluation.</p>
+<p><strong>Aims</strong>: The aim of the project is to investigate the efficacy of summer schools as a widening participation activity. The aim of the widening participation agenda is to increase progression to HE among students from disadvantaged or under-represented groups.</p>
+<p><strong>Intervention</strong>: This study evaluated a collection of interventions. Five HEPs delivered their own summer schools, either for students in pre-16 or post-16 education. Mode of delivery differed, with some summer schools taking place in-person, and some using a combination of online and in-person elements.</p>
+<p><strong>Design</strong>: This study is a two-arm, parallel group randomised controlled trial (RCT).</p>
+<p><strong>Outcome measures</strong>: The outcomes analysed in this interim report are survey measures of participants’ self-reported applications to HE, and self-reported attitudes to HE, covering their likelihood of going on to further academic study (for pre-16 students), their self-efficacy relating to HE, the compatibility of HE with their social identity, and their perception of practical barriers to HE.</p>
+<p><strong>Analyses</strong>: A combination of logistic and Ordinary Least Squares (OLS) regressions are used, as appropriate, to estimate effects on the primary, secondary and exploratory outcomes.</p>
+<p><strong>Results</strong>: There is a positive effect on students’ sense of the compatibility of HE with their identity, which is significant at the 5% or 10% level depending on the model specification. Results are not highly consistent across model specifications. None of the other effects are statistically significant at the 5% or 10% level. A high and differential rate of attrition has led to a small sample and possible bias in some of the estimated effects.</p>
+<p><strong>Conclusions</strong>: There is early evidence of promise that these summer schools had a small positive effect on the hypothesised mediating mechanism of compatibility of HE with social identity. The analysis also suggests that there was no effect on self-reported applications to HE, self-efficacy relating to HE, students’ self-reported likelihood of attending HE or post-16 academic study (depending on their age), or perception of practical barriers to HE. This is probably because most applicants to HE summer schools already intend to apply to HE. The more robust test of the intervention will come in 2025 when we have administrative data on students’ entry to HE.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/taso-he\.github\.io\/technicalguide\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../dig/plan-methods-overview.html" class="pagination-link" aria-label="Plan: Methodology overview">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Plan: Methodology overview</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../dig/reflect.html" class="pagination-link" aria-label="Reflect">
+        <span class="nav-page-text">Reflect</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.<br>
+It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.<br>
+Charity number: 1193025</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/events/">
+<p>EVENTS</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-privacy-notice/">
+<p>TASO PRIVACY NOTICE</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/appropriate-policy-document/">
+<p>APPROPRIATE POLICY DOCUMENT</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-speaker-request-form/">
+<p>TASO SPEAKER REQUEST FORM</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/accessibility-statement/">
+<p>ACCESSIBILITY STATEMENT</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+<p>Get in touch:<br>
+TASO<br>
+Evidence Quarter<br>
+4th Floor, Albany House<br>
+Petty France<br>
+London SW1H 9EA<br>
+info@taso.org.uk</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

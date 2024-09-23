@@ -1,0 +1,1928 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Diagnose: Identifying equality gaps using institutional data – Technical Guides</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../dig/plan.html" rel="next">
+<link href="../dig/index.html" rel="prev">
+<link href="../images/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-2PY6X92Q3P"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
+</script>
+<link href="../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
+<script src="../site_libs/kePrint-0.0.1/kePrint.js"></script>
+
+<link href="../site_libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+
+
+
+<link rel="stylesheet" href="../styles.css">
+<meta property="og:title" content="Diagnose: Identifying equality gaps using institutional data – Technical Guides">
+<meta property="og:description" content="">
+<meta property="og:image" content="https://taso-he.github.io/technicalguide/dig/data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABhGlDQ1BJQ0MgcHJvZmlsZQAAKJF9kT1Iw0AcxV9TtVIqHewg4pChOtlFRRxLFYtgobQVWnUwufQLmjQkKS6OgmvBwY/FqoOLs64OroIg+AHi7OCk6CIl/i8ptIjx4Lgf7+497t4BQqvGVLMvDqiaZWSSCTFfWBUDrxhAAGEE4ZeYqaeyizl4jq97+Ph6F+NZ3uf+HENK0WSATySOM92wiDeIZzctnfM+cYRVJIX4nHjSoAsSP3JddvmNc9lhgWdGjFxmnjhCLJZ7WO5hVjFU4hniqKJqlC/kXVY4b3FWaw3WuSd/YaiorWS5TnMMSSwhhTREyGigihosxGjVSDGRof2Eh3/U8afJJZOrCkaOBdShQnL84H/wu1uzND3lJoUSQP+LbX+MA4FdoN207e9j226fAP5n4Err+ustYO6T9GZXix4B4W3g4rqryXvA5Q4w8qRLhuRIfppCqQS8n9E3FYDhWyC45vbW2cfpA5CjrpZvgINDYKJM2ese7x7s7e3fM53+fgAka3KHkP7f3AAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAAuIwAALiMBeKU/dgAAAAd0SU1FB+gGBw8QHQbMx+MAAAAZdEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIEdJTVBXgQ4XAAALC0lEQVR42t2baWxc1RXHf/cts3hmvI3tcZzY2SGFNNACIiGgElW0ZZGqSoCgpUAqWgqULUBYhTEq2SBAwlL2ioiWEhpKJZZUXUgbSCKgAloH2sSJs9iO9232mffu7Qdn8RqP34ztqMfyh2e/u/3f2c+5gvGmC9e72ZUug1QZyhVCM8vRzSm4XCVoeh5KSSwrjJXuwk43YdstqGQLeZ5mQqe3sWWJNZ7bE+My66xVBVjGHLy+b1Nc9H2EMFFYKCUz25XQEMLEsnvo6XqHVPRvRCJ7aauJnLgAnPG8SWf3LMz8SygpvhSlJAqV0312tv2GRGQzBxL7oOb4YJ5S7eLLmtQEALBRp+rA6ZSE7sdthnJ46JF2LAjHvqS38wn23/EVQgxdb+ajCzDMQnbf9o/xBWDWqiq8pXcT8J3GZFBn97vI1EvU3dJ27PCPhCiqepHuzufYe+t7o01hOFp40eNe2lxXEgwuRQjBZFFx4cUodSGsW4ur830s8vFVPovLLEYTRZlMMXYApq6eRjS4mhL3dE4EEkKjJHQX8YJL8ehFuMxCAKQI5B6A6WvPoaz8YXTdM6pgqQkGwuuZOeDZ5Sp2DoBSAh4SvHmqoHRnH4vf7j+X0ikP4dXceBEUajrFyiAoDIKYFAoXPs3AJ1y02FFWWE0YkygeplE+NgA+rc7DDv4E3ZjGZy8Uoqb4mNvtQczwIrQ8Xsv/Jpow0YWGGEV5hu3kpIuG21s5dj/go19Op2DmJlz++VktXpdu5sH0wUnlAIFg5YF7OH/51uO9pg14WvzAftp2XUK8e1tWi0uYVOsAYKEIznmLj9acnjkAAEtqmuk+eA3pyM4sAFCTLgJSKdJCp3DaK3y8pjxzAADMvHasZLPjxZVSGbOpGKd4RBOClEpj+k7BKFrFxo16ZlZAKcGOtT8ir/QilEzmjAMEBkol6O79ACvyGVJ1YqejSE3HML1oIojHfzYF+d9CIkDZ2QEApFVfJBkIXcO03dtR6oXBrvNQALY8GiJUdafjwx9hvyPHtu0YXe0bkMkdeKL7+c9xA5S3mfa4F2HPxuM5l2DpVVmBkDwMolJJAmVX89Ga3wLhkQHYuFEnv7MGwzszK1dGotCETuuhx0h436fp1ljGYxuWxYFaoBbPyjeI+i6irOzGMe9HACmOcZGn4GxiXTejqlchjkWSA3VAqP4k/KHLs/bjUr0f07DvMvbetomm62OO5/n3vV3Y6XrHFiXeDwClLAKhpWzxlQ2vBD+oNigsXYnQvNknRLrfo/HuhqznmfPoIqZOezLjRMoQAOTAbJLhqcQfuL3P0x0MgOGpwl24ODc2WMqs56haeQZlVU8iVcrxHDGG7sMfvIytK0uGAuAt+BmaHsgJAELPDoCZa0+jYuY6lLKOmkon5jKsrCHeru6uwOO9eKAS/MuKIL7Sa3Nng3EOwIINPmI9X6ej7WWU0BFCRygDpTRsNDSho5TGWYGzKPHMQh72PJUGtlKHn/vyUuZh2AZrtEDFg3z6/EbOvD7WB4DH9TV0V4EzjW+HEcKF0NzHAMiCA/51dRR4bdT3NqyZTem8OlADzXX/lJwY9Hx0f65Soq1Tgd19ItDHEk40raCr/kE6dl8H/RSVsGzGmxYv30PPwTUjepd93374MwnNxO07t49Za5/xU1B5j8NsjAspN7Eouon2vdeh7EQfVxiSiaBEz8sI4XY0NjDlBpQSGl2tZY5zox17bmfxXa2IGsmiZa/TVv9DpB1BKntCADjvvl30NK53NNblO4utT5VoKHclSo7d1AjNTTLyp36sp1i87H3a636AEBYTRZHw70cM6kZzFVVPiYHpdu72ymn1g0RCAVuprXZNGAAe1y4Q5hBlOGrEKpNonqkaulHpaOHugytYsjQx7P/m16QmDICFt7VgxT93NFbXKjQM7wxn3l7iC04UCje/7gwAEdRwBeY5swCy6YQBQKYbnQHgKtQwzHIHQxXxZPcJA4Atu5xlroRH4/+BskjAathWqyMP0HQXnjgA6AUOZSemkez90tmilJ8wAGi6szqltHs1rNR+R4NNT25L4iqL7HB+6HJnlky1a1gpZxq0aPoDbNvozR0bj+KM1T7jH/bvOx4JYeSd7kx5ppo0lF2P02AgWTdxJfJw+ko+XH3y0IBInAQq7ciVt+1GjZR1AKGN3XVVMkme94IJ1PR5BGe+x7a13+if0yNQfMXhlMiYZY6Aq13DW9mKcpgELp69ng8eK5kYRScMdPdUiqreYdvq81BKsG3FPPIrbnQ0XzqynTPvbNdYeFUv4aZ1zhSXSuMRl00QC5iHvbcgwZP+wI4nLsHMvxalnBVwwoee42gYmQq/PQq3jMQikuDc9fx1zezx5wDN7Gf2fARn/Y6CaTc7+3AyRcLeDkeSoolILdLqQTMKhqSX3kh8xT5SCEBTAv2wyjzyqwnBweC9zHlqJ0KTICVCSIQusdIWhi6Rto0QcSrmb3Le+SmMwd6P89gh2YZpNBwDYElNO/987k0CU64b8nKvktSSOq4ywTePEt+8EVPXlh2msf6nWbW9KmHkjJt6mqs5Z1mcAZmUZOTpozm9/uQbg5+thvmRKkVX4000PXAwOxEgNwBYiQbi1uZj0x7NkQX2kAx/OuTj+nHOagJB64GfU7d8Tw4cJT0XmpRYx+ucf0fHUADOvD5NuOXOQXV5hd+hrAmhcWDfjdTf/d+stx16dD69+dmX7az4PqzU0/17BAaGw6loLZHWTQM8w7wsWM/lPZk56/Mdj5+3IsicdT9metUrGN5ZWTpSJuG2lzn71taBLDGYPl5bSaDy7+juCgB2phtYbTU7FgGJRXvLKyhrO1XFB9gyQh7xCFVU5+H2z0H3nEtp2VUoJUkrxXr3yZTqzsFMdO9AtV7MaXdFjw+AUoLtT9xE6dynUDJJXfoQD1uNOZA+A4VFJLyNRPQTlN1OSkVQtsBw5aGLEJ7AQgr8C/tMVT9RtICn3fMo1vwOv76b9t1LWbjs1dFbZIRQ7Fi/gUT3Fbjzz8SDjiL7xnpFnwn0B87BHzjnKIcMdrJGKqpk00wVPvQSm3s3sGhoa/3wKbGFt/TSe+gXKJnAFLnQvmP1MAcfHrQsANDMcr7jLxneuo5Ei5d/TuvuK/AYhUxMpW90feKU8oIXkFf8In9eVZA5AADnLd9M/e5rToy0l8gugesr+R6h8o1sri4+vhIcTDN+7aHCtxUpJ68B2gZe9CwgT7hGFSlbSWyrFxXZibRiKBlH2UkQUaTsIp2qJ9D16pHq1eg2ft+1KSreTE06B0RknAgxoipFWKbpVSnasWgnTSc2PdImgSIhk3Q33MaaaC0AbacqLtup4CE13P2izOTqrNfeQjfKJlkHjF7CtawwHS33UH9HxmW7zOQqmToWyCSSjcSTjRMOwGiHj8Z20dB59VgOnzkA8URfz18stod483W07V1KZ/vrGTdFjyswStLe+ivikRto7nd7LEPK0M+XPaSsLlqb76T5vsO9tupZ5j35LkbBcvx5Cybl8D2RD4m1rGP/YeykazRac76S4n2fsKhB4YpokzCxclYop5ox1rqer8Y9QZpTgCYUe1hX83xg5gznjdp65iLL3gFRYXfRSkrp1dnNaHR0fEW6e4/UpXcy5YaKzcTjwdVrSxC1+biLryQ4qKLUKqvWTnTVhwhNAQGkhTdXe8Sj27GNPdQd0vveBiX8aVFj3tpssuxZAjDnILbVYFmVuA2SxCGr8/RsaKk0i3IdAN2vJG0bCHgboWu5kwuQGdD/wMV1Ev0c9aFZQAAAABJRU5ErkJggg==">
+<meta property="og:site_name" content="Technical Guides">
+</head>
+
+<body class="nav-sidebar floating nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="https://taso-he.github.io/technicalguide/" class="navbar-brand navbar-brand-logo">
+    <img src="../images/logo_transp.png" alt="TASO logo" class="navbar-logo">
+    </a>
+    <a class="navbar-brand" href="https://taso-he.github.io/technicalguide/">
+    <span class="navbar-title">Technical Guides</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="../index.html" aria-current="page"> <i class="bi bi-house" role="img">
+</i> 
+<span class="menu-text">Home</span></a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/newsletter/"> <i class="bi bi-envelope" role="img">
+</i> 
+<span class="menu-text">Sign up for our newsletter</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/taso-he/technicalguide"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://twitter.com/taso_he"> <i class="bi bi-twitter" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://uk.linkedin.com/company/taso"> <i class="bi bi-linkedin" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/diagnose.html">Diagnose</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to the guides</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data infrastructure guide</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/diagnose.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Diagnose</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Research questions and outcomes</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Choosing methods</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/plan-methods-overview.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Plan: Methodology overview</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/measure.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Measure</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/reflect.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reflect</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/barriers.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Barriers and facilitators</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../dig/acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data visualisation style guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/principles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Principles for good data visualisation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/styling.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Styling charts for TASO publications</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References and further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Coding good practice guide</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/good_practice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Good practice tips</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/styler.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Automatic styling with styleR</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../coding-good-practice/furtherresources.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Further resources</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../contact.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contact point</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="99">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#identifying-gaps-in-the-student-experience" id="toc-identifying-gaps-in-the-student-experience" class="nav-link active" data-scroll-target="#identifying-gaps-in-the-student-experience">Identifying gaps in the student experience</a>
+  <ul>
+  <li><a href="#descriptive-analysis" id="toc-descriptive-analysis" class="nav-link" data-scroll-target="#descriptive-analysis">Descriptive analysis</a></li>
+  <li><a href="#t-tests" id="toc-t-tests" class="nav-link" data-scroll-target="#t-tests">T-tests</a></li>
+  <li><a href="#anova" id="toc-anova" class="nav-link" data-scroll-target="#anova">ANOVA</a></li>
+  <li><a href="#regression" id="toc-regression" class="nav-link" data-scroll-target="#regression">Regression</a>
+  <ul class="collapse">
+  <li><a href="#simple-model" id="toc-simple-model" class="nav-link" data-scroll-target="#simple-model">Simple model</a></li>
+  <li><a href="#simple-model-with-interaction-term" id="toc-simple-model-with-interaction-term" class="nav-link" data-scroll-target="#simple-model-with-interaction-term">Simple model with interaction term</a></li>
+  <li><a href="#full-model-multiple-regression" id="toc-full-model-multiple-regression" class="nav-link" data-scroll-target="#full-model-multiple-regression">Full model (multiple regression)</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#design-your-intervention" id="toc-design-your-intervention" class="nav-link" data-scroll-target="#design-your-intervention">Design your intervention</a>
+  <ul>
+  <li><a href="#theory-of-change" id="toc-theory-of-change" class="nav-link" data-scroll-target="#theory-of-change">Theory of change</a></li>
+  <li><a href="#post-entry-typology" id="toc-post-entry-typology" class="nav-link" data-scroll-target="#post-entry-typology">Post-entry typology</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li><li class="breadcrumb-item"><a href="../dig/diagnose.html">Diagnose</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Diagnose: Identifying equality gaps using institutional data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-b872a294{}.cl-b86979e4{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b86979f8{font-family:'Source Sans Pro';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:underline;color:rgba(59, 102, 188, 1.00);background-color:transparent;}.cl-b86d53a2{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b86d53ac{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b86d7134{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b86d713e{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-b872a294"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-b86d7134"><p class="cl-b86d53a2"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-b86d713e"><p class="cl-b86d53ac"><a href="https://taso.org.uk/evidence/our-approach-to-evaluation/step-1-diagnose/"><span class="cl-b86979f8">Diagnose</span></a></p></td></tr><tr style="overflow-wrap:break-word;"><td class="cl-b86d7134"><p class="cl-b86d53a2"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-b86d713e"><p class="cl-b86d53ac"><span class="cl-b86979e4">Evaluators</span><br><span class="cl-b86979e4">Planning teams</span><br><span class="cl-b86979e4">Practitioners</span><br><span class="cl-b86979e4">Senior management</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>Identifying equality gaps in your institution is a core part of the APP and <a href="https://www.officeforstudents.org.uk/for-providers/quality-and-standards/about-the-tef/">Teaching Excellence Framework (TEF)</a> processes. Here, we go above and beyond the <a href="https://www.officeforstudents.org.uk/data-and-analysis/access-and-participation-data-dashboard/">OfS guidance and data dashboards</a> to help providers have a deeper understanding of where equality gaps may lie in their institution.</p>
+<p>The degree to which you can identify and understand equality gaps will depend on the data you have available. In this guide we define two broad classes of data, the learner context and the institution context:</p>
+<ul>
+<li><strong>The learner context</strong> is data about the learner when they begin higher education – e.g.&nbsp;demographics and prior attainment - and as they progress through higher education (e.g.&nbsp;engagement with their course and the institution).</li>
+<li><strong>The institution context</strong> is data about the institution relevant to the learner’s studies, such as courses and modules that are studied, contact hours, types of contact, types of assessment and timetable information.</li>
+</ul>
+<p>In <a href="#tbl-levelsofdata" class="quarto-xref">Table&nbsp;1</a> we also define three levels of data: <em>Foundation</em>, <em>Intermediate</em>, and <em>Advanced</em>. Although the levels of data are segregated, it is likely that institutions will have data from more than one of these levels. Data in each additional level provides increasing context for the learner and the institution. Not all of the data listed in <a href="#tbl-levelsofdata" class="quarto-xref">Table&nbsp;1</a> will be useful for identifying equality gaps, but may be useful in understanding what is required from an intervention to reduce equality gaps.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The <a href="https://www.jisc.ac.uk/data-maturity-framework">Jisc Data maturity framework</a> may be useful to understand your institution’s data capability in terms of the infrastructure, the data you collect, and the role of people who use it.</p>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-levelsofdata" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-levelsofdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Example data for different levels and contexts of institutional data
+</figcaption>
+<div aria-describedby="tbl-levelsofdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; empty-cells: hide; border-bottom: hidden;"></th>
+<th colspan="2" data-quarto-table-cell-role="th" style="text-align: center; border-bottom: hidden; padding-bottom: 0; padding-left: 3px; padding-right: 3px; font-weight: bold; color: white !important; padding-right: 4px; padding-left: 4px; background-color: rgba(59, 102, 188, 255) !important;"><div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; ">
+Context
+</div></th>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Level</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Learner</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Institution</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td rowspan="8" style="text-align: left; font-weight: bold; vertical-align: middle !important; background-color: rgba(249, 250, 253, 255) !important;">Foundation</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">Demographics; e.g.</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">Course studied</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">- Ethnicity</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">Modules studied</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">- Disability status</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">- Prior attainment</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">- Contextual offer holder</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">- Area-based measures (IMD, POLAR4, TUNDRA)</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">End-of-stage grades</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;">Continuation</td>
+<td style="text-align: left; background-color: rgba(249, 250, 253, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td rowspan="7" style="text-align: left; font-weight: bold; vertical-align: middle !important; background-color: rgba(204, 216, 239, 255) !important;">Intermediate</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Engagement data</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Course contact hours</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Attendance</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Contact hours split by module</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Virtual learning environment usage</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Extra curricular contact hours</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Library use</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Course materials access</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Extenuating circumstances</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;">Module marks</td>
+<td style="text-align: left; background-color: rgba(204, 216, 239, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td rowspan="9" style="text-align: left; font-weight: bold; vertical-align: middle !important; background-color: rgba(174, 193, 230, 255) !important;">Advanced</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Engagement with extra-curriculars</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Timetable of contact hours</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Engagement with support</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Assessment deadlines</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Personal tutor</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Module prerequisites (i.e. is passing a prior module/assessment required to sit this module)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Academic skills</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Support services available to the student</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Pastoral support</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Personal tutor</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Leave of absence</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Academic skills</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Assessment submission data (timing, attempts)</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Pastoral support</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Use of reading lists</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;">Within-module assessment grades</td>
+<td style="text-align: left; background-color: rgba(174, 193, 230, 255) !important;"></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="identifying-gaps-in-the-student-experience" class="level2">
+<h2 class="anchored" data-anchor-id="identifying-gaps-in-the-student-experience">Identifying gaps in the student experience</h2>
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-b8c44c52{}.cl-b8bc7c16{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-b8bfd3ca{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b8bfd3de{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-b8bfe874{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-b8bfe87e{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-b8c44c52"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-b8bfe874"><p class="cl-b8bfd3ca"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAMAAAAL34HQAAADAFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACzMPSIAAAAsnRSTlMAAQMEBQYICQwNDxASFBUWFxgbHB0eHyAiIyQmJygpKiwtLjAxMjM0NTY3ODo7PD5AQUJERUZHTE5QUVRWV1haW1xdX2BiZGZnaGlqa2xucHF0d3h7fH5/gIKDh4iJiouNjo+QkZOVlpeYmpucnp+goaOmp6ipqqusra+wsbO2t7m6u7y9v8PExcbHyMnLzc7P0NPU1dfY2drb3N7f4ePk5efo6err7O/x8vP19vf4+fr7CMoPtgAAC+5JREFUeF7tm3tQVccdx1cRRA9GEeVqfMG9UpCXgK9LxAeKmVajEHVGmrax1Wmn6TSJmU4msckkk0w6zjTTxiadaTsZmdq0ES1mBE20AYnPgCQIckGDCNqIES4gKBy0UmLP7tlz9nF27wMTnOmczx97dn/ncv2es7/97W93rwDY2NjY2NjY2NjY2NjY2NjYfPuM4A3Bo6TOinZGKEDxtqt93s7OWv4DQ+B+ZbkWuB0KZ6usKuMsQXNfstIS3E7eplPZUKbytmC4D1lpq928ieZAAW8JgiHLcqxZxXcez65i3hIwAcgKi3SM/Lq9c5C2KZv8itLwFvJOFjVqau+1O5xRgD9ZIQvdmeGwcqei+rSpzLU9mnzEFy0vERcLWTh3PvqzzurKWuYhrfiWpSzJSiWtuuPH76JKzlbuVbV4+/q6VDAp2qFwY0B9uRnXVixLJ+b6Y+X/JS0rPmWNez6NaXdv64aXLXm0UfVUVdCjLnNWDvMqd1Sgy4bNtBGA6t/3sgYGX7JmvMp21b1XYaRUnqUGoNpSYLwNirRZa6m/fL8QljFb2EcEtQc/Yw00IbyBMGdrLGv46zHAqlLPvlOE3h9HW2NJf4bZSkku18qey9mjyCc0pqQyL5lFLmvipgWsoaTwnlY+T1R5XjsiEoVo3DPZ9DLH5DNa2dOfPpL6AABjHE19jIFCLmt1LtuuKIRfkrvOaKvv7ZaKgpyp+k4krjo7WrSySUmg7wMw/e451kCQylJeDGPavW90amXOU0a7paBsgLoNlCnOewPMsO8+EjsdVxdVwSeoS+bCSlypLIRJXT7/CbaNQrbrDSMy0AEJOJPmJKE309rwRUMbsZMxq25r18qH/8T9c9IJSva2RvyAfbLz+/q1N/Ibo1toVYnrfvLIzDGo+tBsd3pEDxn5NVeW6JWw5CNa2Tsu3ryFCC3/mjUYyGTN3cS2D9RoxQbD3WlV+b9MRNMA5qHUxTf+bbZaOxbplch79Vo5MHeseQsy0QNfogCprIVM8/pObRQ6tmF3875mOvvUH67nv2LM/JBmM4S3GAPSeUp7Em8U5/WXG9m2ATtmCRPYZhF05jXYsdQd5jOGP73aqBLCvv8L0ngbDkIAJ3dYnvqK3IHofW9FJmsi02oq1QrXKtwqNgP72C3JRpVhWT6pv+TVrzkOrbh4nNyAyNIQmSxm8AOUn2zC3+E5aNof/65ZZXlisVlVd+HKVlgcgiGZEMq0CDJZN+lGT4NWpGF/V/9punv6o0bNQt4Us1qBu9Ht0opeGPAJ+E1akMnqohtXvtQKw1lLycom04gXVuKzSP0dfF0Di/PErgFDtAiZrFY6/qInzNHr6l7T/LCsCyEbyCTRXKlfM2Fx/j+mXfsyOvbSyGQ1wTCDuQXrLhxePSRiEf8RoFDpD/YuBTk99cXg3EWqQSOTBfATQlpgeDTSiU+IXTwKDeaQajt2oWxY0L3IOhqFVNbR62YVpWspet2r55qQSCoJFkASLgA+1S8oJzlNzFdPkDqLVNbgP8wqfFkuLItaysAu8cH40aT+oX5BvdhB0iEUpIVIZYET+4waHJVGokr14XhSFTGWmiiMXoT+NtBhWPdSX8YhlwX2ePTrnWuAhGNqah1Hqn7BvZgEC0PW4QO4IsCHrMG39L+7DItZug1HRoSvlQvPBf2CHg4/2YEieSoP2LSfpbPg+pPaF92A9QjdRMtiJgIr/T28RUsjYIEi9cBfPmZvsfiSpb3nE2vXjmuFNdyJ9JpAkioZ3KTjppFGKCqS1X78TBN114pvWUAt/GDeLVjBww53BqK7llv5scC80YR+nOaDdedkObyBH1kA3NUDlWjPocGnLPoJgOFGEVql/V36jhgfLk8jzIukMRqikriLmvoFu6hfApSl4q9l5F3ht4loivVdFAP899L1Kod/WQpaQAgHc4X8X7l0im1TThAiT4dMfPrWjGTntGmRu/dr1XaRc31Wxuzd0HyExq+JMVHB0Tv7zYFrHdcueXytyaWyQtzuVP2xUJ7Zrs+JnI998NAK1mCwj+tf7FNoDpoIQmNitITEW3e+WiZNIis9eb65XTMZFri7ktjt0J5342YwBszpPZwBT1ToWyZhW3RODmiqPioMfyJZUzPS51GLP9QB/Xod5xEm6pu5KzmTRlExnxrguQt5KL3Wi4tbW1VdZY1iVllKXi69SgZgWvgdPbmBNx3cw135Y896bmNB/dth1gDwHK1FUliwXqpkZzcVwCUMAy8rYsWyOM4EZmt5bh2up/DvfHB3XeZy6jk6j316ibQwCn7LKMSSNREm7uWPj6F8gMDJSvsxmk1ZYGKlevWHTLTGqpqaE/FJyUhZV8MX5+nZ3CAVDxX4cLGWxwbK48lHy5g4x8hKz1opimOJMM8t0zeWMt9m7yHq6/eHTHKMvN3JLOMojLQI+pZT9E/ExSWc+Jxq07KyNovz4JRxWmp1UJel5IqPJgbb+d6lUPDGIvIEbkPWYPmccCoCU9LnrRerAjFwb17FeS+1uxAwa3EfnoWFbGHi+CkVayhZW2aTOgvKFHDeq+TQd0wUxZVmOcHDGH/SAtfjLmGgg0S+SOqkExOlnwfxsBeP44nmMc7pXclRLsVQ5O3ztl2o4yZQY5P+ECyW0ndYZiSaa0giy9h+FRCTehou2fV1spN4lxI3a6GTeUXR0U6QB1RPQz05RTA8C6U6k+aZdivTBbLwaBGyEI7FXXj5nl+JvFuJy3hENH9rKG43UEvP4j2UZ7HwYvgSE2ean7JCJBBZso05SHqG5q3tZbqPKNu3Af8nd0peHjjwofYAucYGFFoV+tpNoSSQuW+RIJAahN+t0sr6jXorsr/1R8+lstv2QhLWxY4e8Qz+4HvVWrGcO4NgaTHzXX7ykbCsWnMM9X28V7813/ebIrjNfRsPHCnheD/cL6KQK2B0FvzgQWPzLlBVBLUAetbSBbxdQoCywJLlWqHu4M0Bo28Db+DNMgKVBdZBL2wesi59G/gjL7ujKyUwl9eIHAF3SlrJcVxwZJyEe9eNJYXlHWON9NQCcfmAZYGEPrg+P5MsmTj9EKnr0hyhsbQ1dBp3FzMUWSOnd7RqlzMZAaynBJi6APjy84F4/kQGMRRZIGLC1RsADJyMH+L7WnrU0DVQ3+EWnRgOSRZwhMHd64HyMdx5UoAoS/tT0kf1Im1XumcLZpWhyQKxHrTPW3OPXwAFhrIoIyV745iLUFhzv5M9w4MMTdbtv8Mjeo36C2grOxA8BRncLJXwvWZ4SKDpsgRlIot08QZ6x1pIJTmDcq0RZ4McLXsrqINkk1dQbrHYcuZ3Fm4rIESeFxCup/2+XbV0L5xxpLp8IByovglHR6vdRzpiLf8cjdr4u3Lk3t2nVvLZRvYF2WEPJnhZzz3VfhVVWkr6Q6WxQi36c4mx76EescQ6f7qClpW/bnRWVF8HqjeWl9wUKVPP/mtnDZXQD7RZhogfXcH61uIXYKnuotYZOTNdDpI9s3m8a+NhuDjMeca0mPj0r2Bl/RaHUs8hdm9UmRKtqLd725htQ9cmN2j6lVbJ3E5ZDXzpCjA7NTECfErK1eJj1LaB2kxeEQaK0uYcWDU2Vhhe96ErSN9ymL/8AeMXrgqlfiDCEfXo5ifREm/s/kHNuVaKBq0P/wpSVgSRpS1U5j62fGpol/XXdI6czT/LMNytGeYdk4TTqFxXkL7lsG71DzRc7fR2fqW/t/BZzukx7KzyyVtaofxBvKSU9eP9y/JHx06Y1qa9ztt1JLoCzuWHzGR0oF/7Cm/XecHFWxD341sBMu0W3CBsE2cdYUtqRZvgwyArbEoXPL8NStcwyAITIrvgZopUF/wJFcdwyAKOqE64Hpfpij7Jm4bB5SFzf442oiV+77aeSw6PLDBD/3WCRJclTR0uWQZiXdZQO8yyxLqsKdtwyxLrshBkYtNvPVsJDHzCBqAuyzxkPY8Jck78RrDMj9Yf6w57JwJrP6rodIMhyHD6zcDF1SKrZzwQWawuj+DQ7UH4FkT5Nd5eUQtF/3/qQckCIDcpRVHbvXstS5MHjiJaeNjY2NjY2NjY2NjY2NjY2Pw/8j8HEEVuZA/nKQAAAABJRU5ErkJggg=="></p></td><td class="cl-b8bfe87e"><p class="cl-b8bfd3de"><span class="cl-b8bc7c16">Evaluators</span><br><span class="cl-b8bc7c16">Planning teams</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<p>To effectively identify gaps in the student experience, we can use a range of statistical techniques, as outlined in <a href="#tbl-statisticalmethods" class="quarto-xref">Table&nbsp;2</a>. This begins with <a href="#descriptive-analysis">descriptive statistics</a>, which give a foundational understanding of the data by summarising and describing key features, such as counts and measures of average.</p>
+<p>For a more in-depth statistical analysis, inferential techniques like <a href="#t-tests">t-tests</a> and <a href="#anova">ANOVAs</a> are useful. T-tests enable the comparison of means between two groups, highlighting statistically significant differences. ANOVAs extend this comparison to multiple groups.</p>
+<p><a href="#regression">Regression</a> is a powerful tool for those who want to quantify the effect of various factors on student outcomes and explore in more detail the relationship between these factors.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Here, we use the <a href="https://analyse.kmi.open.ac.uk/open_dataset">Open University Learning Analytics Dataset (OULAD)</a>. This analysis is educational and illustrative, to show the potential applications of various statistical techniques, using a dataset with variables familiar to many institutions. For those interested in a more comprehensive and formal analysis of the OULAD, we will be releasing a technical report later this year.</p>
+<p>The R code to create figures and tables below is available on our <a href="https://github.com/taso-he/technicalguide">GitHub page</a>. We will also be adding step-by-step guidance for performing these analyses in Excel (e.g.&nbsp;like our previous guidance on <a href="https://cdn.taso.org.uk/wp-content/uploads/TASO_excel_paired_t_test_guidance.pdf">conducting a paired t-test using Excel</a>).</p>
+</div>
+</div>
+<div class="cell">
+<div id="tbl-statisticalmethods" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-statisticalmethods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Statistical methods for identifying gaps in the student experience
+</figcaption>
+<div aria-describedby="tbl-statisticalmethods-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Method</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Purpose</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Focus</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Descriptive statistics</td>
+<td style="text-align: left;">Summarise and describe the basic features of the dataset.</td>
+<td style="text-align: left;">Averages (mean, median, mode), variability (standard deviation, range).</td>
+<td style="text-align: left;">Disadvantaged students score X% on average, while their more advantaged peers score Y% on average.</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">T-test</td>
+<td style="text-align: left;">Compare means between two groups.</td>
+<td style="text-align: left;">Assess if there is a statistically significant difference between the means of two groups.</td>
+<td style="text-align: left;">Is there a statistically significant different between the attainment of two groups?; e.g. comparing the attainment of disadvantaged students with the attainment of more advantaged students students.</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; font-weight: bold;">Analysis of Variance (ANOVA)</td>
+<td style="text-align: left;">Compare means across multiple groups.</td>
+<td style="text-align: left;">Determine if there are statistically significant mean differences across three or more groups.</td>
+<td style="text-align: left;">Is there a statistically significant difference in attainment across more than two groups?; e.g. comparing the score of students by their highest previous qualification (Below A Level vs A Level vs higher education qualification). Note: If the ANOVA revealed a significant difference</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; font-weight: bold;">Regression</td>
+<td style="text-align: left;">Explore relationships between variables and predict outcomes.</td>
+<td style="text-align: left;">Identify the impact of predictor variables on an outcome variable while controlling for variability due to other factors, assess the strength and direction of relationships, and make predictions based on the model.</td>
+<td style="text-align: left;">Is there a statistically significant effect of disadvantage and gender on attainment when controlling for prior attainment and course studied?</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<section id="descriptive-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-analysis">Descriptive analysis</h3>
+<p>Identifying performance gaps among different student groups is important. It allows us to understand how various factors like socio-economic status, gender and disability contribute to disparities in outcomes. Recognising these gaps is the first step to developing interventions that can mitigate the effects of such disparities.</p>
+<p>For example, if we believe that there is likely to be a gap in attainment between students from deprived areas (IMD quintile 1 and 2) and students who are not from deprived areas (IMD quintiles 3 to 5), we might start by visualising the average attainment in terms of module scores. Using a box plot, as in <a href="#fig-deprivation_gaps" class="quarto-xref">Figure&nbsp;1</a>, helps us to see how the distribution of scores differs between these groups.</p>
+<div id="fig-deprivation_gaps" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-deprivation_gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Deprivation gaps
+</figcaption>
+<div aria-describedby="fig-deprivation_gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-deprivation_gaps" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-deprivation_gaps-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-deprivation_gaps-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Average scores are lower for students from deprived areas
+</figcaption>
+<div aria-describedby="fig-deprivation_gaps-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-deprivation_gaps-1.png" class="lightbox" data-gallery="fig-deprivation_gaps" title="Figure&nbsp;1&nbsp;(a): Average scores are lower for students from deprived areas"><img src="diagnose_files/figure-html/fig-deprivation_gaps-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-deprivation_gaps" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-deprivation_gaps" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-deprivation_gaps-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-deprivation_gaps-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Across modules, deprived students score lower on average
+</figcaption>
+<div aria-describedby="fig-deprivation_gaps-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-deprivation_gaps-2.png" class="lightbox" data-gallery="fig-deprivation_gaps" title="Figure&nbsp;1&nbsp;(b): Across modules, deprived students score lower on average"><img src="diagnose_files/figure-html/fig-deprivation_gaps-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-deprivation_gaps" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+<p>Here, we can see that students from deprived areas tend to have lower average module scores compared with their counterparts from more affluent areas. This observation underscores the potential need for targeted interventions aimed at supporting students facing socio-economic challenges. Breaking this down by module, we can see that while average scores vary, a gap remains across the modules.</p>
+<p>To further understand the dynamics of this gap, we may want to look at how it has changed over time. Line charts, as in <a href="#fig-over_time_deprivation_gaps" class="quarto-xref">Figure&nbsp;2</a>, can serve as an effective visual tool, illustrating the trend of average scores by deprivation status across different time periods. In <a href="#fig-over_time_deprivation_gaps" class="quarto-xref">Figure&nbsp;2</a> we can see there is a consistent gap over time across the courses, suggesting that the gap we have identified is persistent.</p>
+<div id="fig-over_time_deprivation_gaps" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-over_time_deprivation_gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Deprivation gaps over time
+</figcaption>
+<div aria-describedby="fig-over_time_deprivation_gaps-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-over_time_deprivation_gaps" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-over_time_deprivation_gaps-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-over_time_deprivation_gaps-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Over time, there are persistent gaps in average module scores between deprived students and their non-deprived peers
+</figcaption>
+<div aria-describedby="fig-over_time_deprivation_gaps-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-over_time_deprivation_gaps-1.png" class="lightbox" data-gallery="fig-over_time_deprivation_gaps" title="Figure&nbsp;2&nbsp;(a): Over time, there are persistent gaps in average module scores between deprived students and their non-deprived peers"><img src="diagnose_files/figure-html/fig-over_time_deprivation_gaps-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-over_time_deprivation_gaps" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-over_time_deprivation_gaps" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-over_time_deprivation_gaps-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-over_time_deprivation_gaps-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Between courses, there is variation in the size of the gap in average module scores between deprived students and their non-deprived peers
+</figcaption>
+<div aria-describedby="fig-over_time_deprivation_gaps-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-over_time_deprivation_gaps-2.png" class="lightbox" data-gallery="fig-over_time_deprivation_gaps" title="Figure&nbsp;2&nbsp;(b): Between courses, there is variation in the size of the gap in average module scores between deprived students and their non-deprived peers"><img src="diagnose_files/figure-html/fig-over_time_deprivation_gaps-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-over_time_deprivation_gaps" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="t-tests" class="level3">
+<h3 class="anchored" data-anchor-id="t-tests">T-tests</h3>
+<p>In <a href="#fig-deprivation_gaps" class="quarto-xref">Figure&nbsp;1</a> above, we saw there was a 7.3 percentage point (pp) difference in scores between students from deprived areas (score = 48.2%) and students who are not from deprived areas (55.5%). However, looking at these charts alone, we cannot say whether the differences are meaningful or just random variation.</p>
+<p>We can use t-tests to determine if the difference in mean scores between students from deprived backgrounds and those who are not deprived is statistically significant using the conventional cut-off for the p-value of 0.05.</p>
+<p>The results of the t-test in <a href="#tbl-t_test_results" class="quarto-xref">Table&nbsp;3</a>, indicate that there is a statistically significant difference at the 5% level because the p-value is less than 0.05. This suggests that on average, students from deprived areas score significantly lower than their counterparts.</p>
+<p>To report the results of this t-test in text you would write: There was a significant difference between the scores for deprived students and the scores for students who are not deprived (t(10686.68) = 15.88, p&lt;0.001).</p>
+<div class="cell">
+<div id="tbl-t_test_results" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-t_test_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: T-test results
+</figcaption>
+<div aria-describedby="tbl-t_test_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Difference (pp)</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Lower confidence interval</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Upper confidence interval</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">T statistic</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Degrees of freedom</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">7.35</td>
+<td style="text-align: right;">6.44</td>
+<td style="text-align: right;">8.25</td>
+<td style="text-align: right;">15.88</td>
+<td style="text-align: right;">10686.68</td>
+<td style="text-align: left;">&lt; 0.001</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="anova" class="level3">
+<h3 class="anchored" data-anchor-id="anova">ANOVA</h3>
+<p>Building on the concept of t-tests, we can extend our analysis to compare factors with more than two groups (e.g.&nbsp;ethnicity, prior qualification types). This is where ANOVA becomes useful. ANOVA allows us to assess whether there are statistically significant differences in means across three or more groups simultaneously.</p>
+<p>For example, ANOVA can enable us to determine whether scores differ based on a student’s highest level of education. By performing ANOVA, we can compare the mean scores across each of the education levels at once, rather than comparing each pair separately. This approach helps to identify if at least one education group has a significantly different mean score compared to the others.</p>
+<p>In <a href="#tbl-anova_results" class="quarto-xref">Table&nbsp;4</a>, we can see that the ANOVA is significant (p&lt;0.001), indicating that there is evidence that the level of education influences the score.</p>
+<div class="cell">
+<div id="tbl-anova_results" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-anova_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;4: ANOVA results
+</figcaption>
+<div aria-describedby="tbl-anova_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Term</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Sum of squares</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Degrees of freedom</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Mean square</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">F statistic</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">P value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">highest_education</td>
+<td style="text-align: right;">362113.3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">90528.3</td>
+<td style="text-align: left;">109.7</td>
+<td style="text-align: left;">&lt; 0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Residuals</td>
+<td style="text-align: right;">15433168.8</td>
+<td style="text-align: right;">18703</td>
+<td style="text-align: right;">825.2</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>Given that there is evidence of a relationship between highest qualification and the scores, you can then conduct further tests such as Tukey’s HSD (a form of pairwise t-test) to determine which specific groups differ from each other, as shown in <a href="#tbl-tukey-results" class="quarto-xref">Table&nbsp;5</a>. This enables us to see, for example, that there is a significant difference in score between students with lower than A Level or equivalent and students with A Levels (highlighted pink), but not a significant difference between students with lower than A Level and students with no formal qualifications (highlighted green).</p>
+<div class="cell">
+<div id="tbl-tukey-results" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-tukey-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;5: Tukey’s HSD results for module scores for all different pairwise comparisons of educational level
+</figcaption>
+<div aria-describedby="tbl-tukey-results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Comparison</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Difference</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Lower confidence interval</th>
+<th data-quarto-table-cell-role="th" style="text-align: right; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Upper confidence interval</th>
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Adjusted p value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Higher education qualification - A Level or equivalent</td>
+<td style="text-align: right;">2.57</td>
+<td style="text-align: right;">0.91</td>
+<td style="text-align: right;">4.23</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(253, 203, 214, 255) !important;">Lower than A Level - A Level or equivalent</td>
+<td style="text-align: right; background-color: rgba(253, 203, 214, 255) !important;">-7.88</td>
+<td style="text-align: right; background-color: rgba(253, 203, 214, 255) !important;">-9.15</td>
+<td style="text-align: right; background-color: rgba(253, 203, 214, 255) !important;">-6.60</td>
+<td style="text-align: left; background-color: rgba(253, 203, 214, 255) !important;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">No formal qualifications - A Level or equivalent</td>
+<td style="text-align: right;">-14.70</td>
+<td style="text-align: right;">-21.60</td>
+<td style="text-align: right;">-7.80</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Post-graduate qualification - A Level or equivalent</td>
+<td style="text-align: right;">9.03</td>
+<td style="text-align: right;">1.85</td>
+<td style="text-align: right;">16.20</td>
+<td style="text-align: left;">0.005</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Lower than A Level - Higher education qualification</td>
+<td style="text-align: right;">-10.45</td>
+<td style="text-align: right;">-12.16</td>
+<td style="text-align: right;">-8.73</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">No formal qualifications - Higher education qualification</td>
+<td style="text-align: right;">-17.27</td>
+<td style="text-align: right;">-24.26</td>
+<td style="text-align: right;">-10.28</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Post-graduate qualification - Higher education qualification</td>
+<td style="text-align: right;">6.46</td>
+<td style="text-align: right;">-0.81</td>
+<td style="text-align: right;">13.72</td>
+<td style="text-align: left;">0.109</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; background-color: rgba(170, 252, 237, 255) !important;">No formal qualifications - Lower than A Level</td>
+<td style="text-align: right; background-color: rgba(170, 252, 237, 255) !important;">-6.82</td>
+<td style="text-align: right; background-color: rgba(170, 252, 237, 255) !important;">-13.74</td>
+<td style="text-align: right; background-color: rgba(170, 252, 237, 255) !important;">0.09</td>
+<td style="text-align: left; background-color: rgba(170, 252, 237, 255) !important;">0.055</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Post-graduate qualification - Lower than A Level</td>
+<td style="text-align: right;">16.90</td>
+<td style="text-align: right;">9.72</td>
+<td style="text-align: right;">24.09</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Post-graduate qualification - No formal qualifications</td>
+<td style="text-align: right;">23.73</td>
+<td style="text-align: right;">13.85</td>
+<td style="text-align: right;">33.61</td>
+<td style="text-align: left;">&lt;0.001</td>
+</tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p><a href="#fig-highest-ed" class="quarto-xref">Figure&nbsp;3</a> visualises these differences. We can see both the difference in scores by highest education using descriptive measures (in this case the median score using a boxplot), and the statistically significant differences in score between these qualification levels.</p>
+<div id="fig-highest-ed" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-highest-ed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Gaps in score by highest education
+</figcaption>
+<div aria-describedby="fig-highest-ed-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-highest-ed" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-highest-ed-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-highest-ed-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Students with higher levels of educuation score higher on average
+</figcaption>
+<div aria-describedby="fig-highest-ed-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-highest-ed-1.png" class="lightbox" data-gallery="fig-highest-ed" title="Figure&nbsp;3&nbsp;(a): Students with higher levels of educuation score higher on average"><img src="diagnose_files/figure-html/fig-highest-ed-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-highest-ed" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-highest-ed" style="flex-basis: 50.0%;justify-content: center;">
+<div id="fig-highest-ed-2" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<figcaption class="quarto-float-caption-top quarto-subfloat-caption quarto-subfloat-fig" id="fig-highest-ed-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) These differences are mostly statistically significant
+</figcaption>
+<div aria-describedby="fig-highest-ed-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-highest-ed-2.png" class="lightbox" data-gallery="fig-highest-ed" title="Figure&nbsp;3&nbsp;(b): These differences are mostly statistically significant"><img src="diagnose_files/figure-html/fig-highest-ed-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" data-ref-parent="fig-highest-ed" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="regression" class="level3">
+<h3 class="anchored" data-anchor-id="regression">Regression</h3>
+<p>Descriptive statistics, such as means or medians, and t-tests and ANOVAs are invaluable for highlighting disparities. But to explore in more depth, it can be useful to progress to regression analysis.</p>
+<p>Regression analysis helps identify the relationship between an outcome (like module score) and a factor (such as gender), while accounting for other demographic variables (such as ethnicity or socio-economic status). It is particularly useful for exploring how an outcome is influenced by the interaction of two or more factors. For example, regression analysis can show how the interaction of deprivation status and gender impacts modules scores, while also accounting for other factors that may affect scores.</p>
+<p>While descriptive statistics show us the extent of equality gaps, and t-tests and ANOVAs can tell us whether these gaps are statistically significant, regression analysis can give us some of the more detailed insights needed to provide targeted interventions.</p>
+<section id="simple-model" class="level4">
+<h4 class="anchored" data-anchor-id="simple-model">Simple model</h4>
+<p>In a basic linear regression model, we use only one explanatory variable - here deprivation status - to predict the dependent variable, which is the score.</p>
+<p>While this simple regression is comparable to our t-test in that it assesses the difference between two groups, it also allows us to quantify the exact impact of deprivation status on scores. Unlike the t-test, which only tells us if there is a significant difference, regression provides an estimate of how much lower deprived students score on average. Here, the regression results in <a href="#tbl-simple_regression_results" class="quarto-xref">Table&nbsp;6</a> tell us that deprived students score, on average, 7 marks lower (see highlighted row).</p>
+<div class="cell">
+<div id="tbl-simple_regression_results" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-simple_regression_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;6: Simple regression results
+</figcaption>
+<div aria-describedby="tbl-simple_regression_results-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Simple model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">55.537***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.253)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left; background-color: rgba(170, 252, 237, 255) !important;">deprivation_statusDeprived</td>
+<td style="text-align: center; background-color: rgba(170, 252, 237, 255) !important;">−7.347***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(0.458)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">18708</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2</td>
+<td style="text-align: center;">0.014</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMSE</td>
+<td style="text-align: center;">28.86</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>We can visualise this simple regression in a chart, as in <a href="#fig-simple_regression" class="quarto-xref">Figure&nbsp;4</a>, with lines indicating our 95% confidence interval. However, this alone tells us relatively little about what impacts scores. Our adjusted R-squared of 0.014 tells us that deprivation status can only explain 1.4% of the variance in score.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-simple_regression" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-simple_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Deprived students score, on average, 7 marks lower
+</figcaption>
+<div aria-describedby="fig-simple_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-simple_regression-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Figure&nbsp;4: Deprived students score, on average, 7 marks lower"><img src="diagnose_files/figure-html/fig-simple_regression-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="simple-model-with-interaction-term" class="level4">
+<h4 class="anchored" data-anchor-id="simple-model-with-interaction-term">Simple model with interaction term</h4>
+<p>To try and gain more detailed insights into how intersecting characteristics influence outcomes, we can introduce an interaction term. In <a href="#tbl-simple_and_interaction" class="quarto-xref">Table&nbsp;7</a>, we add to our simple regression an interaction between deprivation and gender. By doing so, we can explore whether the impact of deprivation on students’ scores is moderated by their gender.</p>
+<p>Using an interaction term like this allows us to identify patterns that may not be evident when looking at these factors independently. This can be important when designing interventions that are sensitive to the needs of different student groups, enabling a more targeted approach.</p>
+<p>We see in <a href="#tbl-simple_and_interaction" class="quarto-xref">Table&nbsp;7</a> that while deprivation remains a significant predictor, the interaction between deprivation and gender is not significant. This indicates that the relationship between deprivation and score does not significantly differ across genders. In other words, the impact of being from a deprived area on the score is roughly the same for male students as it is for female students.</p>
+<div class="cell">
+<div id="tbl-simple_and_interaction" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-simple_and_interaction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;7: Simple regression with interaction results
+</figcaption>
+<div aria-describedby="tbl-simple_and_interaction-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Simple model</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">&nbsp;Interaction model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">55.537***</td>
+<td style="text-align: center;">56.176***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.253)</td>
+<td style="text-align: center;">(0.387)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">deprivation_statusDeprived</td>
+<td style="text-align: center;">−7.347***</td>
+<td style="text-align: center;">−7.860***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.458)</td>
+<td style="text-align: center;">(0.662)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genderMale</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−1.116*</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.512)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">deprivation_statusDeprived × genderMale</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.863</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(0.919)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">18708</td>
+<td style="text-align: center;">18708</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.014</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.014</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMSE</td>
+<td style="text-align: center;">28.86</td>
+<td style="text-align: center;">28.86</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+</section>
+<section id="full-model-multiple-regression" class="level4">
+<h4 class="anchored" data-anchor-id="full-model-multiple-regression">Full model (multiple regression)</h4>
+<p>We can expand our model to include additional regressors such as module presentation, previous qualifications, age category, and virtual learning environment (VLE) clicks. Collectively, these factors should give a better view of the variables affecting student scores. By incorporating more predictors, we can identify more subtle relationships, and the impact of each factor on outcomes.</p>
+<p>In <a href="#tbl-full_regression" class="quarto-xref">Table&nbsp;8</a>, we see significant effects across many of our variables.</p>
+<div class="cell">
+<div id="tbl-full_regression" class="cell quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-full_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;8: Full regression model results
+</figcaption>
+<div aria-describedby="tbl-full_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="cell-output-display">
+<table class="table table-hover do-not-create-environment cell caption-top table-sm table-striped small" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" style="text-align: left; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;"></th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Simple model</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">&nbsp;Interaction model</th>
+<th data-quarto-table-cell-role="th" style="text-align: center; font-weight: bold; color: white !important; background-color: rgba(59, 102, 188, 255) !important;">Full model</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">(Intercept)</td>
+<td style="text-align: center;">55.537***</td>
+<td style="text-align: center;">56.176***</td>
+<td style="text-align: center;">46.997***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.253)</td>
+<td style="text-align: center;">(0.387)</td>
+<td style="text-align: center;">(0.651)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">deprivation_statusDeprived</td>
+<td style="text-align: center;">−7.347***</td>
+<td style="text-align: center;">−7.860***</td>
+<td style="text-align: center;">−5.391***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;">(0.458)</td>
+<td style="text-align: center;">(0.662)</td>
+<td style="text-align: center;">(0.402)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">genderMale</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−1.116*</td>
+<td style="text-align: center;">−4.943***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.512)</td>
+<td style="text-align: center;">(0.375)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">deprivation_statusDeprived × genderMale</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.863</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.919)</td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">disabilityDisabled</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−5.676***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.659)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">code_presentation2013J</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3.069***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.564)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">code_presentation2014B</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−0.615</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.597)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">code_presentation2014J</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">3.824***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.543)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">qualificationsHE or post-graduate qualification</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.796</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.532)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">qualificationsLower than A Level or no formal qualifications</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−7.507***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.407)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">num_of_prev_attempts</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">−4.128***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.436)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">age_categoryUnder 35</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">0.748+</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">(0.412)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">total_vle_clicks_thousands</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">7.171***</td>
+</tr>
+<tr class="even">
+<td style="text-align: left; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;"></td>
+<td style="text-align: center; box-shadow: 0px 1.5px;">(0.101)</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Num.Obs.</td>
+<td style="text-align: center;">18708</td>
+<td style="text-align: center;">18708</td>
+<td style="text-align: center;">18692</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">R2</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.255</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">R2 Adj.</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.014</td>
+<td style="text-align: center;">0.255</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">RMSE</td>
+<td style="text-align: center;">28.86</td>
+<td style="text-align: center;">28.86</td>
+<td style="text-align: center;">25.07</td>
+</tr>
+</tbody><tfoot>
+<tr class="odd">
+<td style="text-align: left; padding: 0;"><sup></sup> + p &lt; 0.1, * p &lt; 0.05, ** p &lt; 0.01, *** p &lt; 0.001</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tfoot>
+
+</table>
+
+
+</div>
+</div>
+</figure>
+</div>
+</div>
+<p>If we sort and plot these results, as in <a href="#fig-full_regression" class="quarto-xref">Figure&nbsp;5</a>, we get an indication of where it might be best to target an intervention. In particular, we can see that having the highest known qualification being below A Level, having a disability, and being from a deprived area have some of the biggest effects on score. This may prompt us to think about how we can devise interventions to target these groups.</p>
+<p>This expanded approach allows us to improve our understanding of the factors that influence our outcome of interest, enabling us to prioritise intervention efforts and design interventions with these factors in mind.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-full_regression" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-full_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Being disabled, being deprived, and having lower qualification levels all have significant effects on average scores
+</figcaption>
+<div aria-describedby="fig-full_regression-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="diagnose_files/figure-html/fig-full_regression-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Figure&nbsp;5: Being disabled, being deprived, and having lower qualification levels all have significant effects on average scores"><img src="diagnose_files/figure-html/fig-full_regression-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672"></a>
+</div>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="design-your-intervention" class="level2">
+<h2 class="anchored" data-anchor-id="design-your-intervention">Design your intervention</h2>
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-bb06ab86{}.cl-bafba2f4{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-baffd9b4{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-baffd9c8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-baffffa2{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-baffffac{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-bb06ab86"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-baffffa2"><p class="cl-baffd9b4"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-baffffac"><p class="cl-baffd9c8"><span class="cl-bafba2f4">Evaluators</span><br><span class="cl-bafba2f4">Practitioners</span><br><span class="cl-bafba2f4">Senior management</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+<section id="theory-of-change" class="level3">
+<h3 class="anchored" data-anchor-id="theory-of-change">Theory of change</h3>
+<p>Once a gap has been diagnosed, you can start thinking about how an intervention could address this gap, and about evaluating this intervention.</p>
+<p>Developing a theory of change is the first step in TASO’s Monitoring and Evaluation Framework and the foundation of all evaluations. The theory of change should capture the reasons why you think the activities you are doing will cause the change you want to realise.</p>
+<p>TASO has a two-strand approach to theory of change development:</p>
+<ul>
+<li><strong>Strand one – <a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/">Core Theory of Change</a></strong>: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.</li>
+<li><strong>Strand two – <a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/">Enhanced Theory of Change</a></strong>: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled" title="More theory of change resources">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+More theory of change resources
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>TASO has a <a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/">range of resources</a> for developing Core and Enhanced Theories of Change, including:</p>
+<div class="columns">
+<div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/">Core Theory of Change templates</a></p></li>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theory-of-change-leader-pack/">Theory of Change workshop resources</a></p></li>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/">Enhanced Theory of Change templates</a></p></li>
+</ul>
+</div><div class="column" style="width:50%;">
+<ul>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-for-the-ethnicity-degree-awarding-gap/">Theories of Change for the ethnicity degree awarding gap (EDAG)</a></p></li>
+<li><p><a href="https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/">Theories of Change for attainment-raising initiatives</a></p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="post-entry-typology" class="level3">
+<h3 class="anchored" data-anchor-id="post-entry-typology">Post-entry typology</h3>
+<p>To effectively evaluate interventions aimed at improving student success, it’s important to record how students engage with those interventions. Additionally, developing a common language to describe the students involved, the outcomes achieved, and the activities undertaken would help improve our collective understanding across the sector of what works to support student success.</p>
+<p>The <a href="https://taso.org.uk/evidence/evaluation-guidance-resources/mapping-outcomes-and-activities-tool-moat-resources/post-entry-mapping-outcomes-and-activities-tool-moat/">post-entry MOAT</a> (Mapping Outcomes and Activities Tool) provides a framework to describe your post-entry student support activities, in terms of their intended beneficiaries, outcomes (and suggested measures), their type and sub-type, how they are delivered and, if applicable, how they map on to the <a href="https://www.officeforstudents.org.uk/advice-and-guidance/promoting-equal-opportunities/equality-of-opportunity-risk-register/">Equality of Opportunity Risk Register</a>.</p>
+<div id="fig-MOAT" class="quarto-float quarto-figure quarto-figure-center anchored" alt="A flowchart titled 'Beneficiaries to Activity' showing a hierarchical relationship. At the top is a box labeled 'Beneficiaries,' with two sub-boxes: 'Provider level' and 'Student Group.' An arrow points downward to a box labeled 'Outcomes,' which contains one large red box labeled 'Primary' and three smaller green boxes labeled 'Secondary.' Another arrow points downward from 'Outcomes' to a box labeled 'Activity,' which has two blue sub-boxes: 'Activity Type' and 'Activity Sub-type." data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-MOAT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Overview of the main features of the post-entry MOAT
+</figcaption>
+<div aria-describedby="fig-MOAT-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/dig-images/MOAT_ConciseOverview.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Figure&nbsp;6: Overview of the main features of the post-entry MOAT"><img src="../images/dig-images/MOAT_ConciseOverview.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="A flowchart titled 'Beneficiaries to Activity' showing a hierarchical relationship. At the top is a box labeled 'Beneficiaries,' with two sub-boxes: 'Provider level' and 'Student Group.' An arrow points downward to a box labeled 'Outcomes,' which contains one large red box labeled 'Primary' and three smaller green boxes labeled 'Secondary.' Another arrow points downward from 'Outcomes' to a box labeled 'Activity,' which has two blue sub-boxes: 'Activity Type' and 'Activity Sub-type." width="500"></a>
+</div>
+</figure>
+</div>
+<p>The post-entry MOAT covers any HEP’s activity whose ultimate beneficiary is deemed to be its own students. This includes:</p>
+<ul>
+<li>transition activities designed for students who have confirmed the HEP as a firm choice on their UCAS application</li>
+<li>activities where individual students directly benefited and participated</li>
+<li>activities in which staff or entire departments are the focus; e.g.&nbsp;activities focused on changing the curriculum or academic culture within a school, which may include staff training and administrative or communications activities</li>
+<li>activities involving changes to physical or virtual infrastructure, e.g.&nbsp;improvements to lab or study facilities, or changes to the virtual learning environment.</li>
+</ul>
+
+
+</section>
+</section>
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/taso-he\.github\.io\/technicalguide\/");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../dig/index.html" class="pagination-link" aria-label="Data infrastructure guide">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Data infrastructure guide</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../dig/plan.html" class="pagination-link" aria-label="Plan: Research questions and outcomes">
+        <span class="nav-page-text">Plan: Research questions and outcomes</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.<br>
+It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.<br>
+Charity number: 1193025</p>
+</div>   
+    <div class="nav-footer-center">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/events/">
+<p>EVENTS</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-privacy-notice/">
+<p>TASO PRIVACY NOTICE</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/appropriate-policy-document/">
+<p>APPROPRIATE POLICY DOCUMENT</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/taso-speaker-request-form/">
+<p>TASO SPEAKER REQUEST FORM</p>
+</a>
+  </li>  
+    <li class="nav-item">
+    <a class="nav-link" href="https://taso.org.uk/accessibility-statement/">
+<p>ACCESSIBILITY STATEMENT</p>
+</a>
+  </li>  
+</ul>
+    </div>
+    <div class="nav-footer-right">
+<p>Get in touch:<br>
+TASO<br>
+Evidence Quarter<br>
+4th Floor, Albany House<br>
+Petty France<br>
+London SW1H 9EA<br>
+info@taso.org.uk</p>
+</div>
+  </div>
+</footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":false,"descPosition":"bottom","closeEffect":"zoom"});
+(function() {
+  let previousOnload = window.onload;
+  window.onload = () => {
+    if (previousOnload) {
+      previousOnload();
+    }
+    lightboxQuarto.on('slide_before_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      const href = trigger.getAttribute('href');
+      if (href !== null) {
+        const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+        if (imgEl !== null) {
+          const srcAttr = imgEl.getAttribute("src");
+          if (srcAttr && srcAttr.startsWith("data:")) {
+            slideConfig.href = srcAttr;
+          }
+        }
+      } 
+    });
+  
+    lightboxQuarto.on('slide_after_load', (data) => {
+      const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(slideNode);
+      }
+    });
+  
+  };
+  
+})();
+          </script>
+
+
+
+
+</body></html>

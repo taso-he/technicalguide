@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Luke Arundel">
+<meta name="author" content="Luke Arundel &amp; Dr Rob Summers">
 
-<title>Data visualisation style guide – Technical Guides</title>
+<title>Data infrastructure guide – Technical Guides</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -65,8 +31,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../data-vis/principles.html" rel="next">
-<link href="../dig/acknowledgements.html" rel="prev">
+<link href="../dig/diagnose.html" rel="next">
+<link href="../index.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -133,12 +99,16 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 background: #3b66bc;
       }
 </style>
+<link href="../site_libs/tabwid-1.1.3/tabwid.css" rel="stylesheet">
+
+<script src="../site_libs/tabwid-1.1.3/tabwid.js"></script>
+
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Data visualisation style guide – Technical Guides">
-<meta property="og:description" content="A practical guide for engaging and consistent charts">
-<meta property="og:image" content="https://taso-he.github.io/technicalguide/data-vis/images/logo_transp.png">
+<meta property="og:title" content="Data infrastructure guide – Technical Guides">
+<meta property="og:description" content="using and developing institutional data infrastructure to support student success in higher education">
+<meta property="og:image" content="https://taso-he.github.io/technicalguide/dig/data:image/png;base64,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">
 <meta property="og:site_name" content="Technical Guides">
 </head>
 
@@ -200,7 +170,7 @@ background: #3b66bc;
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-vis/index.html">Data visualisation style guide</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../dig/index.html">Data infrastructure guide</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
     </div>
@@ -213,8 +183,8 @@ background: #3b66bc;
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Data visualisation style guide</h1>
-            <p class="subtitle lead">A practical guide for engaging and consistent charts</p>
+      <h1 class="title">Data infrastructure guide</h1>
+            <p class="subtitle lead">using and developing institutional data infrastructure to support student success in higher education</p>
                       </div>
   </div>
     
@@ -224,7 +194,7 @@ background: #3b66bc;
       <div>
       <div class="quarto-title-meta-heading">Author</div>
       <div class="quarto-title-meta-contents">
-               <p>Luke Arundel </p>
+               <p>Luke Arundel &amp; Dr Rob Summers </p>
             </div>
     </div>
       
@@ -252,16 +222,16 @@ background: #3b66bc;
 </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+            <a href="../dig/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Data infrastructure guide</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
+  <a href="../dig/index.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -317,16 +287,16 @@ background: #3b66bc;
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link active">
+            <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualisation style guide</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Introduction</span></a>
   </div>
 </li>
@@ -401,15 +371,9 @@ background: #3b66bc;
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#why-good-data-visualisation-matters" id="toc-why-good-data-visualisation-matters" class="nav-link active" data-scroll-target="#why-good-data-visualisation-matters">Why good data visualisation matters</a></li>
-  <li><a href="#about-the-guide" id="toc-about-the-guide" class="nav-link" data-scroll-target="#about-the-guide">About the guide</a>
-  <ul>
-  <li><a href="#how-to-use-the-guide" id="toc-how-to-use-the-guide" class="nav-link" data-scroll-target="#how-to-use-the-guide">How to use the guide</a>
-  <ul class="collapse">
-  <li><a href="#viewing-the-code" id="toc-viewing-the-code" class="nav-link" data-scroll-target="#viewing-the-code">Viewing the code</a></li>
-  </ul></li>
-  <li><a href="#how-we-made-the-guide" id="toc-how-we-made-the-guide" class="nav-link" data-scroll-target="#how-we-made-the-guide">How we made the guide</a></li>
-  </ul></li>
+  <li><a href="#what-is-this-document" id="toc-what-is-this-document" class="nav-link active" data-scroll-target="#what-is-this-document">What is this document?</a></li>
+  <li><a href="#who-is-this-guide-for" id="toc-who-is-this-guide-for" class="nav-link" data-scroll-target="#who-is-this-guide-for">Who is this guide for?</a></li>
+  <li><a href="#how-is-the-guide-organised" id="toc-how-is-the-guide-organised" class="nav-link" data-scroll-target="#how-is-the-guide-organised">How is the guide organised?</a></li>
   </ul>
 </nav>
     </div>
@@ -420,47 +384,50 @@ background: #3b66bc;
 
 
 
-<div>
-
+<p>To create a more inclusive higher education system, institutions in England are required to take active steps to address barriers faced by underrepresented groups.</p>
+<p>Since 2018 the Office for Students (OfS), the regulator for higher education in England, has required all registered providers in the <a href="https://www.officeforstudents.org.uk/for-providers/registering-with-the-ofs/registration-with-the-ofs-a-guide/">approved (fee cap) category</a> to submit an <a href="https://www.officeforstudents.org.uk/for-providers/equality-of-opportunity/access-and-participation-plans/">access and participation plan (APP)</a>, which details how providers will support access and participation for underrepresented groups in higher education.</p>
+<p>The regulations governing APPs were <a href="https://www.officeforstudents.org.uk/publications/regulatory-notice-1-access-and-participation-plan-guidance/">updated in 2023</a> to require higher education providers (HEPs) to identify risks to <a href="https://www.officeforstudents.org.uk/for-providers/equality-of-opportunity/">equality of opportunity</a> in access, participation and progression, and provide details of interventions designed to eliminate these risks. In addition, HEPs are expected to evaluate the impact of these interventions and publish their results.</p>
+<p>The purpose of this guide is to help HEPs use their institutional data to identify equality gaps in student success and evaluate the effectiveness of interventions designed to reduce them.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="What is institutional data?">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<div class="quarto-layout-panel" data-layout-ncol="3">
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ucas_fig_1.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ucas_fig_1.png" class="img-fluid"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ucas_fig_2.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ucas_fig_2.png" class="img-fluid"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ucas_fig_3.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ucas_fig_3.png" class="img-fluid"></a></p>
+<div class="callout-title-container flex-fill">
+What is institutional data?
 </div>
 </div>
-<div class="quarto-layout-row">
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ed_path_fig_1.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ed_path_fig_1.png" class="img-fluid"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ed_path_fig_3.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ed_path_fig_3.png" class="img-fluid"></a></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><a href="../images/data-vis-images/ed_path_fig_6.png" class="lightbox" data-gallery="my-group"><img src="../images/data-vis-images/ed_path_fig_6.png" class="img-fluid"></a></p>
+<div class="callout-body-container callout-body">
+<p>Institutional data is data that is recorded and used as part of an institution’s administration and operations process. It includes data about student demographics, students’ interaction with institutional systems (such as attendance, virtual learning environment use, and engagement with support services), attainment, and course information (such as contact hours and modes of assessment).</p>
 </div>
 </div>
-</div>
-<p>This data visualisation style guide has been developed to help TASO, our partners, and the wider sector to create impactful and effective charts. It is designed to provide clear, accessible guidelines that can be applied using the data visualisation tool of your choice. We welcome your feedback on this guidance. We view this as an iterative document that will evolve as we learn more about which elements are most helpful. Please let us know what you think: <a href="mailto:luke.arundel@taso.org.uk">luke.arundel@taso.org.uk</a>.</p>
-<section id="why-good-data-visualisation-matters" class="level2">
-<h2 class="anchored" data-anchor-id="why-good-data-visualisation-matters">Why good data visualisation matters</h2>
-<p>While often overshadowed by other aspects of writing and analysis, data visualisation warrants dedicated attention. At TASO, we recognise its value and are committed to empowering our audience through carefully designed charts. Good data visualisation is vital because it holds the power to convey complex information succinctly and memorably. By presenting data visually, we simplify patterns, trends and insights. We can tell a story with the data, and design our charts to tell this story compellingly. To do this, we need to carefully consider how we set up our charts, and not rely on the default software settings.</p>
-</section>
-<section id="about-the-guide" class="level2">
-<h2 class="anchored" data-anchor-id="about-the-guide">About the guide</h2>
-<section id="how-to-use-the-guide" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-use-the-guide">How to use the guide</h3>
-<p>The guide is split into two main sections.</p>
+<section id="what-is-this-document" class="level2">
+<h2 class="anchored" data-anchor-id="what-is-this-document">What is this document?</h2>
+<p>This document is a practical guide on using institutional data to address several key areas. It aims to help enable HEPs to:</p>
 <ul>
-<li>The <a href="../data-vis/principles.html">first section</a> is designed for anyone who wants to make their data visualisations more engaging. We present guidelines that serve as effective rules of thumb for creating impactful charts. While we expect our staff and partners to follow these guidelines when creating charts for TASO publications, they are highly flexible according to context.</li>
-<li>The <a href="../data-vis/styling.html">second section</a> gives more technical details on styling charts for TASO publications. It covers aspects like sizing, font usage and colour schemes. This is to ensure consistency across TASO publications when collaborating with our partners. This section is tailored for TASO staff and partners, so if you are a general audience seeking high-level insights, you may wish to skip over it. However, we hope that general audiences may still find this section helpful if you are interested in developing your own style guide, or in understanding the finer details behind creating charts.</li>
+<li>identify equality gaps in higher education</li>
+<li>identify where those equality gaps may be particularly acute, to enable effective design of post-entry student success activities</li>
+<li>help generate robust <a href="https://taso.org.uk/evidence/toolkit/what-is-causal-evidence/">Type 3 (causal) evidence</a> of the success of student support interventions.</li>
 </ul>
+<p>Additionally, this guide provides considerations for:</p>
+<ul>
+<li>planning an evaluation of student success interventions</li>
+<li>obtaining ethical approval to carry out an evaluation and publish the results of an intervention</li>
+</ul>
+</section>
+<section id="who-is-this-guide-for" class="level2">
+<h2 class="anchored" data-anchor-id="who-is-this-guide-for">Who is this guide for?</h2>
+<p>Different sections are aimed at different audiences but overall this document will be useful for:</p>
+<div class="columns">
+<div class="column" style="width:60%;">
+<ul>
+<li>evaluators</li>
+<li>practitioners</li>
+<li>those responsible for writing their institution’s APPs</li>
+<li>planning teams</li>
+<li>senior executive/management with responsibility for supporting student success.</li>
+</ul>
+</div><div class="column" style="width:40%;">
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -471,69 +438,51 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>In this document, you will find examples of charts that follow our guidelines. These are either redesigns of existing TASO charts using the new guidance, or in some cases new charts to illustrate the guidelines. These charts are only intended to demonstrate how the style guide can be applied, and so should not be taken and shared outside of this document. As we apply the style guide, we will update this document with real examples taken from TASO publications.</p>
-</div>
-</div>
-<section id="viewing-the-code" class="level4">
-<h4 class="anchored" data-anchor-id="viewing-the-code">Viewing the code</h4>
-<p>In this guide, wherever there is a chart, you will see a ‘Show the code’ button as below. Clicking this will reveal the R code used to create the plot you’re viewing. Using R is not a requirement for making high-quality charts, but for those who use R as their tool of choice, we hope this code will be helpful.</p>
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load the tidyverse package, which includes ggplot2 and other data manipulation tools.</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Create a dataframe</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">X_Axis_Title =</span> <span class="fu">c</span>(<span class="st">"Category 1"</span>, <span class="st">"Category 2"</span>, <span class="st">"Category 3"</span>, <span class="st">"Category 4"</span>),</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y_Axis_Title =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">20</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the plot using ggplot2 package.</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> X_Axis_Title, <span class="at">y =</span> Y_Axis_Title)) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add bar elements to the plot. 'stat = "identity"' tells ggplot to use the y-values as they are.</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#3b66bc"</span>) <span class="sc">+</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a horizontal line at y = 0, with a solid line type and a specified color.</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, <span class="at">color =</span> <span class="st">"#404040"</span>) <span class="sc">+</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add labels for the axes, title, subtitle, and caption. Also format these elements.</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Axis Title (in italics if included)"</span>, </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"This is the title of the chart, it should be in Arial bold, no</span><span class="sc">\n</span><span class="st">longer than two lines, and normally active"</span>,</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This is the subtitle, it should normally be a formal statistical subtitle"</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: This is the source in italics</span><span class="sc">\n\n</span><span class="st">Notes: These are the notes in italics"</span>) <span class="sc">+</span> </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Customise with TASO theme elements, including background colour, title positioning, gridlines.</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>),</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">8</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey"</span>),</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#EDEBE3"</span>),</span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"italic"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
+<p>In each section, it is indicated who that part of the guide is aimed at, e.g.:</p>
+<div class="cell" data-ft.align="left">
 <div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><a href="index_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img src="index_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" alt="Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics." width="672"></a></p>
+<div class="tabwid tabwid_left"><style>.cl-bd9c68f4{}.cl-bd89e6b6{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bd9763ae{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bd9763b8{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bd977c86{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bd977c90{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-bd9c68f4"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-bd977c86"><p class="cl-bd9763ae"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-bd977c90"><p class="cl-bd9763b8"><span class="cl-bd89e6b6">Evaluators</span><br><span class="cl-bd89e6b6">Practitioners</span></p></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>There are a large variety of HEPs in England, from small and specialist providers with tens of students, to the very largest with tens of thousands. Where possible we have tried to make this guide useful for a wide range of providers, though some sections will be more relevant to some types of providers than others.</p>
+</section>
+<section id="how-is-the-guide-organised" class="level2">
+<h2 class="anchored" data-anchor-id="how-is-the-guide-organised">How is the guide organised?</h2>
+<p>The guide is organised around the four stages of <a href="https://taso.org.uk/evidence/our-approach-to-evaluation/">TASO’s Monitoring and Evaluation Framework</a> (MEF), pictured in <a href="#fig-mefdiagram" class="quarto-xref">Figure&nbsp;1</a>. In addition, there are sections on common barriers to and facilitators of evaluation of student success work.</p>
+<div id="fig-mefdiagram" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center" alt="Diagnose:  Identifying the situation that needs addressing; Establishing (or revising the Theory of Change)\nPlan:  Identifying the research questions; Identifying the outcome measures; Selecting the research methods; Creating a research protocol; Measure:  Collecting data; Analysing data; Evaluating the success of the intervention\nReflect:  Reporting the findings; Discussions with stakeholders; Integration of findings into programme design/revision">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-mefdiagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: MEF diagram
+</figcaption>
+<div aria-describedby="fig-mefdiagram-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="../images/dig-images/im_mef_diagram_cropped.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Figure&nbsp;1: MEF diagram"><img src="../images/dig-images/im_mef_diagram_cropped.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%" alt="Diagnose:  Identifying the situation that needs addressing; Establishing (or revising the Theory of Change)\nPlan:  Identifying the research questions; Identifying the outcome measures; Selecting the research methods; Creating a research protocol; Measure:  Collecting data; Analysing data; Evaluating the success of the intervention\nReflect:  Reporting the findings; Discussions with stakeholders; Integration of findings into programme design/revision"></a>
+</div>
 </figure>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
 </div>
 </div>
-</section>
-</section>
-<section id="how-we-made-the-guide" class="level3">
-<h3 class="anchored" data-anchor-id="how-we-made-the-guide">How we made the guide</h3>
-<p>In developing the guide, we have drawn extensively on existing data visualisation work, notably the key principles outlined by Jonathan Schwabish, and the Government Analysis Function guidance on data visualisation. We aimed to distil and accentuate elements from various sources that we thought would be most beneficial for TASO, our partners and the wider sector. This guide, therefore, stands as a curated synthesis, offering tailored and impactful guidance for our specific context, with due credit to the influential work and expertise that inspired it. We have taken care to strike a balance, ensuring the guide offers practical insights without being overly burdensome. For a comprehensive list of the guides and resources we consulted during this process, please refer to the <a href="../data-vis/references.html">References and further resources</a> section.</p>
+<div class="callout-body-container callout-body">
+<p>The MEF icon will be used to signify the applicable part of the MEF for each section.</p>
+<div class="cell" data-ft.align="left">
+<div class="cell-output-display">
+<div class="tabwid tabwid_left"><style>.cl-bdb84100{}.cl-bdaa6224{font-family:'Source Sans Pro';font-size:11pt;font-weight:normal;font-style:normal;text-decoration:none;color:rgba(0, 0, 0, 1.00);background-color:transparent;}.cl-bdaa622e{font-family:'Source Sans Pro';font-size:10pt;font-weight:normal;font-style:normal;text-decoration:underline;color:rgba(59, 102, 188, 1.00);background-color:transparent;}.cl-bdb09d56{margin:0;text-align:center;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bdb09d6a{margin:0;text-align:left;border-bottom: 0 solid rgba(0, 0, 0, 1.00);border-top: 0 solid rgba(0, 0, 0, 1.00);border-left: 0 solid rgba(0, 0, 0, 1.00);border-right: 0 solid rgba(0, 0, 0, 1.00);padding-bottom:5pt;padding-top:5pt;padding-left:5pt;padding-right:5pt;line-height: 1;background-color:transparent;}.cl-bdb0d078{width:0.75in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}.cl-bdb0d082{width:1.969in;background-color:transparent;vertical-align: middle;border-bottom: 1pt solid rgba(211, 211, 211, 1.00);border-top: 1pt solid rgba(211, 211, 211, 1.00);border-left: 1pt solid rgba(211, 211, 211, 1.00);border-right: 1pt solid rgba(211, 211, 211, 1.00);margin-bottom:0;margin-top:0;margin-left:0;margin-right:0;}</style><table data-quarto-disable-processing="true" class="cl-bdb84100"><tbody><tr style="overflow-wrap:break-word;"><td class="cl-bdb0d078"><p class="cl-bdb09d56"><img style="vertical-align:baseline;width:43px;height:43px;" src="data:image/png;base64,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"></p></td><td class="cl-bdb0d082"><p class="cl-bdb09d6a"><a href="https://taso.org.uk/evidence/our-approach-to-evaluation/step-2-plan/"><span class="cl-bdaa622e">Plan</span></a></p></td></tr></tbody></table></div>
+</div>
+</div>
+</div>
+</div>
 
 
-</section>
 </section>
 
 <a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
@@ -959,13 +908,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../dig/acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Acknowledgements</span>
+      <a href="../index.html" class="pagination-link" aria-label="Introduction to the guides">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction to the guides</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../data-vis/principles.html" class="pagination-link" aria-label="Principles for good data visualisation">
-        <span class="nav-page-text">Principles for good data visualisation</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../dig/diagnose.html" class="pagination-link" aria-label="Diagnose">
+        <span class="nav-page-text">Diagnose</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
@@ -1017,7 +966,7 @@ info@taso.org.uk</p>
 </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","selector":".lightbox","loop":false,"descPosition":"bottom"});
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","loop":false,"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom"});
 (function() {
   let previousOnload = window.onload;
   window.onload = () => {
