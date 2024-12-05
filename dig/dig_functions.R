@@ -4,10 +4,10 @@
 # requires library(officer)
 mef_stage <- c("Diagnose","Plan","Measure","Reflect")
 mef_stage_url <- c(
-  "https://taso.org.uk/evidence/our-approach-to-evaluation/step-1-diagnose/",
-  "https://taso.org.uk/evidence/our-approach-to-evaluation/step-2-plan/",
-  "https://taso.org.uk/evidence/our-approach-to-evaluation/step-3-measure/",
-  "https://taso.org.uk/evidence/our-approach-to-evaluation/step-4-reflect/")
+  "https://taso.org.uk/step-1-diagnose/",
+  "https://taso.org.uk/step-2-plan/",
+  "https://taso.org.uk/step-3-measure/",
+  "https://taso.org.uk/step-4-reflect/")
 mef_image <- here::here("images/dig-images/eval_cycle_icon_small.png")
 audience_image <- here::here("images/dig-images/im_audience.png")
 table_border <- officer::fp_border(color = "lightgrey", style = "solid", width = 1)
