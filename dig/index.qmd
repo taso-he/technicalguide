@@ -27,7 +27,7 @@ This document is a practical guide on using institutional data to address severa
 
 -   identify equality gaps in higher education
 -   identify where those equality gaps may be particularly acute, to enable effective design of post-entry student success activities
--   help generate robust [Type 3 (causal) evidence](https://taso.org.uk/evidence/toolkit/what-is-causal-evidence/) of the success of student support interventions.
+-   help generate robust [Type 3 (causal) evidence](https://taso.org.uk/evidence-toolkits/evidence-toolkit-student-access-success-progression/how-we-rate-evidence/) of the success of student support interventions.
 
 Additionally, this guide provides considerations for:
 
@@ -38,7 +38,7 @@ Additionally, this guide provides considerations for:
 
 Different sections are aimed at different audiences but overall this document will be useful for:
 
-::: columns
+:::::: columns
 ::: {.column width="60%"}
 -   evaluators
 -   practitioners
@@ -47,7 +47,7 @@ Different sections are aimed at different audiences but overall this document wi
 -   senior executive/management with responsibility for supporting student success.
 :::
 
-::: {.column width="40%"}
+:::: {.column width="40%"}
 ::: callout-note
 In each section, it is indicated who that part of the guide is aimed at, e.g.:
 
@@ -57,8 +57,8 @@ genAudienceTable(audience=c("Evaluators",
                             "Practitioners"))
 ```
 :::
-:::
-:::
+::::
+::::::
 
 There are a large variety of HEPs in England, from small and specialist providers with tens of students, to the very largest with tens of thousands. Where possible we have tried to make this guide useful for a wide range of providers, though some sections will be more relevant to some types of providers than others.
 

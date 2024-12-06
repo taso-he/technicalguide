@@ -38,7 +38,7 @@ Production of type 3 (causal) evidence will often entail using experimental (i.e
 
 #### Data
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <input type="checkbox"> Do you know what data you need to collect?<br>
 
@@ -52,13 +52,13 @@ Production of type 3 (causal) evidence will often entail using experimental (i.e
 
 <input type="checkbox"> Is the data available for the timeframe you need it?
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 #### People
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <input type="checkbox"> Do you know who is going to collect the data, either by obtaining it from the data repository or, for surveys and interviews, obtaining it directly from participants?<br>
 :::
@@ -68,13 +68,13 @@ Production of type 3 (causal) evidence will often entail using experimental (i.e
 
 <input type="checkbox"> Do you know who is going to write up the analysis?
 :::
-:::
+:::::
 
 ------------------------------------------------------------------------
 
 #### Systems
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <input type="checkbox"> Are the required privacy notices in place?<br>
 :::
@@ -82,7 +82,7 @@ Production of type 3 (causal) evidence will often entail using experimental (i.e
 ::: {.column width="50%"}
 <input type="checkbox"> Do you have or need ethical approval to gather the data or conduct the analysis? Note: if you are publishing a report (and we strongly encourage you to do so) then you will require some form of ethical approval to conduct the evaluation.
 :::
-:::
+:::::
 
 ### Writing an analysis plan/trial protocol
 
@@ -104,10 +104,10 @@ Reasons for creating a research protocol include**:**
 
 The protocol should be written as if it is going to end up in the hands of someone who knows very little about your organisation, the reason for the research, or the intervention. This is to future-proof the protocol, but also to ensure that you document all your thinking and the decisions you have made along the way.
 
-::: {.callout-tip title="TASO research protocol templates"}
+:::::: {.callout-tip title="TASO research protocol templates"}
 TASO has useful templates for researchers and evaluators writing protocols, including:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   [Trial protocol template](https://cdn.taso.org.uk/wp-content/uploads/TASO_trial_protocol_template_October_23.docx)
 
@@ -121,8 +121,8 @@ TASO has useful templates for researchers and evaluators writing protocols, incl
 
 -   [Economic evaluation protocol template](https://cdn.taso.org.uk/wp-content/uploads/2024_TASO_EE_Protocol_template.docx)
 :::
-:::
-:::
+:::::
+::::::
 
 ### Ethical approval
 
@@ -146,7 +146,7 @@ Dr Matt Horton at the University of Wolverhampton has set up a dedicated panel f
 
 The purposes of the panel are to improve responsiveness (applications are reviewed on a monthly basis), simplify the application process (reducing the form to questions only relevant to the APP) and to provide a standardised participant information and consent form.
 
-The [application form](https://taso.org.uk/wp-content/uploads/APP-Research-Ethics-Submission-Form-UoW-final-v5.docx) collects the following information
+The [application form](https://taso.org.uk/wp-content/uploads/TASO_APP_Research-Ethics-Submission-Form_UoW.docx) collects the following information
 
 -   the [theory of change](diagnose.qmd#theory-of-change) for the intervention
 -   staff involved in the evaluation

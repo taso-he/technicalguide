@@ -2,7 +2,7 @@
 title: "Acknowledgements"
 ---
 
-This guide has been written by [Luke Arundel](https://taso.org.uk/person/luke-arundel/) and [Rob Summers](https://taso.org.uk/person/rob-summers/). The authors would like to thank the following individuals who worked on the [Institutional Data Use project](https://taso.org.uk/research/current-projects/institutional-data-use/) in various capacities. Their valuable insights, gained through workshops and discussions, have greatly informed the content of this guide.
+This guide has been written by [Luke Arundel](https://taso.org.uk/staff/luke-arundel/) and [Rob Summers](https://taso.org.uk/staff/dr-rob-summers/). The authors would like to thank the following individuals who worked on the [Institutional Data Use project](https://taso.org.uk/research/current-projects/institutional-data-use/) in various capacities. Their valuable insights, gained through workshops and discussions, have greatly informed the content of this guide.
 
 -   Bec Aeddi (Nottingham Trent University)
 

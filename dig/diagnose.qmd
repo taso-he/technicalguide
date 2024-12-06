@@ -278,10 +278,10 @@ TASO has a two-strand approach to theory of change development:
 -   **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
 -   **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
 
-::: {.callout-tip title="More theory of change resources"}
+:::::: {.callout-tip title="More theory of change resources"}
 TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/) for developing Core and Enhanced Theories of Change, including:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   [Core Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)
 
@@ -295,14 +295,14 @@ TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance
 
 -   [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
 :::
-:::
-:::
+:::::
+::::::
 
 ### Post-entry typology
 
 To effectively evaluate interventions aimed at improving student success, it's important to record how students engage with those interventions. Additionally, developing a common language to describe the students involved, the outcomes achieved, and the activities undertaken would help improve our collective understanding across the sector of what works to support student success.
 
-The [post-entry MOAT](https://taso.org.uk/evidence/evaluation-guidance-resources/mapping-outcomes-and-activities-tool-moat-resources/post-entry-mapping-outcomes-and-activities-tool-moat/) (Mapping Outcomes and Activities Tool) provides a framework to describe your post-entry student support activities, in terms of their intended beneficiaries, outcomes (and suggested measures), their type and sub-type, how they are delivered and, if applicable, how they map on to the [Equality of Opportunity Risk Register](https://www.officeforstudents.org.uk/advice-and-guidance/promoting-equal-opportunities/equality-of-opportunity-risk-register/).
+The [post-entry MOAT](https://taso.org.uk/evidence/evaluation-guidance-resources/mapping-outcomes-and-activities-tool-moat-resources/post-entry-mapping-outcomes-and-activities-tool-moat/) (Mapping Outcomes and Activities Tool) provides a framework to describe your post-entry student support activities, in terms of their intended beneficiaries, outcomes (and suggested measures), their type and sub-type, how they are delivered and, if applicable, how they map on to the [Equality of Opportunity Risk Register](https://www.officeforstudents.org.uk/for-providers/equality-of-opportunity/equality-of-opportunity-risk-register/).
 
 ![Overview of the main features of the post-entry MOAT](../images/dig-images/MOAT_ConciseOverview.png){#fig-MOAT fig-alt="A flowchart titled 'Beneficiaries to Activity' showing a hierarchical relationship. At the top is a box labeled 'Beneficiaries,' with two sub-boxes: 'Provider level' and 'Student Group.' An arrow points downward to a box labeled 'Outcomes,' which contains one large red box labeled 'Primary' and three smaller green boxes labeled 'Secondary.' Another arrow points downward from 'Outcomes' to a box labeled 'Activity,' which has two blue sub-boxes: 'Activity Type' and 'Activity Sub-type." fig-align="center" width="500"}
 
