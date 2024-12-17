@@ -2,10 +2,11 @@
 title: "Data visualisation style guide"
 subtitle: A practical guide for engaging and consistent charts
 format: html
-title-block-banner: "#3b66bc"
+title-block-banner: "#0f2847"
 title-block-banner-color: "white"
 author: Luke Arundel
-date: last-modified
+date: "February, 2024"
+date-modified: last-modified
 date-format: "MMMM, YYYY" 
 ---
 
@@ -23,7 +24,7 @@ date-format: "MMMM, YYYY"
 ![](../images/data-vis-images/ed_path_fig_6){group="my-group"}
 :::
 
-This data visualisation style guide has been developed to help TASO, our partners, and the wider sector to create impactful and effective charts. It is designed to provide clear, accessible guidelines that can be applied using the data visualisation tool of your choice. We welcome your feedback on this guidance. We view this as an iterative document that will evolve as we learn more about which elements are most helpful. Please let us know what you think: [luke.arundel\@taso.org.uk](mailto:luke.arundel@taso.org.uk).
+This data visualisation style guide has been developed to help TASO, our partners, and the wider sector to create impactful and effective charts. It is designed to provide clear, accessible guidelines that can be applied using the data visualisation tool of your choice. We welcome your feedback on this guidance. We view this as an iterative document that will evolve as we learn more about which elements are most helpful. Please let us know what you think: [research\@taso.org.uk](mailto:research@taso.org.uk).
 
 ## Why good data visualisation matters
 

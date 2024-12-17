@@ -2,11 +2,12 @@
 title: "Coding good practice guide"
 subtitle: "Practical tips for clean, readable and shareable scripts"
 format: html
-title-block-banner: "#3b66bc"
+title-block-banner: "#0f2847"
 title-block-banner-color: "white"
 author: Luke Arundel
-date: 02/01/2024
-date-format: "MMMM, YYYY" 
+date: "February, 2024"
+date-modified: last-modified
+date-format: "MMMM, YYYY"  
 ---
 
 ::: {layout-ncol="2"}

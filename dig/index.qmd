@@ -2,10 +2,11 @@
 title: "Data infrastructure guide"
 subtitle: using and developing institutional data infrastructure to support student success in higher education
 format: html
-title-block-banner: "#3b66bc"
+title-block-banner: "#0f2847"
 title-block-banner-color: "white"
 author: Luke Arundel & Dr Rob Summers
-date: last-modified
+date: "September, 2024"
+date-modified: last-modified
 date-format: "MMMM, YYYY" 
 ---
 

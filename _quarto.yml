@@ -89,13 +89,14 @@ website:
   page-navigation: true
 
   page-footer:
-    background: "#3b66bc"
+    background: "#0f2847"
+    foreground: "#FFFFFF"
     left: |
       TASO was set up by a consortium of King’s College London, Nottingham Trent University and the Behavioural Insights Team.  
       It is funded by the Office for Students and is an affiliate What Works Centre, and part of the UK Government’s What Works Movement.   
       Charity number: 1193025
     right:   |
-      Get in touch:  
+      Contact us:  
       TASO  
       58 Victoria Embankment  
       Temple  

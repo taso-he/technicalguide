@@ -2,7 +2,7 @@
 title: "TASO Technical Guides"
 subtitle: "A collection of interactive TASO resources to enhance your evaluation, data visualisation, and coding practices"
 format: html
-title-block-banner: "#3b66bc"
+title-block-banner: "#0f2847"
 title-block-banner-color: "white"
 ---
 
@@ -10,12 +10,10 @@ title-block-banner-color: "white"
 
 Welcome to the TASO Technical Guide, an interactive resource designed to guide and enhance your evaluation, data visualisation and coding practices. This website contains:
 
-:::{.grid style="background-color: #dbe3f4; padding: 10px"}
-
-::: {.g-col-4}
-<div style="text-align: center;">
-  <a href="dig/index.qmd">
-    <button type="button" style="
+::::::::: {.grid style="background-color: #dbe3f4; padding: 10px"}
+:::: g-col-4
+::: {style="text-align: center;"}
+<a href="dig/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -23,19 +21,15 @@ Welcome to the TASO Technical Guide, an interactive resource designed to guide a
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;">
-      Data Infrastructure Guide
-    </button>
-  </a>
-</div>
+      cursor: pointer;"> Data Infrastructure Guide </button> </a>
+:::
 
 A practical guide on using institutional data to identify equality gaps in students success and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.
-:::
+::::
 
-::: {.g-col-4}
-<div style="text-align: center;">
-  <a href="data-vis/index.qmd">
-    <button type="button" style="
+:::: g-col-4
+::: {style="text-align: center;"}
+<a href="data-vis/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -43,19 +37,15 @@ A practical guide on using institutional data to identify equality gaps in stude
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;">
-      Data Visualisation Style Guide
-    </button>
-  </a>
-</div>
+      cursor: pointer;"> Data Visualisation Style Guide </button> </a>
+:::
 
 Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
-:::
+::::
 
-::: {.g-col-4}
-<div style="text-align: center;">
-  <a href="coding-good-practice/index.qmd">
-    <button type="button" style="
+:::: g-col-4
+::: {style="text-align: center;"}
+<a href="coding-good-practice/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -63,16 +53,12 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;">
-      Coding Good Practice
-    </button>
-  </a>
-</div>
+      cursor: pointer;"> Coding Good Practice </button> </a>
+:::
 
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
-:::
-
-:::
+::::
+:::::::::
 
 ## Why publish on GitHub?
 
