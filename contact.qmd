@@ -5,4 +5,4 @@ title-block-banner: "#0f2847"
 title-block-banner-color: "white"
 ---
 
-We view this guide as an iterative resource and want to emphasise the valuable role feedback plays in its improvement. Your insights are crucial to refining and enhancing this resource. We encourage you to share your thoughts, suggestions and experiences with us, to ensure the ongoing relevance and effectiveness of this guide. For any inquiries, comments, or feedback, you can contact us at [research\@taso.org.uk](mailto:research@taso.org.uk).
+We view these guides as iterative resources and want to emphasise the valuable role feedback plays in their improvement. Your insights are crucial to refining and enhancing these resources. We encourage you to share your thoughts, suggestions and experiences with us, to ensure the ongoing relevance and effectiveness of these guides. For any inquiries, comments, or feedback, you can contact us at [research\@taso.org.uk](mailto:research@taso.org.uk).

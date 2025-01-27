@@ -30,8 +30,8 @@ Deciding which methods are most suitable to produce causal evidence can feel dif
 
 Before using any specific experimental or quasi-experimental method, it is also important to consult more detailed resources. Each method comes with its own set of assumptions, requirements and considerations that will significantly impact the validity and reliability of your research findings.
 
-::: {.callout-tip title="Causal evaluation resources"}
-::: columns
+:::::: {.callout-tip title="Causal evaluation resources"}
+::::: columns
 ::: {.column width="50%"}
 -   [TASO evaluation guidance](https://taso.org.uk/evidence/evaluation-guidance-resources/)
 
@@ -51,8 +51,8 @@ Before using any specific experimental or quasi-experimental method, it is also 
 
 -   [Causal Inference for the Brave and True](https://matheusfacure.github.io/python-causality-handbook/landing-page.html) (Matheus Facure Alves)
 :::
-:::
-:::
+:::::
+::::::
 
 As with the flowchart, these sections adapt and build on insights from the [Magenta Book](https://assets.publishing.service.gov.uk/media/5e96cab9d3bf7f412b2264b1/HMT_Magenta_Book.pdf), published under the [Open Government Licence](https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/).
 
@@ -64,8 +64,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   This method helps to isolate the effect of receiving the intervention from other changes over time that might affect the outcome, allowing you to control for unobserved factors.
 -   This method relies on the assumption that both groups would have followed similar trends in outcomes over time if the intervention wasn't introduced (parallel trends assumption).
 
-::: {.callout-note title="Difference-in-difference example"}
-::: columns
+:::::: {.callout-note title="Difference-in-difference example"}
+::::: columns
 ::: {.column width="50%"}
 ![Difference-in-difference diagram](..\images/dig-images/diff-in-diff.png){#fig-diff-in-diff fig-align="center" fig-alt="Difference-in-difference diagram comparing module grades between an intervention group and a comparator group over time, showing the pre- and post-intervention trends and the intervention effect."}
 :::
@@ -79,8 +79,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   Prior to the intervention the trends in attainment over time were similar.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -97,8 +97,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   Individuals on either side of the cutoff are assumed to be similar, except for whether they received the intervention or not.
 -   By comparing individuals just below the cutoff (and did not receive intervention) to those just above (and did receive the intervention), any difference in outcomes can be attributed to the intervention, providing causal evidence.
 
-::: {.callout-note title="Regression discontinuity design example"}
-::: columns
+:::::: {.callout-note title="Regression discontinuity design example"}
+::::: columns
 ::: {.column width="50%"}
 ![Regression discontinuity design diagram](..\images/dig-images/rdd.png){#fig-rdd fig-align="center" fig-alt="Regression discontinuity design diagram showing retention rates by grade, with a cutoff at 70 separating the intervention group and comparator group. The intervention effect is highlighted at the cutoff."}
 :::
@@ -110,8 +110,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   The comparison groups are clearly and objectively defined by the cutoff.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -126,8 +126,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   A good instrumental variable is exogenous; that is the instrumental variable must affect the likelihood of taking part in the intervention but be unrelated to the outcome, other than through the intervention itself.
 -   This method deals with hidden biases (such as motivation) and can address unobserved confounding variables. By comparing the outcomes of those influenced by the instrument to join the intervention to those who are not, the effect of the intervention can be determined.
 
-::: {.callout-note title="Instrumental variables example"}
-::: columns
+:::::: {.callout-note title="Instrumental variables example"}
+::::: columns
 ::: {.column width="50%"}
 ![Instrumental variables diagram](..\images/dig-images/iv.png){#fig-iv fig-align="center" fig-alt="Diagram illustrating an instrumental variables approach, where distance to an information session influences session attendance, which in turn affects graduate outcomes. The information session serves as the treatment, and distance to the session is the instrumental variable."}
 :::
@@ -141,8 +141,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   **Unrelated:** The distance a student travels to the session is unlikely to directly affect graduate outcomes. It influences outcomes primarily through its effect on session attendance.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -156,8 +156,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   These methods can be used to create a comparison group by matching individuals from the population who do not receive an intervention with individuals who do using characteristics (such as grades, entry route, gender, ethnicity) that could influence both the likelihood of receiving the intervention and the outcomes of interest.
 -   The comparison group and intervention group will be similar based on those key characteristics. This creates pairs or groups that are comparable, except for the intervention.
 
-::: {.callout-note title="Matching methods example"}
-::: columns
+:::::: {.callout-note title="Matching methods example"}
+::::: columns
 ::: {.column width="50%"}
 ![Matching methods diagram](..\images/dig-images/matching_methods.png){#fig-matching fig-align="center" fig-alt="Diagram showing control and matched comparator groups, represented by blue and green circles of varying sizes. Arrows connect matched pairs between the two groups, demonstrating the matching process used to compare similar students"}
 :::
@@ -171,8 +171,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   This approach is intuitive and easy to understand, and can be more powerful when paired with a difference-in-difference method.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -186,8 +186,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   This method can be used when an intervention takes place in the whole population of interest and the outcome measure is known over a period of time before and after an intervention (the interruption).
 -   The effects of an intervention are evaluated by obtaining outcome measures at several points before and after an intervention is introduced, allowing the change in level and trend of outcomes to be compared.
 
-::: {.callout-note title="Interrupted time series example"}
-::: columns
+:::::: {.callout-note title="Interrupted time series example"}
+::::: columns
 ::: {.column width="50%"}
 ![Interrupted time-series diagram](..\images/dig-images/interrupted_time_series.png){#fig-interrupted-time-series fig-align="center" fig-alt="Interrupted time series diagram showing student outcomes over time, with a dashed vertical line marking the start of institution-wide change. Pre- and post-intervention trends are represented by blue and green dots and lines, respectively, indicating the effect of the intervention on outcomes."}
 :::
@@ -197,8 +197,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   Student outcomes across the HEP - such as wellbeing, engagement and attainment - before and after the change was introduced are compared.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -214,8 +214,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   Differences between the performance after the intervention begins between the intervention group and its synthetic clone may be used as evidence that the intervention has had an effect. Most commonly applied to interventions applied at an area or group level.
 -   One key strength of synthetic controls is that they can offer a relevant comparison when no other comparators exist.
 
-::: {.callout-note title="Synthetic control methods example"}
-::: columns
+:::::: {.callout-note title="Synthetic control methods example"}
+::::: columns
 ::: {.column width="50%"}
 ![Synthetic control diagram](..\images/dig-images/synthetic-control.png){#fig-synthetic-control fig-align="center" fig-alt="Synthetic control diagram comparing attainment over time between an intervention group and a weighted average comparator group. A dashed vertical line marks the intervention, and the post-intervention difference between the groups highlights the intervention effect."}
 :::
@@ -229,8 +229,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   The intervention effect can be inferred from the difference in outcomes at the end of the trial period.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -249,8 +249,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   Any difference in outcomes between the groups is the intervention's real effect.
 -   RCTs (with implementation and process evaluation) are often considered the strongest way of testing the effectiveness of an intervention.
 
-::: {.callout-note title="Individual RCT example"}
-::: columns
+:::::: {.callout-note title="Individual RCT example"}
+::::: columns
 ::: {.column width="50%"}
 ![Individual RCT diagram](..\images/dig-images/individual_rct.png){#fig-individual-rct fig-align="center" fig-alt="Diagram showing participants randomly allocated into two groups: an intervention group and a control group. Each group consists of individuals represented by different colored dots, highlighting the randomisation process in an RCT."}
 :::
@@ -260,8 +260,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   Each student who is flagged is randomly assigned to receive either an email, or an email plus a phone call.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -279,8 +279,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 -   Cluster RCTs are used when interventions are delivered to pre-existing groups (e.g. students on a module) and individual random allocation is not possible.
 -   Delivering interventions to entire groups can reduce the risk of control group participants being exposed to the intervention (spillover effects).
 
-::: {.callout-note title="Cluster RCT example"}
-::: columns
+:::::: {.callout-note title="Cluster RCT example"}
+::::: columns
 ::: {.column width="50%"}
 ![Cluster RCT diagram](..\images/dig-images/cluster_rct.png){#fig-cluster fig-align="center" fig-alt="Diagram showing participants grouped into schools, modules, or classes, with entire clusters being randomly assigned to either an intervention group or a control group. Each cluster contains multiple individuals represented by blue circles."}
 :::
@@ -288,8 +288,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 ::: {.column width="50%"}
 -   Participants are randomly assigned to receive a change in assessment type by academic school, with Business School and School of Social Sciences receiving the intervention, while School of Engineering and Mathematics and School of Life Sciences do not receive the intervention.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -308,8 +308,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
     -   All participants or clusters eventually receive the intervention, but the start times are randomly assigned so the intervention is rolled out in steps or phases.
     -   A stepped-wedge RCT can be thought of like a waitlist RCT with more than one delay period.
 
-::: {.callout-note title="Waitlist RCT example"}
-::: columns
+:::::: {.callout-note title="Waitlist RCT example"}
+::::: columns
 ::: {.column width="50%"}
 ![Waitlist RCT diagram](..\images/dig-images/waitlist_rct.png){#fig-waitlist fig-align="center" fig-alt="Diagram illustrating a waitlist RCT where the intervention group receives treatment in Term 1, and the control group does not. In Term 2, both groups receive the intervention, with the intervention effect measured between the groups in Term 1."}
 :::
@@ -323,8 +323,8 @@ As with the flowchart, these sections adapt and build on insights from the [Mage
 
 -   Then in term 2, the waitlist control group receives the intervention.
 :::
-:::
-:::
+:::::
+::::::
 
 ##### Considerations
 
@@ -369,10 +369,10 @@ This type of evaluation provides information about how best to revise and improv
 -   identify the elements of an intervention or programme that are necessary to produce the intended effects (outcomes)
 -   establish whether the assumption(s) and mechanisms underpinning the intervention's theory of change hold true.
 
-::: {.callout-tip title="Implementation and process evaluation resources"}
+:::::: {.callout-tip title="Implementation and process evaluation resources"}
 TASO has published several resources to support the sector in conducting rigorous IPE:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 -   [IPE guidance](https://cdn.taso.org.uk/wp-content/uploads/2024-04_TASO-implementation-process-evaluation-guidance.pdf) - provides an introduction to IPE and step-by-step process for completing an IPE
 
@@ -386,5 +386,5 @@ TASO has published several resources to support the sector in conducting rigorou
 
 -   [IPE reporting template](https://cdn.taso.org.uk/wp-content/uploads/TASO_IPE_report_template_FINAL_April_24.docx) - to guide the sector in structuring and developing their own IPE reports
 :::
-:::
-:::
+:::::
+::::::
