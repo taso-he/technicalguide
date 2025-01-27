@@ -46,6 +46,7 @@ Start with the principle of making charts as simple and stripped back as possibl
 ```{r fig.align="center", fig.alt = "Bar chart with TASO stylings. Cluttered vertical and horizontal gridlines, X and Y axis titles, and multi-coloured bars.", message=FALSE, warning=FALSE}
 # Load the tidyverse package.
 library(tidyverse)
+library(extrafont)
 
 # Create a dataframe.
 df <- data.frame(

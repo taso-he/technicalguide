@@ -22,4 +22,4 @@ This website incorporates and adapts elements of the Quarto code from the "Best 
 
 ## Contact information
 
-For any inquiries, comments, or feedback, you can contact Luke Arundel at [luke.arundel\@taso.org.uk](mailto:luke.arundel@taso.org.uk).
+For any inquiries, comments, or feedback, please email [research@taso.org.uk](mailto:research@taso.org.uk).

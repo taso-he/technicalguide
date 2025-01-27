@@ -5,13 +5,14 @@ title: "Styling charts for TASO publications"
 This section is designed with TASO partners and staff in mind, providing rules on chart formatting to ensure consistency across TASO outputs. That said, we anticipate that the insights provided may also be beneficial to anyone interested in developing their own data visualisation style guide, or understanding the technical details behind creating consistently formatted and distinctive charts.
 
 ::: {.callout-warning title="A note for TASO partners"}
-Designing charts for TASO publications has been a trial and error process, as we figure out what works for our partners. If you are a partner on a TASO project and are unsure how to design your charts, please contact [luke.arundel\@taso.org.uk](mailto:luke.arundel@taso.org.uk) 
+Designing charts for TASO publications has been a trial and error process, as we figure out what works for our partners. If you are a partner on a TASO project and are unsure how to design your charts, please email [research\@taso.org.uk](mailto:research@taso.org.uk)
 :::
 
 ## Formatting rules
 
 ```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
 library(tidyverse)
+library(extrafont)
 
 df <- data.frame(
   X_Axis_Title = c("Category 1", "Category 2", "Category 3", "Category 4"),
@@ -70,23 +71,20 @@ You can find an example R script for creating charts with TASO styling on [our G
 -   If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.
 
 ::: {.callout-note title="Adjusting charts for different publication types"}
-
-We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report. 
+We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report.
 
 ::: {.panel-tabset .nav-pills}
+## Chart for report
 
-## Chart for report 
-
-For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our 'active title' for the figure caption, but we used it in-text, rather than as part of the image itself. 
+For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our 'active title' for the figure caption, but we used it in-text, rather than as part of the image itself.
 
 ![](../images/data-vis-images/report_ed_pathways_chart.png)
 
 ## Chart for social media
 
-To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes. 
+To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes.
 
 ![](../images/data-vis-images/social_media_ed_pathways_chart.png)
-
 :::
 :::
 
