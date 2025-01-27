@@ -50,6 +50,7 @@ In this guide, wherever there is a chart, you will see a 'Show the code' button 
 ```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
 # Load the tidyverse package, which includes ggplot2 and other data manipulation tools.
 library(tidyverse)
+library(extrafont) #Note need to run extrafont::font_import() on the R console to import fonts
 
 # Create a dataframe
 df <- data.frame(
