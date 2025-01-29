@@ -6,6 +6,9 @@ title: "Diagnose: Identifying equality gaps using institutional data"
 source("oulad_cleaning_tidying.R")
 source("oulad_analysis.R")
 # Read the data for the tables
+# Note that adding or rows or columns to these files will require the table-
+# generating code to be altered. Any fields containing commas should be
+# enclosed in double quotes.
 levels_data_table <- read.csv("data/tbl_levels-of-data.csv")
 analysis_methods_table <- read.csv("data/tbl_analysis_methods.csv")
 ```
@@ -37,9 +40,9 @@ kableExtra::kable(levels_data_table) %>%
   kableExtra::column_spec(1, bold = TRUE) %>% 
   kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
   kableExtra::collapse_rows(columns = 1, valign = "middle") %>% 
-  kableExtra::row_spec(1:8, background = "#f9fafd") %>%
-  kableExtra::row_spec(9:15, background = "#ccd8ef") %>%
-  kableExtra::row_spec(16:24, background = "#aec1e6") %>%
+  kableExtra::row_spec(1:9, background = "#f9fafd") %>%
+  kableExtra::row_spec(10:16, background = "#ccd8ef") %>%
+  kableExtra::row_spec(17:25, background = "#aec1e6") %>%
   kableExtra::kable_styling(bootstrap_options = "hover") 
 ```
 
@@ -278,10 +281,10 @@ TASO has a two-strand approach to theory of change development:
 -   **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
 -   **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
 
-:::::: {.callout-tip title="More theory of change resources"}
+::: {.callout-tip title="More theory of change resources"}
 TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/) for developing Core and Enhanced Theories of Change, including:
 
-::::: columns
+::: columns
 ::: {.column width="50%"}
 -   [Core Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)
 
@@ -295,8 +298,8 @@ TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance
 
 -   [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
 :::
-:::::
-::::::
+:::
+:::
 
 ### Post-entry typology
 

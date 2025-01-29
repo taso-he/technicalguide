@@ -1,6 +1,7 @@
 Level,Learner,Institution
-Foundation,Demographics; e.g.,Course studied
-Foundation," - Ethnicity",Modules studied
+Foundation,Demographics; for example,Course studied
+Foundation," - Sex",Modules studied
+Foundation," - Ethnicity",
 Foundation," - Disability status",
 Foundation," - Prior attainment",
 Foundation," - Contextual offer holder",
@@ -16,7 +17,7 @@ Intermediate,Extenuating circumstances,
 Intermediate,Module marks,
 Advanced,Engagement with extra-curriculars,Timetable of contact hours
 Advanced,Engagement with support,Assessment deadlines
-Advanced,Personal tutor,Module prerequisites (i.e. is passing a prior module/assessment required to sit this module)
+Advanced,Personal tutor,"Module prerequisites (for example, passing a prior module/assessment required to sit this module)"
 Advanced,Academic skills,Support services available to the student
 Advanced,Pastoral support,Personal tutor
 Advanced,Leave of absence,Academic skills
