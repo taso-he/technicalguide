@@ -2,10 +2,12 @@
 
 h1 {
   color: #03b594; /* Set the color of first-level headers (h1) to #3b66bc */
+  font-family: "Neuton", serif;
 }
 
 h2 {
   color: #3b66bc; /* Set the color of first-level headers (h1) to #3b66bc */
+  font-family: "Neuton", serif;
 }
 
 a:hover {
@@ -20,10 +22,12 @@ a:hover {
 .sidebar {
     border-right: 3px solid #e4e2d9; /* Right border with the specified color */
     font-weight: bold;
+    font-family: "Barlow", sans-serif;
 }
 
 .navbar a {
     font-weight: bold;
+    font-family: "Barlow", sans-serif;
 }
 
 .footer {
