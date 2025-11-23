@@ -26,7 +26,7 @@ This guide is for those who have some experience and familiarity with R and are 
 
 Practitioners, academics and students can all gain from this guide. It is particularly beneficial for those dealing with complex scripts, revisiting their code for updates, or sharing work with colleagues and the wider sector.
 
-## Why is good code hygeine important?
+## Why is good code hygiene important?
 
 ::: {.callout-note title="Hadley Wickham on coding style"}
 "Good coding style is like correct punctuation: you can manage without it, butitsuremakesthingseasiertoread."

@@ -40,7 +40,7 @@ website:
       contents:
         - href: index.qmd
           text: Introduction to the guides
-        - section: "Data infrastructure guide"
+        - section: "Data insights guide"
           href: dig/index.qmd
           contents:
             - href: dig/index.qmd

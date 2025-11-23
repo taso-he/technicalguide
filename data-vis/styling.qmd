@@ -19,35 +19,48 @@ df <- data.frame(
   Y_Axis_Title = c(10, 20, 30, 20)
 )
 
+# Build the plot using ggplot2 package.
 ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
+  # Add bar elements to the plot. 'stat = "identity"' tells ggplot to use the y-values as they are.
   geom_bar(stat = "identity", fill = "#3b66bc") +
+  # Add a horizontal line at y = 0, with a solid line type and a specified color.
     geom_hline(yintercept = 0, linetype = "solid", color = "#404040") +
+  # Add labels for the axes, title, subtitle, and caption. Also format these elements.
   labs(x = "Axis Title (in italics if included)", 
        y = "", 
-       title = "This is the title of the chart, it should be in Arial bold, no\nlonger than two lines, and normally active",
-       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle",
+       title = "This is the title of the chart, it should be in Neuton, no longer than two lines,\nand normally active",
+       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle\n",
        caption = "Source: This is the source in italics\n\nNotes: These are the notes in italics") + 
+  # Customise with TASO theme elements, including background colour, title positioning, gridlines.
   theme_minimal() + 
   theme(
-          text = element_text(family = "Arial"),
+          text = element_text(family = "Barlow", size = 12),
           plot.title.position = "plot",
-          plot.title = element_text(size = 16, face = "bold"),
+          plot.title = element_text(family = "Neuton", size = 16),
           plot.subtitle = element_text(size = 12),
           plot.caption.position = "plot",
-          plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
-          panel.grid.major.x = element_blank(),
-          panel.grid.major.y = element_line(colour = "grey"),
-          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
           plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-          axis.text.y = element_text(size = 11),
-          axis.text.x = element_text(size = 11),
-          axis.title.x = element_text(size = 10, face = "italic"))
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 10),
+          axis.title = element_text(size = 9, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
+    )
 
 ```
 
-You can find an example R script for creating charts with TASO styling on [our GitHub](https://github.com/taso-he). R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the [R resources](references.qmd) section.
+You can find an example R script for creating charts with TASO styling on [our GitHub](https://github.com/taso-he/data_visualisation). R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the [R resources](references.qmd) section.
 
--   The font for the charts is Arial (or URW DIN if you have access). Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.
+-   The fonts for the charts are Neuton for the header and Barlow for all other text. Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.
 
 -   The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page.
 
@@ -61,7 +74,7 @@ You can find an example R script for creating charts with TASO styling on [our G
 
     -   The text should be black, but adjust as appropriate for readability. For example, sometimes data labels will need to be white to stand out against colours.
     -   Background should be #EDEBE3 (putty).
-    -   Gridlines should generally be #E4E2D9 (darker than the background but lighter than text and lines). Gridline shade can be adjusted if it aids readability, but it should be a shade of grey.
+    -   Gridlines should generally be "#CECABC" (darker than the background but lighter than text and lines). Gridline shade can be adjusted if it aids readability, but it should be a shade of grey.
 
 -   Format
 
@@ -101,9 +114,9 @@ You can use RColourBrewer to generate gradients in R. Alternatively, you can use
 
 taso_one_colour <- "#3b66bc"
 taso_two_colour <- c("#3b66bc", "#07dbb3")
-taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
-taso_four_colour <- c("#3b66bc", "#0093d9", "#00bad2", "#07dbb3")
-taso_five_colour <- c("#3b66bc", "#0089d6", "#00a8da", "#00c3cc", "#07dbb3")
+taso_three_colour <- c("#3b66bc","#07dbb3","#f9466c")
+taso_four_colour <- c("#3b66bc", "#07dbb3", "#f9466c","#485866")
+taso_five_colour <- c("#3b66bc", "#07dbb3", "#f9466c","#485866","#e4e2d9")
 
 taso_likert <- c("#f9466c", "#fea3ac", "#f1f1f1", "#9ea8d7", "#3b66bc")
 
@@ -111,7 +124,7 @@ taso_likert <- c("#f9466c", "#fea3ac", "#f1f1f1", "#9ea8d7", "#3b66bc")
 
 ## Accessibility
 
-Ensure foreground and background colours contrast enough to pass the WCAG AA standard. You can check the colour contrast here.
+Ensure foreground and background colours contrast enough to pass the WCAG AA standard. You can check the colour contrast [here.](https://webaim.org/resources/contrastchecker/)
 
 For more in-depth guidance on accessibility, we recommend the accessibility sections of the [Government Analysis Function data visualisation guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) and the [Royal Statistical Society data visualisation guide](https://royal-statistical-society.github.io/datavisguide/).
 

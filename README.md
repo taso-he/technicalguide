@@ -2,7 +2,7 @@
 
 This GitHub repository contains the files and code for the [TASO Technical Guide](https://taso-he.github.io/technicalguide/).
 
-[https://taso-he.github.io/technicalguide/](https://taso-he.github.io/technicalguide/)
+<https://taso-he.github.io/technicalguide/>
 
 ## How we built the guide
 
@@ -22,4 +22,4 @@ This website incorporates and adapts elements of the Quarto code from the "Best 
 
 ## Contact information
 
-For any inquiries, comments, or feedback, please email [research@taso.org.uk](mailto:research@taso.org.uk).
+For any inquiries, comments, or feedback, please email [research\@taso.org.uk](mailto:research@taso.org.uk).

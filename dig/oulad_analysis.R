@@ -171,32 +171,46 @@ summary(model)
 # Visualisations --------------------------------------------------------------
 
 # Custom theme for plots ----
-library(sysfonts)
-font_add_google("Source Sans Pro")
-library(showtext)
-showtext_auto()
 
 theme_taso <- function() {
-  theme_minimal() +
-    theme(
-      text = element_text(size = 30, family = "Source Sans Pro"), # Default text size for all text elements
+  body_text_font <- if (any(extrafont::fonttable()$FamilyName == "Barlow")) {
+    "Barlow"
+  } else {
+    warning("Font 'Barlow' not found. Using default sans-serif font.")
+    "sans"
+  }
+  title_text_font <- if (any(extrafont::fonttable()$FamilyName == "Neuton")) {
+    "Neuton"
+  } else {
+    warning("Font 'Neuton' not found. Using default serif font.")
+    "serif"
+  }
+  
+  ggplot2::theme_minimal(base_family = body_text_font) +
+    ggplot2::theme(
+      text = ggplot2::element_text(size = 10),
       plot.title.position = "plot", # Aligns plot title to whole plot
-      plot.title = element_text(size = 30, face = "bold"),
-      plot.subtitle = element_text(size = 25),
+      plot.title = ggplot2::element_text(family = title_text_font, size = 16),
       plot.caption.position = "plot", # Aligns caption to the left of the plot
-      plot.caption = element_text(hjust = 0, size = 20, face = "italic"),
+      plot.caption = ggplot2::element_text(hjust = 0, size = 9, face = "italic"),
+      plot.background = ggplot2::element_rect(fill = "#edebe3", color = NA), # Background colour
+      plot.margin = ggplot2::margin(0.25, 0.25, 0.25, 0.25, "in"), # Adding margin
+      panel.border = ggplot2::element_blank(),
       panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), # Gridline colour
-      plot.background = element_rect(fill = "white", color = NA), # Background colour
-      plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"), # Adding margin
-      panel.border = element_blank(),
-      panel.background = element_rect(fill = "white", color = NA),
-      # axis.title = element_blank(),
-      axis.line = element_line(colour = "#6E6E6E", linewidth = 0.5),
+      panel.grid.minor = element_blank(),
+      panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA),
+      axis.text = element_text(size = 10),
+      axis.title = element_text(size = 9),
+      axis.line.y = element_blank(),
+      axis.line = element_line(colour = "#485866", linewidth = 0.5),
       axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), # Increase top margin to move text down
       axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
-      axis.ticks.x = element_line(colour = "#6E6E6E", linewidth = 0.5)
+      axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+      legend.position = "none
+      "
     )
 }
+
 
 # Setting colours 
 
@@ -269,8 +283,8 @@ over_time_deprivation_gaps <- ggplot(average_scores_deprivation, aes(x = code_pr
   # Adding additional theme elements
   theme(
     legend.position = "top",
-    legend.text = element_text(size = 20), # Adjusting legend text size
-    legend.title = element_text(size = 20, face = "bold")
+    legend.text = element_text(size = 12), # Adjusting legend text size
+    legend.title = element_text(size = 12, face = "bold")
   ) +
   coord_cartesian(clip = "off")
 
@@ -290,8 +304,8 @@ facet_over_time_deprivation_gaps <- ggplot(facet_average_scores_deprivation, aes
   # Adding additional theme elements
   theme(
     legend.position = "top",
-    legend.text = element_text(size = 20), # Adjusting legend text size
-    legend.title = element_text(size = 20, face = "bold")
+    legend.text = element_text(size = 12), # Adjusting legend text size
+    legend.title = element_text(size = 12, face = "bold")
   ) +
   coord_cartesian(clip = "off")
 
@@ -333,14 +347,18 @@ tukey_chart <- ggplot(tidy_tukey, aes(y = reorder(Comparison, Difference), x = D
   theme_taso() +
   scale_color_manual(values = colors_significance) +
   theme(
-    legend.position = "top",
-    legend.text = element_text(size = 18), # Adjusting legend text size
+    legend.position = "bottom",
+    legend.direction = "vertical",
+    legend.text = element_text(size = 10), # Adjusting legend text size
     legend.title = element_blank(),
     #axis.title.x = element_text(size = 8), 
     axis.line.y = element_blank(),
-    axis.text.y = element_text(size = 18)
+    axis.text.y = element_text(size = 10),
+    plot.margin = margin(.25, .25, .25, .25, "in")
   ) +
   coord_cartesian(clip = "off")
+
+tukey_chart 
 
 ## Simple regression ---- 
 
@@ -460,11 +478,13 @@ full_regression_chart <- ggplot(data_for_model_chart, aes(x = Estimate, y = Vari
                      expand = c(0,0),
                      breaks = seq(-10, 20, by = 5)) +
   theme(
-    legend.position = "top",
-    legend.text = element_text(size = 20), # Adjusting legend text size
+    legend.position = "bottom", 
+    legend.direction = "horizontal", # Keeps items flowing left-to-right
+    legend.text = element_text(size = 9), # Adjusting legend text size
     legend.title = element_blank(),
     #axis.title.x = element_text(size = 8), 
-    axis.line.y = element_blank()
+    axis.line.y = element_blank(),
+    plot.margin = margin(.25, .75, .25, .25, "in")
   ) +
   coord_cartesian(clip = "off")
 

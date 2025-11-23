@@ -1,5 +1,18 @@
 /* css styles */
 
+/* Import the font */
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@400&family=Neuton:wght@400;700&display=swap');
+
+/* 2. Apply Barlow to body */
+body, p, li, div {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+/* 3. Apply Neuton to headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Neuton', serif !important; 
+}
+
 h1 {
   color: #03b594; /* Set the color of first-level headers (h1) to #3b66bc */
 }

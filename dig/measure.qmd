@@ -16,7 +16,7 @@ Below are some TASO examples of different QED and RCT designs that serve as usef
 
 ### Matching
 
-:::: {.callout-note collapse="true" title="NTU: Black Leadership Programme (BLP) impact evaluation using propensity score matching"}
+::: {.callout-note collapse="true" title="NTU: Black Leadership Programme (BLP) impact evaluation using propensity score matching"}
 ::: {style="text-align: left; margin-top: 10px;"}
 <a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_NTU_ImpactEvaluation.pdf"> <button type="button" style="
       background-color: #3b66bc; 
@@ -56,9 +56,9 @@ There was one secondary outcome measure:
 **Results**: Results suggest limited effect of BLP on social and academic engagement across the academic journey. However, BLP students were found to have higher level 6 grades, which may be explained by factors other than academic engagement.
 
 **Conclusions**: BLP may have an impact on students that begins later than the year of the BLP programme, and is not through a direct relationship on students' academic engagement.
-::::
+:::
 
-:::: {.callout-note collapse="true" title="UEA: Peer Assisted Learning (PAL) impact evaluation using propensity score matching"}
+::: {.callout-note collapse="true" title="UEA: Peer Assisted Learning (PAL) impact evaluation using propensity score matching"}
 ::: {style="text-align: left; margin-top: 10px;"}
 <a href="https://taso.org.uk/wp-content/uploads/TASO_IDU_UEA_ImpactEvaluation.pdf"> <button type="button" style="
       background-color: #3b66bc; 
@@ -90,13 +90,13 @@ PAL is open to all first-year students in participating schools of study on an o
 **Results**: Results suggest that participation in PAL significantly improves the likelihood of continuation after the first year of study; is significantly associated with higher course engagement and provides significant positive benefits to end of stage grades in the first year. There was no observable effect of PAL participation on final degree classification. There is evidence that some underrepresented student groups in higher education who participate in PAL have different continuation and end of stage grade outcomes than their peers.
 
 **Conclusions**: This study provides evidence that participating in PAL supports first year student outcomes and equality of opportunity aims at UEA. The findings, while significant, produced small effects for the models tested. Further research is needed to build on these results including and understanding of how delivery mode and additional variables not captured in the models may impact the effectiveness of PAL for student mentees.
-::::
+:::
 
 ### Difference-in-difference
 
-:::: {.callout-note collapse="true" title="University of Leicester: Curriculum reform impact evaluation using differences in differences"}
+::: {.callout-note collapse="true" title="University of Leicester: Curriculum reform impact evaluation using differences in differences"}
 ::: {style="text-align: left; margin-top: 10px;"}
-<a href="https://taso.org.uk/wp-content/uploads/2022-11_BIT_University_of_Leicester_analysis_report-1_Curriculum-reform_EDAG_TASO.pdf"> <button type="button" style="
+<a href="https://cdn.taso.org.uk/wp-content/uploads/2022_11_BIT_University_of_Leicester_analysis_report_Curriculum-reform-EDAG_TASO.pdf"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -124,11 +124,11 @@ PAL is open to all first-year students in participating schools of study on an o
 **Results**: Overall, this impact evaluation suggests that the "Decolonising the Curriculum Toolkit'' might have had a negative impact on both BAME and White students' attainment among Sociology students at the University of Leicester. The estimated treatment effect was significantly negative among BAME students, -6.63 percentiles, 95% CI \[-13.23, 0.03\], p = 0.05. It was directionally negative (though not significant at the 5% level) among White students, -3.07 percentiles, 95% CI \[-9.79, 3.64\], p = 0.37. Findings from the exploratory analysis suggest that intervention did not affect the racial awarding gap.
 
 **Conclusions**: In light of the above discussion, we do not recommend rolling out this toolkit (in its current form) before conducting a closer examination of how the toolkit was delivered by teachers and received by students. We believe the implementation and process evaluation (IPE) led by Leicester may shed light on what might have caused this and help contextualise these effects. If findings from the IPE suggest that there is evidence of promise in how teaching staff and BAME students might benefit from the reforms, we would recommend refining the toolkit based on the IPE and then conducting further impact evaluation of the intervention, with a larger sample and over a longer time period.
-::::
+:::
 
-:::: {.callout-note collapse="true" title="University of Kent: Curriculum reform impact evaluation using differences in differences"}
+::: {.callout-note collapse="true" title="University of Kent: Curriculum reform impact evaluation using differences in differences"}
 ::: {style="text-align: left; margin-top: 10px;"}
-<a href="https://taso.org.uk/wp-content/uploads/2022-11_BIT_University_of_Kent_analysis_report_Curriculum-reform-EDAG_-TASO.pdf"> <button type="button" style="
+<a href="https://cdn.taso.org.uk/wp-content/uploads/2022-11_BIT_University_of_Kent_analysis_report_Curriculum-reform_EDAG_TASO.pdf"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -156,11 +156,11 @@ PAL is open to all first-year students in participating schools of study on an o
 **Results**: Among the modules matched for analyses (4 reformed modules, 4 comparator modules), we did not observe a significant effect of the Diversity Mark Initiative on improving attainment in terms of module mark percentile rank among the BAME students --- the average difference in attainment between reformed and unreformed modules post-intervention versus pre-intervention was not statistically significant (2.0 percentile rank, 95% CI \[-2.20, 6.21\]), p = 0.35. We observed a marginally positive difference among the White students (3.45 percentile rank, 95% CI \[-0.13, 7.03\]), p = 0.06.
 
 **Conclusions**: Overall, we didn't find conclusive evidence supporting the effectiveness of the Diversity Mark Initiative in reducing the racial awarding gap among the SSPSSR students at the University of Kent. However, we also didn't find evidence that suggests it might backfire: the observed trend among BAME students' attainment before and after the initiative, though not significant, was positive. Therefore, we consider the initiative an innovative approach to address the racial awarding gap that is worth further testing.
-::::
+:::
 
 ## RCTs
 
-:::: {.callout-note collapse="true" title="Nottingham Trent University: Learner Analytics Randomised Controlled Trial (RCT)"}
+::: {.callout-note collapse="true" title="Nottingham Trent University: Learner Analytics Randomised Controlled Trial (RCT)"}
 ::: {style="text-align: left; margin-top: 10px;"}
 <a href="https://taso.org.uk/wp-content/uploads/2023-12_TASO_LearningAnalytics_Impact-report_NTU_v2.4.pdf"> <button type="button" style="
       background-color: #3b66bc; 
@@ -198,9 +198,9 @@ These outcomes were collected by NTU's learning analytics system, which involves
 **Analyses**: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.
 
 **Results**: The primary analysis suggests no benefit to students of intervention 1 (automatic phone call) over intervention 2 (email). Estimated effects on the primary outcomes and first secondary outcome are either null or narrowly negative, and none are statistically significant at the 5% level. The impact table for the results is in Appendix C.
-::::
+:::
 
-:::: {.callout-note collapse="true" title="Sheffield Hallam University: Learner Analytics Randomised Controlled Trial (RCT)"}
+::: {.callout-note collapse="true" title="Sheffield Hallam University: Learner Analytics Randomised Controlled Trial (RCT)"}
 ::: {style="text-align: left; margin-top: 10px;"}
 <a href="https://taso.org.uk/wp-content/uploads/2023-12_LearningAnalytics_Impact-report_Sheffield-Hallum-Uni_TASO.pdf"> <button type="button" style="
       background-color: #3b66bc; 
@@ -232,9 +232,9 @@ These outcomes were collected by NTU's learning analytics system, which involves
 **Analyses**: A combination of logistic and ordinary least squares (OLS) regressions was used, as appropriate, to estimate effects on the primary and secondary outcomes.
 
 **Results**: The primary analysis suggests no benefit to students of intervention 1 over intervention 2. All estimated effects are small, and none are statistically significant at the 5% level.
-::::
+:::
 
-:::: {.callout-note collapse="true" title="Summer Schools Randomised Controlled Trial (RCT)"}
+::: {.callout-note collapse="true" title="Summer Schools Randomised Controlled Trial (RCT)"}
 ::: {style="text-align: left; margin-top: 10px;"}
 <a href="https://taso.org.uk/wp-content/uploads/2023-11_In-person-summer-schools_interim_analysis_report_exploratory_outcomes_TASO.pdf"> <button type="button" style="
       background-color: #3b66bc; 
@@ -264,4 +264,4 @@ These outcomes were collected by NTU's learning analytics system, which involves
 **Results**: There is a positive effect on students' sense of the compatibility of HE with their identity, which is significant at the 5% or 10% level depending on the model specification. Results are not highly consistent across model specifications. None of the other effects are statistically significant at the 5% or 10% level. A high and differential rate of attrition has led to a small sample and possible bias in some of the estimated effects.
 
 **Conclusions**: There is early evidence of promise that these summer schools had a small positive effect on the hypothesised mediating mechanism of compatibility of HE with social identity. The analysis also suggests that there was no effect on self-reported applications to HE, self-efficacy relating to HE, students' self-reported likelihood of attending HE or post-16 academic study (depending on their age), or perception of practical barriers to HE. This is probably because most applicants to HE summer schools already intend to apply to HE. The more robust test of the intervention will come in 2025 when we have administrative data on students' entry to HE.
-::::
+:::

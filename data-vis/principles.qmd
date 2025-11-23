@@ -87,18 +87,18 @@ ggplot(df, aes(x=reorder(category, proportion), y=proportion, fill = category)) 
 theme_minimal() + 
   # Further customize the plot's appearance including font, title, grid lines, and margins.
   theme(
-        text = element_text(family = "Arial"),
+        text = element_text(family = "Barlow", size = 12),
         plot.title.position = "plot",
-        plot.title = element_text(size = 16, face = "bold"),
+        plot.title = element_text(family = "Neuton", size = 16),
         plot.subtitle = element_text(size = 12),
         plot.caption.position = "plot",
-        plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
+        plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
         panel.grid.major = element_line(colour = "darkgrey"),
         panel.grid.minor = element_line(colour = "darkgrey"),
         plot.background = element_rect(fill = "#EDEBE3"),
         plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-        axis.text.x = element_text(size = 11),
-        axis.text.y = element_text(size = 11),
+        axis.title = element_text(size = 11, face = "italic"),
+        axis.text = element_text (size = 11),
         legend.position = "none")
 ```
 
@@ -121,7 +121,7 @@ ggplot(df, aes(x=reorder(category, proportion), y=proportion)) +
   coord_flip() + # Flip the coordinates to make the bars horizontal
   labs(x = "", y = "", 
        title = "The range and nature of disability varies considerably",
-       subtitle = "Figure 1: Proportion of students studying in England who declared a disability\nby impairment, 2018-19",
+       subtitle = "Figure 1: Proportion of students studying in England who declared a disability\nby impairment, 2018-19\n",
        caption = "Source: Reproduced from OfS analysis of equality and diversity data\n\nNote: 85.7% of students do not declare a disability 
 "
 ) + 
@@ -135,20 +135,28 @@ geom_text(aes(label = scales::percent(proportion)),
           data = df, 
           color = "white") +
   theme_minimal() + 
-  theme(
-        text = element_text(family = "Arial"),
-        plot.title.position = "plot",
-        plot.title = element_text(size = 16, face = "bold"),
-        plot.subtitle = element_text(size = 12),
-        plot.caption.position = "plot",
-        plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
-        panel.grid.major.y = element_blank(),
-        panel.grid.major.x = element_line("grey"),
-        plot.background = element_rect(fill = "#EDEBE3"),
-        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-        axis.text.x = element_text(size = 11),
-        axis.text.y = element_text(size = 11))
-
+  theme (
+          text = element_text(family = "Barlow", size = 12),
+          plot.title.position = "plot",
+          plot.title = element_text(family = "Neuton", size = 16),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 11),
+          axis.title = element_text(size = 11, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
+    )
 ```
 :::
 
@@ -162,7 +170,7 @@ Consider using annotations if they will help tell the story of the data. They ca
 
 -   Ensure they are distinct from other elements of the chart, such as through font size or weight.
 
-## Integrate the text
+## Integrate the text 
 
 ### Active titles
 
@@ -211,15 +219,27 @@ ggplot(df, aes(x = Year, y = Value, color = School, group = School)) +
   geom_point() +
   scale_colour_manual(values = taso_three_colour) +
   theme_minimal() +
-  theme(
-          text = element_text(family = "Arial"),
-          panel.grid.major.x = element_line(colour = "#E4E2D9"),
-          panel.grid.major.y = element_line(colour = "#E4E2D9"),
-          plot.background = element_rect(fill = "#EDEBE3"),
+  theme (
+          text = element_text(family = "Barlow", size = 12),
+          plot.title.position = "plot",
+          plot.title = element_text(family = "Neuton", size = 16),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
           plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-          axis.text.y = element_text(size = 11),
-          axis.text.x = element_text(size = 11), 
-          axis.title = element_blank()) +
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 11),
+          axis.title = element_text(size = 11, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5)
+    )+
   coord_cartesian(clip = "off") 
 ```
 
@@ -244,18 +264,31 @@ ggplot(df, aes(x = Year, y = Value, color = School, group = School)) +
   geom_line() + # or geom_point() if you want points
   geom_point() +
   geom_text(data = subset(df, Year == 2022), aes(label = School), 
-            hjust = 0.3, vjust = -1, size = 3.5, fontface = "bold") +
+            hjust = 0.3, vjust = -1, size = 3.5, family = "Barlow", fontface = "bold") +
   scale_colour_manual(values = taso_three_colour) +
   theme_minimal() +
-  theme(
-          text = element_text(family = "Arial"),
-          panel.grid.major.x = element_line(colour = "#E4E2D9"),
-          panel.grid.major.y = element_line(colour = "#E4E2D9"),
-          plot.background = element_rect(fill = "#EDEBE3"),
+theme (
+          text = element_text(family = "Barlow", size = 12),
+          plot.title.position = "plot",
+          plot.title = element_text(family = "Neuton", size = 16),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
           plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-          axis.text.y = element_text(size = 11),
-          axis.text.x = element_text(size = 11), 
-          axis.title = element_blank()) +
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 11),
+          axis.title = element_text(size = 11, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
+    )+
   coord_cartesian(clip = "off") + 
   guides(fill = FALSE, colour = FALSE)
 ```
@@ -295,9 +328,9 @@ ggplot(df, aes(x = count, y = factor(category, levels = c("No",
   theme_minimal() + # Setting the theme as minimal, adding elements we want back in 
   # Title, subtitle, axis titles and caption 
   labs(
-    title = 'Over 40 providers did not include a Theory of Change  \n(ToC) in their Access and Participation Plan (APP)',
+    title = 'Over 40 providers did not include a Theory of Change (ToC) in their Access and\nParticipation Plan (APP)',
     # By using ggtext::element_markdown, we can use markdown stylings to colour specific words in the chart to highlight a point
-    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a\nToC in their APP",
+    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a ToC in their APP",
     caption = "Source: TASO (2023), Approaches to addressing the ethnicity degree awarding gap",
     x = NULL, # Not showing X or Y axis title for this example chart
     y = NULL 
@@ -305,23 +338,27 @@ ggplot(df, aes(x = count, y = factor(category, levels = c("No",
   scale_x_continuous(expand = c(0,0)) + 
   geom_vline(xintercept = 0, colour = "#404040", linewidth = 0.5) +
   # Theme elements
-  theme(text = element_text(family = "Arial"), # Specifying font for whole chart
-        ## Title and subtitle elements 
-        plot.title.position = "plot", # Aligning title to entire plot (not just panel)
-        plot.title = ggtext::element_markdown(face = "bold", 
-                                              size = 16), 
-        plot.subtitle = element_text(size = 12), 
-        ## Caption elements 
-        plot.caption.position = "plot", # Aligning caption to entire plot
-        plot.caption = element_text(hjust = 0, # Aligning font to the left
-                                    size = 8, # Changing size
-                                    face = "italic"), # Italicizing caption
-        ## Other theme elements
-        plot.background = element_rect(fill = "#EDEBE3"), # Changing background colour
-        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"), # Setting margin in inches
-        axis.text.x = element_text(size = 10), 
-        panel.grid.major.x = element_line(colour = "grey"),
-
+ theme(
+          text = element_text(family = "Barlow", size = 12),
+          plot.title.position = "plot",
+          plot.title = element_text(family = "Neuton", size = 16),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 11),
+          axis.title = element_text(size = 11, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
   ) + 
   # Other helpful elements
   coord_cartesian(clip = "off") +
@@ -356,9 +393,9 @@ ggplot(df, aes(x = count, y = factor(category, levels = c("No",
   theme_minimal() + # Setting the theme as minimal, adding elements we want back in 
   # Title, subtitle, axis titles and caption 
   labs(
-    title = 'Over 40 providers <span style="color:#3b66bc;">did not include a Theory of Change</span>  \n(ToC) in their Access and Participation Plan (APP)',
+    title = 'Over 40 providers <span style="color:#3b66bc;">did not include a Theory of Change</span> (ToC) in their Access and<br>Participation Plan (APP)',
     # By using ggtext::element_markdown, we can use markdown stylings to colour specific words in the chart to highlight a point
-    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a\nToC in their APP",
+    subtitle = "Figure 3: The number of Higher Education Providers (HEPs) who included a ToC in their APP",
     caption = "Source: TASO (2023), Approaches to addressing the ethnicity degree awarding gap",
     x = NULL, # Not showing X or Y axis title for this example chart
     y = NULL 
@@ -366,23 +403,27 @@ ggplot(df, aes(x = count, y = factor(category, levels = c("No",
   scale_x_continuous(expand = c(0,0)) + 
   geom_vline(xintercept = 0, colour = "#404040", linewidth = 0.5) +
   # Theme elements
-  theme(text = element_text(family = "Arial"), # Specifying font for whole chart
-        ## Title and subtitle elements 
-        plot.title.position = "plot", # Aligning title to entire plot (not just panel)
-        plot.title = ggtext::element_markdown(face = "bold", 
-                                              size = 16), 
-        plot.subtitle = element_text(size = 12), 
-        ## Caption elements 
-        plot.caption.position = "plot", # Aligning caption to entire plot
-        plot.caption = element_text(hjust = 0, # Aligning font to the left
-                                    size = 8, # Changing size
-                                    face = "italic"), # Italicizing caption
-        ## Other theme elements
-        plot.background = element_rect(fill = "#EDEBE3"), # Changing background colour
-        plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"), # Setting margin in inches
-        axis.text.x = element_text(size = 10), 
-        panel.grid.major.x = element_line(colour = "grey"),
-
+ theme(
+          text = element_text(family = "Barlow", size = 12),
+          plot.title.position = "plot",
+          plot.title = ggtext::element_markdown(family = "Neuton", size = 16),
+          plot.subtitle = element_text(size = 12),
+          plot.caption.position = "plot",
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
+          plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 11),
+          axis.title = element_text(size = 11, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
   ) + 
   # Other helpful elements
   coord_cartesian(clip = "off") + 

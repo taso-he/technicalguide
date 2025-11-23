@@ -67,25 +67,33 @@ ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
   # Add labels for the axes, title, subtitle, and caption. Also format these elements.
   labs(x = "Axis Title (in italics if included)", 
        y = "", 
-       title = "This is the title of the chart, it should be in Arial bold, no\nlonger than two lines, and normally active",
-       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle",
+       title = "This is the title of the chart, it should be in Neuton, no longer than two lines,\nand normally active",
+       subtitle = "This is the subtitle, it should normally be a formal statistical subtitle\n",
        caption = "Source: This is the source in italics\n\nNotes: These are the notes in italics") + 
   # Customise with TASO theme elements, including background colour, title positioning, gridlines.
   theme_minimal() + 
   theme(
-          text = element_text(family = "Arial"),
+          text = element_text(family = "Barlow", size = 12),
           plot.title.position = "plot",
-          plot.title = element_text(size = 16, face = "bold"),
+          plot.title = element_text(family = "Neuton", size = 16),
           plot.subtitle = element_text(size = 12),
           plot.caption.position = "plot",
-          plot.caption = element_text(hjust = 0, size = 8, face = "italic"),
-          panel.grid.major.x = element_blank(),
-          panel.grid.major.y = element_line(colour = "grey"),
-          plot.background = element_rect(fill = "#EDEBE3"),
+          plot.caption = element_text(hjust = 0, size = 9, face = "italic"),
+          plot.background = element_rect(fill = "#EDEBE3", color = NA),
           plot.margin = margin(0.25, 0.25, 0.25, 0.25, "in"),
-          axis.text.y = element_text(size = 11),
-          axis.text.x = element_text(size = 11),
-          axis.title.x = element_text(size = 10, face = "italic"))
+          panel.border = ggplot2::element_blank(),
+          panel.grid.major = element_line(colour = "#CECABC", linewidth = 0.3), 
+          panel.grid.minor = element_blank(),
+          panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
+          axis.text = element_text(size = 10),
+          axis.title = element_text(size = 9, face = "italic"),
+          axis.line.y = element_blank(),
+          axis.line = element_line(colour = "#485866", linewidth = 0.5),
+          axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
+          axis.ticks.length = unit(0.3, "cm"), # Increase the length of ticks
+          axis.ticks.x = element_line(colour = "#485866", linewidth = 0.5), 
+          legend.position = "none"
+    )
 ```
 
 ### How we made the guide

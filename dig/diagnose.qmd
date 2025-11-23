@@ -84,10 +84,10 @@ For example, if we believe that there is likely to be a gap in attainment betwee
 #| layout-ncol: 2
 #| label: fig-deprivation_gaps
 #| fig-cap: "Deprivation gaps"
-#| fig-alt: "Box plots showing that both overall and across modules, deprived students score lower on average"
+#| fig-alt: "Box plots showing that both overall and across modules, students from deprived areas score lower on average"
 #| fig-subcap:
 #|   - "Average scores are lower for students from deprived areas"
-#|   - "Across modules, deprived students score lower on average" 
+#|   - "Across modules, students from deprived areas score lower on average" 
 overall_deprivation_gaps
 facet_overall_deprivation_gaps
 ```
@@ -100,10 +100,10 @@ To further understand the dynamics of this gap, we may want to look at how it ha
 #| layout-ncol: 2
 #| label: fig-over_time_deprivation_gaps
 #| fig-cap: "Deprivation gaps over time"
-#| #| fig-alt: "Line charts showing that both overall and across modules, there are gaps in scores between deprived students and their non-deprived peers"
+#| #| fig-alt: "Line charts showing that both overall and across modules, there are gaps in scores between students from deprived areas and non-deprived areas"
 #| fig-subcap:
-#|   - "Over time, there are persistent gaps in average module scores between deprived students and their non-deprived peers"
-#|   - "Between courses, there is variation in the size of the gap in average module scores between deprived students and their non-deprived peers" 
+#|   - "Over time, there are persistent gaps in average module scores between students from deprived and non-deprived areas"
+#|   - "Between courses, there is variation in the size of the gap in average module scores between students from deprived and non-deprived areas" 
 
 over_time_deprivation_gaps
 facet_over_time_deprivation_gaps
@@ -118,7 +118,7 @@ We can use t-tests to determine if the difference in mean scores between student
 
 The results of the t-test in @tbl-t_test_results, indicate that there is a statistically significant difference at the 5% level because the p-value is less than 0.05. This suggests that on average, students from deprived areas score significantly lower than their counterparts.
 
-To report the results of this t-test in text you would write: There was a significant difference between the scores for deprived students and the scores for students who are not deprived (t(10686.68) = 15.88, p\<0.001).
+To report the results of this t-test in text you would write: There was a significant difference between the scores for students from deprived areas and the scores for students not from deprived areas (t(10686.68) = 15.88, p\<0.001).
 
 ```{r, echo=FALSE, warning=FALSE}
 #| label: tbl-t_test_results
@@ -187,7 +187,7 @@ While descriptive statistics show us the extent of equality gaps, and t-tests an
 
 In a basic linear regression model, we use only one explanatory variable - here deprivation status - to predict the dependent variable, which is the score.
 
-While this simple regression is comparable to our t-test in that it assesses the difference between two groups, it also allows us to quantify the exact impact of deprivation status on scores. Unlike the t-test, which only tells us if there is a significant difference, regression provides an estimate of how much lower deprived students score on average. Here, the regression results in @tbl-simple_regression_results tell us that deprived students score, on average, 7 marks lower (see highlighted row).
+While this simple regression is comparable to our t-test in that it assesses the difference between two groups, it also allows us to quantify the exact impact of deprivation status on scores. Unlike the t-test, which only tells us if there is a significant difference, regression provides an estimate of how much lower students from deprived areas score on average. Here, the regression results in @tbl-simple_regression_results tell us that students from deprived areas score, on average, 7 marks lower (see highlighted row).
 
 ```{r, echo=FALSE, warning=FALSE}
 #| label: tbl-simple_regression_results
@@ -204,8 +204,8 @@ We can visualise this simple regression in a chart, as in @fig-simple_regression
 
 ```{r, echo=FALSE, warning=FALSE, fig.align="center"}
 #| label: fig-simple_regression
-#| fig-cap: Deprived students score, on average, 7 marks lower
-#| fig-alt: "Dot plot with error bars showing that deprived students score, on average, 7 marks lower, and that this difference is statistically significant"
+#| fig-cap: Students from deprived areas score, on average, 7 marks lower
+#| fig-alt: "Dot plot with error bars showing that students from deprived areas score, on average, 7 marks lower, and that this difference is statistically significant"
 simple_regression_chart
 ```
 

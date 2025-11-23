@@ -1,5 +1,5 @@
 ---
-title: "Data infrastructure guide"
+title: "Data insights guide"
 subtitle: using and developing institutional data infrastructure to support student success in higher education
 format: html
 title-block-banner: "#0f2847"
@@ -39,7 +39,7 @@ Additionally, this guide provides considerations for:
 
 Different sections are aimed at different audiences but overall this document will be useful for:
 
-:::::: columns
+::: columns
 ::: {.column width="60%"}
 -   evaluators
 -   practitioners
@@ -48,7 +48,7 @@ Different sections are aimed at different audiences but overall this document wi
 -   senior executive/management with responsibility for supporting student success.
 :::
 
-:::: {.column width="40%"}
+::: {.column width="40%"}
 ::: callout-note
 In each section, it is indicated who that part of the guide is aimed at, e.g.:
 
@@ -58,8 +58,8 @@ genAudienceTable(audience=c("Evaluators",
                             "Practitioners"))
 ```
 :::
-::::
-::::::
+:::
+:::
 
 There are a large variety of HEPs in England, from small and specialist providers with tens of students, to the very largest with tens of thousands. Where possible we have tried to make this guide useful for a wide range of providers, though some sections will be more relevant to some types of providers than others.
 

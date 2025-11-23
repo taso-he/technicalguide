@@ -5,12 +5,12 @@
 # Loading in data and libraries -----------------------------------------------
 
 # Load OULAD package
-# devtools::install_github("jakubkuzilek/oulad")
+#devtools::install_github("jakubkuzilek/oulad")
 library(oulad)
 
 # Other packages
-
-library(tidyverse)
+library (tidyverse)
+library (extrafont) 
 library(scales) # Showing plots as percentages
 library(broom) # For regression outputs
 library(modelsummary) # For regression outputs
@@ -392,3 +392,4 @@ student$code_presentation <- factor(student$code_presentation,
                                       "2014B", "2014J"
                                     )
 )
+

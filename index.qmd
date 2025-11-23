@@ -10,8 +10,8 @@ title-block-banner-color: "white"
 
 Welcome to the TASO Interactive Technical Guides, a collection of interactive resources designed to guide and enhance your evaluation, data visualisation and coding practices. This website contains:
 
-::::::::: {.grid style="background-color: #dbe3f4; padding: 10px"}
-:::: g-col-4
+::: {.grid style="background-color: #dbe3f4; padding: 10px"}
+::: g-col-4
 ::: {style="text-align: center;"}
 <a href="dig/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -21,13 +21,13 @@ Welcome to the TASO Interactive Technical Guides, a collection of interactive re
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;"> Data Infrastructure Guide </button> </a>
+      cursor: pointer;"> Data Insights Guide </button> </a>
 :::
 
 A practical guide on using institutional data to identify equality gaps in students success and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.
-::::
+:::
 
-:::: g-col-4
+::: g-col-4
 ::: {style="text-align: center;"}
 <a href="data-vis/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -41,9 +41,9 @@ A practical guide on using institutional data to identify equality gaps in stude
 :::
 
 Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
-::::
+:::
 
-:::: g-col-4
+::: g-col-4
 ::: {style="text-align: center;"}
 <a href="coding-good-practice/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -57,8 +57,8 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
 :::
 
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
-::::
-:::::::::
+:::
+:::
 
 ## Why publish on GitHub?
 
@@ -75,7 +75,7 @@ You will also see when we are referring to code through text highlighted `like t
 ```{r, message=FALSE, warning=FALSE}
 library(tidyverse)
 
-taso_three_colour <- c("#3b66bc", "#00a8da", "#07dbb3")
+taso_three_colour <- c("#3b66bc","#07dbb3","#f9466c")
 
 df <- data.frame(
   Year = c(2019, 2020, 2021, 2022),
