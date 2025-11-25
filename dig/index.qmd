@@ -1,6 +1,6 @@
 ---
 title: "Data insights guide"
-subtitle: using and developing institutional data infrastructure to support student success in higher education
+subtitle: using institutional data to support evaluation in higher education
 format: html
 title-block-banner: "#0f2847"
 title-block-banner-color: "white"

@@ -24,7 +24,9 @@ Welcome to the TASO Interactive Technical Guides, a collection of interactive re
       cursor: pointer;"> Data Insights Guide </button> </a>
 :::
 
-A practical guide on using institutional data to identify equality gaps in students success and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.
+A practical guide on using institutional data to identify equality gaps and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.
+
+Note: This guide was previously known as the Data Infrastructure Guide. We updated the title in November 2025 to more accurately reflect its purpose.
 :::
 
 ::: g-col-4
@@ -88,7 +90,7 @@ df <- data.frame(
 You can see the latest changes and the code behind how we built this website using [Quarto](https://quarto.org/) on our [GitHub page](https://github.com/taso-he/technicalguide).
 
 ::: {.callout-note title="Licensing and acknowledgements"}
-**The TASO Interactive Technical Guides © 2024 by TASO are licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). This means that others are free to share, copy, distribute, and transmit the work, as well as to adapt or build upon it, for non-commercial purposes, as long as appropriate credit is given, a link to the license is provided, and any changes made are indicated.**
+**The TASO Interactive Technical Guides © 2024-2025 by TASO are licensed under [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). This means that others are free to share, copy, distribute, and transmit the work, as well as to adapt or build upon it, for non-commercial purposes, as long as appropriate credit is given, a link to the license is provided, and any changes made are indicated.**
 
 This website incorporates and adapts elements of the Quarto code from the "Best Practices for Data Visualisation" guide, authored by Andreas Krause, Nicola Rennie and Brian Tarran, and published by the Royal Statistical Society in July 2023. While the specific content from the guide has not been used, [the code structure](https://github.com/royal-statistical-society/datavisguide/blob/main/_quarto.yml) has been valuable in the development of specific functionalities on this site. Their guide is accessible at <https://royal-statistical-society.github.io/datavisguide/> and is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1). We are thankful to the authors and the Royal Statistical Society for sharing their expertise and resources, which have greatly assisted in the technical aspects of this website's construction.
 :::

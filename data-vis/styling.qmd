@@ -26,7 +26,7 @@ ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
   # Add a horizontal line at y = 0, with a solid line type and a specified color.
     geom_hline(yintercept = 0, linetype = "solid", color = "#404040") +
   # Add labels for the axes, title, subtitle, and caption. Also format these elements.
-  labs(x = "Axis Title (in italics if included)", 
+  labs(x = "Axis Title", 
        y = "", 
        title = "This is the title of the chart, it should be in Neuton, no longer than two lines,\nand normally active",
        subtitle = "This is the subtitle, it should normally be a formal statistical subtitle\n",
@@ -47,7 +47,7 @@ ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
           panel.grid.minor = element_blank(),
           panel.background = ggplot2::element_rect(fill = "#edebe3", color = NA), 
           axis.text = element_text(size = 10),
-          axis.title = element_text(size = 9, face = "italic"),
+          axis.title = element_text(size = 9),
           axis.line.y = element_blank(),
           axis.line = element_line(colour = "#485866", linewidth = 0.5),
           axis.text.x = element_text(margin = margin(t = 7, unit = "pt")), 
@@ -79,25 +79,56 @@ You can find an example R script for creating charts with TASO styling on [our G
 -   Format
 
     -   180mm (width) x 120mm (height) is the default standard chart size for A4 PDF reports. 180mm is the maximum width, however, the height is flexible depending on the chart. For example, if your chart needs to be tall rather than wide.
+
+    -   [Different social media platforms require different image sizes.](https://www.linkedin.com/pulse/ultimate-guide-social-media-content-size-requirements-fourmeta-wphsf)
+
+        -   For an instagram story or reel, 1080 x 1920 pixels is recommended. For carousel posts, the recommended sizes are:
+
+            -   Landscape: 1080 x 566 pixels
+
+            -   Portrait: 1080 x 1350 pixels
+
+            -   Square: 1080 x 1080 pixels
+
+        -   For in-stream photos on X, the recommended image size is 1600 x 900 pixels. The minimum size is 600 x 335 pixels.
+
+        -   For LinkedIn, the recommended image size is 1200 x 627 px for a blog post.
+
+    ```{r fig.align="center", message=FALSE, warning=FALSE}
+
+
+    #You can adjust the size of the image using: 
+    # ggsave(
+    #   "chart.png",
+    #   plot = chart_name,
+    #   width = #in px,
+    #   height = #in px,
+    #   units = "px", #px = pixels. You can also use millimeters (mm).
+    #   dpi = 300,
+    #   scale = 1.3   # <–– tune this until chart fills the space nicely. You may need to adjust the spacing in titles. 
+    # )
+
+    ```
+
     -   Save as a PNG or a JPEG to avoid losing quality through copy and pasting or screenshots.
 
 -   If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.
 
 ::: {.callout-note title="Adjusting charts for different publication types"}
-We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report.
+A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report.
 
 ::: {.panel-tabset .nav-pills}
 ## Chart for report
 
-For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our 'active title' for the figure caption, but we used it in-text, rather than as part of the image itself.
+In a formal report, the aim is to be transparent and credible. To support this, the chart includes a figure number and clear title, along with key technical details such as the data source, cohorts included, and variable definitions. Error bars are also shown to indicate uncertainty around the estimates. This information equips readers to understand the methodology, verify the findings, or even replicate the analysis. The title is neutral and descriptive, allowing readers to evaluate the findings and form their own conclusions. Because this is a formal report, the accompanying text can provide the necessary context and guide the reader's interpretation.
 
-![](../images/data-vis-images/report_ed_pathways_chart.png)
+![](/images/data-vis-images/report_ed_pathways_chart.png)
 
 ## Chart for social media
 
-To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes.
+For the social media version of the chart, the focus shifts from transparency to impact. The figure number and technical details are removed to keep the visual clean, and an active, attention-grabbing title highlights the key takeaway immediately. Annotations are added to draw the viewer's eye to the most important point, while unnecessary information about the data source or cohort definitions is left out to avoid clutter. The organisation's logo is also included to reinforce branding and make the graphic instantly recognisable. This streamlined design helps the chart work effectively in fast-paced online environments where viewers need to grasp the message at a glance.
 
-![](../images/data-vis-images/social_media_ed_pathways_chart.png)
+![](/images/data-vis-images/social_media_ed_pathways_chart.png)
 :::
 :::
 

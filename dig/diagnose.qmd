@@ -60,9 +60,9 @@ For a more in-depth statistical analysis, inferential techniques like [t-tests](
 [Regression](#regression) is a powerful tool for those who want to quantify the effect of various factors on student outcomes and explore in more detail the relationship between these factors.
 
 ::: callout-note
-Here, we use the [Open University Learning Analytics Dataset (OULAD)](https://analyse.kmi.open.ac.uk/open_dataset). This analysis is educational and illustrative, to show the potential applications of various statistical techniques, using a dataset with variables familiar to many institutions. For those interested in a more comprehensive and formal analysis of the OULAD, we will be releasing a technical report later this year.
+Here, we use the [Open University Learning Analytics Dataset (OULAD)](https://analyse.kmi.open.ac.uk/open_dataset). This analysis is educational and illustrative, to show the potential applications of various statistical techniques, using a dataset with variables familiar to many institutions.
 
-The R code to create figures and tables below is available on our [GitHub page](https://github.com/taso-he/technicalguide). We will also be adding step-by-step guidance for performing these analyses in Excel (e.g. like our previous guidance on [conducting a paired t-test using Excel](https://cdn.taso.org.uk/wp-content/uploads/TASO_excel_paired_t_test_guidance.pdf)).
+The R code to create figures and tables below is available on our [GitHub page](https://github.com/taso-he/technicalguide).
 :::
 
 ```{r, echo=FALSE, warning=FALSE}

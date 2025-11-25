@@ -19,7 +19,7 @@ date-format: "MMMM, YYYY"
 
 ![](../images/data-vis-images/ed_path_fig_1){group="my-group"}
 
-![](../images/data-vis-images/ed_path_fig_3){group="my-group"}
+![](../images/data-vis-images/ed_path_fig_2){group="my-group"}
 
 ![](../images/data-vis-images/ed_path_fig_6){group="my-group"}
 :::
@@ -65,7 +65,7 @@ ggplot(df, aes(x = X_Axis_Title, y = Y_Axis_Title)) +
   # Add a horizontal line at y = 0, with a solid line type and a specified color.
     geom_hline(yintercept = 0, linetype = "solid", color = "#404040") +
   # Add labels for the axes, title, subtitle, and caption. Also format these elements.
-  labs(x = "Axis Title (in italics if included)", 
+  labs(x = "Axis Title", 
        y = "", 
        title = "This is the title of the chart, it should be in Neuton, no longer than two lines,\nand normally active",
        subtitle = "This is the subtitle, it should normally be a formal statistical subtitle\n",
