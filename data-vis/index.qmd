@@ -47,7 +47,7 @@ In this document, you will find examples of charts that follow our guidelines. T
 
 In this guide, wherever there is a chart, you will see a 'Show the code' button as below. Clicking this will reveal the R code used to create the plot you're viewing. Using R is not a requirement for making high-quality charts, but for those who use R as their tool of choice, we hope this code will be helpful.
 
-```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.", message=FALSE, warning=FALSE}
+```{r fig.align="center", fig.alt = "Bar chart with TASO stylings - putty background, Arial font, minimal gridlines. Title is largest text on the page in bold with subtitle underneath. Caption is in italics.",}
 # Load the tidyverse package, which includes ggplot2 and other data manipulation tools.
 library(tidyverse)
 library(extrafont) #Note need to run extrafont::font_import() on the R console to import fonts
