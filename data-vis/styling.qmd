@@ -92,21 +92,18 @@ You can find an example R script for creating charts with TASO styling on [our G
 
         -   For in-stream photos on X, the recommended image size is 1600 x 900 pixels. The minimum size is 600 x 335 pixels.
 
-        -   For LinkedIn, the recommended image size is 1200 x 627 px for a blog post.
+        -   For LinkedIn, the recommended image size is 1200 x 627 pixels for a blog post.
 
-    ```{r fig.align="center", message=FALSE, warning=FALSE}
-
-
+    ```r
     #You can adjust the size of the image using: 
-    # ggsave(
-    #   "chart.png",
-    #   plot = chart_name,
-    #   width = #in px,
-    #   height = #in px,
-    #   units = "px", #px = pixels. You can also use millimeters (mm).
-    #   dpi = 300,
-    #   scale = 1.3   # <–– tune this until chart fills the space nicely. You may need to adjust the spacing in titles. 
-    # )
+    ggsave(
+       "chart.png",
+       plot = chart_name,
+       width = #in px,
+       height = #in px,
+       units = "px", #px = pixels. You can also use millimeters (mm).
+       scale = 1.3   # <–– tune this until chart fills the space nicely. You may need to adjust the spacing in titles. 
+    )
 
     ```
 
@@ -115,7 +112,7 @@ You can find an example R script for creating charts with TASO styling on [our G
 -   If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.
 
 ::: {.callout-note title="Adjusting charts for different publication types"}
-A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/research/current-projects/education-earnings-employment/) report.
+A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. To see how we have tackled this most recently, we can look at charts for TASO's [Education pathways](https://taso.org.uk/libraryitem/project-education-pathways-equality-gaps-in-earnings-and-employment/) report.
 
 ::: {.panel-tabset .nav-pills}
 ## Chart for report
