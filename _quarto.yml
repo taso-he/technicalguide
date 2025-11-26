@@ -144,4 +144,6 @@ editor: visual
 
 execute:
   freeze: false
+  warning: false
+  
 
