@@ -187,9 +187,6 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
         </a>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -206,7 +203,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="../dig/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data infrastructure guide</span></a>
+ <span class="menu-text">Data insights guide</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -409,29 +406,42 @@ A note for TASO partners
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Y_Axis_Title =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">20</span>)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> X_Axis_Title, <span class="at">y =</span> Y_Axis_Title)) <span class="sc">+</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#3b66bc"</span>) <span class="sc">+</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, <span class="at">color =</span> <span class="st">"#404040"</span>) <span class="sc">+</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Axis Title (in italics if included)"</span>, </span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"This is the title of the chart, it should be in Arial bold, no</span><span class="sc">\n</span><span class="st">longer than two lines, and normally active"</span>,</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This is the subtitle, it should normally be a formal statistical subtitle"</span>,</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: This is the source in italics</span><span class="sc">\n\n</span><span class="st">Notes: These are the notes in italics"</span>) <span class="sc">+</span> </span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Arial"</span>),</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">16</span>, <span class="at">face =</span> <span class="st">"bold"</span>),</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">8</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.x =</span> <span class="fu">element_blank</span>(),</span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major.y =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"grey"</span>),</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#EDEBE3"</span>),</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.y =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">11</span>),</span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title.x =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>, <span class="at">face =</span> <span class="st">"italic"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Build the plot using ggplot2 package.</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x =</span> X_Axis_Title, <span class="at">y =</span> Y_Axis_Title)) <span class="sc">+</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add bar elements to the plot. 'stat = "identity"' tells ggplot to use the y-values as they are.</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"#3b66bc"</span>) <span class="sc">+</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add a horizontal line at y = 0, with a solid line type and a specified color.</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_hline</span>(<span class="at">yintercept =</span> <span class="dv">0</span>, <span class="at">linetype =</span> <span class="st">"solid"</span>, <span class="at">color =</span> <span class="st">"#404040"</span>) <span class="sc">+</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Add labels for the axes, title, subtitle, and caption. Also format these elements.</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Axis Title"</span>, </span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">""</span>, </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>       <span class="at">title =</span> <span class="st">"This is the title of the chart, it should be in Neuton, no longer than two lines,</span><span class="sc">\n</span><span class="st">and normally active"</span>,</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>       <span class="at">subtitle =</span> <span class="st">"This is the subtitle, it should normally be a formal statistical subtitle</span><span class="sc">\n</span><span class="st">"</span>,</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>       <span class="at">caption =</span> <span class="st">"Source: This is the source in italics</span><span class="sc">\n\n</span><span class="st">Notes: These are the notes in italics"</span>) <span class="sc">+</span> </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Customise with TASO theme elements, including background colour, title positioning, gridlines.</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span> </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>          <span class="at">text =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Barlow"</span>, <span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">family =</span> <span class="st">"Neuton"</span>, <span class="at">size =</span> <span class="dv">16</span>),</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.subtitle =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">12</span>),</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption.position =</span> <span class="st">"plot"</span>,</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.caption =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="dv">0</span>, <span class="at">size =</span> <span class="dv">9</span>, <span class="at">face =</span> <span class="st">"italic"</span>),</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.background =</span> <span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#EDEBE3"</span>, <span class="at">color =</span> <span class="cn">NA</span>),</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>          <span class="at">plot.margin =</span> <span class="fu">margin</span>(<span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="fl">0.25</span>, <span class="st">"in"</span>),</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.border =</span> ggplot2<span class="sc">::</span><span class="fu">element_blank</span>(),</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.major =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"#CECABC"</span>, <span class="at">linewidth =</span> <span class="fl">0.3</span>), </span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.grid.minor =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>          <span class="at">panel.background =</span> ggplot2<span class="sc">::</span><span class="fu">element_rect</span>(<span class="at">fill =</span> <span class="st">"#edebe3"</span>, <span class="at">color =</span> <span class="cn">NA</span>), </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">10</span>),</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.title =</span> <span class="fu">element_text</span>(<span class="at">size =</span> <span class="dv">9</span>),</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line.y =</span> <span class="fu">element_blank</span>(),</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.line =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"#485866"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>),</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">margin =</span> <span class="fu">margin</span>(<span class="at">t =</span> <span class="dv">7</span>, <span class="at">unit =</span> <span class="st">"pt"</span>)), </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.length =</span> <span class="fu">unit</span>(<span class="fl">0.3</span>, <span class="st">"cm"</span>), <span class="co"># Increase the length of ticks</span></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>          <span class="at">axis.ticks.x =</span> <span class="fu">element_line</span>(<span class="at">colour =</span> <span class="st">"#485866"</span>, <span class="at">linewidth =</span> <span class="fl">0.5</span>), </span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>          <span class="at">legend.position =</span> <span class="st">"none"</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>    )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
@@ -441,9 +451,9 @@ A note for TASO partners
 </div>
 </div>
 </div>
-<p>You can find an example R script for creating charts with TASO styling on <a href="https://github.com/taso-he">our GitHub</a>. R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the <a href="../data-vis/references.html">R resources</a> section.</p>
+<p>You can find an example R script for creating charts with TASO styling on <a href="https://github.com/taso-he/data_visualisation">our GitHub</a>. R is a widely used statistical software among researchers and data analysis. You can also find useful resources for data visualisation in R in the <a href="../data-vis/references.html">R resources</a> section.</p>
 <ul>
-<li><p>The font for the charts is Arial (or URW DIN if you have access). Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.</p></li>
+<li><p>The fonts for the charts are Neuton for the header and Barlow for all other text. Ensure that font sizes always remain readable. If there is text you must include but you are finding it is too small, consider how you can redesign the chart. For annotations and data labels, if you are to use bolding or italics, use them with purpose.</p></li>
 <li><p>The title should normally be an active title that conveys the key takeaway and should always be the largest text on the page.</p></li>
 <li><p>The subtitle should be a formal statistical title (as you might traditionally title a chart).</p></li>
 <li><p>The caption should be in the bottom left of the chart. It should be in italics, and smaller than the rest of the text on the chart.</p></li>
@@ -452,11 +462,33 @@ A note for TASO partners
 <ul>
 <li>The text should be black, but adjust as appropriate for readability. For example, sometimes data labels will need to be white to stand out against colours.</li>
 <li>Background should be #EDEBE3 (putty).</li>
-<li>Gridlines should generally be #E4E2D9 (darker than the background but lighter than text and lines). Gridline shade can be adjusted if it aids readability, but it should be a shade of grey.</li>
+<li>Gridlines should generally be “#CECABC” (darker than the background but lighter than text and lines). Gridline shade can be adjusted if it aids readability, but it should be a shade of grey.</li>
 </ul></li>
 <li><p>Format</p>
 <ul>
-<li>180mm (width) x 120mm (height) is the default standard chart size for A4 PDF reports. 180mm is the maximum width, however, the height is flexible depending on the chart. For example, if your chart needs to be tall rather than wide.</li>
+<li><p>180mm (width) x 120mm (height) is the default standard chart size for A4 PDF reports. 180mm is the maximum width, however, the height is flexible depending on the chart. For example, if your chart needs to be tall rather than wide.</p></li>
+<li><p><a href="https://www.linkedin.com/pulse/ultimate-guide-social-media-content-size-requirements-fourmeta-wphsf">Different social media platforms require different image sizes.</a></p>
+<ul>
+<li><p>For an instagram story or reel, 1080 x 1920 pixels is recommended. For carousel posts, the recommended sizes are:</p>
+<ul>
+<li><p>Landscape: 1080 x 566 pixels</p></li>
+<li><p>Portrait: 1080 x 1350 pixels</p></li>
+<li><p>Square: 1080 x 1080 pixels</p></li>
+</ul></li>
+<li><p>For in-stream photos on X, the recommended image size is 1600 x 900 pixels. The minimum size is 600 x 335 pixels.</p></li>
+<li><p>For LinkedIn, the recommended image size is 1200 x 627 pixels for a blog post.</p></li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#You can adjust the size of the image using: </span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>   <span class="st">"chart.png"</span>,</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>   <span class="at">plot =</span> chart_name,</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>   <span class="at">width =</span> <span class="co">#in px,</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>   <span class="at">height =</span> <span class="co">#in px,</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>   <span class="at">units =</span> <span class="st">"px"</span>, <span class="co">#px = pixels. You can also use millimeters (mm).</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>   <span class="at">scale =</span> <span class="fl">1.3</span>   <span class="co"># &lt;–– tune this until chart fills the space nicely. You may need to adjust the spacing in titles. </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
 <li>Save as a PNG or a JPEG to avoid losing quality through copy and pasting or screenshots.</li>
 </ul></li>
 <li><p>If you are including the logo, it should be in the bottom right corner, with sufficient space around it as per the brand guidelines. The logo is not needed in PDF reports that already contain TASO branding. However, consider including the logo for web/social media versions of charts, where the chart is taken outside of the context of the report.</p></li>
@@ -471,17 +503,17 @@ Adjusting charts for different publication types
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>We are currently developing how charts should be styled across different publications. A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. TASO are exploring how to optimise charts for each of these mediums. To see how we have tackled this most recently, we can look at charts for TASO’s <a href="https://taso.org.uk/research/current-projects/education-earnings-employment/">Education pathways</a> report.</p>
+<p>A chart published in an analytical report will require a slightly different set up to a chart for a blog or a social media. To see how we have tackled this most recently, we can look at charts for TASO’s <a href="https://taso.org.uk/libraryitem/project-education-pathways-equality-gaps-in-earnings-and-employment/">Education pathways</a> report.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset nav-pills">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Chart for report</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Chart for social media</a></li></ul>
 <div class="tab-content nav-pills">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>For a formal report, we felt it was more appropriate to have the figure caption in text. We still used our ‘active title’ for the figure caption, but we used it in-text, rather than as part of the image itself.</p>
-<p><a href="../images/data-vis-images/report_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="../images/data-vis-images/report_ed_pathways_chart.png" class="img-fluid"></a></p>
+<p>In a formal report, the aim is to be transparent and credible. To support this, the chart includes a figure number and clear title, along with key technical details such as the data source, cohorts included, and variable definitions. Error bars are also shown to indicate uncertainty around the estimates. This information equips readers to understand the methodology, verify the findings, or even replicate the analysis. The title is neutral and descriptive, allowing readers to evaluate the findings and form their own conclusions. Because this is a formal report, the accompanying text can provide the necessary context and guide the reader’s interpretation.</p>
+<p><a href="..\images/data-vis-images/report_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="..\images/data-vis-images/report_ed_pathways_chart.png" class="img-fluid"></a></p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>To share this chart on social media, we incorporated this figure caption into the chart itself. We also dropped the figure number and the footnotes.</p>
-<p><a href="../images/data-vis-images/social_media_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="../images/data-vis-images/social_media_ed_pathways_chart.png" class="img-fluid"></a></p>
+<p>For the social media version of the chart, the focus shifts from transparency to impact. The figure number and technical details are removed to keep the visual clean, and an active, attention-grabbing title highlights the key takeaway immediately. Annotations are added to draw the viewer’s eye to the most important point, while unnecessary information about the data source or cohort definitions is left out to avoid clutter. The organisation’s logo is also included to reinforce branding and make the graphic instantly recognisable. This streamlined design helps the chart work effectively in fast-paced online environments where viewers need to grasp the message at a glance.</p>
+<p><a href="..\images/data-vis-images/social_media_ed_pathways_chart.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="..\images/data-vis-images/social_media_ed_pathways_chart.png" class="img-fluid"></a></p>
 </div>
 </div>
 </div>
@@ -507,19 +539,19 @@ Note
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>taso_one_colour <span class="ot">&lt;-</span> <span class="st">"#3b66bc"</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>taso_two_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#07dbb3"</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>taso_three_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#00a8da"</span>, <span class="st">"#07dbb3"</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>taso_four_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#0093d9"</span>, <span class="st">"#00bad2"</span>, <span class="st">"#07dbb3"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>taso_five_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#0089d6"</span>, <span class="st">"#00a8da"</span>, <span class="st">"#00c3cc"</span>, <span class="st">"#07dbb3"</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>taso_likert <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#f9466c"</span>, <span class="st">"#fea3ac"</span>, <span class="st">"#f1f1f1"</span>, <span class="st">"#9ea8d7"</span>, <span class="st">"#3b66bc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>taso_one_colour <span class="ot">&lt;-</span> <span class="st">"#3b66bc"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>taso_two_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#07dbb3"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>taso_three_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>,<span class="st">"#07dbb3"</span>,<span class="st">"#f9466c"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>taso_four_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#07dbb3"</span>, <span class="st">"#f9466c"</span>,<span class="st">"#485866"</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>taso_five_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#07dbb3"</span>, <span class="st">"#f9466c"</span>,<span class="st">"#485866"</span>,<span class="st">"#e4e2d9"</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>taso_likert <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#f9466c"</span>, <span class="st">"#fea3ac"</span>, <span class="st">"#f1f1f1"</span>, <span class="st">"#9ea8d7"</span>, <span class="st">"#3b66bc"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 </section>
 <section id="accessibility" class="level2">
 <h2 class="anchored" data-anchor-id="accessibility">Accessibility</h2>
-<p>Ensure foreground and background colours contrast enough to pass the WCAG AA standard. You can check the colour contrast here.</p>
+<p>Ensure foreground and background colours contrast enough to pass the WCAG AA standard. You can check the colour contrast <a href="https://webaim.org/resources/contrastchecker/">here.</a></p>
 <p>For more in-depth guidance on accessibility, we recommend the accessibility sections of the <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/">Government Analysis Function data visualisation guidance</a> and the <a href="https://royal-statistical-society.github.io/datavisguide/">Royal Statistical Society data visualisation guide</a>.</p>
 <p>At TASO, we will be looking further into how we can improve the accessibility of our charts, particularly around the use of accessible colour palettes.</p>
 <p>For alt text, <a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81?">Amy Cesal</a> provides some useful guidance on how to write alt text for charts.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> She includes the following formula to help:</p>

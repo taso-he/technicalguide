@@ -202,9 +202,6 @@ background: #0f2847;
         </a>
     </div>
   </nav>
-  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
@@ -238,7 +235,7 @@ background: #0f2847;
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a href="./dig/index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Data infrastructure guide</span></a>
+ <span class="menu-text">Data insights guide</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -412,9 +409,10 @@ background: #0f2847;
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;"> Data Infrastructure Guide </button> </a></p>
+      cursor: pointer;"> Data Insights Guide </button> </a></p>
 </div>
-<p>A practical guide on using institutional data to identify equality gaps in students success and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.</p>
+<p>A practical guide on using institutional data to identify equality gaps and evaluate the effectiveness of interventions designed to reduce them. Aims to help higher education providers generate robust type 3 (causal) evidence.</p>
+<p>Note: This guide was previously known as the Data Infrastructure Guide. We updated the title in November 2025 to more accurately reflect its purpose.</p>
 </div>
 <div class="g-col-4">
 <div style="text-align: center;">
@@ -469,7 +467,7 @@ Tip
 <summary>Show the code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>taso_three_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>, <span class="st">"#00a8da"</span>, <span class="st">"#07dbb3"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>taso_three_colour <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#3b66bc"</span>,<span class="st">"#07dbb3"</span>,<span class="st">"#f9466c"</span>)</span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">Year =</span> <span class="fu">c</span>(<span class="dv">2019</span>, <span class="dv">2020</span>, <span class="dv">2021</span>, <span class="dv">2022</span>),</span>
@@ -490,7 +488,7 @@ Licensing and acknowledgements
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>The TASO Interactive Technical Guides © 2024 by TASO are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. This means that others are free to share, copy, distribute, and transmit the work, as well as to adapt or build upon it, for non-commercial purposes, as long as appropriate credit is given, a link to the license is provided, and any changes made are indicated.</strong></p>
+<p><strong>The TASO Interactive Technical Guides © 2024-2025 by TASO are licensed under <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>. This means that others are free to share, copy, distribute, and transmit the work, as well as to adapt or build upon it, for non-commercial purposes, as long as appropriate credit is given, a link to the license is provided, and any changes made are indicated.</strong></p>
 <p>This website incorporates and adapts elements of the Quarto code from the “Best Practices for Data Visualisation” guide, authored by Andreas Krause, Nicola Rennie and Brian Tarran, and published by the Royal Statistical Society in July 2023. While the specific content from the guide has not been used, <a href="https://github.com/royal-statistical-society/datavisguide/blob/main/_quarto.yml">the code structure</a> has been valuable in the development of specific functionalities on this site. Their guide is accessible at <a href="https://royal-statistical-society.github.io/datavisguide/" class="uri">https://royal-statistical-society.github.io/datavisguide/</a> and is licensed under <a href="https://creativecommons.org/licenses/by/4.0/?ref=chooser-v1">CC BY 4.0</a>. We are thankful to the authors and the Royal Statistical Society for sharing their expertise and resources, which have greatly assisted in the technical aspects of this website’s construction.</p>
 </div>
 </div>
@@ -923,8 +921,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./dig/index.html" class="pagination-link" aria-label="Data infrastructure guide">
-        <span class="nav-page-text">Data infrastructure guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./dig/index.html" class="pagination-link" aria-label="Data insights guide">
+        <span class="nav-page-text">Data insights guide</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

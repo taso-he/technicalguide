@@ -81,7 +81,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 <link rel="stylesheet" href="../styles.css">
 <meta property="og:title" content="creating_dig_pdf – Technical Guides">
 <meta property="og:description" content="">
-<meta property="og:image" content="https://taso-he.github.io/technicalguide/dig/images/logo_transp.png">
+<meta property="og:image" content="images/logo_transp.png">
 <meta property="og:site_name" content="Technical Guides">
 </head>
 
@@ -138,9 +138,6 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </div>
       </div> <!-- /container-fluid -->
     </nav>
-  <div id="quarto-announcement" data-announcement-id="aed2ba93fd7b08ab3f1ce9b6d6306bc3" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
-<p>This is a TASO resource site. Access the <a href="https://taso.org.uk/">main TASO website here</a></p>
-</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
@@ -151,7 +148,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#data-infrastructure-guide-using-and-developing-institutional-data-infrastructure-to-support-student-success-in-higher-education" id="toc-data-infrastructure-guide-using-and-developing-institutional-data-infrastructure-to-support-student-success-in-higher-education" class="nav-link active" data-scroll-target="#data-infrastructure-guide-using-and-developing-institutional-data-infrastructure-to-support-student-success-in-higher-education"><span style="color: #3b66bc;">Data Infrastructure Guide: Using and developing institutional data infrastructure to support student success in Higher Education</span></a></li>
+  <li><a href="#data-insights-guide-using-institutional-data-to-support-evaluation-in-higher-education" id="toc-data-insights-guide-using-institutional-data-to-support-evaluation-in-higher-education" class="nav-link active" data-scroll-target="#data-insights-guide-using-institutional-data-to-support-evaluation-in-higher-education"><span style="color: #3b66bc;">Data Insights Guide: using institutional data to support evaluation in higher education</span></a></li>
   <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a>
   <ul>
   <li><a href="#what-is-this-document" id="toc-what-is-this-document" class="nav-link" data-scroll-target="#what-is-this-document">What is this document?</a></li>
@@ -268,11 +265,11 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </header>
 
 
-<p>To save as pdf: render –&gt; Print –&gt; Pages: 2 - (n-1) –&gt; Untick Headers (keep Backgrounbd graphics ticked) –&gt; Save as PDF</p>
+<p>#To save as pdf: render –&gt; Print –&gt; Pages: 2 - (n-1) –&gt; Untick Headers (keep Backgrounbd graphics ticked) –&gt; Save as PDF</p>
 <div style="page-break-after: always;"></div>
 <div style="page-break-after: always;"></div>
-<section id="data-infrastructure-guide-using-and-developing-institutional-data-infrastructure-to-support-student-success-in-higher-education" class="level1">
-<h1><span style="color: #3b66bc;">Data Infrastructure Guide: Using and developing institutional data infrastructure to support student success in Higher Education</span></h1>
+<section id="data-insights-guide-using-institutional-data-to-support-evaluation-in-higher-education" class="level1">
+<h1><span style="color: #3b66bc;">Data Insights Guide: using institutional data to support evaluation in higher education</span></h1>
 <div style="page-break-after: always;"></div>
 </section>
 <section id="introduction" class="level1">
@@ -578,7 +575,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/taso-he\.github\.io\/technicalguide\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
