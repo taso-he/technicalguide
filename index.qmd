@@ -59,6 +59,22 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
 :::
 
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
+
+::: g-col-4
+::: {style="text-align: center;"}
+<a href="administrative-database-guidance/index.qmd"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;"> Administrative Database Guidance </button> </a>
+:::
+
+A practical guide on using administrative data relevant to higher education research and policy. Aims to support users to understand each administrative dataset's structure, access process and application to investigating HE inequalities.
+:::
 :::
 :::
 

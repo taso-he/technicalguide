@@ -83,6 +83,25 @@ website:
               text: Automatic styling with styleR
             - href: coding-good-practice/furtherresources.qmd 
               text: Further resources
+        - section: "Administrative database guidance"
+          href: administrative-database-guidance/index.qmd
+          contents: 
+            - href: administrative-database-guidance/index.qmd
+              text: Introduction
+            - href: administrative-database-guidance/npd.qmd
+              text: The National Pupil Database
+            - href: administrative-database-guidance/hesa.qmd
+              text: The Higher Education Statistics Agency (HESA)
+            - href: administrative-database-guidance/leo.qmd
+              text: Longitudinal Education Outcomes
+            - href: administrative-database-guidance/ucas.qmd
+              text: University and College Admissions Service
+            - href: administrative-database-guidance/heat.qmd
+              text: The Higher Education Access Tracker 
+            - href: administrative-database-guidance/references.qmd
+              text: References
+            - href: administrative-database-guidance/data_catalogue.qmd
+              text: Data catalogue
         - href: contact.qmd
           text: Contact point
 
