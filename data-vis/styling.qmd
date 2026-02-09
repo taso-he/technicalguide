@@ -94,7 +94,7 @@ You can find an example R script for creating charts with TASO styling on [our G
 
         -   For LinkedIn, the recommended image size is 1200 x 627 pixels for a blog post.
 
-    ```r
+    ``` r
     #You can adjust the size of the image using: 
     ggsave(
        "chart.png",
@@ -104,7 +104,6 @@ You can find an example R script for creating charts with TASO styling on [our G
        units = "px", #px = pixels. You can also use millimeters (mm).
        scale = 1.3   # <–– tune this until chart fills the space nicely. You may need to adjust the spacing in titles. 
     )
-
     ```
 
     -   Save as a PNG or a JPEG to avoid losing quality through copy and pasting or screenshots.
