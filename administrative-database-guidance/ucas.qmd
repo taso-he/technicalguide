@@ -1,1 +1,121 @@
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+library (kableExtra) 
+library(readxl)
+# Read the data for the table
+# Note that adding or rows or columns to these files will require the table-
+# generating code to be altered.
+# generating code to be altered. Any fields containing commas should be
+# enclosed in double quotes.
+ucas_MIOM_data <- read_excel("data/tbl_ucas_MIOM_data.xlsx")
+ucas_MIOM_outcomes <- read_excel("data/tbl_ucas_MIOM_outcomes.xlsx")
+```
 
+# Universities and Colleges Admissions Service (UCAS)
+
+## Introduction 
+
+The Universities and Colleges Admissions Service (UCAS) is a centralised admissions service provider in the UK, whose primary focus is to manage the application process for students entering HE providers. UCAS offers information, advice and guidance for young people exploring post-18 opportunities, mature learners, international students, parents, school and college advisers, and HE professionals to support educational progress to university, college, teacher training or a degree apprenticeship (UCAS, 2025b). 
+
+In its primary function, UCAS is an intermediary digital platform between applicants and HE providers such as universities and further education colleges. As part of this process, UCAS collects, monitors, and processes information on applicants. This data is published and leveraged to support various activities, including helping students manage their applications, assisting institutions with admissions and recruitment, informing policy and research, enhancing its own services, and providing detailed public reports and customised data services (UCAS, 2025a). 
+
+## Variables available in UCAS datasets
+
+The information collected, monitored and processed by UCAS includes: 
+
+-   Demographic characteristics such as ethnic group, gender (sex), POLAR4 quintile (Participation of Local Areas), FSM status, care responsibility status, disability status, estranged status and TUNDRA quintile and refugee/asylum status. 
+
+-   Characteristics of applicants - subject group (HECoS), deferrals status, applicant status, route of acceptance (e.g., direct clearing, main scheme), qualification group, indices of multiple deprivations (IMD, SIMD, WIMD, NIMDM), reapplication status, predicted grade (subject-specific), difference in achieved and predicted A-level points score (subject specific), achieved BTEC grade (subject specific), predicted BTEC grade (subject specific) and parental responsibility status. 
+
+-   Provider -- country of provider, UK geographical region and provider tariff group.
+
+-   Acceptance -- number of accepted applicants, the proportion of applicants accepted, number of withdrawals and number of applicant rejections. 
+
+-   Clearing -- the year of entry and provider country (including overseas providers that award recognised UK qualifications). 
+
+A comprehensive list of sector level variables available at UCAS can be accessed in their data dashboard (UCAS, 2024b). Data is available from 2006 to the present date.
+
+UCAS's coverage at further education colleges in the UK is less comprehensive, depending on the course type and the devolved nation for which the applicant is applying (UCAS, 2024), making it less representative of FE-based and Scottish HE pathways. 
+
+## Access to UCAS
+
+UCAS publishes aggregated, anonymised data openly that is available for download, with clear communication on repurposing the data. This data can be accessed via the interactive dashboard which covers end of cycle, clearing and application deadline data. This data is broken down by undergraduate, conservatoire, and teacher training at different points in the application cycle (UCAS, 2023). 
+
+Individual-level, de-identified UCAS data can be accessed through the LEO dataset when applying through the ONS SRS. However, only certain UCAS variables incorporated into the LEO are available, and these currently cover 18-year-old applicants from England from 2007/08 application cycle onwards[^ucas-1] [(ADR UK, no date)](https://www.zotero.org/google-docs/?gKLLCz). 
+
+[^ucas-1]: UCAS data within the LEO dataset includes information on university applications, covering the application cycle year, application details (institutions applied to, subjects, and offer/acceptance status), and applicant characteristics such as location, age and socioeconomic and demographic information.
+
+Additionally, UCAS offers two services. The Outreach Evaluator (previously known as STROBE) allows HE providers to assess the impact of their outreach and engagement activities through matching a cohort of participants who have taken part in HEoutreach activities to their UCAS application records, providing information on every stage of the admissions cycle (application, offer, reply, acceptance). Students in matched samples can then be compared to national averages, comparable control groups, and competitors for universities, with the option of in-cycle reporting to deliver real-time insights (UCAS, no date b).
+
+The UCAS EXACT service is a bespoke data service for HE providers and stakeholders, identifying trends in application and acceptance patterns. It provides access to historical (earliest 2006) and live-cycle admissions data. Those seeking the UCAS EXACT service will be supplied with a tailored dataset and custom reports to meet their specific needs. The data provided by UCAS EXACT is aggregated and anonymised to reduce the risk of disclosing personal data about identifiable individuals (UCAS, no date a). 
+
+## Application of UCAS in HE 
+
+Assessing the trends in HE applications (e.g., progression to high-tariff HE provider) among young people can help to guide outreach activities. For example, a cohort of students participating in a widening participation activity can be submitted to the UCAS Outreach Evaluator and matched to their UCAS application records. Outcomes for this sample (for example, attending a high-tariff HE provider)  can be compared to a \'benchmarked\' expected result and national averages. However, bias in how these samples are selected and matched would need to be ruled out before making causal claims about the impact of activities using this sort of analysis.
+
+UCAS can be used to explore applicant entry behaviour, for example, identifying where high-achieving students apply and accept offers to study particular subjects. In commissioning a tailored dataset from UCAS EXACT, it can be analysed how many of these students applied, the proportion of those who received offers from each institution, and where they ultimately accepted a place. This allows calculation of offer-to-accept conversion rates[^ucas-2] by HE provider, helping to assess which providers are more or less competitive for high-achieving students in particular subjects.
+
+[^ucas-2]: The offer rate is calculated as the total number of offers received divided by the total number of main scheme applications made.
+
+Furthermore, UCAS provides an interactive dashboard to explore high-level trends in applicant characteristics across different stages of the application cycle. For example, users can view rounded counts of applicants by gender or age, and observe percentage changes year-on-year. 
+
+## UCAS Evaluation Case Study
+
+## Background 
+
+TASO funded a multi-partner evaluation project that partnered with three HE providers to bolster the casual evidence base for the effectiveness of multi-intervention outreach and mentoring (MIOM) programmes and long-term behaviour outcomes such as HE attendance. One of the HE providers, Aston University, conducted a two-arm RCT to evaluate the Pathway to Healthcare programme[^ucas-3] regarding its impact on the target cohort\'s progression to HE. The Pathway to Healthcare programme was delivered to Year 12 and Year 13, as it was an 18-month programme. It was delivered across two cycles of Year 12 cohorts from widening participation backgrounds to empower learners to progress to HE, raise their aspirations for studying medicine or health-related courses and improve their skills and knowledge to enhance their UCAS application. 
+
+[^ucas-3]: The Pathway to Healthcare programme offers subject-specific taster days,attainment-raising activities, careers advice, sessions, university interview preparation, work experience, a UCAS personal statement day, a summer school, and a graduation and transition event. It aims to support students who are considering a career in healthcare or medicine in HE. 
+
+The student sample involved two cohorts of students:
+
+-   Year 12 students in the 2020-21 cohort due to attend university in the summer of 2023.
+
+-   Year 12 students in the 2021-22 cohort due to attend university in the summer of 2024.
+
+The Pathways to Healthcare programme is traditionally oversubscribed, making it an ideal intervention to test via a RCT. Students who met the eligibility criteria,[^ucas-4] were randomly allocated to the treatment group ( participant) or a control group (no intervention).
+
+[^ucas-4]: Students were eligible if they met at least one widening participation criteria, were studying at a non-selective school in Birmingham, Solihull, and the Black Country, and were not part of another Aston University widening participation programme.
+
+## Process for accessing administrative data in UCAS strobe
+
+Individual-level HESA data for the 2020/21 and 2021/22 Year 12 cohorts will not be available until approximately 18 months after students begin their higher education studies (April 2024 for the 2020/21 cohort and April 2025 for the 2021/22 cohort) (Table 6).[^ucas-5] To obtain an early indication of progression to higher education, Aston University will use the UCAS Outreach Evaluator service (formerly UCAS Strobe) to make preliminary comparisons between the treatment and control groups in the RCT. The Outreach Evaluator provides aggregate data on applications, offers and firm acceptances approximately two to three months after A-level results, enabling early assessment of differences in higher-education application behaviour well before HESA data become available.
+
+[^ucas-5]: This data has yet to be reported, and future results will be supplied by HEAT.
+
+As part of the request, Aston will submit a UCAS Outreach Evaluator spreadsheet (Table 5), which includes the necessary identifiers for UCAS to internally match students to their applicant records and assign them to user-defined groups (treatment, control, or whole cohort). UCAS performs all matching and linkage processes and returns only aggregated, non-identifiable counts of applications, offers and firm acceptances by group.
+
+These aggregate UCAS data provide an early proxy indicator of progression to higher education, allowing comparison between the RCT groups around 12--15 months before HESA enrolment data are released.
+
+```{r, echo=FALSE, warning=FALSE, results='markup'}
+#| label: tbl_ucas_MIOM_data
+#| tbl-cap: Table 5. Table used to apply for UCAS Strobe data for the MIOM evaluation at Aston University.   
+kableExtra::kable(ucas_MIOM_data) %>%
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
+  kableExtra::kable_styling(bootstrap_options = "hover") %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+```
+
+```{r, echo=FALSE, warning=FALSE, results='markup'}
+#| label: tbl_ucas_MIOM_outcomes
+#| tbl-cap: Table 6. Outcome measures for the MIOM evaluation at Aston University. Other outcome measures were included in the evaluation, but for this particular example, those related to HESA and UCAS have been included only. Please see further TASO resources for a comprehensive list of outcome measures (TASO, 2021). 
+kableExtra::kable(ucas_MIOM_outcomes) %>%
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
+  kableExtra::kable_styling(bootstrap_options = "hover") %>% 
+  kableExtra::kable_styling(full_width = FALSE) %>% 
+  kableExtra::kable_styling () %>% 
+  collapse_rows (columns = c (1,2,4,5))
+```
+
+## Ethical and data privacy considerations 
+
+Pathway to Healthcare applicants received a participant information sheet and links to a data privacy notice that informed them of the data being collected, that this would be matched to future datasets as part of an evaluation, and how they could opt out of the research process. Any students who opted out were not part of the request to UCAS.
+
+## Limitations
+
+-   The use of proxy measures from UCAS to answer the primary research questions limits findings as it relates to acceptances[^ucas-6] rather than enrolments.[^ucas-7] 
+
+-   The UCAS Outreach Evaluator was used due to delays in accessing HESA data however, it provides rounded aggregated data, which limits the precision and reliability of evaluating true HE entry outcomes.
+
+[^ucas-6]: Defined as an applicant who has been placed for entry into higher education. It confirms the students intention to take up the offer.
+
+[^ucas-7]: An enrolment happens after acceptance, at the provider itself. It\'s when the student arrives, registers on campus or online, and is officially recorded on the institution\'s register (and later on HESA\'s Student Record).
