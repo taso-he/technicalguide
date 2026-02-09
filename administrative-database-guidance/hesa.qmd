@@ -1,0 +1,45 @@
+# The Higher Education Statistics Agency (HESA) 
+
+## Introduction to HESA
+
+The Higher Education Statistics Agency (HESA) maintains a number of datasets about HE providers, students and their study choices. Data is collected from providers and further education providers (FEPs) in the UK to help them fulfil their statutory obligations to provide information to the funding and regulatory bodies in each devolved UK nation (HESA, n.d.b). 
+
+## Variables available in HESA
+
+HESA collects information on a broad range of activities in the HE sector this includes:[^hesa-1]
+
+[^hesa-1]: A comprehensive list of the data collected can be found in the coding manuals on the data collections page [(HESA, 2025)](https://www.zotero.org/google-docs/?0mx2hL)
+
+-   Student-level data:[^hesa-2] demographics (e.g., age, sex, disability status, home postcode, ethnicity), mode and level of study, subject of study, place of study and year of study.
+
+-   Staff data: demographics (e.g., age, sex, nationality, disability status, ethnicity), academic role (subject of teaching, mode of employment), contract type (permanent, fixed, zero hours contract), total number of staff and location of provider.
+
+-   Graduate and destination data:[^hesa-3] mode of the qualification obtained, wellbeing of graduates (using ONS4), mode of work (full time/part time), location of employment, salary and occupational classification.
+
+-   Specialist collections: Initial Teacher Training (ITT) record (collects data on trainee numbers, personal characteristics, enrolment subject and date of enrolment).
+
+-   Other information is collected on the financial records and environmental information of providers in the UK. 
+
+[^hesa-2]: The same variables are collected for both alternative providers (non-publicly funded) and UK publicly funded providers (HESA, 2018). Students studying outside the UK are collected within a different aggregate dataset known as the Aggregate Offshore Record (HESA, 2025).
+
+[^hesa-3]: Graduate-level data is collected in the Graduate Outcomes survey, which replaced the Destinations of Leavers from Higher Education survey (up to 2016-17). The Graduate Outcomes survey is administered to graduates 15 months after course completion and focuses on employment, further study, and salary. 
+
+Students registered at UK providers but studying entirely overseas are excluded from the main Student Record and instead appear in HESA\'s Aggregate Offshore Record (HESA, 2025). The HESA excludes students enrolled in community or workplace-based learning, such as those on apprenticeships or short work-based training placements that do not lead to a recognised qualification or award (HESA, 2018). Also, atypical non-academic staff on non-academic contracts are excluded from the staff data (HESA, 2016). HE graduates from further education colleges in Scotland are excluded from the population. 
+
+## Access to HESA
+
+HESA openly publishes aggregated data on aspects of the UK HE sector. This is open data meaning data anyone can access, use or share (Publications Office of the European Union, n.d.). For example, anyone can download aggregate tables and CSVs covering students, staff, finances, estates, graduate outcomes and more from HESA\'s Open Data portal. 
+
+Subscribing HE providers and partner organisations can also use Heidi Plus, an interactive web-based dashboard to explore aggregated HESA data (ten years of data on students, graduates, staff, estates and three years of finance). Access requires mandatory data-protection training and is tiered by role (Bronze, Silver, Gold), with Gold users able to view unrounded data (QAA, 2018).
+
+To access non-aggregated, individual level data, a request can be made to purchase a tailored dataset through the Jisc Data Service team or the ONS SRS.
+
+## Application of HESA data in HE 
+
+Promoting equality of opportunity is a key objective of the Office for Students (OfS), and the HESA data has been used to explore ethnic disparities among graduates. For example, one study linked the Destinations of Leavers from Higher Education (DLHE) data and the Longitudinal Destinations of Leavers from Higher Education (LDLHE) data with the HESA Student Record as the source for control variables (i.e., personal characteristics, study characteristics and degree outcomes) in a regression analysis to isolate the impact of ethnicity on career satisfaction. The linkage between HESA Student Record and LDLHE/DLHE allowed for a more nuanced analysis of the non-financial benefits of HE (Bermingham, Nathwani and Essen-Fishman, 2020).
+
+There is a regulatory requirement on HE providers to increase access to HE for students from disadvantaged or under-represented backgrounds (OfS, 2018). An outreach programme investigated the likelihood of state school pupils in England progressing to high-tariff[^hesa-4] universities using HESA data to identify whether students had enrolled. This data was linked with the NPD, which provided personal and educational characteristics known to influence progression to HE (gender, ethnicity, FSM status, POLAR quintile, IMD decile, KS4 attainment, achievement of English Baccalaureate). The linkage between HESA and NPD enabled the identification of underrepresented or at-risk groups who are less likely to progress to HE, thus developing more targeted interventions (Martin, 2024). 
+
+[^hesa-4]: A high-tariff university refers to a higher education institution in the UK that typically requires high entry qualifications (tariff points) for admission to its undergraduate courses.
+
+Graduate progression into skilled employment or postgraduate study is a common indicator used to assess the value delivered by HE courses. A recent evaluation of the Q-Step programme employed a quasi-experimental design using administrative data sources, specifically the HESA Student Record and the Graduate Outcomes Survey. The HESA Student Record was used to identify the treatment group (Q-Step students) through course and module titles, as well as institutional identifiers, and to construct a control group of similar students from universities not involved in Q-Step. The Graduate Outcomes Survey, also managed by HESA, provided the outcome measures, such as whether graduates were in highly skilled employment, whether their job required their qualification, and whether they earned over £25,000 15 months after graduation (Rosemberg et al., 2022).

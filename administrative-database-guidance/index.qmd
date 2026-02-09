@@ -1,0 +1,76 @@
+---
+title: "Administrative Database Guidance"
+subtitle: using administrative data to support evaluation in higher education
+format: html
+title-block-banner: "#0f2847"
+title-block-banner-color: "white"
+author: Nicholette Pollard-Odle
+date: "April, 2026"
+date-modified: last-modified
+date-format: "MMMM, YYYY" 
+---
+
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+library (kableExtra) 
+library(readxl)
+# Read the data for the table
+# Note that adding or rows or columns to these files will require the table-
+# generating code to be altered. Any fields containing commas should be
+# enclosed in double quotes.
+summary_admin_datasets <- read_excel("data/tbl_summary_administrative_datasets.xlsx")
+```
+
+## What is administrative data? 
+
+Personal data is routinely collected in our day-to-day lives. For instance, when a child enrols in school, information is collected about them, such as demographic characteristics, attendance, and attainment. This information is then used within schools for day-to-day operations (timetabling, class sizes, safeguarding), but this same data can be repurposed for research to answer research questions, track long-term outcomes, or evaluate policies.
+
+This type of information is known as administrative data because it is the secondary by-product of routine operations and administrative systems collected by public bodies or private organisations when people interact with those services (ONS, 2024b).\
+
+::: {.callout-note title="List of administrative datasets available and relevant to higher education (HE)"}
+1.  **National Pupil Database (NPD)** -- compiled by the Department for Education, contains information on pupils in state-funded schools in England. 
+
+2.  **Higher Education Statistics Agency (HESA) datasets** -- collected by Jisc, contains wide ranging information about the HE sector in the UK. 
+
+3.  **Longitudinal Education Outcome data (LEO)** -- compiled by the Department for Education, contains the educational records of individuals linked to later employment, tax and benefit data to create a de-identified person level dataset. 
+
+4.  **The Universities and Colleges Admissions Service (UCAS) datasets**, contain information on admissions, offers, and enrolment in further and HE institutions. 
+
+5.  **The Individualised Learner Record (ILR)** -- compiled by the Department for Education, contains information on students aged 16-18 years old and those aged 19 and older studying in vocational or further education in England.
+:::
+
+## Why is administrative data useful?
+
+The primary advantage of administrative data is its high coverage[^1] and the large amounts of information it collects on individuals who interact with private or public services. This makes it particularly useful for drawing inferences about entire populations or specific subgroups that may be missed by other data collection methods, such as surveys. Furthermore, because of its population-level coverage, and longitudinal structure, studies that use administrative data are often better powered (ADR UK, n.d.).
+
+[^1]: Coverage refers to how completely a dataset captures the population or group it is intended to represent.
+
+Another advantage of administrative data is that it can be linked (combined) with other sources of information to build a more comprehensive dataset that enables researchers and policymakers to better understand societal issues they hope to address (NATCEN, n.d.). For instance, early years data can be linked with labour market data, which traditionally would be hosted in two databases. This provides insight into identifying critical windows where interventions can most effectively narrow lifetime inequalities, which, if not linked, could not be inferred from analysing only a single dataset. 
+
+In addition, administrative data is collected across a range of topics. The breadth of variables and outcome measures available enables academics and other researchers to explore key social issues in ways surveys struggle to match. However, administrative data has drawbacks. For example, it may not include all the variables a researcher needs, such as people's motivations about a particular decision or sensitive experiences that would be disclosed in interviews or surveys. In such cases, it often needs to be supplemented with other sources to fully meet research needs. Other issues exist with administrative data like quality issues (e.g., missing fields, miscoding) and a lack of a standardised approach in data collection among different administrative databases (Office for Statistics Regulation, n.d.). Therefore, it can be time-consuming to extract and process the relevant data required for statistical purposes due to inconsistent data structures. 
+
+## Who is this guidance for? 
+
+This guidance is for:
+
+-   evaluators
+
+-   academic researchers
+
+-   delivery staff
+
+-   and senior leaders interested in utilising administrative databases to evaluate interventions in the HE sector.
+
+It is curated to support evaluation within the English HE system because education is devolved in the UK, and each country's government publishes data on its separate system. Those interested in Welsh, Scottish, and Northern Ireland education statistics are advised to consult relevant local guidance. 
+
+## Structure of the guide
+
+This guide is divided into four sections, each focused on an administrative data source relevant to higher education (HE) research and policy. The guide is designed to be accessible and practical, supporting users in understanding each dataset's structure, access process and application to investigating HE inequalities (Table 1).
+
+```{r, echo=FALSE, warning=FALSE, results='markup'}
+#| label: tbl_summary_administrative_datasets
+#| tbl-cap: Table 1. Summary of administrative datasets
+kableExtra::kable(summary_admin_datasets) %>%
+  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
+  kableExtra::kable_styling(bootstrap_options = "hover") %>% 
+  kableExtra::kable_styling(full_width = FALSE)
+```
