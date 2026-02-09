@@ -16,6 +16,8 @@ library(readxl)
 # Read the data for the table
 # Note that adding or rows or columns to these files will require the table-
 # generating code to be altered.
+# generating code to be altered. Any fields containing commas should be
+# enclosed in double quotes.
 summary_admin_datasets <- read_excel("data/tbl_summary_administrative_datasets.xlsx")
 ```
 
