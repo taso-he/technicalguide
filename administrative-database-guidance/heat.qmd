@@ -1,8 +1,12 @@
+---
+bibliography: references.bib
+---
+
 # Intermediary Data Services: The Higher Education Access Tracker (HEAT)
 
-This section is included in the guidance because HEAT[^heat-1] is one of the largest higher education data-tracking services in England. TASO acknowledges that HEAT is not an administrative database, rather, it is a centralised tracking service that negotiates access to the majority of variables covered in this administrative guidance resource. HEAT works with external administrative bodies to obtain linked administrative data on behalf of its members and disseminates this back to them for evaluation purposes.
+This section is included in the guidance because HEAT[^1] is one of the largest higher education data-tracking services in England. TASO acknowledges that HEAT is not an administrative database, rather, it is a centralised tracking service that negotiates access to the majority of variables covered in this administrative guidance resource. HEAT works with external administrative bodies to obtain linked administrative data on behalf of its members and disseminates this back to them for evaluation purposes.
 
-[^heat-1]: In the HE sector, there are two national tracking services -- the Higher Education Access Tracker (HEAT) and AimHigher West Midlands. A third tracking service - the East Midlands Widening Participation Research and Evaluation Partnership (EMWPREP) - closed in summer 2025. This document focuses on HEAT because it has the broadest coverage and is subscribed to by the majority of English higher education providers.
+[^1]: In the HE sector, there are two national tracking services -- the Higher Education Access Tracker (HEAT) and AimHigher West Midlands. A third tracking service - the East Midlands Widening Participation Research and Evaluation Partnership (EMWPREP) - closed in summer 2025. This document focuses on HEAT because it has the broadest coverage and is subscribed to by the majority of English higher education providers.
 
 HEAT is a non-profit membership organisation made up of HEPs and other partners working together to evaluate equality of opportunity activity. It tracks both pre and post entry activity, enabling members to follow students longitudinally across time and across multiple educational datasets. Through this centralised tracking, HEAT members can access a wide range of long-term outcomes relevant to equality of opportunity work, including GCSE and A-level attainment, and progression, access and success in HE and beyond. 
 
@@ -12,4 +16,4 @@ As the majority of outcomes covered in this resource are available through the H
 
 In addition to sourcing administrative data for its members, HEAT accepts research applications from external researchers who wish to analyse aggregate HEAT data on outreach activity delivered by member organisations. Applicants do not need to belong to a HEAT member institution.  External researchers interested in understanding more  about the application process and the specifics of the available data are advised to contact HEAT directly. 
 
-![Figure 2. Overview of the outcome measures available in the HEAT Track database, and the source for the data (HEAT, no date c).](/images/admin-data-images/HEAT Track Outcome Measures.png)
+![Figure 2. Overview of the outcome measures available in the HEAT Track database, and the source for the data [@heat].](/images/admin-data-images/HEAT%20Track%20Outcome%20Measures.png)

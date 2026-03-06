@@ -1,6 +1,7 @@
 ---
 title: "Administrative Database Guidance"
 subtitle: using administrative data to support evaluation in higher education
+bibliography: "references.bib"
 format: html
 title-block-banner: "#0f2847"
 title-block-banner-color: "white"
@@ -23,9 +24,9 @@ summary_admin_datasets <- read_excel("data/tbl_summary_administrative_datasets.x
 
 ## What is administrative data? 
 
-Personal data is routinely collected in our day-to-day lives. For instance, when a child enrols in school, information is collected about them, such as demographic characteristics, attendance, and attainment. This information is then used within schools for day-to-day operations (timetabling, class sizes, safeguarding), but this same data can be repurposed for research to answer research questions, track long-term outcomes, or evaluate policies.
+Personal data is routinely collected in our day-to-day lives. For instance, when a child enrols in school, information is collected about them, such as demographic characteristics, attendance, and attainment. This information is then used within schools for day-to-day operations (timetabling, class sizes, safeguarding), but this same data can be re-purposed for research to answer research questions, track long-term outcomes, or evaluate policies.
 
-This type of information is known as administrative data because it is the secondary by-product of routine operations and administrative systems collected by public bodies or private organisations when people interact with those services (ONS, 2024b).\
+This type of information is known as administrative data because it is the secondary by-product of routine operations and administrative systems collected by public bodies or private organisations when people interact with those services [@officefornationalstatistics2024f]\
 
 ::: {.callout-note title="List of administrative datasets available and relevant to higher education (HE)"}
 1.  **National Pupil Database (NPD)** -- compiled by the Department for Education, contains information on pupils in state-funded schools in England. 
@@ -41,13 +42,13 @@ This type of information is known as administrative data because it is the secon
 
 ## Why is administrative data useful?
 
-The primary advantage of administrative data is its high coverage[^1] and the large amounts of information it collects on individuals who interact with private or public services. This makes it particularly useful for drawing inferences about entire populations or specific subgroups that may be missed by other data collection methods, such as surveys. Furthermore, because of its population-level coverage, and longitudinal structure, studies that use administrative data are often better powered (ADR UK, n.d.).
+The primary advantage of administrative data is its high coverage[^1] and the large amounts of information it collects on individuals who interact with private or public services. This makes it particularly useful for drawing inferences about entire populations or specific subgroups that may be missed by other data collection methods, such as surveys. Furthermore, because of its population-level coverage, and longitudinal structure, studies that use administrative data are often better powered [@adruk].
 
 [^1]: Coverage refers to how completely a dataset captures the population or group it is intended to represent.
 
-Another advantage of administrative data is that it can be linked (combined) with other sources of information to build a more comprehensive dataset that enables researchers and policymakers to better understand societal issues they hope to address (NATCEN, n.d.). For instance, early years data can be linked with labour market data, which traditionally would be hosted in two databases. This provides insight into identifying critical windows where interventions can most effectively narrow lifetime inequalities, which, if not linked, could not be inferred from analysing only a single dataset. 
+Another advantage of administrative data is that it can be linked (combined) with other sources of information to build a more comprehensive dataset that enables researchers and policymakers to better understand societal issues they hope to address [@nationalcentreforsocialresearch]. For instance, early years data can be linked with labour market data, which traditionally would be hosted in two databases. This provides insight into identifying critical windows where interventions can most effectively narrow lifetime inequalities, which, if not linked, could not be inferred from analysing only a single dataset. 
 
-In addition, administrative data is collected across a range of topics. The breadth of variables and outcome measures available enables academics and other researchers to explore key social issues in ways surveys struggle to match. However, administrative data has drawbacks. For example, it may not include all the variables a researcher needs, such as people's motivations about a particular decision or sensitive experiences that would be disclosed in interviews or surveys. In such cases, it often needs to be supplemented with other sources to fully meet research needs. Other issues exist with administrative data like quality issues (e.g., missing fields, miscoding) and a lack of a standardised approach in data collection among different administrative databases (Office for Statistics Regulation, n.d.). Therefore, it can be time-consuming to extract and process the relevant data required for statistical purposes due to inconsistent data structures. 
+In addition, administrative data is collected across a range of topics. The breadth of variables and outcome measures available enables academics and other researchers to explore key social issues in ways surveys struggle to match. However, administrative data has drawbacks. For example, it may not include all the variables a researcher needs, such as people's motivations about a particular decision or sensitive experiences that would be disclosed in interviews or surveys. In such cases, it often needs to be supplemented with other sources to fully meet research needs. Other issues exist with administrative data like quality issues (e.g., missing fields, miscoding) and a lack of a standardised approach in data collection among different administrative databases [@officeforstatisticsregulation]. Therefore, it can be time-consuming to extract and process the relevant data required for statistical purposes due to inconsistent data structures. 
 
 ## Who is this guidance for? 
 
@@ -65,7 +66,7 @@ It is curated to support evaluation within the English HE system because educati
 
 ## Structure of the guide
 
-This guide is divided into four sections, each focused on an administrative data source relevant to higher education (HE) research and policy. The guide is designed to be accessible and practical, supporting users in understanding each dataset's structure, access process and application to investigating HE inequalities (Table 1).
+This guide is divided into five sections, each focused on an administrative data source relevant to higher education (HE) research and policy. The guide is designed to be accessible and practical, supporting users in understanding each dataset's structure, access process and application to investigating HE inequalities. A high-level summary is provided in Table 1. For more details, please visit the section for the data set.
 
 ```{r, echo=FALSE, warning=FALSE, results='markup'}
 #| label: tbl_summary_administrative_datasets

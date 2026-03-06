@@ -1,3 +1,7 @@
+---
+bibliography: references.bib
+---
+
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
 library (kableExtra) 
 library(readxl)
@@ -12,13 +16,13 @@ equality_gaps_outcomes <- read_excel("data/tbl_equality_gaps_outcomes.xlsx")
 
 ## Introduction to LEO
 
-The Longitudinal Education Outcomes (LEO) dataset is an administrative database that contains de-identified individual-level information on the employment and earnings of approximately 39 million learners who have attended schools, further education colleges and HE providers in England (DfE, 2024c). It includes records for anyone born since 1985 who attended school in England. Learners from Wales or Scotland appear in LEO only once they enrol in an English institution, via the NPD or ILR.
+The Longitudinal Education Outcomes (LEO) dataset is an administrative database that contains de-identified individual-level information on the employment and earnings of approximately 39 million learners who have attended schools, further education colleges and HE providers in England [@dfe2024]. It includes records for anyone born since 1985 who attended school in England. Learners from Wales or Scotland appear in LEO only once they enrol in an English institution, via the NPD or ILR.
 
-The LEO database comprises of different linked data sources (Figure 1)[^leo-1][^leo-2]combining FE and HE student records (NPD, ILR and HESA) with the Department for Work and Pensions (DWP) and His Majesty's Revenue and Customs (HMRC) earnings, benefits and tax data, with its most recent expansion including linked data sources from the Universities and College Admissions Service (UCAS, 18-year-old English applicants only), the Inter-Departmental Business Register (IDBR) and COVID-19 furlough data(ADR UK, 2023).
+The LEO database comprises of different linked data sources (Figure 1)[^1][^2]combining FE and HE student records (NPD, ILR and HESA) with the Department for Work and Pensions (DWP) and His Majesty's Revenue and Customs (HMRC) earnings, benefits and tax data, with its most recent expansion including linked data sources from the Universities and College Admissions Service (UCAS, 18-year-old English applicants only), the Inter-Departmental Business Register (IDBR) and COVID-19 furlough data [@adruk2023].
 
-[^leo-1]: When researchers request access to LEO, they receive only the specific linked datasets relevant to their approved project, not the full LEO database. All data sources within LEO can be linked to each other at the individual level through shared pseudonymised identifiers, but no external individual-level datasets may be linked to LEO. Data can be linked at the school, college or university level but approval is granted only where the data owner determines that including these variables does not create an unacceptable disclosure risk. Decisions are made on a case-by-case basis.
+[^1]: When researchers request access to LEO, they receive only the specific linked datasets relevant to their approved project, not the full LEO database. All data sources within LEO can be linked to each other at the individual level through shared pseudonymised identifiers, but no external individual-level datasets may be linked to LEO. Data can be linked at the school, college or university level but approval is granted only where the data owner determines that including these variables does not create an unacceptable disclosure risk. Decisions are made on a case-by-case basis.
 
-[^leo-2]: LEO linked data sources span different time periods; NPD from 2001/02 (exceptions of KS1 1997/98 and KS2 1995/96), ILR from 2002/03, HESA from 2004/05, DWP from 1990/00, HMRC from 1997/98, UCAS 2007/08, IDBR from 2004/05 and COVID-19 furlough data 2020/21 only. 
+[^2]: LEO linked data sources span different time periods; NPD from 2001/02 (exceptions of KS1 1997/98 and KS2 1995/96), ILR from 2002/03, HESA from 2004/05, DWP from 1990/00, HMRC from 1997/98, UCAS 2007/08, IDBR from 2004/05 and COVID-19 furlough data 2020/21 only. 
 
 The purpose of the LEO database is to facilitate evidence-informed decision-making about educational policy and practice based on retrospective data from English learners in order to enhance the lifetime outcomes of current and future learners.
 
@@ -28,13 +32,13 @@ The purpose of the LEO database is to facilitate evidence-informed decision-maki
 
 They are two iterations of the LEO standard extract. The initial version LEO I1 (Iteration 1 Standard Extract) contained the NPD, ILR, HESA and HMRC and DWP. The most recent version is an extension of the LEO I1, with more years of data and additional linked datasets (Figure 1). 
 
-The data stored in LEO links education data and labour market data, which allows tracking of students from compulsory school age into HE and the labour market. The following variables are key examples of what is available in the LEO database:[^leo-3]
+The data stored in LEO links education data and labour market data, which allows tracking of students from compulsory school age into HE and the labour market. The following variables are key examples of what is available in the LEO database:[^3]
 
-[^leo-3]: The full list of variables available in LEO is provided in the LEO I2SE variable request form, under Section 4: Using Longitudinal Education Outcomes (LEO) datasets. (ONS, 2024a).
+[^3]: The full list of variables available in LEO is provided in the LEO I2SE variable request form, under Section 4: Using Longitudinal Education Outcomes (LEO) datasets. (ONS, 2024a).
 
--   Personal characteristics,[^leo-4] such as FSM status, age, gender, ethnicity and POLAR quintile (Participation Of Local Area).[^leo-5]
+-   Personal characteristics,[^4] such as FSM status, age, gender, ethnicity and POLAR quintile (Participation Of Local Area).[^5]
 
--   Educational history, such as schools, further education (FE), Alternative Providers (APs)[^leo-6] and HE provider attended, prior school attainment, domicile status (UK, EU and overseas), course studied, predicted grades of HE applicants, number of offers received by applicants, and qualification level achieved.
+-   Educational history, such as schools, further education (FE), Alternative Providers (APs)[^6] and HE provider attended, prior school attainment, domicile status (UK, EU and overseas), course studied, predicted grades of HE applicants, number of offers received by applicants, and qualification level achieved.
 
 -   Employment status (including sector type and size), benefits claimed, industry of employment, and earnings (available from 2003/04).
 
@@ -42,11 +46,11 @@ The data stored in LEO links education data and labour market data, which allows
 
 -   Movement of graduates throughout the entire cycle of study between their home region (before entering HE), the region where they studied, and their current region (after completing their course).
 
-[^leo-4]: These variables come from different parts of the LEO database, with some common across datasets (e.g., age, gender, ethnicity) and others unique to a single dataset. 
+[^4]: These variables come from different parts of the LEO database, with some common across datasets (e.g., age, gender, ethnicity) and others unique to a single dataset. 
 
-[^leo-5]: LEO does not provide postcodes, substitutes such as geographic identifiers are available such as LSOA or POLAR quintiles.
+[^5]: LEO does not provide postcodes, substitutes such as geographic identifiers are available such as LSOA or POLAR quintiles.
 
-[^leo-6]: Alternative providers are HE providers that did not receive recurrent funding from the Office for Students (OfS) or other public bodies and that are not further education colleges.
+[^6]: Alternative providers are HE providers that did not receive recurrent funding from the Office for Students (OfS) or other public bodies and that are not further education colleges.
 
 The LEO database does not collect information on:
 
@@ -58,29 +62,29 @@ The LEO database does not collect information on:
 
 ## Access to LEO
 
-LEO data is published online in two aggregated formats, 'Graduate and Postgraduate Outcomes' and 'Graduate Outcomes Provider Level Data'. Provider-level data is grouped by subject, graduate characteristics, and HE provider, while graduate-level data is aggregated by qualification level (bachelor's, master's, doctorate) (DfE, 2024b). Data grouping protects the anonymity of HE graduates but still allows policymakers and researchers to compare long-term employment and earning outcomes. The LEO aggregated data is published openly and can be accessed via the GOV.UK Data Catalogue, under the HE theme (DfE, n.d.)
+LEO data is published online in two aggregated formats, 'Graduate and Postgraduate Outcomes' and 'Graduate Outcomes Provider Level Data'. Provider-level data is grouped by subject, graduate characteristics, and HE provider, while graduate-level data is aggregated by qualification level (bachelor's, master's, doctorate) [@dfe2024b]. Data grouping protects the anonymity of HE graduates but still allows policymakers and researchers to compare long-term employment and earning outcomes. The LEO aggregated data is published openly and can be accessed via the GOV.UK Data Catalogue, under the HE theme [@dfe].
 
-To access the LEO standard extract, researchers must submit a full project application through the ONS Project Accreditation Service for SRS (PASS)[^leo-7] outlining the research aims, public benefit, methods and data requirements. The application must include the LEO I2SE Variable Request Form, specifying the required tables and variables, and may also require an NSDEC ethics self-assessment or equivalent institutional ethics approval depending on the project [(ONS, n.d.)](https://www.zotero.org/google-docs/?broken=ItQRpM) . Those seeking access are advised to have proficiency in Structured Query Language (SQL). However, strong proficiency is not essential, as data can be exported from SQL into other statistical packages available in the Secure Research Service (SRS). Guidance can be found on GOV.UK (DfE, 2024a).
+To access the LEO standard extract, researchers must submit a full project application through the ONS Project Accreditation Service for SRS (PASS)[^7] outlining the research aims, public benefit, methods and data requirements. The application must include the LEO I2SE Variable Request Form, specifying the required tables and variables, and may also require an NSDEC ethics self-assessment or equivalent institutional ethics approval depending on the project [@onsa]. Those seeking access are advised to have proficiency in Structured Query Language (SQL). However, strong proficiency is not essential, as data can be exported from SQL into other statistical packages available in the Secure Research Service (SRS). Guidance can be found on GOV.UK [@dfe2025b].
 
-[^leo-7]: The Research Accreditation Service (RAS) has now been replaced with two new services. The Project Accreditation Service for the Secure Research Service (PASS) is now used to apply for new SRS projects or request changes to existing ones. The People and Projects Service (PPS) is used to manage researcher accreditation applications for new researchers or those who are renewing and to submit an application for a project in the IDS Integrated Data Service (IDS)
+[^7]: The Research Accreditation Service (RAS) has now been replaced with two new services. The Project Accreditation Service for the Secure Research Service (PASS) is now used to apply for new SRS projects or request changes to existing ones. The People and Projects Service (PPS) is used to manage researcher accreditation applications for new researchers or those who are renewing and to submit an application for a project in the IDS Integrated Data Service (IDS)
 
 ## Application of LEO in HE
 
 The primary purpose of LEO is to connect individual's education data with their employment, benefits and earnings data. Therefore, the LEO dataset provides a unique data source to understand the role the English education system has in shaping individual long-term employment outcomes.
 
-Some LEO analysis is designed to inform policies to address inequality gaps in UK HE. For example, comparing median earnings at 3 and 10 years post-graduation for FSM-eligible versus non-FSM graduates reveals large gaps in earnings. Insights like these can inform targeted interventions such as bursaries, mentoring or other support schemes (i.e. transition support) for disadvantaged students. Further, breaking results down by qualification level or subject area can reveal pathways that yield the greatest earning returns and employability gains. Hence, by using the LEO database, policymakers can understand which groups to support, at what stage in their studies, and in which courses (ONS, 2022).
+Some LEO analysis is designed to inform policies to address inequality gaps in UK HE. For example, comparing median earnings at 3 and 10 years post-graduation for FSM-eligible versus non-FSM graduates reveals large gaps in earnings. Insights like these can inform targeted interventions such as bursaries, mentoring or other support schemes (i.e. transition support) for disadvantaged students. Further, breaking results down by qualification level or subject area can reveal pathways that yield the greatest earning returns and employability gains. Hence, by using the LEO database, policymakers can understand which groups to support, at what stage in their studies, and in which courses [@ons2022].
 
-Alternatively, the LEO dataset can be used to explore the role of early attainment and post-16 pathways in shaping labour market outcomes, which can inform when careers advice and guidance may be most impactful for disadvantaged students. For example, the Education Policy Institute (EPI) used regression modelling with LEO data to examine how prior attainment, post-16 qualification routes, and disadvantage status are associated with earnings at age 25. Their findings showed that GCSE attainment explains a substantial share of the earnings gap between disadvantaged and non-disadvantaged young people, while post-16 qualification choices make an additional but smaller contribution. These patterns were more pronounced for women, for whom differences in attainment and qualification level explained a larger proportion of the earnings gap than for men [(Cruikshanks and Robinson, 2025)](https://www.zotero.org/google-docs/?kXjsem).
+Alternatively, the LEO dataset can be used to explore the role of early attainment and post-16 pathways in shaping labour market outcomes, which can inform when careers advice and guidance may be most impactful for disadvantaged students. For example, the Education Policy Institute (EPI) used regression modelling with LEO data to examine how prior attainment, post-16 qualification routes, and disadvantage status are associated with earnings at age 25. Their findings showed that GCSE attainment explains a substantial share of the earnings gap between disadvantaged and non-disadvantaged young people, while post-16 qualification choices make an additional but smaller contribution. These patterns were more pronounced for women, for whom differences in attainment and qualification level explained a larger proportion of the earnings gap than for men [@cruikshanks2025].
 
-Unlike the NPD and HESA data, the LEO data cannot currently be matched with bespoke datasets collected by evaluators outside of the LEO system for the purposes of evaluation.[^leo-8]
+Unlike the NPD and HESA data, the LEO data cannot currently be matched with bespoke datasets collected by evaluators outside of the LEO system for the purposes of evaluation.[^8]
 
-[^leo-8]: Correct at the time of publishing in 2025
+[^8]: Correct at the time of publishing in 2025
 
 ## Longitudinal Education Outcome Evaluation Case Study
 
 ### Background
 
-In 2021, TASO commissioned State of Life and Mime to research whether HE addresses existing equality gaps between advantaged and disadvantaged students. Using the Longitudinal Educational Outcomes (LEO) dataset. The study examined employment earnings and employment status among young people who pursued different educational pathways, defined as the highest level and type of qualification obtained nine years post-Key Stage 4 (KS4) [(TASO, 2023a)](https://www.zotero.org/google-docs/?szZCKI).
+In 2021, TASO commissioned State of Life and Mime to research whether HE addresses existing equality gaps between advantaged and disadvantaged students. Using the Longitudinal Educational Outcomes (LEO) dataset. The study examined employment earnings and employment status among young people who pursued different educational pathways, defined as the highest level and type of qualification obtained nine years post-Key Stage 4 (KS4) [@taso2023].
 
 ### Process for accessing LEO
 
