@@ -1,5 +1,6 @@
 ---
 bibliography: references.bib
+csl: imperial-college-london-author-date.csl
 ---
 
 # Intermediary Data Services: The Higher Education Access Tracker (HEAT)

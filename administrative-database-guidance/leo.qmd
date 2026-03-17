@@ -1,5 +1,6 @@
 ---
 bibliography: references.bib
+csl: imperial-college-london-author-date.csl
 ---
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}

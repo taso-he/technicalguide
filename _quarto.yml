@@ -98,8 +98,6 @@ website:
               text: University and College Admissions Service
             - href: administrative-database-guidance/heat.qmd
               text: The Higher Education Access Tracker 
-            - href: administrative-database-guidance/references.qmd
-              text: References
             - href: administrative-database-guidance/data_catalogue.qmd
               text: Data catalogue
         - href: contact.qmd

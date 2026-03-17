@@ -1,5 +1,6 @@
 ---
 bibliography: references.bib
+csl: imperial-college-london-author-date.csl
 ---
 
 ```{r setup, include=FALSE, warning=FALSE, message=FALSE}
@@ -10,66 +11,72 @@ library (kableExtra)
 # generating code to be altered. Any fields containing commas should be
 # enclosed in double quotes.
 npd_variables <- read_excel ("./data/tbl_npd_variables.xlsx")
+npd_variables <- as.data.frame(npd_variables)
 summer_school_outcomes <- read_excel("./data/tbl_summer_schools_outcomes.xlsx")
 ```
 
+# The National Pupil Database (NPD)
+
 ## Introduction to NPD
 
-The National Pupil Database (NPD) is a longitudinal administrative data source collected by the Department for Education (DfE) that hosts child-level and school-level data on all pupils in state-funded schools across England [@dfe2024a]. This includes children in state-funded nursery, primary, secondary, and special schools, non-maintained special schools, pupil referral units, general hospital schools, and independent schools. The NPD is the DfE's primary source of information on pupils in school and is used primarily to monitor school performance and pupil characteristics, and to inform policy and research [@dfe_national_2022].
+The National Pupil Database (NPD) is a longitudinal administrative data source collected by the Department for Education (DfE) that hosts child-level and school-level[^1] data on all pupils in state-funded schools across England [@dfe2024a][^2]. The NPD is the DfE's primary source of information on pupils in school and is used primarily to monitor school performance and pupil characteristics, and to inform policy and research [@dfe_national_2022].
+
+[^1]: NPD school-level datasets provide aggregated attainment and census indicators at the level of the school (one row per school). School-level datasets summarise outcomes such as KS2--KS5 performance, contextual characteristics, and accountability measures from the individual level.
+
+[^2]: Full variable listings are available in the NPD Data Tables (Excel), under the Data Tables section [(GOV.UK, 2025)](https://www.find-npd-data.education.gov.uk/)
+
+## Variables available in the NPD
 
 ```{r, echo=FALSE, warning=FALSE, results='markup'}
-#| label: tbl_summary_administrative_datasets
-#| tbl-cap: Table 2. National Pupil Database
-kableExtra::kable(npd_variables) %>% 
-  kableExtra::kable_styling(bootstrap_options = "hover") %>% 
-  kableExtra::kable_styling(full_width = FALSE) %>%
-  kableExtra::kable_styling () %>% 
-  collapse_rows (columns = 1)
+#| label: tbl_npd
+#| tbl-cap: Table 2. National Pupil Database Overview 
+kable(npd_variables) %>%
+  kableExtra::kable_styling(
+    bootstrap_options = "hover",
+    full_width = FALSE
+  ) %>%
+  #Hide the column names 
+  kableExtra::row_spec(0, extra_css = "display:none;") %>%
+  kableExtra::column_spec(1, background = "#3b66bc", color = "white", bold = TRUE) %>%
+  kableExtra::collapse_rows(columns = 1, valign = "middle")
+
 ```
 
-The main data stored in the NPD is information on characteristics of pupils enrolled in state-funded schools, from the academic year 2001-02 onward. This includes:[^1] 
+## Limitations
 
-[^1]: Full variable listings are available in the NPD Data Tables (Excel), under the Data Tables section [(GOV.UK, 2025)](https://www.zotero.org/google-docs/?kEtbP3)
+EYFSP, KS1 and KS2 attainment data are missing for pupils who attended independent or non-state schools, as these schools do not submit statutory assessment returns.
 
--   Child level variables such as gender, date of birth, ethnicity, postcode language, free school meal eligibility, special educational needs, social care status (looked after children and children in need), absences, exclusion, dates of joining and leaving a school. 
-
--   Achievement level variables such as attainment at Key Stage 1, 2, 3, 4 and 5 (KS1, KS2, KS3, KS4 and KS5), and Information about what they did after they finished school. 
-
--   School-level variables such as the local authority of the school and the school name.
-
--   Area-based variables such as the local authority area in which the child lives.  
-
-The NPD only includes data on the number of pupils enrolled in independent and general hospital schools, but no detailed characteristics data. It also excludes data on compulsory-age children outside formal education, such as those who are home-schooled, missing in education, or too unwell to attend school. The DfE gathers these figures from local authorities and publishes them separately in the Elective Home Education (EHE), Education Otherwise Than at School (EOTAS), and Children Missing Education (CME) databases [@independentproviderofspecialeducationadvice2018; @dfe_elective_2024].
+The NPD school census only includes data on the number of pupils enrolled in independent and general hospital schools, but no detailed characteristics data. It also excludes data on compulsory-age children outside formal education, such as those who are home-schooled, missing in education, or too unwell to attend school. The DfE gathers these figures from local authorities and publishes them separately in the Elective Home Education (EHE), Education Otherwise Than at School (EOTAS), and Children Missing Education (CME) databases [@independentproviderofspecialeducationadvice2018; @dfe_elective_2024].
 
 ## Access to the NPD
 
-Due to the sensitive nature of the information hosted by the DfE, strict procedures are in place that limit access to the NPD. Researchers and organisations seeking to access data from the NPD must apply directly to the DfE data-sharing service. Data can then be shared through the Office for National Statistics Secure Research Service (ONS SRS). Therefore, those wishing to access the NPD must have an ONS Approved Researcher accreditation to access data via the ONS SRS [@ons]. In exceptional cases where an organisation can demonstrate a clear need, the DfE may agree to a direct data supply without ONS accreditation. A publicly available guide details the full application process [@dfe2025]. 
+Access to the NPD is managed by the Department for Education (DfE). Due to the sensitive nature of the information hosted by the DfE, strict procedures are in place that limit access to the NPD. Researchers and organisations seeking to access data from the NPD must apply directly to the DfE data-sharing service. Data can then be shared through the Office for National Statistics Secure Research Service (ONS SRS). Therefore, those wishing to access the NPD must have an ONS Approved Researcher accreditation to access data via the ONS SRS [@ons]. In exceptional cases where an organisation can demonstrate a clear need, the DfE may agree to a direct data supply without ONS accreditation. A publicly available guide details the full application process [@dfe2025]. 
 
 ## Application of the NPD in HE
 
 The NPD can be used in a variety of ways in HE research and evaluation - typically as a source of background characteristics before HE entry, prior attainment measures, measures of deprivation or a source for covariates in statistical modelling. Some examples are given below.
 
-It is well known that poor GCSE attainment has been shown to limit access to HE [@ofs2022]. @sibieta_increasing_2024 tested whether incentives (event-based[^2] or financial) could improve GCSE performance in Year 11 pupils. The NPD was used as a data source for the primary outcome measure (GCSE results in Maths, English, and Science), pupil characteristics, and school attendance of those in the treatment and control schools. The findings showed no statistically significant effect of financial incentives on GCSE performance. However, event-based incentives had a positive effect on Maths GCSE scores, particularly among pupils with low levels of prior attainment. The application of the NPD, in this example, enabled access to reliable outcome data (GCSE attainment) and a large-scale impact evaluation without reliance on new data collection [@sibieta_increasing_2024]. 
+It is well known that poor GCSE attainment has been shown to limit access to HE [@ofs2022]. @sibieta_increasing_2024 tested whether incentives (event-based[^3] or financial) could improve GCSE performance in Year 11 pupils. The NPD was used as a data source for the primary outcome measure (GCSE results in Maths, English, and Science), pupil characteristics, and school attendance of those in the treatment and control schools. The findings showed no statistically significant effect of financial incentives on GCSE performance. However, event-based incentives had a positive effect on Maths GCSE scores, particularly among pupils with low levels of prior attainment. The application of the NPD, in this example, enabled researchers to conduct a large-scale impact evaluation without reliance on new data collection [@sibieta_increasing_2024]. 
 
-[^2]: Event based incentives refers to a non-financial incentive reward in the form of a trip or group-event, chosen by pupils in the year group at the start of the school term.
+[^3]: Event-based incentives refers to a non-financial incentive reward in the form of a trip or group-event, chosen by pupils in the year group at the start of the school term.
 
 The NPD can also be linked with other datasets, such as those collated by Higher Education Statistics Agency (HESA), to explore how prior attainment and background characteristics (e.g., gender, school type, socio-economic status) influence the likelihood of enrolment in HE and the type of HE institution attended. For example, @rodeiro2019 used the NPD as the source of data on A Level subjects and attainment, prior attainment (e.g., GCSEs), and background characteristics (gender, school type, deprivation). They linked NPD-HESA administrative data for use in a multivariate logistic regression model. The NPD-derived variables were included as controls to isolate the effect of A Level subject choice on HE participation [@rodeiro2019a]. 
 
-Self-reported survey data can also be linked with NPD records, but the access procedures for survey linkage is a specialised process, distinct from those for the NPD standard extract.[^3] For example, @cferesearch2023 linked survey data to the NPD to assess the impact of a Uni Connect outreach programme on intermediate learner outcomes. These outcomes included knowledge of higher education, aspirations, self-efficacy, and intentions to apply to HE, which are key indicators along the causal pathway to HE participation [@thomson2022a]. The self-reported survey data was linked with the NPD data (prior attainment, FSM eligibility, gender, ethnicity and disability status) and tracking data from Uni Connect delivery partners (HEAT, AimHigher West Midlands, EMWPREP). Combining administrative and self-reported data gave the evaluation greater explanatory power and helped inform improvements in how the outreach programme was targeted [@cferesearch2023a]. 
+Self-reported survey data can also be linked with NPD records, but the access procedures for survey linkage is a specialised process, distinct from those for the NPD standard extract.[^4] For example, @cferesearch2023 linked survey data to the NPD to assess the impact of a Uni Connect outreach programme on intermediate learner outcomes. These outcomes included knowledge of higher education, aspirations, self-efficacy, and intentions to apply to HE, which are key indicators along the causal pathway to HE participation [@thomson2022a]. The self-reported survey data was linked with the NPD data (prior attainment, FSM eligibility, gender, ethnicity and disability status) and tracking data from Uni Connect delivery partners (HEAT, AimHigher West Midlands, EMWPREP). Combining administrative and self-reported data gave the evaluation greater explanatory power and helped inform improvements in how the outreach programme was targeted [@cferesearch2023a]. 
 
-[^3]: Linkage of survey responses with NPD data involves obtaining consent from respondents, securely transferring key identifiers (forename, surname, date of birth, postcode, and sex/gender) to the DfE, and the DfE then carrying out the matching. A combined dataset of survey responses and the requested administrative data is created, anonymised, and securely returned to researchers (DfE, 2016). 
+[^4]: Linkage of survey responses with NPD data involves obtaining consent from respondents, securely transferring key identifiers (forename, surname, date of birth, postcode, and sex/gender) to the DfE, and the DfE then carrying out the matching. A combined dataset of survey responses and the requested administrative data is created, anonymised, and securely returned to researchers (DfE, 2016). 
 
 ## National Pupil Database Evaluation Case Study
 
 ### Background
 
-In 2021, TASO collaborated with eight HE providers and the Behavioural Insights Team (BIT) to address the lack of casual evidence on the effectiveness of summer schools on widening participation in HE. To investigate this, a two-arm, parallel-group randomised controlled trial (RCT) was conducted to investigate the impact of summer schools on improving access to HE.[^4] 
+In 2021, TASO collaborated with eight HE providers and the Behavioural Insights Team (BIT) to address the lack of casual evidence on the effectiveness of summer schools on widening participation in HE. To investigate this, a two-arm, parallel-group randomised controlled trial (RCT) was conducted to investigate the impact of summer schools on improving access to HE.[^5] 
 
-[^4]: An interim impact and analysis report on the summer schools trial can be found on the TASO website [(TASO, 2023b)](https://www.zotero.org/google-docs/?1NqRYa). The final impact report is expected in 2026. 
+[^5]: An interim impact and analysis report on the summer schools trial can be found on the TASO website [(TASO, 2023b).](https://osf.io/ujs59) The final impact report is expected in 2026. 
 
-The NPD was accessed in this evaluation to provide covariates[^5] in the analysis, as these variables may impact HE enrolment rates (Table 2). 
+The NPD was accessed in this evaluation to provide covariates[^6] in the analysis, as these variables may impact HE enrolment rates (Table 2). 
 
-[^5]: Covariates are variables that researchers include in an analysis to control for their potential influence on the relationship between the intervention and the outcome. 
+[^6]: Covariates are variables that researchers include in an analysis to control for their potential influence on the relationship between the intervention and the outcome. 
 
 ```{r, echo=FALSE, warning=FALSE, results='markup'}
 #| label: tbl_summer_schools_outcomes
@@ -81,25 +88,25 @@ kableExtra::kable(summer_school_outcomes) %>%
   kableExtra::kable_styling(full_width = FALSE)
 ```
 
-## Process for accessing the NPD
+### Process for accessing the NPD
 
-To access the covariates required for the evaluation, the BIT completed the DfE Data Sharing Service application form.[^6] This involved:
+To access the covariates required for the evaluation, the BIT completed the DfE Data Sharing Service application form.[^7] This involved:
 
-[^6]: See the application form and guidance document under the 'Application Process' section  [(GOV.UK, 2025)](https://www.zotero.org/google-docs/?SSLvdk).
+[^7]: See the application form and guidance document under the 'Application Process' section [(GOV.UK, 2025).](https://www.gov.uk/guidance/apply-for-department-for-education-dfe-personal-data)
 
--   Describing the projects purpose, research methods and public benefit 
+-   Describing the projects purpose, research methods and public benefit.
 
--   Specifying all NPD datasets and variables needed, using the NPD Data Tables and the Find and Explore NPD tool, and submitting the completed official data tables document
+-   Specifying all NPD datasets and variables needed, using the NPD Data Tables and the Find and Explore NPD tool, and submitting the completed official data tables document.
 
 -   Submitting a matching request that identified the personal identifiers used for linkage, including the Unique Reference Number (URN) and Unique ID, to enable matching between HESA data, self-reported survey data, and NPD records.
 
--   Providing evidence of ethical approval 
+-   Providing evidence of ethical approval.
 
--   Indicating the mechanism for accessing the ONS SRS
+-   Indicating the mechanism for accessing the ONS SRS.
 
 -   Setting up a Data Sharing Agreement with the DfE (as TASO is a third-party data controller) and supplying the required inter-organisational agreements and Data Protection Officer details. 
 
-## Process of linking NPD 
+### Process of linking NPD 
 
 For the linkage, BIT will supply the DfE with the personal identifiers required to match trial participants to their records in the NPD. These will include:
 
@@ -115,23 +122,23 @@ For the linkage, BIT will supply the DfE with the personal identifiers required 
 
 These identifiers will be uploaded alongside the datasets collected for the evaluation, including:
 
--   Online survey data[^7] (attitudes, aspirations and intentions) collected by TASO
+-   Online survey data[^8] (attitudes, aspirations and intentions) collected by TASO
 
--   Progression to HE and progression to host university derived from HESA via the Higher Education Access Tracker (HEAT)[^8]
+-   Progression to HE and progression to host university derived from HESA via the Higher Education Access Tracker (HEAT)[^9]
 
 -   Attendance data at the summer school
 
 -   Randomisation group assignment
 
--   Application data indicating which summer school participants applied to 
+-   Application data indicating which summer school participants applied to.
 
-[^7]: Only the survey responses of trial participants who have provided consent for data sharing will be supplied to the DfE. Responses from individuals who do not provide consent will be excluded.
+[^8]: Only the survey responses of trial participants who have provided consent for data sharing will be supplied to the DfE. Responses from individuals who do not provide consent will be excluded.
 
-[^8]:  HESA data will not be made available until the Summer of 2025.
+[^9]: HESA data will not be made available until the Summer of 2025.
 
 At the same time, BIT will submit an NPD variable request for FSM eligibility, KS2 attainment and KS4 attainment. The DfE will then carry out the matching using a fuzzy-matching approach, which uses combinations of identifiers to locate the correct pupil record. Once the matching is complete, the DfE will remove all personal identifiers and generate a pseudonymised pupil matching reference (PMR) for every participant. This same PMR will be applied to the NPD extract and to the pseudonymised versions of the trial and survey datasets submitted by BIT. All of these pseudonymised datasets will then be made available to BIT within the ONS Secure Research Service. Since, PMR will be applied consistently across both the NPD extract and the submitted trial datasets, BIT will be able to securely merge all datasets using the PMR to create a fully de-identified matched dataset for the evaluation.
 
-## Ethical considerations
+### Ethical considerations
 
 -   Informed consent: Students had to be informed about what data would be collected and how it would be used through a participant information sheet. Notifying the students that they would be tracked was particularly important.
 
