@@ -1,1 +1,103 @@
+```{r setup, include=FALSE, warning=FALSE, message=FALSE}
+library(readxl)
+library(tidyverse)
+library(flextable)
+# Read the data for the table
+# Note that adding or rows or columns to these files will require the table-
+# generating code to be altered.
+# generating code to be altered. Any fields containing commas should be
+# enclosed in double quotes.
+tbl_final_mapping <- read_excel("data/tbl_final_mapping.xlsx")
+```
 
+```{r, echo=FALSE, warning=FALSE, results='markup'}
+#| label: tbl_final_mapping
+#| tbl-cap: Table 1.  High-level comparison of datasets 
+
+tbl_compare_datasets <- flextable(tbl_final_mapping)
+
+
+tbl_compare_datasets <- tbl_compare_datasets %>%
+  # Add a top header row spanning columns 3–6
+  add_header_row(
+    values = c("","","Administrative data sets"),
+    colwidths = c(1,1,4)) %>%
+  # Style the header 
+  bg(part = "header", bg = "#3b66bc") %>%
+  font(part = "all", fontname = "Barlow") %>% 
+  font(part = "header", fontname = "Neuton") %>% 
+  color(part = "header",color = "white") %>% 
+  fontsize(part = "header", size = 14) %>% 
+  # Merge the theme column vertically
+  merge_v(j = "Theme") %>%
+  valign(j = "Theme", valign = "top") %>%
+  # Align text
+  align(part = "header", align = "center") %>%
+  align(j = "Theme", align = "left") %>%
+  #Add horizontal dividers between theme sections 
+  hline (i = c(5,10,22,31,35)) %>% 
+  #Add footnotes 
+   footnote (
+    i = 6, #row 
+    j = "HESA", #column
+    value = as_paragraph ("HESA collects socio-economic classification (SEC), which refers to the socio-economic background of students aged 21 and over at the start of their course, or, for students under 21, the socio-economic background of their parent, step-parent, or guardian."),
+    ref_symbols = "1") %>% 
+footnote (
+    i = 11, #row 
+    j = "UCAS", #column
+    value = as_paragraph ("(UCAS) UCAS collected sex (Male/Female) prior to 2015 and gender from 2015 onward. For time-series consistency, values are treated as sex before 2015 and gender thereafter. From 2024, additional options (‘I use another term’, ‘I prefer not to say’) were introduced. "),
+    ref_symbols = "2") %>% 
+  footnote (
+    i = 16, #row 
+    j = "HESA", #column
+    value = as_paragraph (" Permanent home address  (PERMADDPOSTCODE) and  Country of permanent address (PERMADDCOUNTRY) can be treated as relevant domicile proxy for domicile status."),
+    ref_symbols = "3") %>% 
+  footnote (
+    i = 17, #row 
+    j = "HESA", #column
+    value = as_paragraph ("HESA Collects Previous provider (PREVIOUSPROVIDER), which distinguishes the broad type of last provider attended (e.g., UK state school, independent school, FE college), and may be used to describe post-16 entry routes. However, it cannot be interpreted as a full indicator of “school type,” as it does not capture pre-16 schooling or detailed school-sector characteristics." ),
+    ref_symbols = "4") %>% 
+  footnote (
+    i = 17, #row 
+    j = "UCAS", #column
+    value = as_paragraph ("UCAS records the type of school or centre most recently attended or used to submit the application. This field is only populated for applicants aged 19 and under; anyone older is recorded as ‘Not Applicable'." ),
+    ref_symbols = "5") %>% 
+  footnote (
+    i = 18, #row 
+    j = "HESA", #column
+    value = as_paragraph ("(HESA) collects the country of permanent address, which refers to the country the student lived in for non-educational purposes before starting HE." ),
+    ref_symbols = "6") %>% 
+  footnote (
+    i = 19, #row 
+    j = "LEO", #column
+    value = as_paragraph ("LEO hosts other geographic identifiers to show where learners live, including local authority (anonymised), census output area, region, country, and parliamentary constituency. Each is linked to the learner and the relevant tax year."),
+    ref_symbols = "7"
+  )%>%
+  footnote (
+    i = 24, 
+    j = "LEO", 
+    value = as_paragraph ("LEO does not store provider name, only anonymised identifiers and location (pseudonymised HESA provider ID), available from 2004/05–2019/20."),
+    ref_symbols = "8"
+   )%>%
+  footnote (
+    i = 27, 
+    j = "HESA", 
+    value = as_paragraph ("HESA contains no single variable that explicitly represents “enrolment” or “entry to higher education.” Instead, entry must be derived using Engagement-level data, particularly the Engagement start date (ENGSTARTDATE), the appearance of a new Engagement number (NUMHUS) for a student (SID), and the Programme year (YEARPRG), which typically equals 1 in the first year of study."),
+    ref_symbols = "9"
+)%>%
+  footnote (
+    i = 28, 
+    j = "HESA", 
+    value = as_paragraph ("HESA contains no single variable representing “continuation”. Instead, continuation can be inferred from using a combination of Engagement number (NUMHUS), Student identifier (SID), Programme year (YEARPRG) and the presence/absence of Engagement end date (ENGENDDATE). [LEO] No single variable can dervice continuation, but continuation can be deriverd from HE_DATELEFT / HE_ENDDATE – end/withdrawal date, HE_RSNEND – reason for ending an instance, HE_NOTACT – indicates suspension, HE_FUNDCOMP – completion status of that academic year."),
+    ref_symbols = "10"
+  )%>%
+  footnote (
+    i = 29, 
+    j = "HESA", 
+    value = as_paragraph ("HESA contains no single variable representing completion. Instead, continuation can be inferred using a combination of Qualification awarded result (QUALAWARDRESULT), Reason for engagement ending (RSNENGEND) and Engagement end date (ENGENDDATE)."),
+    ref_symbols = "11") 
+  
+
+tbl_compare_datasets
+
+```
