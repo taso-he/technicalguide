@@ -95,7 +95,13 @@ footnote (
     i = 29, 
     j = "HESA", 
     value = as_paragraph ("HESA contains no single variable representing completion. Instead, continuation can be inferred using a combination of Qualification awarded result (QUALAWARDRESULT), Reason for engagement ending (RSNENGEND) and Engagement end date (ENGENDDATE)."),
-    ref_symbols = "11") 
+    ref_symbols = "11") %>% 
+ font(part = "footer", fontname = "Barlow") %>%
+  color(part = "footer", color = "#74706d") %>%
+  fontsize(part = "footer", size = 9) %>% 
+  set_table_properties(
+    opts_html = list(scroll = list(height = "300px")))%>% 
+  width(width = 1)
   
 
 tbl_compare_datasets
