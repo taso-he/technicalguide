@@ -98,7 +98,7 @@ Individual-level, de-identified UCAS data can be accessed through the LEO datase
 
 [^4]: UCAS data within the LEO dataset includes information on university applications, covering the application cycle year, application details (institutions applied to, subjects, and offer/acceptance status), and applicant characteristics such as location, age and socioeconomic and demographic information.
 
-Additionally, UCAS offers two services. The Outreach Evaluator (previously known as STROBE) allows HE providers to assess the impact of their outreach and engagement activities through matching a cohort of participants who have taken part in HEoutreach activities to their UCAS application records, providing information on every stage of the admissions cycle (application, offer, reply, acceptance). Students in matched samples can then be compared to national averages, comparable control groups, and competitors for universities, with the option of in-cycle reporting to deliver real-time insights [@ucas_outreach_nodate].
+Additionally, UCAS offers two services. The Outreach Evaluator service allows HE providers to assess the impact of their outreach and engagement activities through matching a cohort of participants who have taken part in HEoutreach activities to their UCAS application records, providing information on every stage of the admissions cycle (application, offer, reply, acceptance). Students in matched samples can then be compared to national averages, comparable control groups, and competitors for universities, with the option of in-cycle reporting to deliver real-time insights [@ucas_outreach_nodate].
 
 The UCAS EXACT service is a bespoke data service for HE providers and stakeholders, identifying trends in application and acceptance patterns. It provides access to historical (earliest 2006) and live-cycle admissions data. Those seeking the UCAS EXACT service will be supplied with a tailored dataset and custom reports to meet their specific needs. The data provided by UCAS EXACT is aggregated and anonymised to reduce the risk of disclosing personal data about identifiable individuals [@ucasa]. 
 
@@ -113,7 +113,7 @@ UCAS can be used to explore applicant entry behaviour, for example, identifying 
 Furthermore, UCAS provides an interactive dashboard to explore high-level trends in applicant characteristics across different stages of the application cycle. For example, users can view rounded counts of applicants by gender or age, and observe percentage changes year-on-year. 
 
 ::: {.callout-note collapse="true"}
-## UCAS Evaluation Case Study
+## UCAS Outreach Evaluator Case Study
 
 ## Background 
 
@@ -127,7 +127,7 @@ The student sample involved two cohorts of students:
 
 The Pathways to Healthcare programme is traditionally oversubscribed, making it an ideal intervention to test via a RCT. Students who met the eligibility criteria,[^7] were randomly allocated to the treatment group ( participant) or a control group (no intervention).
 
-## Process for accessing administrative data in UCAS strobe
+## Process for accessing data from the UCAS Outreach Evaluator service
 
 Individual-level HESA data for the 2020/21 and 2021/22 Year 12 cohorts will not be available until approximately 18 months after students begin their higher education studies (April 2024 for the 2020/21 cohort and April 2025 for the 2021/22 cohort) (Table 6).[^8] To obtain an early indication of progression to higher education, Aston University will use the UCAS Outreach Evaluator service (formerly UCAS Strobe) to make preliminary comparisons between the treatment and control groups in the RCT. The Outreach Evaluator provides aggregate data on applications, offers and firm acceptances approximately two to three months after A-level results, enabling early assessment of differences in higher-education application behaviour well before HESA data become available.
 
@@ -137,7 +137,7 @@ These aggregate UCAS data provide an early proxy indicator of progression to hig
 
 ```{r, echo=FALSE, warning=FALSE, results='markup'}
 #| label: tbl_ucas_MIOM_data
-#| tbl-cap: Table 1. Table used to apply for UCAS Strobe data for the MIOM evaluation at Aston University.   
+#| tbl-cap: Table 1. Table used to apply for data from the UCAS Outreach Evaluator service data for the MIOM evaluation at Aston University.   
 kableExtra::kable(ucas_MIOM_data) %>%
   kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
   kableExtra::kable_styling(bootstrap_options = "hover") %>% 
