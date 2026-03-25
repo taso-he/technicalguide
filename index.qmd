@@ -31,6 +31,24 @@ Note: This guide was previously known as the Data Infrastructure Guide. We updat
 
 ::: g-col-6
 ::: {style="text-align: center;"}
+<a href="administrative-database-guidance/index.qmd"> <button type="button" style="
+      background-color: #3b66bc; 
+      color: white; 
+      font-weight: bold;
+      padding: 10px 20px; 
+      font-size: 16px; 
+      border: none; 
+      border-radius: 25px; 
+      cursor: pointer;"> Administrative Database Guidance </button> </a>
+:::
+
+A practical guide on using administrative data relevant to higher education research and policy. Aims to support users to understand each administrative dataset's structure, access process and application to investigating HE inequalities.
+:::
+:::
+
+::: {.grid style="background-color: #dbe3f4; padding: 10px"}
+::: g-col-6
+::: {style="text-align: center;"}
 <a href="data-vis/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
@@ -44,11 +62,6 @@ Note: This guide was previously known as the Data Infrastructure Guide. We updat
 
 Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
 :::
-
-
-:::
-
-::: {.grid style="background-color: #dbe3f4; padding: 10px"}
 
 ::: g-col-6
 ::: {style="text-align: center;"}
@@ -64,24 +77,6 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
 :::
 
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
-:::
-
-
-
-::: g-col-6
-::: {style="text-align: center;"}
-<a href="administrative-database-guidance/index.qmd"> <button type="button" style="
-      background-color: #3b66bc; 
-      color: white; 
-      font-weight: bold;
-      padding: 10px 20px; 
-      font-size: 16px; 
-      border: none; 
-      border-radius: 25px; 
-      cursor: pointer;"> Administrative Database Guidance </button> </a>
-:::
-
-A practical guide on using administrative data relevant to higher education research and policy. Aims to support users to understand each administrative dataset's structure, access process and application to investigating HE inequalities.
 :::
 :::
 
