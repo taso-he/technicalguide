@@ -13,6 +13,8 @@ tbl_data <- read_excel("data/tbl_final_mapping.xlsx")
 
 ```
 
+# Data Catalogue
+
 ```{r, echo = FALSE, message = FALSE, warning = FALSE}
 
 #| label: tbl_final_mapping
@@ -33,7 +35,7 @@ tbl_data[27, 4] <- paste0(tbl_data[27, 4], "<sup>11</sup>")
 tbl_data[28, 4] <- paste0(tbl_data[28, 4], "<sup>12</sup>")
 tbl_data[29, 4] <- paste0(tbl_data[29, 4], "<sup>13</sup>")
 
-# 3. Remove the 'Theme' column from the display data (since we'll use Group Labels)
+# 3. Remove the 'Theme' column from the display data (since using Group Labels)
 display_data <- tbl_data %>% select(-Theme)
 
 # 4. Create the Table and store it in tbl
@@ -44,17 +46,17 @@ tbl <- display_data %>%
     full_width = TRUE,
     fixed_thead = TRUE
   ) %>%
-  # Add Group Labels (Replace start/end rows based on your Excel)
-  pack_rows("Attainment", 1, 5, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
-  pack_rows("Measures of disadvantage", 6, 10, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
-  pack_rows("Student characteristics", 11, 22, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
-  pack_rows("Higher Education Outcomes", 23, 31, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
-  pack_rows("Application and Offer Behaviour", 32, 35, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
-    pack_rows("Post Higher Education Outcomes", 36, 39, label_row_css = "background-color: #5ca6f3; color: #fff;") %>%
+  # Add Group Labels 
+  pack_rows("Attainment", 1, 5, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
+  pack_rows("Measures of disadvantage", 6, 10, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
+  pack_rows("Student characteristics", 11, 22, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
+  pack_rows("Higher Education Outcomes", 23, 31, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
+  pack_rows("Application and Offer Behaviour", 32, 35, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
+    pack_rows("Post Higher Education Outcomes", 36, 39, label_row_css = "background-color: #5ca6f3; color: #000000;") %>%
   # Style the main Blue Header
   row_spec(0, background = "#3b66bc", color = "white", font_size = 14, bold = TRUE) %>%
   # Scrolling Box
-  scroll_box(height = "500px", width = "100%") %>%
+  scroll_box(height = "500px") %>%
   # Footnotes
   footnote(
     number = c(
