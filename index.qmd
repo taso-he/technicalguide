@@ -11,7 +11,7 @@ title-block-banner-color: "white"
 Welcome to the TASO Interactive Technical Guides, a collection of interactive resources designed to guide and enhance your evaluation, data visualisation and coding practices. This website contains:
 
 ::: {.grid style="background-color: #dbe3f4; padding: 10px"}
-::: g-col-4
+::: g-col-6
 ::: {style="text-align: center;"}
 <a href="dig/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -29,7 +29,7 @@ A practical guide on using institutional data to identify equality gaps and eval
 Note: This guide was previously known as the Data Infrastructure Guide. We updated the title in November 2025 to more accurately reflect its purpose.
 :::
 
-::: g-col-4
+::: g-col-6
 ::: {style="text-align: center;"}
 <a href="data-vis/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -45,7 +45,12 @@ Note: This guide was previously known as the Data Infrastructure Guide. We updat
 Developed to help TASO, our partners, and the wider sector to create impactful charts. Designed to provide clear, accessible guidelines that you can apply using the data visualisation tool of your choice (e.g., Excel, R or Tableau).
 :::
 
-::: g-col-4
+
+:::
+
+::: {.grid style="background-color: #dbe3f4; padding: 10px"}
+
+::: g-col-6
 ::: {style="text-align: center;"}
 <a href="coding-good-practice/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -59,8 +64,11 @@ Developed to help TASO, our partners, and the wider sector to create impactful c
 :::
 
 Guidelines, tools and tips for ensuring that code is accessible and shareable. Designed for those looking to improve the tidiness, reproducibility and quality of their R scripts.
+:::
 
-::: g-col-4
+
+
+::: g-col-6
 ::: {style="text-align: center;"}
 <a href="administrative-database-guidance/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
@@ -74,7 +82,6 @@ Guidelines, tools and tips for ensuring that code is accessible and shareable. D
 :::
 
 A practical guide on using administrative data relevant to higher education research and policy. Aims to support users to understand each administrative dataset's structure, access process and application to investigating HE inequalities.
-:::
 :::
 :::
 
