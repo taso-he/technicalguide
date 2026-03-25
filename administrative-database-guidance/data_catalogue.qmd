@@ -6,6 +6,7 @@ library(readxl)
 library(knitr)
 library(kableExtra)
 library(dplyr)
+library(htmltools)
 
 # Load Data
 tbl_data <- read_excel("data/tbl_final_mapping.xlsx")
@@ -35,8 +36,8 @@ tbl_data[29, 4] <- paste0(tbl_data[29, 4], "<sup>13</sup>")
 # 3. Remove the 'Theme' column from the display data (since we'll use Group Labels)
 display_data <- tbl_data %>% select(-Theme)
 
-# 4. Create the Table
-display_data %>%
+# 4. Create the Table and store it in tbl
+tbl <- display_data %>%
   kbl(escape = FALSE, align = "l") %>%
   kable_styling(
     bootstrap_options = c("hover", "condensed"),
@@ -73,4 +74,28 @@ display_data %>%
     ),
     threeparttable = TRUE
   )
+
+# 5. Make the footnote rows span all 5 columns
+# Adds some javascript which detects empty cells (only exists in the
+# footnote cells) and make them span all 5 columns. Beware: This only
+# works because the only empty cells are in the footnotes. See:
+# https://stackoverflow.com/questions/58132626/rmarkdown-can-we-merge-two-cells-with-kableextra
+browsable(
+  tagList(
+    HTML(tbl),
+    tags$script(HTML("
+      document.querySelectorAll('td').forEach(function(cell) {
+        if(cell.innerText.trim() == ''){
+          var prevCell = cell.previousElementSibling;
+          if(prevCell) {
+            // Set colspan on the previous cell and center the text
+            prevCell.setAttribute('colspan', '5');
+            // Remove the empty cell
+            cell.remove();
+          }
+        } 
+      });
+    ")),
+  )
+)
 ```
