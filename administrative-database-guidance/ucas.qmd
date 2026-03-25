@@ -135,14 +135,51 @@ As part of the request, Aston will submit a UCAS Outreach Evaluator spreadsheet 
 
 These aggregate UCAS data provide an early proxy indicator of progression to higher education, allowing comparison between the RCT groups around 12--15 months before HESA enrolment data are released.
 
-```{r, echo=FALSE, warning=FALSE, results='markup'}
-#| label: tbl_ucas_MIOM_data
-#| tbl-cap: Table 1. Table used to apply for data from the UCAS Outreach Evaluator service data for the MIOM evaluation at Aston University.   
-kableExtra::kable(ucas_MIOM_data) %>%
-  kableExtra::row_spec(0, background = "#3b66bc", color = "white", bold = TRUE) %>%
-  kableExtra::kable_styling(bootstrap_options = "hover") %>% 
-  kableExtra::kable_styling(full_width = FALSE)
+```{=html}
+<div class="custom-table2">
+<style>
+  /* Make header row blue */
+  .custom-table2 th {
+    background-color:  #3b66bc;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Stripe rows */
+  .custom-table2 tbody tr:nth-child(odd) {
+    background-color: #F2F2F2;
+  }
+
+  /* Hover effect */
+  .custom-table2 tbody tr:hover {
+    background-color: #ECECEC;
+  }
+</style>
 ```
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Column heading       | Explanation                                                                                                                                  |
++:=====================+:=============================================================================================================================================+
+| Forename\*           | Matching identifier                                                                                                                          |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Last name\*          | Matching identifier                                                                                                                          |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Date_of_Birth\*      | Matching identifier                                                                                                                          |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Postcode\*           | Home postcode                                                                                                                                |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Link_to_UCAS_cycle\* | The year this student could first start university, e.g., 2022                                                                               |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Extend_link_by\*     | If you're making the request 1 or more years after the student could have started university, put that number here, otherwise leave it blank |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+| Intervention\*\*     | Either *treatment* or *control*                                                                                                              |
++----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
+
+: Table 1. Table used to apply for UCAS Extra data for the MIOM evaluation at Aston University.
+
+\* These fields are required and used by UCAS to facilitate matching.\
+\*\* These fields are user-defined. For each user-defined field, UCAS will aggregate the data by the indicated categories. In this case, the data returned by UCAS is aggregated in three ways: the whole group the treatment group only, and the control group only.
+
+</div>
 
 ```{r, echo=FALSE, warning=FALSE, results='markup'}
 #| label: tbl_ucas_MIOM_outcomes
