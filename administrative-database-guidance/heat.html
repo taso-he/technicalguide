@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Guides - References and further resources</title>
+<title>Technical Guides – heat</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../coding-good-practice/index.html" rel="next">
-<link href="../data-vis/styling.html" rel="prev">
+<link href="../administrative-database-guidance/data_catalogue.html" rel="next">
+<link href="../administrative-database-guidance/ucas.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -73,9 +92,6 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Technical Guides - References and further resources">
-<meta property="og:description" content="">
-<meta property="og:site-name" content="Technical Guides">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -136,7 +152,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-vis/index.html">Data visualisation style guide</a></li><li class="breadcrumb-item"><a href="../data-vis/references.html">References and further resources</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../administrative-database-guidance/index.html">Administrative database guidance</a></li><li class="breadcrumb-item"><a href="../administrative-database-guidance/heat.html">The Higher Education Access Tracker</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -223,11 +239,11 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../administrative-database-guidance/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Administrative database guidance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../administrative-database-guidance/index.html" class="sidebar-item-text sidebar-link">
@@ -260,7 +276,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../administrative-database-guidance/heat.html" class="sidebar-item-text sidebar-link">
+  <a href="../administrative-database-guidance/heat.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The Higher Education Access Tracker</span></a>
   </div>
 </li>
@@ -276,11 +292,11 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualisation style guide</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
@@ -301,7 +317,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References and further resources</span></a>
   </div>
 </li>
@@ -358,82 +374,44 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" id="toc-resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" class="nav-link active" data-scroll-target="#resources-referenced-and-linked-to-in-the-text-in-order-of-appearance">Resources referenced and linked to in the text (in order of appearance)</a></li>
-  <li><a href="#further-data-visualisation-resources" id="toc-further-data-visualisation-resources" class="nav-link" data-scroll-target="#further-data-visualisation-resources">Further data visualisation resources</a></li>
-  <li><a href="#r-resources" id="toc-r-resources" class="nav-link" data-scroll-target="#r-resources">R resources</a></li>
+  <li><a href="#intermediary-data-services-the-higher-education-access-tracker-heat" id="toc-intermediary-data-services-the-higher-education-access-tracker-heat" class="nav-link active" data-scroll-target="#intermediary-data-services-the-higher-education-access-tracker-heat">Intermediary Data Services: The Higher Education Access Tracker (HEAT)</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">References and further resources</h1>
+
+
+<section id="intermediary-data-services-the-higher-education-access-tracker-heat" class="level1">
+<h1>Intermediary Data Services: The Higher Education Access Tracker (HEAT)</h1>
+<p>This section is included in the guidance because HEAT<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> is one of the largest higher education data-tracking services in England. TASO acknowledges that HEAT is not an administrative database, rather, it is a centralised tracking service that negotiates access to the majority of variables covered in this administrative guidance resource. HEAT works with external administrative bodies to obtain linked administrative data on behalf of its members and disseminates this back to them for evaluation purposes.</p>
+<p>HEAT is a non-profit membership organisation made up of HEPs and other partners working together to evaluate equality of opportunity activity. It tracks both pre and post entry activity, enabling members to follow students longitudinally across time and across multiple educational datasets. Through this centralised tracking, HEAT members can access a wide range of long-term outcomes relevant to equality of opportunity work, including GCSE and A-level attainment, and progression, access and success in HE and beyond.&nbsp;</p>
+<p>HEAT negotiates access to administrative data such as the NPD and HESA records and returns aggregated linked outcomes to members, along with dashboards to support analysis. This allows members to evaluate the impact of their interventions using robust methods without each institution needing to negotiate data access independently.</p>
+<p>As the majority of outcomes covered in this resource are available through the HEAT Service (Figure 2), it is strongly recommended that HEPs consult HEAT before undertaking their own data linking with administrative bodies. HEAT can advise whether the research questions can be addressed using its existing outcome datasets, reducing duplication of effort and minimising burden on external data providers.</p>
+<p>In addition to sourcing administrative data for its members, HEAT accepts research applications from external researchers who wish to analyse aggregate HEAT data on outreach activity delivered by member organisations. Applicants do not need to belong to a HEAT member institution.&nbsp; External researchers interested in understanding more&nbsp; about the application process and the specifics of the available data are advised to contact HEAT directly.&nbsp;</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<figcaption class="figure-caption">Figure 2. Overview of the outcome measures available in the HEAT Track database, and the source for the data <span class="citation" data-cites="heat">(<a href="#ref-heat" role="doc-biblioref">HEAT, n.d.</a>)</span>.</figcaption>
+<p><img src="..\images/admin-data-images/HEAT Track Outcome Measures.png" class="img-fluid figure-img"></p>
+</figure>
 </div>
 
 
 
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" class="level2">
-<h2 class="anchored" data-anchor-id="resources-referenced-and-linked-to-in-the-text-in-order-of-appearance">Resources referenced and linked to in the text (in order of appearance)</h2>
-<p>Financial Times. 2019. Visual vocabulary. <a href="https://ft-interactive.github.io/visual-vocabulary/" class="uri">https://ft-interactive.github.io/visual-vocabulary/</a> [Accessed 15 August 2024]</p>
-<p>Schwabish, J. 2021. Better data visualizations: A guide for scholars, researchers, and wonks. Columbia University Press.</p>
-<p>Donnarumma, F. 2019. Say what you see - the way we write chart titles is changing. <a href="https://digitalblog.ons.gov.uk/2019/01/28/" class="uri">https://digitalblog.ons.gov.uk/2019/01/28/</a> [Accessed 15 August 2024]</p>
-<p>Learn UI Design. 2023. Data color picker. <a href="https://www.learnui.design/tools/data-color-picker.html" class="uri">https://www.learnui.design/tools/data-color-picker.html</a> [Accessed 15 August 2024]</p>
-<p>Government Analysis Function. 2022. Data visualisation: charts. <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="uri">https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/</a> [Accessed 15 August 2024]</p>
-<p>Royal Statistical Society. 2023. Best Practices for Data Visualisation: <a href="https://royal-statistical-society.github.io/datavisguide/" class="uri">https://royal-statistical-society.github.io/datavisguide/</a> [Accessed 21 November 2023]</p>
-<p>Cesal, A. 2020. Writing Alt Text for Data Visualization. <a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81" class="uri">https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81</a> [Accessed 21 November 2023]</p>
-</section>
-<section id="further-data-visualisation-resources" class="level2">
-<h2 class="anchored" data-anchor-id="further-data-visualisation-resources">Further data visualisation resources</h2>
-<p>This style guide draws on some existing style guides. Some key sources of inspiration include:</p>
-<ul>
-<li><p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-12?">Government Analysis Function style guide</a></p></li>
-<li><p><a href="http://urbaninstitute.github.io/graphics-styleguide/?">Urban Institute Data Visualisation style guide</a></p></li>
-<li><p><a href="https://royal-statistical-society.github.io/datavisguide/?">Royal Statistical Society style guide</a></p></li>
-</ul>
-<p>We have endeavoured to keep this guide as concise as possible, meaning we do not cover the same ground that more extensive style guides do. If you have further questions on data visualisation, the above guides may be able to help. In particular, we found the Government Analysis Function valuable as an extensive but readable style guide.</p>
-<p>Our principles for effective data visualisation are rooted in the insights of Jonathan Schwabish, showcased in his contributions through PolicyViz. Sources include:</p>
-<ul>
-<li><p>Better Data Vizualisations: A Guide for Scholars, Researchers and Wonks</p></li>
-<li><p>Better Presentations: A Guide for Scholars, Researchers and Wonks</p></li>
-<li><p><a href="https://policyviz.com/2018/08/07/dataviz-cheatsheet/?">Data viz cheat sheet</a></p></li>
-<li><p><a href="https://policyviz.com/2016/11/30/style-guides/?">List of style guides</a></p></li>
-<li><p><a href="https://www.aeaweb.org/articles?id=10.1257/jep.28.1.209">An Economist’s Guide to Visualising Data</a></p></li>
-</ul>
-<p>For excellent examples of data visualisation, we also found the Financial Times (FT) and The Economist very helpful, particularly the work of John Burn-Murdoch:</p>
-<ul>
-<li><p>You can <a href="https://www.ft.com/john-burn-murdoch">find the work of John Burn-Murdoch here</a>, or on <a href="http://x.com/jburnmurdoch">X</a> (formerly Twitter). <a href="https://www.youtube.com/watch?v=tIbaQUo6H9g">This presentation</a> is also insightful.</p></li>
-<li><p>The Economist’s data visualisation newsletter Off The Charts is a helpful resource for learning how their data journalism team create visualisations and tackles problems. Its <a href="https://www.economist.com/graphic-detail">‘Graphic Detail’</a> section showcases its charts.</p></li>
-</ul>
-<p>Organisations that focus on data visualisation also have helpful blogs. These include <a href="https://flourish.studio/blog/">Flourish</a>, <a href="https://blog.datawrapper.de/category/datavis-dos-and-donts/">Datawrapper</a> and <a href="https://visualisingdata.com/">Visualisingdata</a>.</p>
-</section>
-<section id="r-resources" class="level2">
-<h2 class="anchored" data-anchor-id="r-resources">R resources</h2>
-<p>You can find example R code for creating charts with TASO stylings on our <a href="https://github.com/taso-he">GitHub</a>.</p>
-<p>If you are using R to create your plots, you may also find the following resources helpful.</p>
-<ul>
-<li><p><a href="https://z3tt.github.io/OutlierConf2021/">ggplot Wizardry Hands-On</a> - some helpful tips and tricks from Cédric Scherer</p></li>
-<li><p><a href="https://erikgahner.dk/2022/tips-and-tricks-for-ggplot2/">Tips and Tricks for ggplot2</a> - more helpful tips and tricks from Erik Gahner Larsen</p></li>
-<li><p><a href="https://rkabacoff.github.io/datavis/">Modern Data Visualisation with R</a> - an open-access textbook by Robert Kabacoff</p></li>
-<li><p><a href="https://r4ds.had.co.nz/data-visualisation.html">R for Data Science</a> - an open-access textbook by Hadley Wickham, if you are using ggplot for the first time the data visualisation chapter provides a great introduction to how ggplot works.</p></li>
-<li><p><a href="https://r-graph-gallery.com/index.html">R graph gallery</a> - a collection of charts made with R. The creator <a href="https://twitter.com/R_Graph_Gallery">Yan Holtz</a> provides useful insight on X (formerly Twitter).</p></li>
-</ul>
-
-
 </section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-heat" class="csl-entry" role="listitem">
+HEAT (n.d.) <em>Overview <span></span> HEAT, evaluation &amp; tracking</em>. <a href="https://heat.ac.uk/evaluation-tracking/overview/">https://heat.ac.uk/evaluation-tracking/overview/</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>In the HE sector, there are two national tracking services – the Higher Education Access Tracker (HEAT) and AimHigher West Midlands. A third tracking service - the East Midlands Widening Participation Research and Evaluation Partnership (EMWPREP) - closed in summer 2025. This document focuses on HEAT because it has the broadest coverage and is subscribed to by the majority of English higher education providers.<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -669,13 +647,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../data-vis/styling.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Styling charts for TASO publications</span>
+      <a href="../administrative-database-guidance/ucas.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">University and College Admissions Service</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../coding-good-practice/index.html" class="pagination-link">
-        <span class="nav-page-text">Coding good practice guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../administrative-database-guidance/data_catalogue.html" class="pagination-link">
+        <span class="nav-page-text">Data catalogue</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,79 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://taso-he.github.io/technicalguide/index.html</loc>
-    <lastmod>2025-11-26T15:18:57.362Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/data_catalogue.html</loc>
+    <lastmod>2026-03-27T09:34:32.489Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/dig/plan.html</loc>
-    <lastmod>2025-11-25T17:28:47.426Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/heat.html</loc>
+    <lastmod>2026-03-27T09:34:33.156Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/dig/plan-methods-overview.html</loc>
-    <lastmod>2025-11-26T15:18:57.185Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/hesa.html</loc>
+    <lastmod>2026-03-27T09:34:34.007Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/dig/index.html</loc>
-    <lastmod>2025-11-26T15:18:57.179Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/index.html</loc>
+    <lastmod>2026-03-27T09:34:40.348Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/dig/barriers.html</loc>
-    <lastmod>2025-11-25T17:28:47.418Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/leo.html</loc>
+    <lastmod>2026-03-27T09:34:46.987Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/data-vis/styling.html</loc>
-    <lastmod>2025-11-26T15:18:57.174Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/npd.html</loc>
+    <lastmod>2026-03-27T09:34:54.416Z</lastmod>
   </url>
   <url>
-    <loc>https://taso-he.github.io/technicalguide/data-vis/principles.html</loc>
-    <lastmod>2025-11-26T15:18:57.173Z</lastmod>
-  </url>
-  <url>
-    <loc>https://taso-he.github.io/technicalguide/contact.html</loc>
-    <lastmod>2025-11-25T17:28:47.414Z</lastmod>
-  </url>
-  <url>
-    <loc>https://taso-he.github.io/technicalguide/coding-good-practice/index.html</loc>
-    <lastmod>2025-11-26T15:18:57.171Z</lastmod>
+    <loc>https://taso-he.github.io/technicalguide/administrative-database-guidance/ucas.html</loc>
+    <lastmod>2026-03-27T09:34:59.844Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/furtherresources.html</loc>
-    <lastmod>2025-11-25T17:28:47.410Z</lastmod>
+    <lastmod>2026-03-27T09:35:01.244Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/good_practice.html</loc>
-    <lastmod>2025-11-26T15:18:57.169Z</lastmod>
+    <lastmod>2026-03-27T09:35:03.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/coding-good-practice/index.html</loc>
+    <lastmod>2026-03-27T09:35:05.239Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/coding-good-practice/styler.html</loc>
-    <lastmod>2025-11-25T17:28:47.413Z</lastmod>
+    <lastmod>2026-03-27T09:35:06.714Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/contact.html</loc>
+    <lastmod>2026-03-27T09:35:07.941Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/data-vis/index.html</loc>
-    <lastmod>2025-11-26T15:18:57.172Z</lastmod>
+    <lastmod>2026-03-27T09:35:15.771Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/data-vis/principles.html</loc>
+    <lastmod>2026-03-27T09:35:32.751Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/data-vis/references.html</loc>
-    <lastmod>2025-11-25T17:28:47.416Z</lastmod>
+    <lastmod>2026-03-27T09:35:34.280Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/data-vis/styling.html</loc>
+    <lastmod>2026-03-27T09:35:41.421Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/dig/acknowledgements.html</loc>
-    <lastmod>2025-11-25T17:28:47.417Z</lastmod>
+    <lastmod>2026-03-27T09:35:42.681Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/barriers.html</loc>
+    <lastmod>2026-03-27T09:35:51.778Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/dig/diagnose.html</loc>
-    <lastmod>2025-11-26T15:18:57.176Z</lastmod>
+    <lastmod>2026-03-27T09:36:30.362Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/index.html</loc>
+    <lastmod>2026-03-27T09:36:35.122Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/dig/measure.html</loc>
-    <lastmod>2025-11-26T15:18:57.181Z</lastmod>
+    <lastmod>2026-03-27T09:36:40.259Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/plan-methods-overview.html</loc>
+    <lastmod>2026-03-27T09:36:46.831Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/dig/plan-methods.html</loc>
-    <lastmod>2025-11-26T15:18:57.187Z</lastmod>
+    <lastmod>2026-03-27T09:36:51.529Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/dig/plan.html</loc>
+    <lastmod>2026-03-27T09:36:55.918Z</lastmod>
   </url>
   <url>
     <loc>https://taso-he.github.io/technicalguide/dig/reflect.html</loc>
-    <lastmod>2025-11-25T17:28:47.426Z</lastmod>
+    <lastmod>2026-03-27T09:37:00.168Z</lastmod>
+  </url>
+  <url>
+    <loc>https://taso-he.github.io/technicalguide/index.html</loc>
+    <lastmod>2026-03-27T09:37:04.702Z</lastmod>
   </url>
 </urlset>

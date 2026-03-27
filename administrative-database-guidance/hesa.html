@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Technical Guides - References and further resources</title>
+<title>Technical Guides – hesa</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,8 +49,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../coding-good-practice/index.html" rel="next">
-<link href="../data-vis/styling.html" rel="prev">
+<link href="../administrative-database-guidance/leo.html" rel="next">
+<link href="../administrative-database-guidance/npd.html" rel="prev">
 <link href="../images/favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -73,9 +92,6 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 
 
 <link rel="stylesheet" href="../styles.css">
-<meta property="og:title" content="Technical Guides - References and further resources">
-<meta property="og:description" content="">
-<meta property="og:site-name" content="Technical Guides">
 </head>
 
 <body class="nav-sidebar floating nav-fixed">
@@ -136,7 +152,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../data-vis/index.html">Data visualisation style guide</a></li><li class="breadcrumb-item"><a href="../data-vis/references.html">References and further resources</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../administrative-database-guidance/index.html">Administrative database guidance</a></li><li class="breadcrumb-item"><a href="../administrative-database-guidance/hesa.html">The Higher Education Statistics Agency (HESA)</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
     </div>
@@ -223,11 +239,11 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../administrative-database-guidance/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Administrative database guidance</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../administrative-database-guidance/index.html" class="sidebar-item-text sidebar-link">
@@ -242,7 +258,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../administrative-database-guidance/hesa.html" class="sidebar-item-text sidebar-link">
+  <a href="../administrative-database-guidance/hesa.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">The Higher Education Statistics Agency (HESA)</span></a>
   </div>
 </li>
@@ -276,11 +292,11 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
       <div class="sidebar-item-container"> 
             <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Data visualisation style guide</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../data-vis/index.html" class="sidebar-item-text sidebar-link">
@@ -301,7 +317,7 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link active">
+  <a href="../data-vis/references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">References and further resources</span></a>
   </div>
 </li>
@@ -358,82 +374,169 @@ gtag('config', 'G-2PY6X92Q3P', { 'anonymize_ip': true});
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" id="toc-resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" class="nav-link active" data-scroll-target="#resources-referenced-and-linked-to-in-the-text-in-order-of-appearance">Resources referenced and linked to in the text (in order of appearance)</a></li>
-  <li><a href="#further-data-visualisation-resources" id="toc-further-data-visualisation-resources" class="nav-link" data-scroll-target="#further-data-visualisation-resources">Further data visualisation resources</a></li>
-  <li><a href="#r-resources" id="toc-r-resources" class="nav-link" data-scroll-target="#r-resources">R resources</a></li>
+  <li><a href="#the-higher-education-statistics-agency-hesa" id="toc-the-higher-education-statistics-agency-hesa" class="nav-link active" data-scroll-target="#the-higher-education-statistics-agency-hesa">The Higher Education Statistics Agency (HESA)</a>
+  <ul>
+  <li><a href="#introduction-to-hesa" id="toc-introduction-to-hesa" class="nav-link" data-scroll-target="#introduction-to-hesa">Introduction to HESA</a></li>
+  <li><a href="#overview-of-the-data-available-in-hesa" id="toc-overview-of-the-data-available-in-hesa" class="nav-link" data-scroll-target="#overview-of-the-data-available-in-hesa">Overview of the data available in HESA</a></li>
+  <li><a href="#limitations-and-exclusions" id="toc-limitations-and-exclusions" class="nav-link" data-scroll-target="#limitations-and-exclusions">Limitations and exclusions</a></li>
+  <li><a href="#access-to-hesa" id="toc-access-to-hesa" class="nav-link" data-scroll-target="#access-to-hesa">Access to HESA</a></li>
+  <li><a href="#application-of-hesa-data-in-he" id="toc-application-of-hesa-data-in-he" class="nav-link" data-scroll-target="#application-of-hesa-data-in-he">Application of HESA data in HE</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">References and further resources</h1>
+
+
+<section id="the-higher-education-statistics-agency-hesa" class="level1">
+<h1>The Higher Education Statistics Agency (HESA)</h1>
+<section id="introduction-to-hesa" class="level2">
+<h2 class="anchored" data-anchor-id="introduction-to-hesa">Introduction to HESA</h2>
+<p>The Higher Education Statistics Agency (HESA) maintains a number of datasets about HE providers, students and their study choices.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> Data is collected from providers and further education providers (FEPs) in the UK to help them fulfil their statutory obligations to provide information to the funding and regulatory bodies in each devolved UK nation <span class="citation" data-cites="hesa">(<a href="#ref-hesa" role="doc-biblioref">HESA, n.d.b</a>)</span>.</p>
+</section>
+<section id="overview-of-the-data-available-in-hesa" class="level2">
+<h2 class="anchored" data-anchor-id="overview-of-the-data-available-in-hesa">Overview of the data available in HESA</h2>
+<div class="custom-table">
+
+<style>
+  /* Make all header cells normal except top-left */
+  .custom-table th {
+    background-color: transparent;
+    color: inherit;
+    font-weight: normal;
+  }
+
+  /* Top-left cell: bold, white on blue */
+  .custom-table  thead th:first-child {
+    background-color: #3b66bc!important;
+    color: white!important;
+    font-weight: bold;
+  }
+
+  /* First column in body: bold, white on blue */
+  .custom-table tbody td:first-child {
+    background-color: #3b66bc!important;
+    color: white!important;
+    font-weight: bold;
+  }
+  
+  /* Stripe rows */
+  .custom-table tbody tr:nth-child(odd) {
+    background-color: #F2F2F2;
+  }
+
+  /* Hover effect */
+  .custom-table tbody tr:hover {
+    background-color: #ECECEC;
+  }
+</style>
+<table class="table">
+<colgroup>
+<col style="width: 6%">
+<col style="width: 93%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Population covered</th>
+<th style="text-align: left;">Students, staff (including governors), and graduates who have obtained HE qualifications.</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">Unit of observation</td>
+<td style="text-align: left;">Individual level and Provider level (for aggregate offshore record)</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">Key variables</td>
+<td style="text-align: left;"><p><strong>Student-level data:</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> demographics (e.g., age, sex, disability status,<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a> country of permanent residence/ home postcode, ethnicity, socio-economic classification (SEC)<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>), mode<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a> and level of study, subject of study, place of study and year of study.</p>
+<p><strong>Staff data:</strong> demographics (e.g., age, sex, nationality, disability status, ethnicity), academic role (subject of teaching, mode of employment), contract type (permanent, fixed, zero hours contract), total number of staff and location of provider.</p>
+<p><strong>Graduate and destination data:</strong><a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a> mode of the qualification obtained, wellbeing of graduates (using ONS4), mode of work (full time/part time), location of employment, salary and occupational classification, and other activities including voluntary/ unpaid work, sabatical periods, and caring for someone.</p>
+<p><strong>Specialist collections:</strong> Initial Teacher Training (ITT) record (collects data on trainee numbers, personal characteristics, enrolment subject and date of enrolment).</p>
+<p>Other information is collected on the financial records and environmental information of providers in the UK.</p></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">Years available</td>
+<td style="text-align: left;">Student Record (1994/1995 to 2023/24).<br>
+<br>
+Graduate Outcomes Survey from 2017/2018 to 2023/24 (replaced the Destinations of Leavers from Higher Education survey, which ran from 2002/03 to 2016/17).<br>
+<br>
+Aggregate Offshore record (2007/08 to 2023/24)</td>
+</tr>
+</tbody>
+</table>
 </div>
-
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
-
-<section id="resources-referenced-and-linked-to-in-the-text-in-order-of-appearance" class="level2">
-<h2 class="anchored" data-anchor-id="resources-referenced-and-linked-to-in-the-text-in-order-of-appearance">Resources referenced and linked to in the text (in order of appearance)</h2>
-<p>Financial Times. 2019. Visual vocabulary. <a href="https://ft-interactive.github.io/visual-vocabulary/" class="uri">https://ft-interactive.github.io/visual-vocabulary/</a> [Accessed 15 August 2024]</p>
-<p>Schwabish, J. 2021. Better data visualizations: A guide for scholars, researchers, and wonks. Columbia University Press.</p>
-<p>Donnarumma, F. 2019. Say what you see - the way we write chart titles is changing. <a href="https://digitalblog.ons.gov.uk/2019/01/28/" class="uri">https://digitalblog.ons.gov.uk/2019/01/28/</a> [Accessed 15 August 2024]</p>
-<p>Learn UI Design. 2023. Data color picker. <a href="https://www.learnui.design/tools/data-color-picker.html" class="uri">https://www.learnui.design/tools/data-color-picker.html</a> [Accessed 15 August 2024]</p>
-<p>Government Analysis Function. 2022. Data visualisation: charts. <a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/" class="uri">https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/</a> [Accessed 15 August 2024]</p>
-<p>Royal Statistical Society. 2023. Best Practices for Data Visualisation: <a href="https://royal-statistical-society.github.io/datavisguide/" class="uri">https://royal-statistical-society.github.io/datavisguide/</a> [Accessed 21 November 2023]</p>
-<p>Cesal, A. 2020. Writing Alt Text for Data Visualization. <a href="https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81" class="uri">https://medium.com/nightingale/writing-alt-text-for-data-visualization-2a218ef43f81</a> [Accessed 21 November 2023]</p>
 </section>
-<section id="further-data-visualisation-resources" class="level2">
-<h2 class="anchored" data-anchor-id="further-data-visualisation-resources">Further data visualisation resources</h2>
-<p>This style guide draws on some existing style guides. Some key sources of inspiration include:</p>
-<ul>
-<li><p><a href="https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/#section-12?">Government Analysis Function style guide</a></p></li>
-<li><p><a href="http://urbaninstitute.github.io/graphics-styleguide/?">Urban Institute Data Visualisation style guide</a></p></li>
-<li><p><a href="https://royal-statistical-society.github.io/datavisguide/?">Royal Statistical Society style guide</a></p></li>
-</ul>
-<p>We have endeavoured to keep this guide as concise as possible, meaning we do not cover the same ground that more extensive style guides do. If you have further questions on data visualisation, the above guides may be able to help. In particular, we found the Government Analysis Function valuable as an extensive but readable style guide.</p>
-<p>Our principles for effective data visualisation are rooted in the insights of Jonathan Schwabish, showcased in his contributions through PolicyViz. Sources include:</p>
-<ul>
-<li><p>Better Data Vizualisations: A Guide for Scholars, Researchers and Wonks</p></li>
-<li><p>Better Presentations: A Guide for Scholars, Researchers and Wonks</p></li>
-<li><p><a href="https://policyviz.com/2018/08/07/dataviz-cheatsheet/?">Data viz cheat sheet</a></p></li>
-<li><p><a href="https://policyviz.com/2016/11/30/style-guides/?">List of style guides</a></p></li>
-<li><p><a href="https://www.aeaweb.org/articles?id=10.1257/jep.28.1.209">An Economist’s Guide to Visualising Data</a></p></li>
-</ul>
-<p>For excellent examples of data visualisation, we also found the Financial Times (FT) and The Economist very helpful, particularly the work of John Burn-Murdoch:</p>
-<ul>
-<li><p>You can <a href="https://www.ft.com/john-burn-murdoch">find the work of John Burn-Murdoch here</a>, or on <a href="http://x.com/jburnmurdoch">X</a> (formerly Twitter). <a href="https://www.youtube.com/watch?v=tIbaQUo6H9g">This presentation</a> is also insightful.</p></li>
-<li><p>The Economist’s data visualisation newsletter Off The Charts is a helpful resource for learning how their data journalism team create visualisations and tackles problems. Its <a href="https://www.economist.com/graphic-detail">‘Graphic Detail’</a> section showcases its charts.</p></li>
-</ul>
-<p>Organisations that focus on data visualisation also have helpful blogs. These include <a href="https://flourish.studio/blog/">Flourish</a>, <a href="https://blog.datawrapper.de/category/datavis-dos-and-donts/">Datawrapper</a> and <a href="https://visualisingdata.com/">Visualisingdata</a>.</p>
+<section id="limitations-and-exclusions" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-exclusions">Limitations and exclusions</h2>
+<p>HESA primarily covers recognised HE courses at publicly funded HE providers. The HESA excludes students enrolled in community or workplace-based learning, such as those on apprenticeships or short work-based training placements that do not lead to a recognised qualification or award <span class="citation" data-cites="hesa2018">(<a href="#ref-hesa2018" role="doc-biblioref">HESA, 2018b</a>)</span>. As such, it does not comprehensively capture learners in sub-degree higher-level courses (e.g., HNCs/HNDs) that are often delivered in FE colleges. This can bias analyses toward traditional university pathways and underrepresent vocational/technical learners, staged FE-to-HE progression routes, mature learners, and other disadvantaged groups more likely to follow Level 4/5 routes.</p>
+<p>Students registered at UK providers but studying entirely overseas are excluded from the main Student Record and instead appear in HESA’s Aggregate Offshore Record (HESA, 2025). Also, atypical non-academic staff on non-academic contracts are excluded from the staff data (HESA, 2016). HE graduates from further education colleges in Scotland are also excluded from the population.&nbsp;</p>
 </section>
-<section id="r-resources" class="level2">
-<h2 class="anchored" data-anchor-id="r-resources">R resources</h2>
-<p>You can find example R code for creating charts with TASO stylings on our <a href="https://github.com/taso-he">GitHub</a>.</p>
-<p>If you are using R to create your plots, you may also find the following resources helpful.</p>
-<ul>
-<li><p><a href="https://z3tt.github.io/OutlierConf2021/">ggplot Wizardry Hands-On</a> - some helpful tips and tricks from Cédric Scherer</p></li>
-<li><p><a href="https://erikgahner.dk/2022/tips-and-tricks-for-ggplot2/">Tips and Tricks for ggplot2</a> - more helpful tips and tricks from Erik Gahner Larsen</p></li>
-<li><p><a href="https://rkabacoff.github.io/datavis/">Modern Data Visualisation with R</a> - an open-access textbook by Robert Kabacoff</p></li>
-<li><p><a href="https://r4ds.had.co.nz/data-visualisation.html">R for Data Science</a> - an open-access textbook by Hadley Wickham, if you are using ggplot for the first time the data visualisation chapter provides a great introduction to how ggplot works.</p></li>
-<li><p><a href="https://r-graph-gallery.com/index.html">R graph gallery</a> - a collection of charts made with R. The creator <a href="https://twitter.com/R_Graph_Gallery">Yan Holtz</a> provides useful insight on X (formerly Twitter).</p></li>
-</ul>
+<section id="access-to-hesa" class="level2">
+<h2 class="anchored" data-anchor-id="access-to-hesa">Access to HESA</h2>
+<p>HESA openly publishes aggregated data on aspects of the UK HE sector. This is open data meaning data anyone can access, use or share <span class="citation" data-cites="publicationsofficeoftheeuropeanunion">(<a href="#ref-publicationsofficeoftheeuropeanunion" role="doc-biblioref">Publications Office of the European Union, n.d.</a>)</span>. For example, anyone can download aggregate tables and CSVs covering students, staff, finances, estates, graduate outcomes and more from HESA’s Open Data portal.</p>
+<p>Subscribing HE providers and partner organisations can also use Heidi Plus, an interactive web-based dashboard to explore aggregated HESA data (ten years of data on students, graduates, staff, estates and three years of finance). Access requires mandatory data-protection training and is tiered by role (Bronze, Silver, Gold), with Gold users able to view unrounded data <span class="citation" data-cites="thequalityassuranceagencyforhighereducation2018">(<a href="#ref-thequalityassuranceagencyforhighereducation2018" role="doc-biblioref">The Quality Assurance Agency for Higher Education, 2018</a>)</span>.</p>
+<p>To access non-aggregated, individual level data, a request can be made to purchase a tailored dataset through the Jisc Data Service team or the ONS SRS.</p>
+</section>
+<section id="application-of-hesa-data-in-he" class="level2">
+<h2 class="anchored" data-anchor-id="application-of-hesa-data-in-he">Application of HESA data in HE</h2>
+<p>Promoting equality of opportunity is a key objective of the Office for Students (OfS), and the HESA data has been used to explore ethnic disparities among graduates. For example, one study linked the Destinations of Leavers from Higher Education (DLHE) data and the Longitudinal Destinations of Leavers from Higher Education (LDLHE) data with the HESA Student Record as the source for control variables (i.e., personal characteristics, study characteristics and degree outcomes) in a regression analysis to isolate the impact of ethnicity on career satisfaction. The linkage between HESA Student Record and LDLHE/DLHE allowed for a more nuanced analysis of the non-financial benefits of HE <span class="citation" data-cites="bermingham2020">(<a href="#ref-bermingham2020" role="doc-biblioref">Bermingham, Nathwani &amp; Essen-Fishman, 2020</a>)</span>.</p>
+<p>There is a regulatory requirement on HE providers to increase access to HE for students from disadvantaged or under-represented backgrounds <span class="citation" data-cites="ofs2018">(<a href="#ref-ofs2018" role="doc-biblioref">OfS, 2018</a>)</span>. An outreach programme investigated the likelihood of state school pupils in England progressing to high-tariff<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a> universities using HESA data to identify whether students had enrolled. This data was linked with the NPD, which provided personal and educational characteristics known to influence progression to HE (gender, ethnicity, FSM status, POLAR quintile, IMD decile, KS4 attainment, achievement of English Baccalaureate). The linkage between HESA and NPD enabled the identification of underrepresented or at-risk groups who are less likely to progress to HE, thus developing more targeted interventions <span class="citation" data-cites="martin_participants_2024">(<a href="#ref-martin_participants_2024" role="doc-biblioref">Martin, 2024</a>)</span>.</p>
+<p>Graduate progression into skilled employment or postgraduate study is a common indicator used to assess the value delivered by HE courses. A recent evaluation of the Q-Step programme employed a quasi-experimental design using administrative data sources, specifically the HESA Student Record and the Graduate Outcomes Survey. The HESA Student Record was used to identify the treatment group (Q-Step students) through course and module titles, as well as institutional identifiers, and to construct a control group of similar students from universities not involved in Q-Step. The Graduate Outcomes Survey, also managed by HESA, provided the outcome measures, such as whether graduates were in highly skilled employment, whether their job required their qualification, and whether they earned over £25,000 15 months after graduation <span class="citation" data-cites="rosemberg">(<a href="#ref-rosemberg" role="doc-biblioref">Rosemberg et al., n.d.</a>)</span>.</p>
+
 
 
 </section>
+</section>
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a><div id="quarto-appendix" class="default"><section class="quarto-appendix-contents" role="doc-bibliography"><h2 class="anchored quarto-appendix-heading">References</h2><div id="refs" class="references csl-bib-body" role="list">
+<div id="ref-bermingham2020" class="csl-entry" role="listitem">
+Bermingham, J., Nathwani, T. &amp; Essen-Fishman, L.V. (2020) <em>Higher education outcomes: How career satisfaction among graduates varies by ethnicity</em>. <a href="https://www.hesa.ac.uk/files/Career-satisfaction-by-ethnicity-20200922.pdf">https://www.hesa.ac.uk/files/Career-satisfaction-by-ethnicity-20200922.pdf</a>.
+</div>
+<div id="ref-hesa_aggregate_2025" class="csl-entry" role="listitem">
+HESA (2025) Aggregate <span>Offshore</span> record 2024/25 - <span>Introduction</span>. <em>HESA</em>. <a href="https://www.hesa.ac.uk/collection/c24052/introduction">https://www.hesa.ac.uk/collection/c24052/introduction</a>.
+</div>
+<div id="ref-hesa2018" class="csl-entry" role="listitem">
+HESA (2018b) <em>Definitions: Alternative provider student | HESA</em>. <a href="https://www.hesa.ac.uk/support/definitions/ap-student">https://www.hesa.ac.uk/support/definitions/ap-student</a>.
+</div>
+<div id="ref-hesa2018a" class="csl-entry" role="listitem">
+HESA (2018a) <em>Definitions: Alternative provider student | HESA</em>. <a href="https://www.hesa.ac.uk/support/definitions/ap-student">https://www.hesa.ac.uk/support/definitions/ap-student</a>.
+</div>
+<div id="ref-hesaa" class="csl-entry" role="listitem">
+HESA (n.d.a) <em>Socio economic classification (SEC)</em>. <a href="https://www.hesa.ac.uk/collection/25056/datadictionary?element=EntryProfile_SEC">https://www.hesa.ac.uk/collection/25056/datadictionary?element=EntryProfile_SEC</a>.
+</div>
+<div id="ref-hesa" class="csl-entry" role="listitem">
+HESA (n.d.b) <em>Who we are and what we do</em>. <a href="https://www.hesa.ac.uk/about/what-we-do">https://www.hesa.ac.uk/about/what-we-do</a>.
+</div>
+<div id="ref-martin_participants_2024" class="csl-entry" role="listitem">
+Martin, P. (2024) Do participants in widening participation outreach programmes in <span>England</span> progress to selective universities at a higher rate than would otherwise be expected? <em>British Educational Research Journal</em>. 50 (4), 1962–1982. doi:<a href="https://doi.org/10.1002/berj.4011">10.1002/berj.4011</a>.
+</div>
+<div id="ref-ofs2018" class="csl-entry" role="listitem">
+OfS (2018) <em>A new approach to regulating access and participation in english higher education: Consultation outcomes - office for students</em>. <a href="https://www.officeforstudents.org.uk/">https://www.officeforstudents.org.uk/</a>.
+</div>
+<div id="ref-publicationsofficeoftheeuropeanunion" class="csl-entry" role="listitem">
+Publications Office of the European Union (n.d.) <em>What is open data | data.europa.eu</em>. <a href="https://data.europa.eu/en/dataeuropa-academy/what-open-data">https://data.europa.eu/en/dataeuropa-academy/what-open-data</a>.
+</div>
+<div id="ref-rosemberg" class="csl-entry" role="listitem">
+Rosemberg, C., Allinson, R., Farla, D.K., Dobson, D.C., Cimatti, R., Wain, D.M. &amp; Jávorka, Z. (n.d.) <em>Evaluation of the Q-Step programme</em>.
+</div>
+<div id="ref-thequalityassuranceagencyforhighereducation2018" class="csl-entry" role="listitem">
+The Quality Assurance Agency for Higher Education (2018) <em>The Scottish HE Data Landscape: An overview of Heidi Plus</em>. <a href="https://www.enhancementthemes.ac.uk/docs/ethemes/evidence-for-enhancement/he-data-landscape---heidi-plus.pdf?sfvrsn=96a0c081_12">https://www.enhancementthemes.ac.uk/docs/ethemes/evidence-for-enhancement/he-data-landscape---heidi-plus.pdf?sfvrsn=96a0c081_12</a>.
+</div>
+</div></section><section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>A comprehensive list of the data collected can be found in the coding manuals on the data collections page <a href="https://www.hesa.ac.uk/collection/default">(HESA, 2025)</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>The same variables are collected for both alternative providers (non-publicly funded) and UK publicly funded providers <span class="citation" data-cites="hesa2018a">(<a href="#ref-hesa2018a" role="doc-biblioref">HESA, 2018a</a>)</span>. Students studying outside the UK are collected within a different aggregate dataset known as the Aggregate Offshore Record <span class="citation" data-cites="hesa_aggregate_2025">(<a href="#ref-hesa_aggregate_2025" role="doc-biblioref">HESA, 2025</a>)</span>.<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>HESA does not collect school-based SEN categories; instead, it records student-reported disability through a binary disability flag and detailed categories (e.g., specific learning difficulty, mental health condition, sensory or physical impairment, long-standing illness), which functions as the HE-sector equivalent to SEN.<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p>SEC refers to the socio-economic background of students aged 21 and over at the start of their course, or, for students under 21, the socio-economic background of their parent, step-parent, or guardian <span class="citation" data-cites="hesaa">(<a href="#ref-hesaa" role="doc-biblioref">HESA, n.d.a</a>)</span>.<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5"><p>Student course session mode (SCSMODE) information available from 2004/05–2019/20.<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6"><p>Graduate-level data is collected in the Graduate Outcomes survey, which replaced the Destinations of Leavers from Higher Education survey (up to 2016-17). The Graduate Outcomes survey is administered to graduates 15 months after course completion and focuses on employment, further study, and salary.<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7"><p>A high-tariff university refers to a higher education institution in the UK that typically requires high entry qualifications (tariff points) for admission to its undergraduate courses.<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -669,13 +772,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../data-vis/styling.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Styling charts for TASO publications</span>
+      <a href="../administrative-database-guidance/npd.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">The National Pupil Database</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../coding-good-practice/index.html" class="pagination-link">
-        <span class="nav-page-text">Coding good practice guide</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../administrative-database-guidance/leo.html" class="pagination-link">
+        <span class="nav-page-text">Longitudinal Education Outcomes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
