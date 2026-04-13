@@ -16,33 +16,28 @@ The Higher Education Statistics Agency (HESA) maintains a number of datasets abo
 ::: custom-table
 ```{=html}
 <style>
-  /* Make all header cells normal except top-left */
   .custom-table th {
     background-color: transparent;
     color: inherit;
     font-weight: normal;
   }
 
-  /* Top-left cell: bold, white on blue */
   .custom-table  thead th:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
 
-  /* First column in body: bold, white on blue */
   .custom-table tbody td:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
   
-  /* Stripe rows */
   .custom-table tbody tr:nth-child(odd) {
     background-color: #F2F2F2;
   }
 
-  /* Hover effect */
   .custom-table tbody tr:hover {
     background-color: #ECECEC;
   }
