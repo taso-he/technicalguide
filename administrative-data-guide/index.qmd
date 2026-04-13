@@ -1,5 +1,5 @@
 ---
-title: "Administrative Database Guidance"
+title: "Administrative Data Guide"
 subtitle: using administrative data to support evaluation in higher education
 bibliography: "references.bib"
 csl: imperial-college-london-author-date.csl
@@ -17,7 +17,6 @@ library (kableExtra)
 library(readxl)
 # Read the data for the table
 # Note that adding or rows or columns to these files will require the table-
-# generating code to be altered.
 # generating code to be altered. Any fields containing commas should be
 # enclosed in double quotes.
 summary_admin_datasets <- read_excel("data/tbl_summary_administrative_datasets.xlsx")
@@ -67,7 +66,7 @@ It is curated to support evaluation within the English HE system because educati
 
 ## How is the guide organised?
 
-This guide is divided into five sections. The first four sections focus on administrative data sources relevant to higher education (HE) research and policy including: [the National Pupil Database (NPD)](npd.qmd) , the [Higher Education Statistics Agency (HESA)](hesa.qmd), [Longitudinal Education Outcomes Data (LEO)](leo.qmd) and the [University and College Admissions Service (UCAS)](ucas.qmd). The fifth section provides an overview of the [Higher Education Access Tracker (HEAT)](heat.qmd), which is a centralised tracking service that negotiates access to the majority of the variables covered in this administrative guidance resource. To quickly compare which datasets contain different variables, view the [data catalogue](data_catalogue.qmd). \
+This guide is divided into five sections. The first four sections focus on administrative data sources relevant to higher education (HE) research and policy including: [the National Pupil Database (NPD)](npd.qmd) , the [Higher Education Statistics Agency (HESA)](hesa.qmd), [Longitudinal Education Outcomes Data (LEO)](leo.qmd) and the [University and College Admissions Service (UCAS)](ucas.qmd). The fifth section provides an overview of the [Higher Education Access Tracker (HEAT)](heat.qmd), which is a centralised tracking service that negotiates access to the majority of the variables covered in this administrative guidance resource. To quickly compare which datasets contain different variables, view the [data catalogue](data_catalogue.qmd).\
 \
 The guide is designed to be accessible and practical, supporting users in understanding each dataset's structure, access process and application to investigating HE inequalities. Table 1 provides a high-level summary of each data set's population coverage, key variables[^2], years available[^3], and unit of observation. For more details, please visit the section for the relevant data set.
 

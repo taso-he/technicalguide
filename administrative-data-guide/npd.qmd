@@ -9,7 +9,6 @@ library(tidyverse)
 library (kableExtra) 
 # Read the data for the table
 # Note that adding or rows or columns to these files will require the table-
-# generating code to be altered.
 # generating code to be altered. Any fields containing commas should be
 # enclosed in double quotes.
 tbl_summer_schools_outcomes <- read_excel("data/tbl_summer_schools_outcomes.xlsx")
@@ -28,21 +27,21 @@ The National Pupil Database (NPD) is a longitudinal administrative data source c
 ```{=html}
 <div class="custom-table">
 <style>
-  /* Make all header cells normal except top-left */
+  /* Remove header formatting */
   .custom-table th {
     background-color: transparent;
     color: inherit;
     font-weight: normal;
   }
 
-  /* Top-left cell: bold, white on blue */
+  /* Top-left cell: bold, white font on blue background */
   .custom-table  thead th:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
 
-  /* First column in body: bold, white on blue */
+  /* First column in body: bold, white font on blue background */
   .custom-table tbody td:first-child {
     background-color: #3b66bc!important;
     color: white!important;

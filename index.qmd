@@ -31,7 +31,7 @@ Note: This guide was previously known as the Data Infrastructure Guide. We updat
 
 ::: g-col-6
 ::: {style="text-align: center;"}
-<a href="administrative-database-guidance/index.qmd"> <button type="button" style="
+<a href="administrative-data-guide/index.qmd"> <button type="button" style="
       background-color: #3b66bc; 
       color: white; 
       font-weight: bold;
@@ -39,7 +39,7 @@ Note: This guide was previously known as the Data Infrastructure Guide. We updat
       font-size: 16px; 
       border: none; 
       border-radius: 25px; 
-      cursor: pointer;"> Administrative Database Guidance </button> </a>
+      cursor: pointer;"> Administrative Data Guide </button> </a>
 :::
 
 A practical guide on using administrative data relevant to higher education research and policy. Aims to support users to understand each administrative dataset's structure, access process and application to investigating HE inequalities.
