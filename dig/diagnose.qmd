@@ -23,8 +23,8 @@ Identifying equality gaps in your institution is a core part of the APP and [Tea
 
 The degree to which you can identify and understand equality gaps will depend on the data you have available. In this guide we define two broad classes of data, the learner context and the institution context:
 
--   **The learner context** is data about the learner when they begin higher education -- e.g. demographics and prior attainment - and as they progress through higher education (e.g. engagement with their course and the institution).
--   **The institution context** is data about the institution relevant to the learner's studies, such as courses and modules that are studied, contact hours, types of contact, types of assessment and timetable information.
+- **The learner context** is data about the learner when they begin higher education -- e.g. demographics and prior attainment - and as they progress through higher education (e.g. engagement with their course and the institution).
+- **The institution context** is data about the institution relevant to the learner's studies, such as courses and modules that are studied, contact hours, types of contact, types of assessment and timetable information.
 
 In @tbl-levelsofdata we also define three levels of data: *Foundation*, *Intermediate*, and *Advanced*. Although the levels of data are segregated, it is likely that institutions will have data from more than one of these levels. Data in each additional level provides increasing context for the learner and the institution. Not all of the data listed in @tbl-levelsofdata will be useful for identifying equality gaps, but may be useful in understanding what is required from an intervention to reduce equality gaps.
 
@@ -278,28 +278,28 @@ Developing a theory of change is the first step in TASO's Monitoring and Evaluat
 
 TASO has a two-strand approach to theory of change development:
 
--   **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
--   **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
+- **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
+- **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
 
-::: {.callout-tip title="More theory of change resources"}
+:::::: {.callout-tip title="More theory of change resources"}
 TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/) for developing Core and Enhanced Theories of Change, including:
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
--   [Core Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)
+- [Core Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)
 
--   [Theory of Change workshop resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theory-of-change-leader-pack/)
+- [Theory of Change workshop resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theory-of-change-leader-pack/)
 
--   [Enhanced Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)
+- [Enhanced Theory of Change templates](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)
 :::
 
 ::: {.column width="50%"}
--   [Theories of Change for the ethnicity degree awarding gap (EDAG)](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-for-the-ethnicity-degree-awarding-gap/)
+- [Theories of Change for the ethnicity degree awarding gap (EDAG)](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-for-the-ethnicity-degree-awarding-gap/)
 
--   [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
+- [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
 :::
-:::
-:::
+:::::
+::::::
 
 ### Post-entry typology
 
@@ -311,7 +311,7 @@ The [post-entry MOAT](https://taso.org.uk/evidence/evaluation-guidance-resources
 
 The post-entry MOAT covers any HEP's activity whose ultimate beneficiary is deemed to be its own students. This includes:
 
--   transition activities designed for students who have confirmed the HEP as a firm choice on their UCAS application
--   activities where individual students directly benefited and participated
--   activities in which staff or entire departments are the focus; e.g. activities focused on changing the curriculum or academic culture within a school, which may include staff training and administrative or communications activities
--   activities involving changes to physical or virtual infrastructure, e.g. improvements to lab or study facilities, or changes to the virtual learning environment.
+- transition activities designed for students who have confirmed the HEP as a firm choice on their UCAS application
+- activities where individual students directly benefited and participated
+- activities in which staff or entire departments are the focus; e.g. activities focused on changing the curriculum or academic culture within a school, which may include staff training and administrative or communications activities
+- activities involving changes to physical or virtual infrastructure, e.g. improvements to lab or study facilities, or changes to the virtual learning environment.
