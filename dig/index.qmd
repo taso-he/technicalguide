@@ -26,29 +26,29 @@ Institutional data is data that is recorded and used as part of an institution's
 
 This document is a practical guide on using institutional data to address several key areas. It aims to help enable HEPs to:
 
--   identify equality gaps in higher education
--   identify where those equality gaps may be particularly acute, to enable effective design of post-entry student success activities
--   help generate robust [Type 3 (causal) evidence](https://taso.org.uk/evidence-toolkits/evidence-toolkit-student-access-success-progression/how-we-rate-evidence/) of the success of student support interventions.
+- identify equality gaps in higher education
+- identify where those equality gaps may be particularly acute, to enable effective design of post-entry student success activities
+- help generate robust [Type 3 (causal) evidence](https://taso.org.uk/evidence-toolkits/evidence-toolkit-student-access-success-progression/how-we-rate-evidence/) of the success of student support interventions.
 
 Additionally, this guide provides considerations for:
 
--   planning an evaluation of student success interventions
--   obtaining ethical approval to carry out an evaluation and publish the results of an intervention
+- planning an evaluation of student success interventions
+- obtaining ethical approval to carry out an evaluation and publish the results of an intervention
 
 ## Who is this guide for?
 
 Different sections are aimed at different audiences but overall this document will be useful for:
 
-::: columns
+:::::: columns
 ::: {.column width="60%"}
--   evaluators
--   practitioners
--   those responsible for writing their institution's APPs
--   planning teams
--   senior executive/management with responsibility for supporting student success.
+- evaluators
+- practitioners
+- those responsible for writing their institution's APPs
+- planning teams
+- senior executive/management with responsibility for supporting student success.
 :::
 
-::: {.column width="40%"}
+:::: {.column width="40%"}
 ::: callout-note
 In each section, it is indicated who that part of the guide is aimed at, e.g.:
 
@@ -58,8 +58,8 @@ genAudienceTable(audience=c("Evaluators",
                             "Practitioners"))
 ```
 :::
-:::
-:::
+::::
+::::::
 
 There are a large variety of HEPs in England, from small and specialist providers with tens of students, to the very largest with tens of thousands. Where possible we have tried to make this guide useful for a wide range of providers, though some sections will be more relevant to some types of providers than others.
 
