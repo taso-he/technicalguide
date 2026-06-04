@@ -278,11 +278,19 @@ Developing a theory of change is the first step in TASO's Monitoring and Evaluat
 
 TASO has a two-strand approach to theory of change development:
 
+<<<<<<< HEAD
 - **Strand one -- [Core Theory of Change](https://taso.org.uk/libraryitem/core-theory-of-change/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
 - **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/libraryitem/enhanced-theory-of-change/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
 
 :::::: {.callout-tip title="More theory of change resources"}
 TASO has a range of resources for developing Core and Enhanced Theories of Change, including:
+=======
+- **Strand one -- [Core Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/core-theory-of-change-templates/)**: used for simplicity and to assist higher education providers with planning interventions and evaluation activities. The Core Theory of Change guidance follows a simple model of mapping inputs, activities, outputs, outcomes and impact. It provides a high-level snapshot of how we expect an activity to lead to impact.
+- **Strand two -- [Enhanced Theory of Change](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/enhanced-theory-of-change-templates/)**: used for evaluability and to assist higher education providers with robustly evaluating interventions and activities. The Enhanced Theory of Change guidance provides a format for capturing much more information about activities and mechanisms by which we expect change to happen. It includes: context; mapping of links between activities and outcomes; and assumptions and change mechanisms.
+
+:::::: {.callout-tip title="More theory of change resources"}
+TASO has a [range of resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/) for developing Core and Enhanced Theories of Change, including:
+>>>>>>> 32b7bf989ef75e81994a35ffef1c704cd94142dd
 
 ::::: columns
 ::: {.column width="50%"}
@@ -290,15 +298,25 @@ TASO has a range of resources for developing Core and Enhanced Theories of Chang
 
 - [Core Theory of Change templates](https://taso.org.uk/libraryitem/core-theory-of-change/#core-theory-of-change-template)
 
+<<<<<<< HEAD
 - [Theory of Change workshop resources](https://taso.org.uk/libraryitem/theory-of-change-workshop-resources/)
+=======
+- [Theory of Change workshop resources](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theory-of-change-leader-pack/)
+>>>>>>> 32b7bf989ef75e81994a35ffef1c704cd94142dd
 
 - [Enhanced Theory of Change templates](https://taso.org.uk/libraryitem/enhanced-theory-of-change/#tasos-enhanced-toc-narrative-template)
 :::
 
 ::: {.column width="50%"}
+<<<<<<< HEAD
 - [Theories of Change for the ethnicity degree awarding gap (EDAG)](https://taso.org.uk/libraryitem/project-theory-of-change-to-tackle-ethnicity-degree-awarding-gaps/)
 
 - [Theories of Change for attainment-raising initiatives](https://taso.org.uk/libraryitem/project-theories-of-change-for-attainment-raising-initiatives/)
+=======
+- [Theories of Change for the ethnicity degree awarding gap (EDAG)](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-for-the-ethnicity-degree-awarding-gap/)
+
+- [Theories of Change for attainment-raising initiatives](https://taso.org.uk/evidence/evaluation-guidance-resources/toc/theories-of-change-attainment-raising/)
+>>>>>>> 32b7bf989ef75e81994a35ffef1c704cd94142dd
 :::
 :::::
 ::::::
