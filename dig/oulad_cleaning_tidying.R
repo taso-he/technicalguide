@@ -5,7 +5,7 @@
 # Loading in data and libraries -----------------------------------------------
 
 # Load OULAD package
-#devtools::install_github("jakubkuzilek/oulad")
+#pak::pak("jakubkuzilek/oulad")
 library(oulad)
 
 # Other packages

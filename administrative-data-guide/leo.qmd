@@ -7,8 +7,7 @@ csl: imperial-college-london-author-date.csl
 library (kableExtra) 
 library(readxl)
 # Read the data for the table
-# Note that adding or rows or columns to these files will require the table-
-# generating code to be altered.
+# Note that adding or rows or columns to these files will require the table generating code to be altered.
 equality_gaps_variable_sources <- read_excel("data/tbl_equality_gaps_variable_sources.xlsx")
 equality_gaps_outcomes <- read_excel("data/tbl_equality_gaps_outcomes.xlsx")
 ```
@@ -38,33 +37,28 @@ The purpose of the LEO database is to facilitate evidence-informed decision-maki
 ```{=html}
 <div class="custom-table">
 <style>
-  /* Make all header cells normal except top-left */
   .custom-table th {
     background-color: transparent;
     color: inherit;
     font-weight: normal;
   }
 
-  /* Top-left cell: bold, white on blue */
   .custom-table  thead th:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
 
-  /* First column in body: bold, white on blue */
   .custom-table tbody td:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
   
-  /* Stripe rows */
   .custom-table tbody tr:nth-child(odd) {
     background-color: #F2F2F2;
   }
 
-  /* Hover effect */
   .custom-table tbody tr:hover {
     background-color: #ECECEC;
   }
@@ -99,11 +93,11 @@ The purpose of the LEO database is to facilitate evidence-informed decision-maki
 
 [^8]: LEO does not store provider name, only anonymised identifiers and location (pseudonymised HESA provider ID), available from 2004/05--2019/20.
 
-[^9]: LEO KS1 attainment data available from 1997/98 to 2011/12. \
-    KS2 attainment data available from 1995/96 to 2015/16. \
-    KS3 attainment data available from 1997/98 to 2012/13. \
+[^9]: LEO KS1 attainment data available from 1997/98 to 2011/12.\
+    KS2 attainment data available from 1995/96 to 2015/16.\
+    KS3 attainment data available from 1997/98 to 2012/13.\
     KS4 attainment data available from 2001/02 to 2020/21.\
-    KS5 attainment data available from 2001/02 to 2020/21. \
+    KS5 attainment data available from 2001/02 to 2020/21.\
 
 </div>
 

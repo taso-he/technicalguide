@@ -7,10 +7,7 @@ csl: imperial-college-london-author-date.csl
 library (kableExtra) 
 library(readxl)
 # Read the data for the table
-# Note that adding or rows or columns to these files will require the table-
-# generating code to be altered.
-# generating code to be altered. Any fields containing commas should be
-# enclosed in double quotes.
+# Note that adding or rows or columns to these files will require the table generating code to be altered. Any fields containing commas should be enclosed in double quotes.
 ucas_MIOM_data <- read_excel("data/tbl_ucas_MIOM_data.xlsx")
 ucas_MIOM_outcomes <- read_excel("data/tbl_ucas_MIOM_outcomes.xlsx")
 ```
@@ -28,33 +25,29 @@ In its primary function, UCAS is an intermediary digital platform between applic
 ```{=html}
 <div class="custom-table">
 <style>
-  /* Make all header cells normal except top-left */
+
   .custom-table th {
     background-color: transparent;
     color: inherit;
     font-weight: normal;
   }
 
-  /* Top-left cell: bold, white on blue */
   .custom-table  thead th:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
 
-  /* First column in body: bold, white on blue */
   .custom-table tbody td:first-child {
     background-color: #3b66bc!important;
     color: white!important;
     font-weight: bold;
   }
   
-  /* Stripe rows */
   .custom-table tbody tr:nth-child(odd) {
     background-color: #F2F2F2;
   }
 
-  /* Hover effect */
   .custom-table tbody tr:hover {
     background-color: #ECECEC;
   }
@@ -138,24 +131,22 @@ These aggregate UCAS data provide an early proxy indicator of progression to hig
 ```{=html}
 <div class="custom-table2">
 <style>
-  /* Make header row blue */
   .custom-table2 th {
     background-color:  #3b66bc;
     color: white;
     font-weight: bold;
   }
   
-  /* Stripe rows */
   .custom-table2 tbody tr:nth-child(odd) {
     background-color: #F2F2F2;
   }
 
-  /* Hover effect */
   .custom-table2 tbody tr:hover {
     background-color: #ECECEC;
   }
 </style>
 ```
+
 +----------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | Column heading       | Explanation                                                                                                                                  |
 +:=====================+:=============================================================================================================================================+
